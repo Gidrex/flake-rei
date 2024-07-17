@@ -4,7 +4,7 @@ cd "$(dirname "$0")" # ./
 
 git add -A
 if [[ -n "$(git status --porcelain)" ]]; then
-  git commit -m "better"
+  git commit -m "better" > /dev/null
 else 
   exit 0
 fi
