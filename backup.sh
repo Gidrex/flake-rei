@@ -10,4 +10,4 @@ else
 fi
 git push origin main
 
-cd -
+cd - > /dev/null
