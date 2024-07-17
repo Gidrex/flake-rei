@@ -1,0 +1,17 @@
+/**
+@theme "/nix/store/zdv2kv8dk21hgd3gb0x5jk184aijqkxp-rofi-1.7.5/share/rofi/themes/glue_pro_blue.rasi"
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Colors
+ **/
+
+* {
+    background:     #1E1D2FFF;
+    background-alt: #282839FF;
+    foreground:     #D9E0EEFF;
+    selected:       #7AA2F7FF;
+    active:         #ABE9B3FF;
+    urgent:         #F28FADFF;
+}

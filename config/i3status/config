@@ -1,0 +1,64 @@
+#!/bin/sh
+
+general {
+  output_format = "i3bar"
+  colors = true
+  #color_good = "#2E588E"
+  #color_degraded = "#FFFF00"
+  #color_bad = "#FF0000"
+  interval = 1
+  "markup" = "pango"
+}
+
+#order += "disk /"
+order += "battery 0"
+#order += "load"
+order += "volume master"
+order += "wireless _first_"
+order += "tztime local"
+order += "ethernet eth0"
+
+wireless _first_ {
+	format_up = "<span color='#FFFFFF'>󰩩 %essid   %quality</span>"
+	format_down = "󰤮 "
+#	format_up = "<span color='#FFFFFF'>[ ]: On: %essid (%quality) %ip</span>"
+#	format_down = "" #"[ ] Wifi: down"
+}
+
+battery 0 {
+	status_bat = "󰁹"
+	status_chr = "󱐋"
+	status_unk = "error"
+	status_full = "󰚥"
+	format = "%status %percentage %remaining"
+	format_down = "No battery"
+	path = "/sys/class/power_supply/BAT%d/uevent"
+	low_threshold = 10
+	last_full_capacity = true
+	hide_seconds = true
+	integer_battery_capacity = true	
+}
+
+tztime local {
+	format = " 󰅐 %H:%M:%S   %a %d.%m |"
+	locale = "de_DE.UTF-8"
+}
+
+
+load {
+	format = "  %1min "
+}
+
+disk "/" {
+#	format = " hdd %avail "
+	format = " ⛁ %free"
+}
+
+volume master {
+	format = "<span color='#FFFFFF'>󰕾 %volume </span>"
+	format_muted = "<span color='#cfafc8'> %volume </span>"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+

@@ -1,0 +1,41 @@
+live_config_reload = false
+
+import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
+# import = [ "~/.config/alacritty/aura-colors.toml"]
+
+[font]
+size = 10
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Extra Bold"
+
+[mouse]
+hide_when_typing = true
+
+# [colors.cursor]
+# cursor = "0xf0f3f6"
+# text = "0x0a0c10"
+
+[cursor]
+style = { shape = "Beam", blinking = "Off" }
+unfocused_hollow = true
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Extra Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window.padding]
+x = 10
+y = 0

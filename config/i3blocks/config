@@ -1,0 +1,37 @@
+#[DISK]
+#command=df -h / | awk '/\//{ printf(" 💾 %4s/%s \n", $4, $2) }'
+#interval=2
+#color=#C9E3DB
+
+# [COLORS]
+# command=~/.config/i3blocks/colors/colors.sh
+# interval=1
+
+[LIGHT]
+command=echo "☀️ $(light -G | awk '{printf "%.0f\n", $1}')% "
+interval=1
+
+[SOUND]
+full_text=󰖁: 0%
+command=~/.config/i3blocks/sound/sound_info.sh
+interval=1
+signal=1
+
+[BATTERY]
+command=~/.config/i3blocks/battery/battery_info.sh
+interval=3
+
+[CPU]
+full_text= 0.00% 
+command=~/.config/i3blocks/cpu/cpu_info.sh
+interval=repeat
+color=#FFFFFF
+
+[MEM]
+command=free -h | awk '/Mem:/ { printf("   %5s/%s \n", $3, $2) }'
+interval=1
+color=#FFFFFF
+
+[TIME_DATE]
+command=date +" %d %b, %a  %H:%M:%S |"
+interval=1
