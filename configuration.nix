@@ -230,7 +230,7 @@ environment.systemPackages = with pkgs; [
   #   sha256 = "lfig7lFyF7XZowTQKpo6zGeR23VHq/f7vvUDWCs7jeo=";
   #   };
   # }))
-  android-studio.canary
+  android-studio.beta
 
   # Open with
   feh gthumb
