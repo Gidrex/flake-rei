@@ -223,7 +223,7 @@ environment.systemPackages = with pkgs; [
   qalculate-gtk
   audio-recorder kazam
   spotify-cli-linux spotifywm
-  # android-studio.canary
+  android-studio.canary
 
   # Open with
   feh gthumb
