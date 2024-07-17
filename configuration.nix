@@ -223,13 +223,14 @@ environment.systemPackages = with pkgs; [
   qalculate-gtk
   audio-recorder kazam
   spotify-cli-linux spotifywm
-  (pkgs.android-studio.overrideAttrs (oldAttrs: {
-    version = "2024.1.1.4";
-    src = pkgs.fetchurl {
-    url = "https://redirector.gvt1.com/edgedl/android/studio/install/2024.1.1.4/android-studio-2024.1.1.4-linux.tar.gz";
-    sha256 = "lfig7lFyF7XZowTQKpo6zGeR23VHq/f7vvUDWCs7jeo=";
-    };
-  }))
+  # (pkgs.android-studio.overrideAttrs (oldAttrs: {
+  #   version = "2024.1.1.4";
+  #   src = pkgs.fetchurl {
+  #   url = "https://redirector.gvt1.com/edgedl/android/studio/install/2024.1.1.4/android-studio-2024.1.1.4-linux.tar.gz";
+  #   sha256 = "lfig7lFyF7XZowTQKpo6zGeR23VHq/f7vvUDWCs7jeo=";
+  #   };
+  # }))
+  android-studio.canary
 
   # Open with
   feh gthumb
