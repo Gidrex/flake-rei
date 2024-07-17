@@ -25,7 +25,7 @@ boot = {
 
 # Networking
 networking = {
-  # proxy.httpProxy = "http://127.0.0.1:1092";
+  proxy.httpProxy = "http://127.0.0.1:1092";
   # proxy.noProxy = "127.0.0.1";
   hostName = "rei";
   networkmanager.enable = true;
@@ -230,7 +230,6 @@ environment.systemPackages = with pkgs; [
   #   sha256 = "lfig7lFyF7XZowTQKpo6zGeR23VHq/f7vvUDWCs7jeo=";
   #   };
   # }))
-  android-studio.beta
 
   # Open with
   feh gthumb
