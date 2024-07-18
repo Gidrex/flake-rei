@@ -1,11 +1,14 @@
 let
   nixpkgs-24-05 = import (fetchTarball {
     url = "https://nixos.org/channels/nixos-24.05/nixexprs.tar.xz";
-    sha256 = "1nanlslf1mdnnpxl7i3c7dkdz2dm4mbl6d6xc2w1bx21jgsk5g37";
-  }) { };
+    sha256 = "0gy2wvfwwi2jss5prhxq5c1rw321mi82c0mnki5m404j2zzzas6f";
+    }) { 
+    system = "x86_64-linux"; 
+    config.allowUnfree = true;
+  };
 in
 {
-  environment.systemPackages = [
-    nixpkgs-24-05.android-studio
+  environment.systemPackages = with nixpkgs-24-05; [
+    android-studio
   ];
 }
