@@ -53,7 +53,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_file(4
 
 -- Oil
 vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Oil<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>t', '<cmd>tabedit<cr><cmd>Oil<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>c', '<cmd>tabedit<cr><cmd>Oil<cr>', { noremap = true, silent = true })
 
 
 -- Neorg
