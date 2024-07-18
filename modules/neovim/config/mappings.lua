@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- lazygit
--- vim.api.nvim_set_keymap('n', '<leader>Z', '<cmd>LazyGit<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>Z', '<cmd>LazyGit<cr>', { noremap = true, silent = true })
 
 -- lsp trouble
 vim.api.nvim_set_keymap('n', '<leader>tt', '<cmd>TroubleToggle document_diagnostics<cr>', { noremap = true })
