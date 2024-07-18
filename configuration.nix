@@ -161,7 +161,7 @@ environment.systemPackages = with pkgs; [
 
   # term tools
   xsel ffmpeg
-  file hexyl procs broot chafa
+  file hexyl procs broot chafa dig
   imagemagick
   fd ripgrep
   nix-inspect
