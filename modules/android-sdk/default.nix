@@ -1,25 +1,29 @@
-{ config, pkgs, ... }:
+{ pkgs ? import <nixpkgs> { }
+, system ? pkgs.stdenv.system
+, channel ? "stable"
+}:
 
+with pkgs;
 let
-  androidSdkModule = import ((builtins.fetchGit {
-    url = "https://github.com/tadfisher/android-nixpkgs.git";
-    ref = "main";  # Or "stable", "beta", "preview", "canary"
-  }) + "/hm-module.nix");
+  androidSdk = callPackage ./pkgs/android { };
+
+  isSupported = _: pkg:
+    (!lib.isDerivation pkg) ||
+    lib.meta.availableOn hostPlatform pkg ||
+    config.allowUnsupportedSystem ||
+    builtins.getEnv "NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM" == "1";
+
+  filterIsSupported = lib.filterAttrs isSupported;
+
+  channelPkgs = rec {
+    stable = filterIsSupported (androidSdk.callPackage ./channels/stable { });
+    beta = filterIsSupported (androidSdk.callPackage ./channels/beta { });
+    preview = filterIsSupported (androidSdk.callPackage ./channels/preview { });
+    canary = filterIsSupported (androidSdk.callPackage ./channels/canary { });
+  };
 
 in
-{
-  imports = [ androidSdkModule ];
-
-  android-sdk.enable = true;
-
-  # Optional; default path is "~/.local/share/android".
-  android-sdk.path = "${config.home.homeDirectory}/.android/sdk";
-
-  android-sdk.packages = sdkPkgs: with sdkPkgs; [
-    build-tools-34-0-0
-    cmdline-tools-latest
-    emulator
-    platforms-android-34
-    sources-android-34
-  ];
+rec {
+  packages = channelPkgs."${channel}";
+  sdk = callPackage ./pkgs/android/sdk.nix { inherit packages; };
 }

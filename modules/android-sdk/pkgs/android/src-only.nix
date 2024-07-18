@@ -1,0 +1,5 @@
+{ mkGeneric }:
+
+mkGeneric {
+  phases = [ "unpackPhase" ];
+}
