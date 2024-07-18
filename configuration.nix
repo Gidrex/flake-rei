@@ -171,7 +171,7 @@ environment.systemPackages = with pkgs; [
   openssl
   cloak pass
   shadowsocks-rust shadowsocks-libev 
-  wireguard-tools udp2raw telnet
+  wireguard-tools udp2raw inetutils
   crow-translate
   ytfzf yt-dlp
   git-filter-repo
