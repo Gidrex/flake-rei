@@ -1,5 +1,0 @@
-{ mkGeneric }:
-
-mkGeneric {
-  phases = [ "unpackPhase" ];
-}
