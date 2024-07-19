@@ -66,7 +66,7 @@ services.xserver.videoDrivers = ["nvidia"];
 hardware = {
   graphics = {
     enable = true;
-    # driSupport = true;
+    driSupport = true;
     enable32Bit = true;
     extraPackages = with pkgs; [ vaapiVdpau libvdpau-va-gl mesa.drivers ];
   };
