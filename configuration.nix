@@ -106,6 +106,7 @@ programs = {
   gamemode.enable = true;
   fish.enable = true;
   zsh.enable = true;
+  sqlite.enable = true;
   # command-not-found.enable = true;
 };
 
