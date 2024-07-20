@@ -265,6 +265,7 @@ environment.systemPackages = with pkgs; [
   xorg.libX11
   xorg.libXfixes
   xorg.libXrandr
+  hypr
 
   # Gaming
   mangohud
