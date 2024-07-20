@@ -106,7 +106,7 @@ programs = {
   gamemode.enable = true;
   fish.enable = true;
   zsh.enable = true;
-  # command-not-found.enable = true;
+  command-not-found.enable = true;
 };
 
 # Screen lighting
