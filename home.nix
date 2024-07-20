@@ -41,7 +41,6 @@ programs = {
   thefuck.enable = true;
   yazi.enable = true;
   lazygit.enable = true;
-  command-not-found.enable = true;
 
   # zsh = {
   #   enable = true;
