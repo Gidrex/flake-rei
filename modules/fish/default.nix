@@ -27,6 +27,7 @@
       "...." = "cd ../../../";
       grep = "rg";
       rr = "ranger";
+      yz = "yazi";
       rb = "~/flake-rei/backup.sh && sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
       rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
       nv = "nvim";
