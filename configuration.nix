@@ -164,7 +164,7 @@ environment.systemPackages = with pkgs; [
   file hexyl procs broot chafa dig
   imagemagick
   fd ripgrep
-  nix-inspect
+  nix-inspect nix-prefetch-github
 
 
   # web & security
