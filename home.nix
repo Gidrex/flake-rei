@@ -43,7 +43,7 @@ programs = {
   lazygit.enable = true;
   zellij.enable = true;
   zellij.settings = {
-    hide_status_bar = true;
+    session.hide_status_bar = true;
   };
 
   # zsh = {
