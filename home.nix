@@ -20,6 +20,9 @@ home.packages = with pkgs; [
 
   # android-studio
 
+  # Apps
+  spicetify-cli spotifywm
+
   # LSP Servers
   pyright
   cmake-language-server
