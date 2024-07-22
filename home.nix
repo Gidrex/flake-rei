@@ -42,7 +42,6 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   zellij.enable = true;
-  zellij.enableFishIntegration = true;
 
   # zsh = {
   #   enable = true;
