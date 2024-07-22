@@ -1,5 +1,5 @@
 {
-programs.zelliq = {
+programs.zellij = {
   enable = true;
   enableFishIntegration = false;
   settings = {
