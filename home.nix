@@ -7,6 +7,7 @@ imports = [
   ./modules/tmux
   ./modules/git
   ./modules/fish
+  ./modules/zelliq
   # ./modules/android-sdk
   # ./rice/hyprland
   # ./rice/sway
