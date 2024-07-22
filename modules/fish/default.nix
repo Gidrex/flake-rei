@@ -1,7 +1,7 @@
 { pkgs, ... }: 
 {
   programs.starship.enableFishIntegration = false;
-  programs.enableFishIntegration = false;
+  programs.zellij.enableFishIntegration = false;
   programs.fish = {
     enable = true;
     plugins = [
