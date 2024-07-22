@@ -42,6 +42,9 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   zellij.enable = true;
+  zellij.settings = {
+    hide_status_bar = true;
+  };
 
   # zsh = {
   #   enable = true;

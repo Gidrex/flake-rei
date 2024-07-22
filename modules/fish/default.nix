@@ -33,6 +33,7 @@
       rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
       nv = "nvim";
       tx = "tmux";
+      zl = "zellij";
       nf = "nvim $(fzf)";
       fk = "fuck";
       lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
