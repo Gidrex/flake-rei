@@ -2,13 +2,14 @@
 {
 
 home.packages = with pkgs; [
-  # hyprpaper
+  hyprpaper
   wlr-randr
   xwayland
   slurp
-  # wl-clipboard
-  # swayidle
+  wl-clipboard
+  swayidle
   dunst
+  hyprshot
   # kanshi # >1 display
 ];
 
