@@ -46,10 +46,6 @@
 
       set -Ux fifc_editor nvim
       set -U fifc_keybinding \cx
-
-      function fish_user_key_bindings
-      bind \cr fish_reverse_search_history
-      end
     '';
   };
 }
