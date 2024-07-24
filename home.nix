@@ -9,7 +9,7 @@ imports = [
   ./modules/fish
   ./modules/zelliq
   # ./modules/android-sdk
-  ./rice/hyprland
+  # ./rice/hyprland
   # ./rice/sway
 ]; 
 

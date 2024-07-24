@@ -17,7 +17,6 @@ bindsym $super+O 		exec blueman-manager
 bindsym Print 		  	exec flameshot gui
 # bindsym $super+t	  	exec kitty
 bindsym $super+t	  	exec alacritty
-bindsym $super+Return	  	exec alacritty && tmux attach -t main
 bindsym $super+d 	  	exec rofi -show drun
 
 #########################################
