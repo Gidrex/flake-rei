@@ -106,8 +106,9 @@ programs = {
   gamemode.enable = true;
   fish.enable = true;
   zsh.enable = true;
-  command-not-found.enable = true;
-  command-not-found.dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
+  command-not-found.enable = false;
+  # command-not-found.dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
+  nix-index.enable = true;
 };
 
 # Screen lighting
