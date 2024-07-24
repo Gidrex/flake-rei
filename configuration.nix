@@ -208,7 +208,7 @@ environment.systemPackages = with pkgs; [
   flutter
   gcc cmake gnumake
   libstdcxx5 
-  sqlite
+  sqlite sqlite-utils
 
   # Utility
   flameshot pick-colour-picker
