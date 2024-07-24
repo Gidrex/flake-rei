@@ -49,14 +49,9 @@ programs = {
     session.hide_status_bar = true;
   };
 
-  # zsh = {
-  #   enable = true;
-  #   oh-my-zsh.enable = true;
-  # };
-
   fzf = {
     enable = true;
-    defaultOptions = [ "--preview 'bat {}'" ];
+    # defaultOptions = [ "--preview 'bat {}'" ];
     defaultCommand = "fd --type f";
   };
 
