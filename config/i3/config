@@ -115,7 +115,9 @@ bindsym $super+minus scratchpad show
 
 # Navigate workspaces next / previous
 bindsym $super+Next workspace next
+bindsym $super+k workspace next
 bindsym $super+Prior workspace prev
+bindsym $super+j workspace prev
 
 # Switch to workspace
 bindsym $super+1 workspace 1
