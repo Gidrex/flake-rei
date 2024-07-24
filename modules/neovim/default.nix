@@ -113,7 +113,14 @@ in {
         (fromGitHub "f30f899c30d91bb35574ff5962103f00cc4ea23a" "main" "MattCairns/telescope-cargo-workspace.nvim")
         {
           plugin = pkgs.vimPlugins.oil-nvim;
-          config = "require('oil').setup()";
+          config = "
+          -- require('oil').setup()
+          require('oil').setup({
+              view_options = {
+              show_icons = false,
+              },
+          })
+          ";
           type = "lua";
         }
         {
