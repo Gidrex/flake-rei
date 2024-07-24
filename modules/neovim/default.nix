@@ -114,10 +114,9 @@ in {
         {
           plugin = pkgs.vimPlugins.oil-nvim;
           config = "
-          -- require('oil').setup()
           require('oil').setup({
               view_options = {
-              show_icons = false,
+                show_icons = false,
               },
           })
           ";
