@@ -42,7 +42,6 @@ programs = {
   alacritty.enable = true;
   mangohud.enable = true;
   looking-glass-client.enable = true;
-  thefuck.enable = true;
   yazi.enable = true;
   lazygit.enable = true;
   zellij.enable = true;

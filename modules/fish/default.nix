@@ -35,7 +35,6 @@
       tx = "tmux";
       zl = "zellij";
       nf = "nvim $(fzf)";
-      fk = "fuck";
       lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
       trans = "crow -s en -t ru -e yandex -b";
     };

@@ -108,7 +108,7 @@ programs = {
   zsh.enable = true;
   command-not-found.enable = false;
   # command-not-found.dbPath = "/nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite";
-  nix-index.enable = true;
+  nix-index.enable = false;
 };
 
 # Screen lighting
