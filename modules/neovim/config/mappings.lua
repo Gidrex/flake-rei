@@ -6,6 +6,24 @@
 -- leader to space
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.api.nvim_set_keymap('', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('n', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('v', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('x', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('s', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('o', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('i', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('l', ' ', '', { noremap = true })
+vim.api.nvim_set_keymap('c', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, '', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'n', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'v', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'x', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 's', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'o', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'i', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'l', ' ', '', { noremap = true })
+vim.api.nvim_buf_set_keymap(0, 'c', ' ', '', { noremap = true })
 
 -- lazygit
 vim.api.nvim_set_keymap('n', '<leader>Z', '<cmd>LazyGit<cr>', { noremap = true, silent = true })
