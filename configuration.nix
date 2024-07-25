@@ -209,6 +209,7 @@ environment.systemPackages = with pkgs; [
   gcc cmake gnumake
   libstdcxx5 
   sqlite sqlite-utils
+  cmdline-tools-latest build-tools-34-0-0 platform-tools platforms-android-34 emulator
 
   # Utility
   flameshot pick-colour-picker
