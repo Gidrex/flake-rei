@@ -205,7 +205,7 @@ environment.systemPackages = with pkgs; [
   lua 
   nodejs yarn deno
   rustup cargo
-  flutter
+  flutter dart
   gcc cmake gnumake
   libstdcxx5 
   sqlite sqlite-utils
