@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    impermanence.url = "github:nix-community/impermanence";
+    # impermanence.url = "github:nix-community/impermanence"; # TODO
     home-manager.url = "github:nix-community/home-manager";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };

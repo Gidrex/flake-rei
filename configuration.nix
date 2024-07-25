@@ -176,7 +176,7 @@ environment.systemPackages = with pkgs; [
   git-filter-repo
 
   # fun
-  ranger neofetch calc
+  ranger neofetch
 
   # university learning & documents
   zip unzip pkg-config

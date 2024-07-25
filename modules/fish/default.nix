@@ -37,6 +37,7 @@
       nf = "nvim $(fzf)";
       lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
       trans = "crow -s en -t ru -e yandex -b";
+      calc = "~/github/calc.rs/clc/wrapper.sh";
     };
 
     interactiveShellInit = ''
