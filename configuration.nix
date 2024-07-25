@@ -4,7 +4,7 @@ security.polkit.enable = true;
 imports = [ 
   ./hardware-configuration.nix
   ./rice/i3
-  # ./modules/nixpkgs-24.05
+  ./modules/nixpkgs-24.05
   # ./modules/wgraw
 # ./modules/pince
 # ./modules/proxy
