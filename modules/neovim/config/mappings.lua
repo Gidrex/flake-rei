@@ -62,7 +62,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_file(4
 -- vim.api.nvim_set_keymap('n', '<leader>he', '<cmd>ClangdSwitchSourceHeader<cr>', { noremap = true, silent = true })
 
 -- Oil
-vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Oil<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Oil<cr>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>v', '<cmd>tabnew<cr><cmd>Oil<cr>', { noremap = true, silent = true })
 
 
