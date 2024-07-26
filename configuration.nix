@@ -222,7 +222,7 @@ environment.systemPackages = with pkgs; [
   mysql-workbench dbeaver-bin sqlitebrowser
   drawio gimp krita
   qalculate-gtk
-  audio-recorder kazam
+  audio-recorder kazam obs-studio
   spotify-cli-linux spotifywm
   # (pkgs.android-studio.overrideAttrs (oldAttrs: {
   #   version = "2024.1.1.4";
