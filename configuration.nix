@@ -265,7 +265,7 @@ environment.systemPackages = with pkgs; [
   xorg.libX11
   xorg.libXfixes
   xorg.libXrandr
-  hypr
+  xorg.xmodmap
 
   # Gaming
   mangohud
@@ -282,7 +282,7 @@ services.xserver = {
   xkb = {
     layout = "us,ru";
     model = "pc105";
-    options = "grp:alt_shift_toggle, caps_toggle:none";
+    options = "grp:alt_shift_toggle";
   };
   displayManager.lightdm = {
     background = ./assets/nix.png;
