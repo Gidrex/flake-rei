@@ -1,5 +1,3 @@
-{ config, ... }:
-
 let
   catppuccinMochaTheme = {
     fg = "#D9E0EE";
