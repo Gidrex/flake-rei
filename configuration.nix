@@ -282,7 +282,7 @@ services.xserver = {
   xkb = {
     layout = "us,ru";
     model = "pc105";
-    options = "grp:alt_shift_toggle, caps:none";
+    options = "grp:alt_shift_toggle, caps_toggle:none";
   };
   displayManager.lightdm = {
     background = ./assets/nix.png;
