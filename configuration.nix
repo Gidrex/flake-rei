@@ -162,7 +162,7 @@ environment.systemPackages = with pkgs; [
   xsel ffmpeg
   file hexyl procs broot chafa dig
   imagemagick
-  fd ripgrep
+  fd ripgrep procs
   nix-inspect nix-prefetch-github
   daemonize
 
