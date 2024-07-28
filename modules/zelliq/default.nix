@@ -6,6 +6,7 @@ programs.zellij = {
     session.hide_status_bar = true;
     # default_layout = "compact"; 
     pane_frames = true;
+    theme = "Catppuccin Mocha";
   };
 };
 }
