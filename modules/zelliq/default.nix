@@ -2,7 +2,7 @@
 programs.zellij = {
   enable = true;
   enableFishIntegration = false;
-  settings = { #TODO - make compambility with my neovim hotkeys
+  settings = {
     session.hide_status_bar = true;
     # default_layout = "compact"; 
     pane_frames = true;
@@ -28,6 +28,16 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
+
+    keybinds = [
+    {
+      action = "Resize";
+      key = "Ctrl + m";
+    }
+    ];
+    unbind = [
+      "Ctrl + b"
+    ];
   };
 };
 }
