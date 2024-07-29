@@ -37,5 +37,5 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window.padding]
-x = 10
+x = 0
 y = 0
