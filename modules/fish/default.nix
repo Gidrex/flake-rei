@@ -36,11 +36,15 @@
       rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
       nv = "nvim";
       tx = "tmux";
-      zl = "zellij";
       nf = "nvim $(fzf)";
       lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
       trans = "crow -s en -t ru -e yandex -b";
       calc = "~/github/calc.rs/clc/wrapper.sh";
+
+      # zellij
+      zl = "zellij";
+      zla = "zellij attach";
+      zln = "zellij --session";
     };
 
     interactiveShellInit = ''
