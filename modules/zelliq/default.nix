@@ -31,12 +31,18 @@ programs.zellij = {
 
     keybinds = [
     {
+      mode = "normal";
       action = "Resize";
-      key = "Ctrl + m";
+      key = "m";
+      mods = "CTRL";
     }
     ];
     unbind = [
-      "Ctrl + b"
+    {
+      mode = "normal";
+      key = "b";
+      mods = "CTRL";
+    }
     ];
   };
 };
