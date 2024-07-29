@@ -29,11 +29,18 @@ programs.zellij = {
       bright_white = "#D9E0EE";
     };
 
-config = ''
+ config = ''
         keybinds {
           normal {
-            keybind action="Resize" key="m" mods="CTRL"
-            unbind key="b" mods="CTRL"
+            keybind {
+              action "Resize"
+              key "m"
+              mods "CTRL"
+            }
+            unbind {
+              key "b"
+              mods "CTRL"
+            }
           }
         }
       '';
