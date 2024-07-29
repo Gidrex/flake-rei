@@ -28,15 +28,6 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
-
-    plugins = [
-    {
-      name = "status-bar";
-      location = "zellij:status-bar";
-      # disable = true;
-      hide_session_name = true;
-    }
-    ];
   };
 };
 }
