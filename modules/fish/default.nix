@@ -44,7 +44,7 @@
       end
 
       set -Ux fifc_editor nvim
-      set -U fifc_exa_opts  --oneline --icons -tree --level 2
+      set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
     '';
   };
