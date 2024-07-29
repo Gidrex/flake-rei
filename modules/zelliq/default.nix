@@ -28,14 +28,18 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
-
- config = ''
-   keybinds clear-defaults=true {
-     normal {
-       bind "Ctrl m" { Resize; }
-       unbind "Ctrl b";
-     }
-      '';
   };
 };
+
+home.file.".config/zellij/config.kdl".text = ''
+    keybinds clear-defaults=true {
+        normal {
+            // Переназначение Resize на Ctrl+m
+            bind "Ctrl m" { Resize; }
+
+            // Удаление Ctrl+b
+            unbind "Ctrl b";
+        }
+    }
+'';
 }
