@@ -22,6 +22,7 @@
     shellAliases = {
       "!!" = "eval sudo (history | head -n1 | string trim)";
       ls = "eza";
+      exa = "eza";
       la = "ls -al --no-user";
       "..." = "cd ../../";
       "...." = "cd ../../../";
@@ -44,7 +45,7 @@
       end
 
       set -Ux fifc_editor nvim
-      set -U fifc_exa_opts -T --level 2
+      # set -U fifc_exa_opts  --oneline --icons -tree --level 2
       set -U fifc_keybinding \cx
     '';
   };
