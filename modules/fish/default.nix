@@ -44,7 +44,7 @@
       end
 
       set -Ux fifc_editor nvim
-      set -Ux $fifc_exa_opts -T --level 2
+      set -U $fifc_exa_opts -T --level 2
       set -U fifc_keybinding \cx
     '';
   };
