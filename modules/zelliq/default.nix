@@ -28,6 +28,17 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
+    plugins = [
+    {
+      name = "tab-bar";
+      location = "zellij:tab-bar";
+    }
+    {
+      name = "status-bar";
+      location = "zellij:status-bar";
+      disable = true;
+    }
+    ];
   };
 };
 }
