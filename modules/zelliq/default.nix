@@ -29,21 +29,16 @@ programs.zellij = {
       bright_white = "#D9E0EE";
     };
 
-    keybinds = [
-    {
-      mode = "normal";
-      action = "Resize";
-      key = "m";
-      mods = "CTRL";
-    }
-    ];
-    unbind = [
-    {
-      mode = "normal";
-      key = "b";
-      mods = "CTRL";
-    }
-    ];
+config = ''
+        keybinds {
+          normal {
+            // Переназначение Resize на Ctrl+m
+            keybind action="Resize" key="m" mods="CTRL"
+            // Удаление Ctrl+b
+            unbind key="b" mods="CTRL"
+          }
+        }
+      '';
   };
 };
 }
