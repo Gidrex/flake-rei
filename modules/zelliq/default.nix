@@ -32,9 +32,7 @@ programs.zellij = {
 config = ''
         keybinds {
           normal {
-            // Переназначение Resize на Ctrl+m
             keybind action="Resize" key="m" mods="CTRL"
-            // Удаление Ctrl+b
             unbind key="b" mods="CTRL"
           }
         }
