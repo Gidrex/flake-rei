@@ -44,17 +44,8 @@
       end
 
       set -Ux fifc_editor nvim
-      # set -U fifc_exa_opts  --oneline --icons -tree --level 2
+      set -U fifc_exa_opts  --oneline --icons -tree --level 2
       set -U fifc_keybinding \cx
-
-
-      function __fifc_preview
-      if test -d $argv
-        eza --tree --level=2 $argv
-      else
-        bat --paging=always $argv
-          end
-          end
     '';
   };
 }
