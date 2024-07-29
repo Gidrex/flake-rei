@@ -16,9 +16,6 @@
       {
         name = "fifc";
         src = pkgs.fishPlugins.fifc.src;
-        interactiveShellInit = ''
-          set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
-          '';
       }
     ];
 
@@ -40,6 +37,15 @@
       lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
       trans = "crow -s en -t ru -e yandex -b";
       calc = "~/github/calc.rs/clc/wrapper.sh";
+      fifc = ''
+        fifc \
+        -r '.*\*{2}.*' \
+        -s 'rg --hidden -l --no-messages (string match -r -g \'.*\*{2}(.*)\' "$fifc_commandline")' \
+        -p 'batgrep --color --paging=never (string match -r -g \'.*\*{2}(.*)\' "$fifc_commandline") "$fifc_candidate"' \
+        -f "--query ''" \
+        -o 'batgrep --color (string match -r -g \'.*\*{2}(.*)\' "$fifc_commandline") "$fifc_candidate" | less -R' \
+        -O 1
+      '';
     };
 
     interactiveShellInit = ''
@@ -47,6 +53,7 @@
       end
 
       set -Ux fifc_editor nvim
+      set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
     '';
   };
