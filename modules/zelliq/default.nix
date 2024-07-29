@@ -30,16 +30,4 @@ programs.zellij = {
     };
   };
 };
-
-home.file.".config/zellij/config.kdl".text = ''
-    keybinds clear-defaults=true {
-        normal {
-            // Переназначение Resize на Ctrl+m
-            bind "Ctrl m" { Resize; }
-
-            // Удаление Ctrl+b
-            unbind "Ctrl b";
-        }
-    }
-'';
 }
