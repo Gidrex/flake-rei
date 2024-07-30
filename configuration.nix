@@ -164,8 +164,6 @@ environment.systemPackages = with pkgs; [
   imagemagick
   fd ripgrep procs
   nix-inspect nix-prefetch-github
-  daemonize
-
 
   # web & security
   openssl
