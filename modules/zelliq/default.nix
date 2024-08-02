@@ -6,6 +6,7 @@ programs.zellij = {
     session.hide_status_bar = true;
     # default_layout = "compact"; 
     pane_frames = false;
+    mouse_mode = true;
     theme = "Catppuccin";
     themes.Catppuccin = {
       fg = "#D9E0EE";
