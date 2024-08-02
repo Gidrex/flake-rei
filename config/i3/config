@@ -9,13 +9,13 @@ set $super 	Mod4
 #		Commonly Used Application Keybinds:		#
 #################################################################
 
-bindsym $super+F1 		exec firefox;focus
-bindsym $super+F2 		exec thunar;focus
-bindsym $super+F3		exec telegram-desktop;focus
-bindsym $super+P 		exec kitty nmtui
+bindsym $super+F1 		exec firefox
+bindsym $super+F2 		exec thunar
+bindsym $super+F3		exec telegram-desktop
+bindsym $super+F4		exec alacritty -e yazi
+bindsym $super+P 		exec kitty -e nmtui
 bindsym $super+O 		exec blueman-manager
 bindsym Print 		  	exec flameshot gui
-# bindsym $super+t	  	exec kitty
 bindsym $super+t	  	exec alacritty
 bindsym $super+d 	  	exec rofi -show
 
