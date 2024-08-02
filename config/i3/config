@@ -34,9 +34,9 @@ set $Mil_ss $(pass show ss-mil)
 # --------------------------------------------------------------------- #
 
 # ShadowSocks startup:
-exec sslocal --server-url $Hel_ss --local-addr localhost:1092 --protocol http -d
-exec sslocal --server-url $Mil_ss --local-addr localhost:1091 --protocol http -d
-exec sslocal --server-url $Ist_ss --local-addr localhost:1090 --protocol http -d
+# exec sslocal --server-url $Hel_ss --local-addr localhost:1092 --protocol http -d
+# exec sslocal --server-url $Mil_ss --local-addr localhost:1091 --protocol http -d
+# exec sslocal --server-url $Ist_ss --local-addr localhost:1090 --protocol http -d
 
 exec nitrogen --restore
 exec gxkb
