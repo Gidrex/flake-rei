@@ -56,7 +56,7 @@ users.users.gidrex = {
   shell = pkgs.fish;
   isNormalUser = true;
   description = "Alexander";
-  extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm"];
+  extraGroups = [ "networkmanager" "wheel" "audio" "input" /* "docker" */ "vboxusers" "input" "plugdev" "libvirtd" "kvm"];
 };
 
 # Graphics
@@ -89,13 +89,13 @@ hardware = {
 };
 
 # Docker
-virtualisation.docker.enable = true;
-virtualisation.docker.rootless = {
-  enable = true;
-  setSocketVariable = true;
-};
-virtualisation.containers.enable = true;
-users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
+# virtualisation.docker.enable = true;
+# virtualisation.docker.rootless = {
+#   enable = true;
+#   setSocketVariable = true;
+# };
+# virtualisation.containers.enable = true;
+# users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
 programs = {
   thunar.enable = true;
@@ -169,7 +169,7 @@ environment.systemPackages = with pkgs; [
   openssl
   cloak pass
   shadowsocks-rust shadowsocks-libev 
-  wireguard-tools udp2raw inetutils
+  wireguard-tools udp2raw inetutils v2ray
   crow-translate
   ytfzf yt-dlp
   git-filter-repo
