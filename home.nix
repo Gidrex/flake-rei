@@ -96,11 +96,6 @@ services = {
   };
 };
 
-gtk = {
-  enable = true;
-  # theme.package = pkgs.catppuccin ;
-  # theme.name = "catppuccin_mocha";
-};
 programs.home-manager.enable = true;
 home.enableNixpkgsReleaseCheck = false;
 home.stateVersion = "24.05";
