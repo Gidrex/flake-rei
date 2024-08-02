@@ -11,7 +11,6 @@ style = "Extra Bold"
 
 [mouse]
 hide_when_typing = true
-enabled = true
 
 # [colors.cursor]
 # cursor = "0xf0f3f6"
