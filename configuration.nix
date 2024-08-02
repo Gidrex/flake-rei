@@ -25,11 +25,14 @@ boot = {
 
 # Networking
 networking = {
-  proxy.httpProxy = "http://127.0.0.1:1092";
-  # proxy.noProxy = "127.0.0.1";
+  proxy.httpProxy = "http://127.0.0.1:8889";
+  proxy.allProxy = "socks5://localhost:1089";
+  proxy.noProxy = "127.0.0.1,localhost,.localdomain";
+
   hostName = "rei";
   networkmanager.enable = true;
 };
+
 
 # Locale
 time.timeZone = "Europe/Moscow";
