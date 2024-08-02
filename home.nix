@@ -16,7 +16,7 @@ home.packages = with pkgs; [
   catppuccin
   tokyo-night-gtk
 
-  # android-studio
+  android-studio
 
   # Apps
   spicetify-cli spotifywm
