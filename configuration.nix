@@ -215,7 +215,7 @@ environment.systemPackages = with pkgs; [
   telegram-desktop vesktop 
   onlyoffice-bin_latest
   logseq figma-linux
-  android-studio
+  androidStudioPackages.canary
   mysql-workbench dbeaver-bin sqlitebrowser
   drawio gimp krita davinci-resolve
   audio-recorder kazam obs-studio
