@@ -15,7 +15,7 @@ imports = [
 
 home.packages = with pkgs; [
   # theming
-  catppuccin # catppuccin :3
+  catppuccin
   tokyo-night-gtk
 
   # android-studio
@@ -98,8 +98,8 @@ services = {
 
 gtk = {
   enable = true;
-  theme.package = pkgs.catppuccin-gtk ;
-  theme.name = "catppuccin_mocha";
+  # theme.package = pkgs.catppuccin ;
+  # theme.name = "catppuccin_mocha";
 
   font.name = "JetBrains Mono";
 };
