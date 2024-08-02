@@ -1,14 +1,11 @@
 { config, pkgs, ... }: 
 {
-security.polkit.enable = true;
 imports = [ 
   ./hardware-configuration.nix
   ./rice/i3
-  # ./modules/wgraw
-# ./modules/pince
-# ./modules/proxy
 ];
 
+security.polkit.enable = true;
 boot = {
   binfmt.emulatedSystems = ["aarch64-linux"];
   kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
@@ -218,6 +215,7 @@ environment.systemPackages = with pkgs; [
   telegram-desktop vesktop 
   onlyoffice-bin_latest
   logseq figma-linux
+  android-studio
   mysql-workbench dbeaver-bin sqlitebrowser
   drawio gimp krita
   audio-recorder kazam obs-studio
@@ -264,9 +262,7 @@ environment.systemPackages = with pkgs; [
 ];
 
 # Electron <3 .!.
-nixpkgs.config.permittedInsecurePackages = [
-  "electron-27.3.11"
-];
+nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
 # xserver conf
 services.xserver = {

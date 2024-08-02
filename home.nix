@@ -1,7 +1,5 @@
-{  pkgs, ... }: {
-home.username = "gidrex";
-home.homeDirectory = "/home/gidrex";
-
+{  pkgs, ... }:
+{
 imports = [
   ./modules/neovim
   ./modules/tmux
@@ -15,8 +13,6 @@ home.packages = with pkgs; [
   # theming
   catppuccin
   tokyo-night-gtk
-
-  android-studio
 
   # Apps
   spicetify-cli spotifywm
@@ -116,6 +112,9 @@ services = {
 };
 
 programs.home-manager.enable = true;
+
+home.username = "gidrex";
+home.homeDirectory = "/home/gidrex";
 home.enableNixpkgsReleaseCheck = false;
 home.stateVersion = "24.05";
 }
