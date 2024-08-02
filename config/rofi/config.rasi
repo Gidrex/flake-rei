@@ -16,6 +16,7 @@ configuration {
 	normalize-match: true;
 	show-icons: true;
 	icon-theme: "Papirus";
+/* terminal: "alacritty -e"; */
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
