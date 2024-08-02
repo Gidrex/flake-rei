@@ -7,6 +7,8 @@ programs.zellij = {
     # default_layout = "compact"; 
     pane_frames = false;
     mouse_mode = true;
+    enable_mouse_mode = false;
+
     theme = "Catppuccin";
     themes.Catppuccin = {
       fg = "#D9E0EE";
