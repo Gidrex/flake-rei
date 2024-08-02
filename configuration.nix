@@ -225,6 +225,7 @@ environment.systemPackages = with pkgs; [
   qalculate-gtk
   audio-recorder kazam obs-studio
   spotify-cli-linux spotifywm
+  anydesk
 
   # Open with
   feh gthumb
