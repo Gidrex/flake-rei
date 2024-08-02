@@ -215,7 +215,7 @@ environment.systemPackages = with pkgs; [
   flameshot pick-colour-picker
 
   # Apps
-  firefox google-chrome falkon ungoogled-chromium
+  firefox ungoogled-chromium
   webtorrent_desktop
   telegram-desktop vesktop 
   onlyoffice-bin_latest
