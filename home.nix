@@ -112,7 +112,6 @@ services = {
 };
 
 programs.home-manager.enable = true;
-
 home.username = "gidrex";
 home.homeDirectory = "/home/gidrex";
 home.enableNixpkgsReleaseCheck = false;

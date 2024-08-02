@@ -210,14 +210,14 @@ environment.systemPackages = with pkgs; [
   flameshot pick-colour-picker
 
   # Apps
-  firefox ungoogled-chromium
+  firefox ungoogled-chromium 
   webtorrent_desktop
   telegram-desktop vesktop 
   onlyoffice-bin_latest
   logseq figma-linux
   androidStudioPackages.canary
   mysql-workbench dbeaver-bin sqlitebrowser
-  drawio gimp krita davinci-resolve
+  drawio gimp krita #davinci-resolve
   audio-recorder kazam obs-studio
   spotify-cli-linux spotifywm
   anydesk
