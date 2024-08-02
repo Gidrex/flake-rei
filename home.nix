@@ -100,8 +100,6 @@ gtk = {
   enable = true;
   # theme.package = pkgs.catppuccin ;
   # theme.name = "catppuccin_mocha";
-
-  font.name = "JetBrains Mono";
 };
 programs.home-manager.enable = true;
 home.enableNixpkgsReleaseCheck = false;
