@@ -217,7 +217,7 @@ environment.systemPackages = with pkgs; [
   logseq figma-linux
   android-studio
   mysql-workbench dbeaver-bin sqlitebrowser
-  drawio gimp krita
+  drawio gimp krita davinci-resolve
   audio-recorder kazam obs-studio
   spotify-cli-linux spotifywm
   anydesk
