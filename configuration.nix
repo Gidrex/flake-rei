@@ -158,7 +158,7 @@ environment.systemPackages = with pkgs; [
   neovim tlrc
   pciutils gnutls usbutils util-linux wget
   acpi sysstat
-  htop btop
+  htop
   coreutils-prefixed pinentry
 
   # term tools

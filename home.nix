@@ -44,6 +44,7 @@ programs = {
   # looking-glass-client.enable = true;
   yazi.enable = true;
   lazygit.enable = true;
+  btop.enable = true;
 
   fzf = {
     enable = true;
