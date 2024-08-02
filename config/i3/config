@@ -41,6 +41,7 @@ set $Mil_ss $(pass show ss-mil)
 exec nitrogen --restore
 exec gxkb
 exec parcellite
+exec qv2ray
 
 # Rebind capslock to escape
 exec setxkbmap -option caps:none
