@@ -181,7 +181,7 @@ environment.systemPackages = with pkgs; [
   ranger neofetch
 
   # university learning & documents
-  zip unzip pkg-config
+  zip unzip
   pandoc
 
   # dependencies
@@ -207,7 +207,7 @@ environment.systemPackages = with pkgs; [
   nodejs yarn deno
   rustup cargo
   flutter dart
-  gcc cmake gnumake
+  gcc cmake gnumake pkg-config freetype
   libstdcxx5 
   sqlite sqlite-utils
 
