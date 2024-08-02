@@ -129,7 +129,6 @@ services = {
   openssh.enable = true;
   udisks2.enable = true; # auto mount flash usb
   udisks2.mountOnMedia = true;
-  # spotifyd.enable = true;
   deluge.enable = true;
   printing.enable = true;
   printing.drivers = with pkgs; [ pantum-driver ];
@@ -165,7 +164,7 @@ environment.systemPackages = with pkgs; [
   xsel ffmpeg
   file hexyl procs broot chafa dig
   imagemagick
-  fd ripgrep procs
+  fd ripgrep procs jq 
   nix-inspect nix-prefetch-github
 
   # web & security
@@ -188,11 +187,10 @@ environment.systemPackages = with pkgs; [
   alsa-utils ueberzug
 
   # why Im garbage collector?
-  jq  micro
+  micro
 
   # I want to learn it
-  lynx 
-  rust-script
+  lynx elinks
 # ---------------------------------------------- #
 
   # Shells
@@ -205,7 +203,7 @@ environment.systemPackages = with pkgs; [
   gdb
   lua 
   nodejs yarn deno
-  rustup cargo
+  rustup cargo rust-script
   flutter dart
   gcc cmake gnumake pkg-config freetype
   libstdcxx5 
