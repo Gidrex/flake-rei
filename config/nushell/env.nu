@@ -109,7 +109,6 @@ alias ... = cd ../../
 alias grep = rg
 # alias find = fd 
 alias cat = bat --theme Dracula
-alias rr = ranger
 alias clc = ~/github/calc.rs/clc/target/release/clc
 
 # starship init nu | save -f ~/.cache/starship/init.nu
