@@ -7,7 +7,7 @@ imports = [
   ./modules/tmux
   ./modules/git
   ./modules/fish
-  ./modules/zelliq
+  ./modules/zellij
   # ./modules/android-sdk
   # ./rice/hyprland
   # ./rice/sway
@@ -44,10 +44,7 @@ programs = {
   # looking-glass-client.enable = true;
   yazi.enable = true;
   lazygit.enable = true;
-  zellij.enable = true;
-  zellij.settings = {
-    session.hide_status_bar = true;
-  };
+  URxvt.enable = true;
 
   fzf = {
     enable = true;
