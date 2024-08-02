@@ -6,8 +6,7 @@
 # rm ~/.config/dotfiling.sh
 
 # Recomended
-# CONFIG_DIR="$HOME/.config/"
-CONFIG_DIR="$HOME/temp/"
+CONFIG_DIR="$HOME/.config/"
 exclude_list=("dotfiling.sh" "starship.toml")
 
 cd "$HOME/flake-rei/config"
