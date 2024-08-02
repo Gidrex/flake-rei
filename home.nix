@@ -104,11 +104,11 @@ services = {
     };
   };
 
-    udiskie = {
-      enable = true;
-      tray = "auto";
-      automount = true;
-    };
+  udiskie = {
+    enable = true;
+    tray = "auto";
+    automount = true;
+  };
 };
 
 programs.home-manager.enable = true;
