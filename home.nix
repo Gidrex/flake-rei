@@ -7,7 +7,6 @@ imports = [
   ./modules/tmux
   ./modules/fish
   ./modules/zellij
-  # ./modules/android-sdk
   # ./rice/hyprland
   # ./rice/sway
 ]; 
@@ -17,7 +16,7 @@ home.packages = with pkgs; [
   catppuccin
   tokyo-night-gtk
 
-  # android-studio
+  android-studio
 
   # Apps
   spicetify-cli spotifywm
@@ -94,24 +93,26 @@ programs = {
 };
 
 services = {
-  spotifyd.enable = true;
-  spotifyd.settings.global = {
-    device_name = "nix";
-    username = "Gidrex";
-    password_cmd = "pass show spotifyd";
-    backend = "alsa";
-    dbus_type = "session"; # system for no graphic
-    bitrate = 320;
-    volume_normalisation = true;
-    autoplay = true;
-    # proxy = "http://127.0.0.1:1089";
+  spotifyd = {
+    enable = true;
+    settings.global = {
+      device_name = "nix";
+      username = "Gidrex";
+      password_cmd = "pass show spotifyd";
+      backend = "alsa";
+      dbus_type = "session"; # "system" for no graphic
+      bitrate = 320;
+      volume_normalisation = true;
+      autoplay = true;
+      proxy = "http://127.0.0.1:8889";
+    };
   };
 
-  udiskie = {
-    enable = true;
-    tray = "auto";
-    automount = true;
-  };
+    udiskie = {
+      enable = true;
+      tray = "auto";
+      automount = true;
+    };
 };
 
 programs.home-manager.enable = true;
