@@ -16,7 +16,7 @@ imports = [
 home.packages = with pkgs; [
   # theming
   catppuccin # catppuccin :3
-  tokyo-night-gtk catppuccin-gtk 
+  tokyo-night-gtk
 
   # android-studio
 
@@ -75,11 +75,6 @@ programs = {
   };
 };
 
-# home.sessionVariables = {
-#   EDITOR = "nvim";
-#   TERMINAL = "alacritty";
-# };
-
 services = {
   spotifyd.enable = true;
   spotifyd.settings.global = {
@@ -91,7 +86,7 @@ services = {
     bitrate = 320;
     volume_normalisation = true;
     autoplay = true;
-    # proxy = "http://127.0.0.1:1092";
+    # proxy = "http://127.0.0.1:1089";
   };
 
   udiskie = {
@@ -101,6 +96,13 @@ services = {
   };
 };
 
+gtk = {
+  enable = true;
+  theme.package = pkgs.catppuccin-gtk ;
+  theme.name = "catppuccin_mocha";
+
+  font.name = "JetBrains Mono";
+};
 programs.home-manager.enable = true;
 home.enableNixpkgsReleaseCheck = false;
 home.stateVersion = "24.05";
