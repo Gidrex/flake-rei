@@ -33,6 +33,10 @@ home.packages = with pkgs; [
   nodePackages.vim-language-server
   lua-language-server
   buf-language-server
+
+  (pkgs.st.overrideAttrs (old: {
+    patches = old.patches or [] ++ [ ./config/st/st-catppuccin-mocha.patch ];
+  }))
 ];
 
 programs = {

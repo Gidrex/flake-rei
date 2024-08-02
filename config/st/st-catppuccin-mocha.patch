@@ -1,0 +1,69 @@
+diff --git a/config.def.h b/config.def.h
+index e8a4ef8..6d1f7e2 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -4,7 +4,7 @@
+  * appearance
+  *
+  */
+-static char *font = "monospace:size=12";
++static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+ static int borderpx = 2;
+
+ /*
+@@ -18,36 +18,37 @@ static int borderpx = 2;
+  */
+ static const char *colorname[] = {
+ 	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
++	"#45475a", /* black   */
++	"#f38ba8", /* red     */
++	"#a6e3a1", /* green   */
++	"#f9e2af", /* yellow  */
++	"#89b4fa", /* blue    */
++	"#f5c2e7", /* magenta */
++	"#94e2d5", /* cyan    */
++	"#bac2de", /* white   */
+
+ 	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
++	"#585b70", /* black   */
++	"#f38ba8", /* red     */
++	"#a6e3a1", /* green   */
++	"#f9e2af", /* yellow  */
++	"#89b4fa", /* blue    */
++	"#f5c2e7", /* magenta */
++	"#94e2d5", /* cyan    */
++	"#a6adc8", /* white   */
+
+ 	[255] = 0,
+
+ 	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	"#cdd6f4", /* default foreground colour */
++	"#1e1e2e", /* default background colour */
+ };
+
+-unsigned int defaultfg = 7;
+-unsigned int defaultbg = 0;
++unsigned int defaultfg = 256;
++unsigned int defaultbg = 257;
+ static unsigned int defaultcs = 256;
+ static unsigned int defaultrcs = 257;

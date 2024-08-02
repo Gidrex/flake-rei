@@ -196,7 +196,7 @@ environment.systemPackages = with pkgs; [
 # ---------------------------------------------- #
 
   # Shells
-  kitty fish alacritty st nushell starship
+  kitty fish alacritty nushell starship
 
   # Dev
   gradle openjdk jdk8 #libcanberra 
