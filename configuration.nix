@@ -24,7 +24,7 @@ boot = {
 networking = {
   proxy.httpProxy = "http://127.0.0.1:8889";
   proxy.allProxy = "socks5://localhost:1089";
-  proxy.noProxy = "127.0.0.1,.localdomain";
+  # proxy.noProxy = "127.0.0.1,.localdomain";
 
   hostName = "rei";
   networkmanager.enable = true;
