@@ -111,6 +111,20 @@ services = {
   };
 };
 
+xdg.desktopEntries = {
+  enable = true;
+  entries = {
+    steam-custom = {
+      name = "Steam (Custom)";
+      desktopName = "Steam";
+      exec = "${pkgs.steam}/bin/steam --no-proxy-server";
+      icon = "steam";
+      type = "Application";
+      categories = "Game";
+    };
+  };
+};
+
 programs.home-manager.enable = true;
 home.username = "gidrex";
 home.homeDirectory = "/home/gidrex";
