@@ -16,6 +16,7 @@ home.packages = with pkgs; [
 
   # Apps
   spicetify-cli spotifywm
+  steam
 
   # LSP Servers
   pyright
