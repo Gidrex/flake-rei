@@ -97,7 +97,7 @@ services = {
       password_cmd = "pass show spotifyd";
       backend = "alsa";
       dbus_type = "session"; # "system" for no graphic
-      bitrate = 320;
+        bitrate = 320;
       volume_normalisation = true;
       autoplay = true;
       proxy = "http://127.0.0.1:8889";
@@ -110,20 +110,6 @@ services = {
     automount = true;
   };
 };
-
-xdg = {
-    enable = true;
-    desktopEntries = {
-      steam-custom = {
-        name = "Steam (Custom)";
-        exec = "${pkgs.steam}/bin/steam --no-proxy-server";
-        icon = "steam";
-        type = "Application";
-        categories = [ "Game" ];
-
-      };
-    };
-  };
 
 programs.home-manager.enable = true;
 home.username = "gidrex";

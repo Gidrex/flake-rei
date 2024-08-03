@@ -30,6 +30,27 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
-  };
+
+keybinds = {
+        normal = [
+          {
+            key = "Ctrl+Shift+Up";
+            action = "scroll up";
+          }
+          {
+            key = "Ctrl+Shift+Down";
+            action = "scroll down";
+          }
+          {
+            key = "Ctrl+Shift+PageUp";
+            action = "scroll up page";
+          }
+          {
+            key = "Ctrl+Shift+PageDown";
+            action = "scroll down page";
+          }
+        ];
+      };
+    };
 };
 }
