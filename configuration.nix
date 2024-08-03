@@ -220,7 +220,7 @@ environment.systemPackages = with pkgs; [
   drawio gimp krita
   audio-recorder kazam obs-studio
   spotify-cli-linux spotifywm
-  GameConqueror
+  scanmem
   anydesk
 
   # Open with
