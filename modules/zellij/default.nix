@@ -31,26 +31,26 @@ programs.zellij = {
       bright_white = "#D9E0EE";
     };
 
-keybinds = {
-        normal = [
-          {
-            key = "Ctrl+Shift+Up";
-            action = "scroll up";
-          }
-          {
-            key = "Ctrl+Shift+Down";
-            action = "scroll down";
-          }
-          {
-            key = "Ctrl+Shift+PageUp";
-            action = "scroll up page";
-          }
-          {
-            key = "Ctrl+Shift+PageDown";
-            action = "scroll down page";
-          }
-        ];
-      };
+    keybinds = {
+      normal = [
+      {
+        action = "scroll up";
+        key = "Ctrl+Shift+Up";
+      }
+      {
+        action = "scroll down";
+        key = "Ctrl+Shift+Down";
+      }
+      {
+        action = "scroll up page";
+        key = "Ctrl+Shift+PageUp";
+      }
+      {
+        action = "scroll down page";
+        key = "Ctrl+Shift+PageDown";
+      }
+      ];
     };
+  };
 };
 }
