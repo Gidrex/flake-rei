@@ -119,7 +119,8 @@ xdg = {
         exec = "${pkgs.steam}/bin/steam --no-proxy-server";
         icon = "steam";
         type = "Application";
-        categories = "Game";
+        categories = [ "Game" ];
+
       };
     };
   };
