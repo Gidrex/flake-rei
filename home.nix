@@ -16,7 +16,6 @@ home.packages = with pkgs; [
 
   # Apps
   spicetify-cli spotifywm
-  steam
 
   # LSP Servers
   pyright
@@ -117,7 +116,6 @@ xdg = {
     desktopEntries = {
       steam-custom = {
         name = "Steam (Custom)";
-        desktopName = "Steam";
         exec = "${pkgs.steam}/bin/steam --no-proxy-server";
         icon = "steam";
         type = "Application";
