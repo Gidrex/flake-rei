@@ -31,24 +31,20 @@
         bright_white = "#D9E0EE";
       };
 
-      keybinds = ''
-        keybinds {
-          normal {
-            "Ctrl+Shift+Up" {
-              run "scroll up"
-            }
-            "Ctrl+Shift+Down" {
-              run "scroll down"
-            }
-            "Ctrl+Shift+PageUp" {
-              run "scroll up page"
-            }
-            "Ctrl+Shift+PageDown" {
-              run "scroll down page"
-            }
-          }
-        }
-      '';
+      keybinds.normal = {
+        "Ctrl+Shift+Up" = {
+          action = "scroll up";
+        };
+        "Ctrl+Shift+Down" = {
+          action = "scroll down";
+        };
+        "Ctrl+Shift+PageUp" = {
+          action = "scroll up page";
+        };
+        "Ctrl+Shift+PageDown" = {
+          action = "scroll down page";
+        };
+      };
     };
   };
 }
