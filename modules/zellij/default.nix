@@ -34,6 +34,6 @@ settings = ''
     '';
 
     # Include the external keybinds file
-    home.file.".config/zellij/config.kdl".text = builtins.readFile ~/.config/nixpkgs/zellij-config.kdl;
+    home.file.".config/zellij/config.kdl".text = builtins.readFile ./zellij-config.kdl;
   };
 }
