@@ -30,24 +30,24 @@ programs.zellij = {
       bright_cyan = "#89DCEB";
       bright_white = "#D9E0EE";
     };
-    settings = ''
-      keybinds {
-        normal {
-          "Ctrl+Shift+Up" {
-            run "scroll up"
-          }
-          "Ctrl+Shift+Down" {
-            run "scroll down"
-          }
-          "Ctrl+Shift+PageUp" {
-            run "scroll up page"
-          }
-          "Ctrl+Shift+PageDown" {
-            run "scroll down page"
-          }
-        }
-      }
-    '';
   };
 };
+home.file.".config/zellij/config.kdl".text = ''
+    keybinds {
+      normal {
+        "Ctrl+Shift+Up" {
+          run "scroll up"
+        }
+        "Ctrl+Shift+Down" {
+          run "scroll down"
+        }
+        "Ctrl+Shift+PageUp" {
+          run "scroll up page"
+        }
+        "Ctrl+Shift+PageDown" {
+          run "scroll down page"
+        }
+      }
+    }
+  '';
 }
