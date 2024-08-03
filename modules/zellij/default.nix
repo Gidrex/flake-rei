@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+
 {
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
-    settingsFile = "${pkgs.lib.fileToString ./zellij-config.kdl}";
-settings = ''
+    settings = ''
       session.hide_status_bar = true
       pane_frames = false
       mouse_mode = false
@@ -32,8 +32,7 @@ settings = ''
         bright_white = "#D9E0EE"
       }
     '';
-
-    # Include the external keybinds file
-    home.file.".config/zellij/config.kdl".text = builtins.readFile ./zellij-config.kdl;
   };
+
+  home.file.".config/zellij/config.kdl".text = builtins.readFile /home/gidrex/flake-rei/modules/zellij/zellij-config.kdl;
 }
