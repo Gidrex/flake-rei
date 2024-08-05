@@ -259,6 +259,7 @@ environment.systemPackages = with pkgs; [
   xarchive
   vulkan-tools vulkan-loader vulkan-validation-layers
   dotnetCorePackages.sdk_6_0_1xx
+  acpid
 
   # Dependencies
   xorg.libX11
