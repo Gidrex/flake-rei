@@ -132,12 +132,12 @@ services = {
 
   acpid = {
     enable = true;
-    handlers = [
-    {
-      event = "button/lid.*";
-      action = "i3lock-fancy -g && systemctl suspend";
-    }
-    ];
+    handlers = {
+      "lidHandler" = {
+        event = "button/lid.*";
+        action = "i3lock-fancy -g && systemctl suspend";
+      };
+    };
   };
 };
 
