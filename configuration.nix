@@ -129,6 +129,14 @@ services = {
   printing.drivers = with pkgs; [ pantum-driver ];
   blueman.enable = true;
   onlyoffice.enable = true;
+
+  acpid = {
+    enable = true;
+    extraRules = ''
+      event=button/lid.*
+      action=i3lock-fancy -g && systemctl suspend
+      '';
+  };
 };
 
 # Fonts
