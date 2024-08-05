@@ -34,7 +34,7 @@ time.timeZone = "Europe/Moscow";
 i18n.defaultLocale = "en_GB.UTF-8";
 
 # Audio
-sound.enable = true;
+# sound.enable = true;
 services.pipewire = {
   enable = true;
   alsa.enable = true;
@@ -129,12 +129,6 @@ services = {
   printing.drivers = with pkgs; [ pantum-driver ];
   blueman.enable = true;
   onlyoffice.enable = true;
-
-  acpid = {
-    enable = true;
-    lidEventCommands = "i3lock-fancy -g && systemctl suspend"; # action when I put down my laptop cover
-  };
-};
 
 # Fonts
 fonts.fontconfig.enable = true;
