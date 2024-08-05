@@ -34,7 +34,7 @@ time.timeZone = "Europe/Moscow";
 i18n.defaultLocale = "en_GB.UTF-8";
 
 # Audio
-# sound.enable = true;
+sound.enable = true;
 services.pipewire = {
   enable = true;
   alsa.enable = true;
