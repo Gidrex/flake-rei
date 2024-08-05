@@ -132,10 +132,12 @@ services = {
 
   acpid = {
     enable = true;
-    extraRules = ''
-      event=button/lid.*
-      action=i3lock-fancy -g && systemctl suspend
-      '';
+    handlers = [
+    {
+      event = "button/lid.*";
+      action = "i3lock-fancy -g && systemctl suspend";
+    }
+    ];
   };
 };
 
