@@ -132,7 +132,7 @@ services = {
 
   acpid = {
     enable = true;
-    lidEventCommands = "i3lock-fancy -g && systemctl suspend";
+    lidEventCommands = "i3lock-fancy -g && systemctl suspend"; # action when I put down my laptop cover
   };
 };
 
