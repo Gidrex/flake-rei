@@ -111,8 +111,6 @@ services = {
   };
 };
 
-programs.vscode.enable = true;
-
 programs.home-manager.enable = true;
 home.username = "gidrex";
 home.homeDirectory = "/home/gidrex";

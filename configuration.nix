@@ -129,6 +129,7 @@ services = {
   printing.drivers = with pkgs; [ pantum-driver ];
   blueman.enable = true;
   onlyoffice.enable = true;
+};
 
 # Fonts
 fonts.fontconfig.enable = true;
