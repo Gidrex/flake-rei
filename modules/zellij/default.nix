@@ -5,8 +5,10 @@
     settings = {
       session.hide_status_bar = true;
       default_layout = "compact";
-      pane_frames = false;
+      pane_frames = true;
       mouse_mode = false;
+      ui.pane_frames.rounded_corners = true;
+
       theme = "Catppuccin";
       themes.Catppuccin = {
         fg = "#D9E0EE";
