@@ -28,9 +28,7 @@
             };
           }
           # {
-          #   environment.systemPackages = with pkgs; [
-          #     byedpi.packages.${system}.default
-          #   ];
+          #   environment.systemPackages = with pkgs; [ byedpi.packages.${system}.default ];
           # }
         ];
       };
