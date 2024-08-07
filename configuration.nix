@@ -146,7 +146,6 @@ fonts.packages = with pkgs; [
 # Packets
 nixpkgs.config.allowUnfree = true;
 environment.systemPackages = with pkgs; [
-  byedpi.packages.x86_64-linux.default
 # --------------- Terminal tools --------------- #
   # musthave
   neovim tlrc
