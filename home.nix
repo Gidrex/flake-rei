@@ -31,7 +31,7 @@ home.packages = with pkgs; [
 
 home.sessionVariables = {
     EDITOR = "nvim";
-    # VISUAL = "nvim";
+    VISUAL = "nvim";
     TERM = "alacritty";
   };
 

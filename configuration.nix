@@ -29,6 +29,10 @@ networking = {
   hostName = "rei";
   networkmanager.enable = true;
 };
+services.dnscrypt-proxy2 = {
+  enable = true;
+  servers = [ "scaleway-fr" "google" ];
+};
 
 
 # Locale
