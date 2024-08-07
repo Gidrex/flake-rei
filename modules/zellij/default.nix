@@ -7,7 +7,7 @@
       default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
-      styled_underlines = false;
+      on_force_close = "quit";
 
       theme = "Catppuccin";
       themes.Catppuccin = {

@@ -45,12 +45,6 @@ services.pipewire = {
 };  
 hardware.bluetooth.enable = true;
 
-# default environment variables
-environment.variables = {
-  TERM = "alacritty";
-  EDITOR = "nvim";
-};
-
  # User
 users.users.gidrex = {
   shell = pkgs.fish;

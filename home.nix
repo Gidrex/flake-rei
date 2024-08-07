@@ -29,6 +29,12 @@ home.packages = with pkgs; [
   buf-language-server
 ];
 
+home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+    TERM = "alacritty";
+  };
+
 programs = {
   firefox.enable = true;
   gpg.enable = true;
