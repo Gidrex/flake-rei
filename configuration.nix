@@ -24,8 +24,8 @@ nix.gc.automatic = true; #Garbage collector
 
 # Networking
 networking = {
-  proxy.httpProxy = "http://127.0.0.1:8889";
-  proxy.allProxy = "socks5://localhost:1089";
+  # proxy.httpProxy = "http://127.0.0.1:8889";
+  # proxy.allProxy = "socks5://localhost:1089";
   hostName = "rei";
   networkmanager.enable = true;
 };
