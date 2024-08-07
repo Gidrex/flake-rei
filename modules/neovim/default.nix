@@ -15,10 +15,7 @@ in {
   ];
 
   programs.neovim = {
-      extraPackages = with pkgs; [ lua54Packages.lua-utils-nvim ];
-      extraConfig = ''
-        let g:python3_host_prog = "${pkgs.python3}/bin/python3"
-        '';
+      extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
 
       plugins = [
         # Theme
