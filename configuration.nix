@@ -27,14 +27,14 @@ networking = {
   proxy.httpProxy = "http://127.0.0.1:8889";
   proxy.allProxy = "socks5://localhost:1089";
   hostName = "rei";
-  networkmanager.enable = false;
+  networkmanager.enable = true;
   networkmanager.dns = "none";
 };
 services.dnscrypt-proxy2 = {
   enable = false;
   upstreamDefaults = true;
   settings = {
-    server_names = [ "scaleway-fr" "google" "cloudflare" "quad9-dnscrypt-ip4-filter-pri" "quad9-dnscrypt-ip4-filter-alt" ];
+    server_names = [ "google" "cloudflare" ];
     cache = true;
     proxy = "http://127.0.0.1:8889";
   };
