@@ -7,7 +7,7 @@
       default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
-      ui.pane_frames.rounded_corners = true;
+      styled_underlines = false;
 
       theme = "Catppuccin";
       themes.Catppuccin = {
