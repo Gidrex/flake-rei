@@ -23,9 +23,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.gidrex = {
-              imports = [ ./home.nix ];
-            };
+            home-manager.users.gidrex = { imports = [ ./home.nix ]; };
           }
           # {
           #   environment.systemPackages = with pkgs; [ byedpi.packages.${system}.default ];
