@@ -28,7 +28,7 @@ networking = {
   proxy.allProxy = "socks5://localhost:1089";
   hostName = "rei";
   networkmanager.enable = true;
-  networkmanager.dns = "none";
+  # networkmanager.dns = "none";
 };
 services.dnscrypt-proxy2 = {
   enable = false;
