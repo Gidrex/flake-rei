@@ -10,8 +10,9 @@
     byedpi.url = "github:Gidrex/byedpi-nix";
   };
 
-  outputs = { nixpkgs, home-manager, ... }: let
+  outputs = { nixpkgs, home-manager, byedpi, ... }: let
     system = "x86_64-linux";
+    pkgs = import nixpkgs { system = system; };
   in {
     nixosConfigurations = {
       rei = nixpkgs.lib.nixosSystem {
@@ -26,9 +27,13 @@
               imports = [ ./home.nix ];
             };
           }
+          # {
+          #   environment.systemPackages = with pkgs; [
+          #     byedpi.packages.${system}.default
+          #   ];
+          # }
         ];
       };
     };
   };
 }
-
