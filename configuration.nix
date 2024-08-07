@@ -31,12 +31,12 @@ networking = {
   # networkmanager.dns = "systemd-resolved";
   # useNetworkd = true;
   # useDHCP = false;
-  # nameservers = [
-  #   "45.90.28.0#242bc4.dns.nextdns.io"
-  #   "2a07:a8c0::#242bc4.dns.nextdns.io"
-  #   "45.90.30.0#242bc4.dns.nextdns.io"
-  #   "2a07:a8c1::#242bc4.dns.nextdns.io"
-  # ];
+  nameservers = [
+    "45.90.28.0#242bc4.dns.nextdns.io"
+    "2a07:a8c0::#242bc4.dns.nextdns.io"
+    "45.90.30.0#242bc4.dns.nextdns.io"
+    "2a07:a8c1::#242bc4.dns.nextdns.io"
+  ];
 };
 
 # Locale
