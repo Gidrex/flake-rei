@@ -1,4 +1,4 @@
-{ config, pkgs, byedpi, ... }: 
+{ config, pkgs, ... }: 
 {
 imports = [ 
   ./hardware-configuration.nix
@@ -146,7 +146,6 @@ fonts.packages = with pkgs; [
 # Packets
 nixpkgs.config.allowUnfree = true;
 environment.systemPackages = with pkgs; [
-  byedpi.packages.${system}.default
 # --------------- Terminal tools --------------- #
   # musthave
   neovim tlrc
