@@ -7,6 +7,7 @@
       default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
+      scroll_buffer_size = 5000;
       theme = "Catppuccin";
       themes.Catppuccin = {
         fg = "#D9E0EE";
