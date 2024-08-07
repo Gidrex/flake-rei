@@ -4,7 +4,7 @@
     enableFishIntegration = false;
     settings = {
       session.hide_status_bar = true;
-      simplified_ui = true; # disable noob mode
+      default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
       theme = "Catppuccin";
