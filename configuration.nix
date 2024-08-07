@@ -30,7 +30,7 @@ networking = {
   networkmanager.enable = true;
 };
 services.dnscrypt-proxy2 = {
-  enable = true;
+  enable = false;
   upstreamDefaults = true;
   settings = {
     server_names = [ "scaleway-fr" "google" "cloudflare" "quad9-dnscrypt-ip4-filter-pri" "quad9-dnscrypt-ip4-filter-alt" ];
