@@ -1,5 +1,23 @@
 {
   "nodes": {
+    "byedpi": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1723051015,
+        "narHash": "sha256-qw7uhJO3yrqqbdnYRvxSiMKI2e1uQAa31G/aUwthov8=",
+        "owner": "Gidrex",
+        "repo": "byedpi-nix",
+        "rev": "0188660021b73ede11a6220eb64310340dc97a52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Gidrex",
+        "repo": "byedpi-nix",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -20,7 +38,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1721135958,
@@ -69,6 +87,21 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1723049121,
+        "narHash": "sha256-9qxV4dsvhQHeQetFsYIELCZgp4DRRdv/HOl2YD3mjQw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "1914a451ca667b2caff7493661a3093a956628c8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1719848872,
         "narHash": "sha256-H3+EC5cYuq+gQW8y0lSrrDZfH71LB4DAf+TDFyvwCNA=",
         "owner": "NixOS",
@@ -83,7 +116,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1720957393,
         "narHash": "sha256-oedh2RwpjEa+TNxhg5Je9Ch6d3W1NKi7DbRO1ziHemA=",
@@ -100,11 +133,12 @@
     },
     "root": {
       "inputs": {
+        "byedpi": "byedpi",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_3"
       }
     },
     "systems": {
