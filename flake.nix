@@ -7,7 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-utils.url = "github:numtide/flake-utils";
-    byedpi.url = "github:Gidrex/byedpi-nix.git";
+    # byedpi.url = "github:Gidrex/byedpi-nix.git";
   };
 
   outputs = { nixpkgs, home-manager, ... }: let
