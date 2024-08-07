@@ -25,9 +25,9 @@
             home-manager.useUserPackages = true;
             home-manager.users.gidrex = { imports = [ ./home.nix ]; };
           }
-          # {
-          #   environment.systemPackages = with pkgs; [ byedpi.packages.${system}.default ];
-          # }
+          {
+            environment.systemPackages = with pkgs; [ byedpi.packages.${system}.default ];
+          }
         ];
       };
     };
