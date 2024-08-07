@@ -25,16 +25,16 @@ in {
           type = "lua";
         }     
         pkgs.vimPlugins.rose-pine
-        pkgs.vimPlugins.cyberdream-nvim
         
         # Useful plugins
-        #   plugin = pkgs.vimPlugins.hop-nvim;
-        #   config = "require'hop'.setup{
-        #     keys = 'etovxqpdygfblzhckisuran',
-        #     case_insensitive = true,
-        #     char2_fallback_key = '<CR>'}";
-        #   type = "lua";
-        # }
+        {
+          plugin = pkgs.vimPlugins.hop-nvim;
+          config = "require'hop'.setup{
+            keys = 'etovxqpdygfblzhckisuran',
+            case_insensitive = true,
+            char2_fallback_key = '<CR>'}";
+          type = "lua";
+        }
        { 
          plugin = pkgs.vimPlugins.nvim-highlight-colors;
          config = builtins.readFile ./config/setup/hightlight-colors.lua;
