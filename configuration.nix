@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }: 
 {
 imports = [ 
   ./hardware-configuration.nix
@@ -20,16 +20,8 @@ boot = {
   };
 };
 nix.settings.experimental-features = ["nix-command" "flakes"];
-nix.gc.automatic = true; #Garbage collector
-
-# Networking
-networking = {
-  proxy.httpProxy = "http://127.0.0.1:8889";
-  proxy.allProxy = "socks5://localhost:1089";
-  hostName = "rei";
-  networkmanager.enable = true;
-  # networkmanager.dns = "none";
-};
+nix.gc.automatic = true; #Garbage collector # Networking networking = { proxy.httpProxy = "http://127.0.0.1:8889"; proxy.allProxy = "socks5://localhost:1089"; hostName = "rei"; networkmanager.enable = true; networkmanager.dns = "none"; };
+services.dpi.enable = lib.mkForce false;
 services.dnscrypt-proxy2 = {
   enable = false;
   upstreamDefaults = true;
