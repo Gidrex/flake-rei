@@ -3,7 +3,8 @@
     enable = true;
     enableFishIntegration = false;
     settings = {
-      session.hide_status_bar = false;
+      session.hide_status_bar = true;
+      simplified_ui = false;
       pane_frames = false;
       mouse_mode = false;
       theme = "Catppuccin";
