@@ -45,6 +45,7 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
+  direnv.enable = true;
 
   fzf = {
     enable = true;
