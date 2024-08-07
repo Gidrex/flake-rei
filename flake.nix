@@ -6,6 +6,7 @@
     impermanence.url = "github:nix-community/impermanence"; # TODO
     home-manager.url = "github:nix-community/home-manager";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    byedpi.url = "git@github.com:Gidrex/byedpi-nix.git";
   };
 
   outputs = { nixpkgs, home-manager, ... }: let
