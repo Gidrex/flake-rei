@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, byedpi, ... }: 
 {
 imports = [ 
   ./hardware-configuration.nix
