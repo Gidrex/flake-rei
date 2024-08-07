@@ -19,6 +19,8 @@ boot = {
     grub.device = "nodev";
   };
 };
+nix.settings.experimental-features = ["nix-command" "flakes"];
+nix.gc.automatic = true; #Garbage collector
 
 # Networking
 networking = {
@@ -140,9 +142,6 @@ fonts.packages = with pkgs; [
   _0xproto
   times-newer-roman
 ];
-
-nix.settings.experimental-features = ["nix-command" "flakes"];
-nix.gc.automatic = true; #Garbage collector
 
 # Packets
 nixpkgs.config.allowUnfree = true;

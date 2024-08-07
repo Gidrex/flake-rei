@@ -178,7 +178,7 @@ in {
         type = "lua";
       }
 
-# Debugging
+      # Debugging
       pkgs.vimPlugins.nvim-dap-ui
       pkgs.vimPlugins.nvim-dap-virtual-text
       {
