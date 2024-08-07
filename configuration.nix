@@ -38,17 +38,43 @@ networking = {
       "2a07:a8c1::#242bc4.dns.nextdns.io"
   ];
 };
-
-services.dnscrypt-proxy2 = {
-  enable = false;
-  upstreamDefaults = true;
-  settings = {
-    server_names = [ "google" "cloudflare" ];
-    cache = true;
-    proxy = "http://127.0.0.1:8889";
+systemd.network = {
+  wait-online.anyInterface = true;
+  netdevs.wireCat = {
+    netdevConfig = {
+      Name = "wireCat";
+      Kind = "bond";
+    };
+    bondConfig = {
+      Mode = "active-backup";
+      MIIMonitorSec = "1s";
+      PrimaryReselectPolicy = "better";
+    };
+  };
+  networks = {
+    "90-ethers" = {
+      bond = [ "wireCat" ];
+      matchConfig = {
+        Type = "ether";
+        Kind = "!*"; # fix docker
+      };
+    };
+    "90-wlans" = {
+      bond = [ "wireCat" ];
+      matchConfig.WLANInterfaceType = "station";
+    };
+    "90-wireCat" = {
+      name = "wireCat";
+      networkConfig = {
+        DHCP = "yes";
+        DNSSEC = "yes";
+        DNSOverTLS = "yes";
+      };
+      dhcpV4Config.UseDNS = false;
+      dhcpV6Config.UseDNS = false;
+    };
   };
 };
-
 
 # Locale
 time.timeZone = "Europe/Moscow";
