@@ -12,7 +12,7 @@
 
   outputs = { nixpkgs, home-manager, byedpi, ... }: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { system = system; };
+    # pkgs = import nixpkgs { system = system; };
   in {
     nixosConfigurations = {
       rei = nixpkgs.lib.nixosSystem {
@@ -26,7 +26,7 @@
             home-manager.users.gidrex = { imports = [ ./home.nix ]; };
           }
           {
-            environment.systemPackages = with pkgs; [ byedpi.packages.${system}.default ];
+            environment.systemPackages = [ byedpi.packages.${system}.default ];
           }
         ];
       };
