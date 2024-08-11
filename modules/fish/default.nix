@@ -58,14 +58,10 @@
 
       functions.nv = ''
 function nv
-    if test (count $argv) -eq 0
-      set -l file (fzf)
-      echo "Selected file: $file"
-      if test -n "$file"
-        nvim "$file"
-      end
+if test (count $argv) -eq 0
+      echo "No arguments provided"
     else
-      nvim $argv
+      echo "Arguments provided: $argv"
     end
   end
       '';
