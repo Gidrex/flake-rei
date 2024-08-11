@@ -57,13 +57,13 @@
       '';
 
       functions.nv = ''
-      function nv
-          if test (count $argv) -eq 0
-            echo "No arguments provided"
-          else
-            echo "Arguments provided: $argv"
-          end
-        end
+function nv
+    if test (count $argv) -eq 0
+      echo "No arguments provided"
+    else
+      echo "Arguments provided: $argv"
+    end
+  end
       '';
     };
   };
