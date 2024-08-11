@@ -59,9 +59,9 @@
       functions.nv = ''
 function nv
   if test (count $argv) -eq 0
-    echo "test"
+    echo "No arguments provided"
   else
-    nvim $argv
+    echo "Arguments provided: $argv"
   end
 end
 '';
