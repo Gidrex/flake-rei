@@ -58,11 +58,12 @@
 
       functions.nv = ''
 function nv
-    if test (count $argv) -eq 0
-      nvim $(nvim)
-      nvim $argv
-    end
+  if test (count $argv) -eq 0
+    nvim $(nvim)
+  else
+    nvim $argv
   end
+end
       '';
     };
   };
