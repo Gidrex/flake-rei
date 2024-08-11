@@ -1,6 +1,6 @@
 { pkgs, ... }: 
 {
-  programs= {
+  programs = {
     starship.enableFishIntegration = false;
     zellij.enableFishIntegration = false;
     zoxide.enableFishIntegration = true;
@@ -36,6 +36,7 @@
         rb = "~/flake-rei/backup.sh && sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         tx = "tmux";
+        nv = "nvim";
         nf = "nvim $(fzf)";
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
@@ -55,23 +56,6 @@
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
       '';
-
-      functions.nv = ''
-function nv
-    echo "Function nv is called"
-    if test (count $argv) -eq 0
-        set -l file (fzf)
-        echo "Selected file: $file"
-        if test -n "$file"
-            nvim "$file"
-        else
-            echo "No file selected or fzf failed"
-        end
-    else
-        nvim $argv
-    end
-end
-'';
     };
   };
 }

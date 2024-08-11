@@ -30,10 +30,10 @@ home.packages = with pkgs; [
 ];
 
 home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    TERM = "alacritty";
-  };
+  EDITOR = "nvim";
+  VISUAL = "nvim";
+  TERM = "alacritty";
+};
 
 programs = {
   firefox.enable = true;
