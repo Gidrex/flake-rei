@@ -58,13 +58,13 @@
 
       functions = {
         nv = ''
-        function nv
-            if test (count $argv) -eq 0
-                nvim $(fzf)
-            else
-                nvim $argv
-            end
-        end
+    function nv
+      if test (count \$argv) -eq 0
+        nvim (fzf)
+      else
+        nvim \$argv
+      end
+    end
         '';
       };
     };
