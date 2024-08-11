@@ -64,7 +64,7 @@ function nv
     nvim $argv
   end
 end
-      '';
+'';
     };
   };
 }
