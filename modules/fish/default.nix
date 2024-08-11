@@ -59,10 +59,10 @@
       functions = {
         nv = ''
     function nv
-      if test (count \$argv) -eq 0
+      if test (count $argv) -eq 0
         nvim (fzf)
       else
-        nvim \$argv
+        nvim $argv
       end
     end
         '';
