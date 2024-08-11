@@ -57,12 +57,12 @@
       '';
 
       functions.nv = ''
-        function nv
+      function nv
           if test (count $argv) -eq 0
-                  nvim $(fzf)
-              else
-                  nvim
-              end
+            echo "No arguments provided"
+          else
+            echo "Arguments provided: $argv"
+          end
         end
       '';
     };
