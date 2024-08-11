@@ -1,7 +1,7 @@
 { pkgs, ... }: 
 {
   programs.starship.enableFishIntegration = false;
-  programs.zellij.enableFishIntegration = false;
+  programs.zellij.enableFishIntegration = true;
   programs.fish = {
     enable = true;
     plugins = [
@@ -54,5 +54,17 @@
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
     '';
+
+    functions = {
+      nv = ''
+        function nv
+            if test (count $argv) -eq 0
+                nvim (fzf)
+            else
+                nvim $argv
+            end
+        end
+      '';
+    };
   };
 }
