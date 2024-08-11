@@ -57,16 +57,17 @@
       '';
 
       functions.nv = ''
-      function nv
-          if test (count $argv) -eq 0
-            set -l file (fzf)
-            if test -n "$file"
-              nvim "$file"
-            end
-          else
-            nvim $argv
-          end
-        end
+function nv
+    if test (count $argv) -eq 0
+      set -l file (fzf)
+      echo "Selected file: $file"
+      if test -n "$file"
+        nvim "$file"
+      end
+    else
+      nvim $argv
+    end
+  end
       '';
     };
   };
