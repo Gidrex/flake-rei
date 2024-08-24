@@ -38,7 +38,7 @@ home.sessionVariables = {
 catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
-qt.style.gtk2.enable = true;
+qt.style.name = "gtk2";
 
 programs = {
   firefox.enable = true;
