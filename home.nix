@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, catppuccin, ... }:
 {
 imports = [
   ./modules/neovim
