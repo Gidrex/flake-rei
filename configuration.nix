@@ -24,8 +24,8 @@ nix.gc.automatic = true; #Garbage collector
 
 # Networking
 networking = {
-  # proxy.httpProxy = "http://127.0.0.1:8889";
-  # proxy.allProxy = "socks5://localhost:1089";
+  proxy.httpProxy = "http://127.0.0.1:8889";
+  proxy.allProxy = "socks5://localhost:1089";
   hostName = "rei";
   networkmanager.enable = true;
 };
@@ -58,19 +58,16 @@ services.xserver.videoDrivers = ["nvidia"];
 hardware = {
   graphics = {
     enable = true;
-    # driSupport = true;
     enable32Bit = true;
     extraPackages = with pkgs; [ vaapiVdpau libvdpau-va-gl mesa.drivers ];
   };
   nvidia = {
     open = false;
     nvidiaSettings = true;
-    powerManagement.enable = true;      # false
-    powerManagement.finegrained = true; # false 
+    powerManagement.enable = true;
+    powerManagement.finegrained = true;
     dynamicBoost.enable = true;
     modesetting.enable = true;
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;
-    # package = config.boot.kernelPackages.nvidiaPackages.beta;
     package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     prime = {
       offload.enable = true;
