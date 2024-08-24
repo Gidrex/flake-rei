@@ -4,8 +4,12 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     impermanence.url = "github:nix-community/impermanence"; # TODO
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     catppuccin.url = "github:catppuccin/nix";
     flake-utils.url = "github:numtide/flake-utils";
     byedpi.url = "github:Gidrex/byedpi-nix";
@@ -21,8 +25,6 @@
         modules = [
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
-          catppuccin.homeManagerModules.catppuccin
-
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -30,7 +32,7 @@
             home-manager.users.gidrex = {
               imports = [ 
                 ./home.nix
-                <catppuccin/modules/home-manager>
+                catppuccin.homeManagerModules.catppuccin
               ];
             };
           }
