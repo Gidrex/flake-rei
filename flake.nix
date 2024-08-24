@@ -21,7 +21,8 @@
         modules = [
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
-          catppuccin.homeManagerModules.catppuccin
+          # catppuccin.homeManagerModules.catppuccin
+
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
