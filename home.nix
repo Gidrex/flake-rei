@@ -35,7 +35,7 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
-catppuccin.enable = true;
+# catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
 qt.style.name = "gtk2";
