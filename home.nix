@@ -11,7 +11,6 @@ imports = [
 
 home.packages = with pkgs; [
   # theming
-  catppuccin
   tokyo-night-gtk
 
   # Apps
@@ -35,8 +34,10 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
+catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
+
 # qt.style.name = "kvantum";
 qt.style.catppuccin.enable = true;
 
