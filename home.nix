@@ -46,7 +46,7 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
-  btop.catppuccin.enable = true;
+  gtk.catppuccin.enable = true;
   direnv.enable = true;
 
   fzf = {
