@@ -11,7 +11,7 @@
     byedpi.url = "github:Gidrex/byedpi-nix";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ... }: let
+  outputs = { nixpkgs, catppuccin, byedpi, ... }: let
     system = "x86_64-linux";
     # pkgs = import nixpkgs { system = system; };
   in {
