@@ -36,6 +36,8 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
+gtk.catppuccin.enable = true;
+
 programs = {
   firefox.enable = true;
   gpg.enable = true;
@@ -46,7 +48,6 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
-  gtk.catppuccin.enable = true;
   direnv.enable = true;
 
   fzf = {
