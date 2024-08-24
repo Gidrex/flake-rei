@@ -7,6 +7,7 @@ imports = [
   ./modules/zellij
   # ./rice/hyprland
   # ./rice/sway
+    <catppuccin/modules/home-manager>
 ]; 
 
 home.packages = with pkgs; [
