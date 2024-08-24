@@ -35,8 +35,9 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
-# catppuccin.enable = true;
+catppuccin.enable = true;
 catppuccin.flavor = "mocha";
+qt.style = "gtk2";
 
 programs = {
   firefox.enable = true;
