@@ -8,7 +8,6 @@ imports = [
   # ./rice/hyprland
   # ./rice/sway
 ]; 
-catppuccin.flavor = "mocha";
 
 home.packages = with pkgs; [
   # theming
@@ -37,6 +36,7 @@ home.sessionVariables = {
 };
 
 catppuccin.enable = true;
+catppuccin.flavor = "mocha";
 
 programs = {
   firefox.enable = true;
