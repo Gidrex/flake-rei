@@ -35,10 +35,10 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
-# catppuccin.enable = true;
+catppuccin.enable = false;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
-qt.style.name = "gtk2";
+qt.style.name = "adwaita-dark";
 qt.style.catppucin.enable = false;
 
 programs = {
