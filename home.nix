@@ -14,6 +14,7 @@ imports = [
 home.packages = with pkgs; [
   # theming
   tokyo-night-gtk
+  catppuccin
 
   # Apps
   spicetify-cli spotifywm
