@@ -39,6 +39,7 @@ catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
 qt.style.name = "gtk2";
+qt.style.catppucin.enable = false;
 
 programs = {
   firefox.enable = true;
