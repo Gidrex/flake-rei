@@ -36,7 +36,7 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
-gtk.catppuccin.enable = true;
+catppuccin.enable = true;
 
 programs = {
   firefox.enable = true;
