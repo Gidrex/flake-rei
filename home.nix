@@ -37,6 +37,7 @@ home.sessionVariables = {
 
 catppuccin.enable = true;
 catppuccin.flavor = "mocha";
+catppuccin.accent = "lavender";
 qt.style.catppuccin = "gtk2";
 
 programs = {
