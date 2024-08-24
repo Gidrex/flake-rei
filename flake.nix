@@ -30,7 +30,7 @@
             home-manager.users.gidrex = {
               imports = [ 
                 ./home.nix
-                catppuccin.homeManagerModules.catppuccin
+                <catppuccin/modules/home-manager>
               ];
             };
           }
