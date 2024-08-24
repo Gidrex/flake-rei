@@ -38,7 +38,7 @@ home.sessionVariables = {
 catppuccin.enable = false;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
-qt.style.name = "adwaita-dark";
+qt.style.name = "kvantum";
 qt.style.catppucin.enable = false;
 
 programs = {
