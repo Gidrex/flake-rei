@@ -8,6 +8,7 @@ imports = [
   # ./rice/hyprland
   # ./rice/sway
 ]; 
+catppuccin.flavor = "mocha";
 
 home.packages = with pkgs; [
   # theming
