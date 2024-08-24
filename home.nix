@@ -7,6 +7,7 @@ imports = [
   ./modules/zellij
   # ./rice/hyprland
   # ./rice/sway
+
     <catppuccin/modules/home-manager>
 ]; 
 
@@ -38,9 +39,8 @@ home.sessionVariables = {
 catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
-
-# qt.style.name = "kvantum";
-# qt.style.catppuccin.enable = true;
+qt.style.name = "kvantum";
+qt.style.catppuccin.enable = true;
 
 programs = {
   firefox.enable = true;
