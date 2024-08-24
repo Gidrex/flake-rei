@@ -39,7 +39,7 @@ catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
 qt.style.name = "kvantum";
- qt.style.enable = false;
+catppuccin.enableQtStyling = false;
 
 programs = {
   firefox.enable = true;
