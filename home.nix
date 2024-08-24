@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, catppuccin, ... }:
 {
 imports = [
   ./modules/neovim
@@ -45,6 +45,7 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
+  btop.catppuccin.enable = true;
   direnv.enable = true;
 
   fzf = {
