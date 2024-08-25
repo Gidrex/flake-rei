@@ -44,7 +44,7 @@ catppuccin.accent = "lavender";
 # qt.style.catppuccin.enable = true;
 
 # excludes
-programs.zellij.catppuccin.enable = true;
+programs.zellij.catppuccin.enable = false;
 
 programs = {
   firefox.enable = true;
