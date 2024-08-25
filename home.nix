@@ -58,6 +58,7 @@ programs = {
   lazygit.enable = true;
   btop.enable = true;
   direnv.enable = true;
+  environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
   fzf = {
     enable = true;

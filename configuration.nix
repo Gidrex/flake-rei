@@ -292,7 +292,5 @@ virtualisation.libvirtd = {
 programs.virt-manager.enable = true;
 services.dbus.packages = [ pkgs.dbus ];
 
-environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
-
 system.stateVersion = "24.11";
 }
