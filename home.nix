@@ -1,4 +1,4 @@
-{  pkgs, catppuccin, ... }:
+{  pkgs, ... }:
 {
 imports = [
   ./modules/neovim
@@ -7,8 +7,6 @@ imports = [
   ./modules/zellij
   # ./rice/hyprland
   # ./rice/sway
-
-    <catppuccin/modules/home-manager>
 ]; 
 
 home.packages = with pkgs; [
