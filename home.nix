@@ -38,10 +38,9 @@ home.sessionVariables = {
 # catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
-qt.style.name = "kvantum";
-qt.style.package = pkgs.catppuccin-kvantum;
+# qt.style.name = "kvantum";
+# qt.style.package = pkgs.catppuccin-kvantum;
 qt.style.catppuccin.enable = true;
-btop.catppuccin.enable = true;
 
 programs = {
   firefox.enable = true;
