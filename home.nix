@@ -43,6 +43,9 @@ catppuccin.accent = "lavender";
 # qt.style.package = pkgs.catppuccin-kvantum;
 # qt.style.catppuccin.enable = true;
 
+# excludes
+programs.zellij.catppuccin.enable = true;
+
 programs = {
   firefox.enable = true;
   gpg.enable = true;
