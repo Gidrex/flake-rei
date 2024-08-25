@@ -41,6 +41,7 @@ catppuccin.accent = "lavender";
 qt.style.name = "kvantum";
 qt.style.package = pkgs.catppuccin-kvantum;
 qt.style.catppuccin.enable = true;
+btop.tr.enable = true;
 
 programs = {
   firefox.enable = true;
@@ -52,7 +53,6 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
-  btop.catppuccin.enable = true;
   direnv.enable = true;
 
   fzf = {
