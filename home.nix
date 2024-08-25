@@ -45,7 +45,6 @@ catppuccin.accent = "lavender";
 
 # excludes
 programs.zellij.catppuccin.enable = false;
-# programs.alacritty.catppuccin.enable = false;
 
 programs = {
   firefox.enable = true;
@@ -58,7 +57,6 @@ programs = {
   yazi.enable = true;
   lazygit.enable = true;
   btop.enable = true;
-  # btop.catppuccin.enable = false;
   direnv.enable = true;
 
   fzf = {
