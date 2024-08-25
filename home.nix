@@ -35,6 +35,7 @@ home.sessionVariables = {
   TERM = "alacritty";
 };
 
+# Theming
 catppuccin.enable = true;
 catppuccin.flavor = "mocha";
 catppuccin.accent = "lavender";
@@ -77,7 +78,7 @@ programs = {
   bat = {
     enable = true;
     config.style = "numbers";
-    config.theme = "Nord";
+    # config.theme = "Nord";
     config.pager = "less -FR";
     config.color = "always";
   };
