@@ -46,13 +46,14 @@ catppuccin.accent = "lavender";
 # excludes
 programs.zellij.catppuccin.enable = false;
 programs.btop.catppuccin.enable = false;
-programs.alacritty.catppuccin.enable = false;
+# programs.alacritty.catppuccin.enable = false;
 
 programs = {
   firefox.enable = true;
   gpg.enable = true;
   zoxide.enable = true;
   alacritty.enable = true;
+  alacritty.catppuccin.enable = false;
   mangohud.enable = true;
   # looking-glass-client.enable = true;
   yazi.enable = true;
