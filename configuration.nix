@@ -198,7 +198,7 @@ environment.systemPackages = with pkgs; [
 
   # Apps
   firefox ungoogled-chromium 
-  dolphin
+  dolphin systemsettings
   webtorrent_desktop
   telegram-desktop vesktop 
   onlyoffice-bin_latest
