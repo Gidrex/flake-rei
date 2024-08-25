@@ -198,7 +198,7 @@ environment.systemPackages = with pkgs; [
 
   # Apps
   firefox ungoogled-chromium 
-  dolphin systemsettings
+  libsForQt5.dolphin libsForQt5.qtstyleplugin-kvantum
   webtorrent_desktop
   telegram-desktop vesktop 
   onlyoffice-bin_latest
