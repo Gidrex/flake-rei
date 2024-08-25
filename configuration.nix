@@ -198,7 +198,7 @@ environment.systemPackages = with pkgs; [
 
   # Apps
   firefox ungoogled-chromium 
-  libsForQt5.dolphin libsForQt5.qtstyleplugin-kvantum
+  libsForQt5.dolphin libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
   webtorrent_desktop
   telegram-desktop vesktop 
   onlyoffice-bin_latest
