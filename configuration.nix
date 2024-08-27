@@ -53,8 +53,8 @@
   };
 
   # Android
-  services.udev.packages = [ pkgs.android-udev-rules ];
-  programs.adb.enable = true;
+  # services.udev.packages = [ pkgs.android-udev-rules ];
+  # programs.adb.enable = true;
 
   # Graphics
   boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];

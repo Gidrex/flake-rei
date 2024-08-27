@@ -4,13 +4,9 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    impermanence.url = "github:nix-community/impermanence"; # TODO
+    # impermanence.url = "github:nix-community/impermanence"; # TODO
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    android-nixpkgs = {
-      url = "github:tadfisher/android-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
