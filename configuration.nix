@@ -208,7 +208,7 @@
     webtorrent_desktop
     telegram-desktop vesktop 
     onlyoffice-bin_latest
-    logseq figma-linux android-studio 
+    logseq figma-linux
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
     drawio gimp krita
