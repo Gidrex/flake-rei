@@ -35,7 +35,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.gidrex = { config, lib, pkgs, ... }: {
               imports = [ 
-                ./home.nix
+                # ./home.nix
                 catppuccin.homeManagerModules.catppuccin
 
                 android-nixpkgs.hmModule
