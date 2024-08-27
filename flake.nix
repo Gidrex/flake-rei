@@ -10,12 +10,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin.url = "github:catppuccin/nix";
     flake-utils.url = "github:numtide/flake-utils";
     byedpi.url = "github:Gidrex/byedpi-nix";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ... }: let
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, android-nixpkgs, ... }: let
     system = "x86_64-linux";
     # pkgs = import nixpkgs { system = system; };
   in {
@@ -29,10 +33,27 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.gidrex = {
+            home-manager.users.gidrex = { config, lib, pkgs, ... }: {
               imports = [ 
                 ./home.nix
                 catppuccin.homeManagerModules.catppuccin
+
+                android-nixpkgs.hmModule
+                {
+                  inherit config lib pkgs;
+                  android-sdk.enable = true;
+
+                  # Optional; default path is "~/.local/share/android".
+                  android-sdk.path = "${config.home.homeDirectory}/.android/sdk";
+
+                  android-sdk.packages = sdk: with sdk; [
+                    build-tools-34-0-0
+                    cmdline-tools-latest
+                    emulator
+                    platforms-android-34
+                    sources-android-34
+                  ];
+                }
               ];
             };
           }
