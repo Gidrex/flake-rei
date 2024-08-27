@@ -12,7 +12,7 @@ in
     ./modules/tmux
     ./modules/fish
     ./modules/zellij
-    ./modules/android-sdk
+    # ./modules/android-sdk
     # ./rice/hyprland
     androidSdkModule
     # ./rice/sway
