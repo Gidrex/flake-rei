@@ -97,7 +97,7 @@
     gamemode.enable = true;
     fish.enable = true;
     zsh.enable = true;
-    programs.adb.enable = true;
+    adb.enable = true;
     command-not-found.enable = false;
   };
 
