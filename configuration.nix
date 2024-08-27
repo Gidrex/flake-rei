@@ -52,6 +52,10 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "input" /* "docker" */ "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
   };
 
+  # Android
+  services.udev.packages = [ pkgs.android-udev-rules ];
+  programs.adb.enable = true;
+
   # Graphics
   boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];
   services.xserver.videoDrivers = ["nvidia"];
@@ -97,7 +101,6 @@
     gamemode.enable = true;
     fish.enable = true;
     zsh.enable = true;
-    adb.enable = true;
     command-not-found.enable = false;
   };
 
@@ -205,7 +208,7 @@
     webtorrent_desktop
     telegram-desktop vesktop 
     onlyoffice-bin_latest
-    logseq figma-linux
+    logseq figma-linux android-studio 
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
     drawio gimp krita
