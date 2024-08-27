@@ -49,7 +49,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "networkmanager" "wheel" "audio" "input" /* "docker" */ "vboxusers" "input" "plugdev" "libvirtd" "kvm"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" /* "docker" */ "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
   };
 
   # Graphics
