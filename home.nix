@@ -102,7 +102,7 @@
         user.signingkey = "~/.ssh/id_rsa.pub";
         core.whitespace = "trailing-space,space-before-tab";
         core.editor = "nvim";
-        safe.directory" = "/nix/store/c9fxvvl8n4v0w679p82wpgspzn4kyqbr-flutter-wrapped-3.22.2-sdk-links";
+        safe.directory = "/nix/store/c9fxvvl8n4v0w679p82wpgspzn4kyqbr-flutter-wrapped-3.22.2-sdk-links";
       };
     };
   };
