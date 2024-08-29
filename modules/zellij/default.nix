@@ -8,6 +8,8 @@
       pane_frames = false;
       mouse_mode = false;
       on_force_close = "quit";
+      auto-save-session = true;
+      session-storage-path = "~/.zellij/sessions";
 
       theme = "Catppuccin";
       themes.Catppuccin = {
