@@ -2,7 +2,6 @@
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
-    session_serialization = true;
     settings = {
       session.hide_status_bar = true;
       default_layout = "compact";

@@ -5,7 +5,7 @@
     ./modules/tmux
     ./modules/fish
     ./modules/zellij
-    # ./modules/android-sdk # broken
+    ./modules/android-sdk # broken
     # ./rice/hyprland
     # ./rice/sway
   ]; 
