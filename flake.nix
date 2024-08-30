@@ -17,7 +17,7 @@
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/master?submodules=1";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: let
+  outputs = { nixpkgs, pkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: let
     system = "x86_64-linux";
     # pkgs = import nixpkgs { system = system; };
   in {
@@ -41,7 +41,7 @@
           {
             environment.systemPackages = [
               byedpi.packages.${system}.default 
-              ayugram-desktop.packages.${system}.default
+              ayugram-desktop.packages.${pkgs.system}.default
             ];
           }
         ];
