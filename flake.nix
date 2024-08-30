@@ -14,10 +14,9 @@
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
-    ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/master?submodules=1";
   };
 
-  outputs = { nixpkgs, pkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: let
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ... }: let
     system = "x86_64-linux";
     # pkgs = import nixpkgs { system = system; };
   in {
@@ -41,7 +40,6 @@
           {
             environment.systemPackages = [
               byedpi.packages.${system}.default 
-              ayugram-desktop.packages.${pkgs.system}.default
             ];
           }
         ];
