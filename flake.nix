@@ -9,13 +9,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    catppuccin.url = "github:catppuccin/nix";
     flake-utils.url = "github:numtide/flake-utils";
+
+    # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
+    catppuccin.url = "github:catppuccin/nix";
+    inputs.ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/master?submodules=1";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ... }: let
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: let
     system = "x86_64-linux";
     # pkgs = import nixpkgs { system = system; };
   in {
@@ -37,7 +39,10 @@
             };
           }
           {
-            environment.systemPackages = [ byedpi.packages.${system}.default ];
+            environment.systemPackages = [
+              byedpi.packages.${system}.default 
+              ayugram-desktop.packages.${system}.default
+            ];
           }
         ];
       };
