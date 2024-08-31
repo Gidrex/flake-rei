@@ -49,7 +49,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "networkmanager" "wheel" "audio" "input" /* "docker" */ "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
   };
 
   # Android
@@ -86,13 +86,13 @@
   };
 
   # Docker
-  # virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless = {
-  #   enable = true;
-  #   setSocketVariable = true;
-  # };
-  # virtualisation.containers.enable = true;
-  # users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+  virtualisation.containers.enable = true;
+  users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
   programs = {
     thunar.enable = true;
@@ -292,13 +292,13 @@
   '';
 
   # Looking glass TODO
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu.package = pkgs.qemu_kvm;
-    qemu.ovmf.enable = true;
-  };
-  programs.virt-manager.enable = true;
-  services.dbus.packages = [ pkgs.dbus ];
+  # virtualisation.libvirtd = {
+  #   enable = true;
+  #   qemu.package = pkgs.qemu_kvm;
+  #   qemu.ovmf.enable = true;
+  # };
+  # programs.virt-manager.enable = true;
+  # services.dbus.packages = [ pkgs.dbus ];
 
   environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
