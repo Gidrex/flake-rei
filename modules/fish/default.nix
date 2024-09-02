@@ -52,10 +52,10 @@
       function fish_greeting
       end
 
-      set -x http_proxy http://127.0.0.1:8889
-      set -x https_proxy http://127.0.0.1:8889
-      set -x all_proxy socks5://localhost:1089
-      set -x no_proxy localhost,127.0.0.1,::1
+      # set -x http_proxy http://127.0.0.1:8889
+      # set -x https_proxy http://127.0.0.1:8889
+      # set -x all_proxy socks5://localhost:1089
+      # set -x no_proxy localhost,127.0.0.1,::1
 
       set -Ux fifc_editor nvim
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
