@@ -41,7 +41,6 @@
   catppuccin.flavor = "mocha";
   catppuccin.accent = "lavender";
   gtk.catppuccin.enable = true;
-  programs.kitty.catppuccin.enable = true;
 
   # excludes
   programs.zellij.catppuccin.enable = false;
@@ -56,7 +55,12 @@
     # looking-glass-client.enable = true;
     yazi.enable = true;
     lazygit.enable = true;
-    btop.enable = true;
+    btop = {
+      enable = true;
+      extraConfig = ''
+        color_theme = "horizon"
+      '';
+    };
     direnv.enable = true;
 
     fzf = {
