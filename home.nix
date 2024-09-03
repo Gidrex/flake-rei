@@ -41,6 +41,7 @@
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
   catppuccin.accent = "lavender";
+  gtk.catppuccin.enable = true;
 
   # excludes
   programs.zellij.catppuccin.enable = false;
