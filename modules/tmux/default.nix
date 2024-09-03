@@ -28,17 +28,10 @@ programs.tmux = {
     '';
   }
   {
-    plugin = net-speed;
-    extraConfig = ''
-      set -g @plugin 'tmux-plugins/tmux-net-speed'
-      # set -g status-right 'Up: #{net_speed_up} Down: #{net_speed_down}'
-    '';
-  }
-  {
     plugin = resurrect;
-    extraConfig = ''
-      set -g @plugin 'tmux-plugins/tmux-resurrect'
-      '';
+    extraConfig = "
+      set -g @resurrect-strategy-nvim 'session'
+      ";
   }
   {
     plugin = continuum;
@@ -60,6 +53,30 @@ programs.tmux = {
 
     bind -r C-h select-window -t :-
     bind -r C-l select-window -t :+
+
+    resurrect_dir="~/.local/share/tmux/resurrect"
+
+    set -g @plugin 'tmux-plugins/tmux-resurrect'
+    set -g @resurrect-strategy-vim 'session'
+    set -g @resurrect-strategy-nvim 'session'
+    set -g @resurrect-processes 'vim nvim hx cat less more tail watch'
+    set -g @resurrect-dir $resurrect_dir
+    set -g @resurrect-hook-post-save-all '~/.tmux/post_save.sh $resurrect_dir/last'
     '';
 };
+  # Create module script
+  home.file = {
+    ".tmux/post_save.sh" = {
+      text = ''
+        #!/bin/bash
+        sed -ie "s| --cmd .*-vim-pack-dir||g" $1
+        sed -i 's|fish	:\[fish\] <defunct>|fish	:|g' $1
+        sed -i ':a;N;$!ba;s|\[fish\] <defunct>\n||g' $1
+        sed -i "s|/run/current-system/sw/bin/||g" $1
+        sed -i "s| $HOME| ~|g" $1
+        sed -ie "s|:bash .*/tmp/nix-shell-.*/rc|:nix-shell|g" $1
+      '';
+      executable = true;
+    };
+  };
 }
