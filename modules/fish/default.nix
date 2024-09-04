@@ -61,6 +61,15 @@
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
       '';
+
+      initExtra = ''
+      fifc \
+        -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
+        -s 'pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'' \
+        -e '.*/(.*?)\\h.*' \
+        -f "--query ''" \
+        -p 'pacman -Si "$fifc_extracted"'
+        '';
     };
   };
 }
