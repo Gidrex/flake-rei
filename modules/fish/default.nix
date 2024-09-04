@@ -62,14 +62,16 @@
       '';
 
       shellInit = ''
-      fifc \
-        -n test -f "$fifc_candidate" \
-        -p _fifc_preview_file \
-        -o _fifc_open_file
+      # fifc \
+      #   -n test -f "$fifc_candidate" \
+      #   -p _fifc_preview_file \
+      #   -o _fifc_open_file
 
+      fifc \
         -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
-        -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'" \
+        -s 'pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\' ' \
         -e '.*/(.*?)\\h.*' \
+        -f "--query ' '" \
         -p 'pacman -Si "$fifc_extracted"'
       '';
     };
