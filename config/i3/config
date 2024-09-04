@@ -56,7 +56,7 @@ font pango: JetBrainsMono Nerd Font 11
 # Screen brightness controls
 bindsym XF86MonBrightnessUp 	  exec light -A 5% 	#; exec notify-send 'brightness up 5%'
 bindsym XF86MonBrightnessDown	  exec light -U 5% 	#; exec notify-send 'brightness down 5%'
-exec light -S 70
+exec light -S 60
 
 # Change volume
 bindsym XF86AudioRaiseVolume 	exec amixer -q sset Master 5%+

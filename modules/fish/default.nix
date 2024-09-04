@@ -59,17 +59,14 @@
 
       set -Ux fifc_editor nvim
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
-      set -U fifc_keybinding \cx
+      # set -U fifc_keybinding \cx
       '';
 
       shellInit = ''
-fifc \
-    # If selected item is a file
-    -n 'test -f "$fifc_candidate"' \
-    # bind `_fifc_preview_file` to preview command
-    -p _fifc_preview_file \
-    # and `_fifc_preview_file` when pressing ctrl-o
-    -o _fifc_open_file
+      fifc \
+        -n 'test -f "$fifc_candidate"' \
+        -p _fifc_preview_file \
+        -o _fifc_open_file
       '';
     };
   };
