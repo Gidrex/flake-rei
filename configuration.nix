@@ -229,7 +229,7 @@
     fuse wine winetricks
     protonup protontricks
     lutris
-    distrobox podman
+    distrobox podman colima
     qemu_kvm libvirt bridge-utils
 
     # Rice
