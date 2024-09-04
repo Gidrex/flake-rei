@@ -220,7 +220,7 @@
 
     # Open with
     feh gthumb
-    evince
+    evince zathura # pdf
     mpv
     qimgv
     ark
