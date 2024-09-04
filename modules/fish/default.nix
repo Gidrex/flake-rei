@@ -60,16 +60,16 @@
       set -Ux fifc_editor nvim
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
       set -U fifc_keybinding \cx
-      set -U fifc_extracted
       '';
 
       shellInit = ''
-      fifc \
-        -r "^(pacman|paru)(\\h*\\-S)?\\h+" \
-        -s "pacman --color=always -Ss '$fifc_token' | string match -r '^[^\\h+].*'" \
-        -e ".*/(.*?)\\h.*" \
-        -f "--query ''" \
-        -p "paru -Si '$fifc_extracted'"
+fifc \
+    # If selected item is a file
+    -n 'test -f "$fifc_candidate"' \
+    # bind `_fifc_preview_file` to preview command
+    -p _fifc_preview_file \
+    # and `_fifc_preview_file` when pressing ctrl-o
+    -o _fifc_open_file
       '';
     };
   };
