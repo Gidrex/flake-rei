@@ -67,9 +67,9 @@
         -p _fifc_preview_file \
         -o _fifc_open_file
 
-        -r "^(pacman|paru)(\\h*\\-S)?\\h+" \
-        -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\" \
-        -e ".*/(.*?)\\h.*" \
+        -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
+        -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'" \
+        -e '.*/(.*?)\\h.*' \
         -f "--query " \
         -p 'pacman -Si "$fifc_extracted"'
       '';
