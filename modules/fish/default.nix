@@ -41,6 +41,7 @@
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
         calc = "~/github/calc.rs/wrapper.sh";
+        "nix-shell init" = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> de fault.nix >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
 
         # zellij
         zl = "zellij";
@@ -69,7 +70,7 @@
 
       fifc \
         -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
-        -s 'pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\' ' \
+        -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'" \
         -e '.*/(.*?)\\h.*' \
         -f "--query ' '" \
         -p 'pacman -Si "$fifc_extracted"'
