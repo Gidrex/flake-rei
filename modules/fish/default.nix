@@ -41,7 +41,7 @@
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
         calc = "~/github/calc.rs/wrapper.sh";
-        "nix-shell init" = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> de fault.nix >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
+        "nix-shell init" = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
 
         # zellij
         zl = "zellij";
