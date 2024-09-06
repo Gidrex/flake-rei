@@ -171,7 +171,7 @@
     neofetch
 
     # university learning & documents
-    zip unzip
+    zip unzip rar unrar
     pandoc
 
     # dependencies
@@ -243,7 +243,7 @@
     vial qmk # for ergonomic keyboard
     udisks2 udiskie # auto mount usb flash 
     cups pantum-driver cups-printers # for my printer
-    xarchive xarchiver
+    xarchiver
     vulkan-tools vulkan-loader vulkan-validation-layers
     dotnetCorePackages.sdk_6_0_1xx
     acpid
