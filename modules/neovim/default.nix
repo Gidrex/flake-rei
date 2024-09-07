@@ -1,15 +1,15 @@
 { pkgs, lib, ... }: 
 let
-fromGitHub = rev: ref: repo:
-pkgs.vimUtils.buildVimPlugin {
-  pname = "${lib.strings.sanitizeDerivationName repo}";
-  version = ref;
-  src = builtins.fetchGit {
-    url = "https://github.com/${repo}.git";
-    ref = ref;
-    rev = rev;
-  };
-};
+  fromGitHub = rev: ref: repo:
+    pkgs.vimUtils.buildVimPlugin {
+      pname = "${lib.strings.sanitizeDerivationName repo}";
+      version = ref;
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        ref = ref;
+        rev = rev;
+      };
+    };
 in {
   home.packages = [
   ];
@@ -18,81 +18,84 @@ in {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
 
     plugins = [
-    # Theme
-    {
-      plugin = pkgs.vimPlugins.catppuccin-nvim;
-      config = "vim.cmd[[colorscheme catppuccin-mocha]]";
-      type = "lua";
-    }     
-    pkgs.vimPlugins.rose-pine
+      # Theme
+      {
+        plugin = pkgs.vimPlugins.catppuccin-nvim;
+        config = "vim.cmd[[colorscheme catppuccin-mocha]]";
+        type = "lua";
+      }     
+      pkgs.vimPlugins.rose-pine
 
-    # Useful plugins
-    {
-      plugin = pkgs.vimPlugins.hop-nvim;
-      config = "require'hop'.setup{
-        keys = 'etovxqpdygfblzhckisuran',
-             case_insensitive = true,
-             char2_fallback_key = '<CR>'}";
-      type = "lua";
-    }
-    { 
-      plugin = pkgs.vimPlugins.nvim-highlight-colors;
-      config = builtins.readFile ./config/setup/hightlight-colors.lua;
-      type = "lua";
-    }
-    # Treesitter
-    {
-      plugin = pkgs.vimPlugins.nvim-treesitter;
-      config = builtins.readFile ./config/setup/treesitter.lua;
-      type = "lua";
-    }
-    pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-    pkgs.vimPlugins.nvim-treesitter-textobjects
-    {
-      plugin = pkgs.vimPlugins.nvim-lspconfig;
-      config = builtins.readFile ./config/setup/lspconfig.lua;
-      type = "lua";
-    }
-    pkgs.vimPlugins.plenary-nvim
+      # Useful plugins
+      {
+        plugin = pkgs.vimPlugins.hop-nvim;
+        config = "require'hop'.setup{ keys = 'etovxqpdygfblzhckisuran', case_insensitive = true, char2_fallback_key = '<CR>'}";
+        type = "lua";
+      }
+      { 
+        plugin = pkgs.vimPlugins.nvim-highlight-colors;
+        config = builtins.readFile ./config/setup/hightlight-colors.lua;
+        type = "lua";
+      }
+      {
+        plugin = pkgs.vimPlugins.barbar-nvim;
+        config = builtins.readFile ./config/setup/barbar.lua;
+        type = "lua";
+      }
 
-    # Telescope
-    {
-      plugin = pkgs.vimPlugins.telescope-nvim;
-      config = builtins.readFile ./config/setup/telescope.lua;
-      type = "lua";
-    }
-    pkgs.vimPlugins.telescope-fzf-native-nvim
-    pkgs.vimPlugins.harpoon
+      # Treesitter
+      {
+        plugin = pkgs.vimPlugins.nvim-treesitter;
+        config = builtins.readFile ./config/setup/treesitter.lua;
+        type = "lua";
+      }
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+      pkgs.vimPlugins.nvim-treesitter-textobjects
+      {
+        plugin = pkgs.vimPlugins.nvim-lspconfig;
+        config = builtins.readFile ./config/setup/lspconfig.lua;
+        type = "lua";
+      }
+      pkgs.vimPlugins.plenary-nvim
 
-    # cmp
-    {
-      plugin = pkgs.vimPlugins.nvim-cmp;
-      config = builtins.readFile ./config/setup/cmp.lua;
-      type = "lua";
-    }
-    pkgs.vimPlugins.cmp-nvim-lsp
-    pkgs.vimPlugins.cmp-buffer
-    pkgs.vimPlugins.cmp-cmdline
-    pkgs.vimPlugins.cmp_luasnip
-    pkgs.vimPlugins.cmp-cmdline
-    pkgs.vimPlugins.cmp-path
+      # Telescope
+      {
+        plugin = pkgs.vimPlugins.telescope-nvim;
+        config = builtins.readFile ./config/setup/telescope.lua;
+        type = "lua";
+      }
+      pkgs.vimPlugins.telescope-fzf-native-nvim
+      pkgs.vimPlugins.harpoon
 
-    # Tpope
-    pkgs.vimPlugins.vim-surround
-    pkgs.vimPlugins.vim-sleuth
-    pkgs.vimPlugins.vim-repeat
-    {
-      plugin = fromGitHub "afd76df166ed0f223ede1071e0cfde8075cc4a24" "main" "TabbyML/vim-tabby";
-      config = ''
+      # cmp
+      {
+        plugin = pkgs.vimPlugins.nvim-cmp;
+        config = builtins.readFile ./config/setup/cmp.lua;
+        type = "lua";
+      }
+      pkgs.vimPlugins.cmp-nvim-lsp
+      pkgs.vimPlugins.cmp-buffer
+      pkgs.vimPlugins.cmp-cmdline
+      pkgs.vimPlugins.cmp_luasnip
+      pkgs.vimPlugins.cmp-cmdline
+      pkgs.vimPlugins.cmp-path
+
+      # Tpope
+      pkgs.vimPlugins.vim-surround
+      pkgs.vimPlugins.vim-sleuth
+      pkgs.vimPlugins.vim-repeat
+      {
+        plugin = fromGitHub "afd76df166ed0f223ede1071e0cfde8075cc4a24" "main" "TabbyML/vim-tabby";
+        config = ''
         vim.cmd([[
             let g:tabby_keybinding_accept = '<Tab>'
         ]])
         '';
-      type = "lua";
-    }
+        type = "lua";
+      }
 
-    # QoL
-    pkgs.vimPlugins.lspkind-nvim
+      # QoL
+      pkgs.vimPlugins.lspkind-nvim
       pkgs.vimPlugins.rainbow
       pkgs.vimPlugins.nvim-web-devicons
       # pkgs.vimPlugins.surround-nvim # again?
@@ -120,7 +123,7 @@ in {
               show_icons = false,
               },
               })
-        ";
+          ";
         type = "lua";
       }
       {
@@ -191,14 +194,14 @@ in {
         config = builtins.readFile ./config/setup/rustaceanvim.lua;
         type = "lua";
       }
-      ];
+    ];
 
-      extraLuaConfig = ''
+    extraLuaConfig = ''
       ${builtins.readFile ./config/mappings.lua}
       ${builtins.readFile ./config/options.lua}
-      '';
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
+    '';
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
   };
 }
