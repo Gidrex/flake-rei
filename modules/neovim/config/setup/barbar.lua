@@ -1,4 +1,4 @@
-require('lazy').setup {
+require'barbar'.setup {
   {'romgrk/barbar.nvim',
     dependencies = {
       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -11,6 +11,6 @@ require('lazy').setup {
       -- insert_at_start = true,
       -- …etc.
     },
-    -- version = '^1.0.0', -- optional: only update when a new 1.x version is released
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
   },
 }
