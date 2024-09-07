@@ -37,11 +37,11 @@ in {
         config = builtins.readFile ./config/setup/hightlight-colors.lua;
         type = "lua";
       }
-      {
-        plugin = pkgs.vimPlugins.barbar-nvim;
-        config = builtins.readFile ./config/setup/barbar.lua;
-        type = "lua";
-      }
+      # {
+      #   plugin = pkgs.vimPlugins.barbar-nvim;
+      #   config = builtins.readFile ./config/setup/barbar.lua;
+      #   type = "lua";
+      # }
 
       # Treesitter
       {
