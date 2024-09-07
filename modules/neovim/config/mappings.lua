@@ -1,7 +1,6 @@
 -- my combos
--- vim.api.nvim_set_keymap('i', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('v', '<C-s>', '<Esc>:w<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-PageUp>', ':tabp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-PageDown>', ':tabn<CR>', { noremap = true, silent = true })
 
 -- leader to space
 vim.g.mapleader = ' '
@@ -16,6 +15,8 @@ vim.api.nvim_buf_set_keymap(0, 'v', ' ', '', { noremap = true })
 vim.api.nvim_buf_set_keymap(0, 'x', ' ', '', { noremap = true })
 vim.api.nvim_buf_set_keymap(0, 's', ' ', '', { noremap = true })
 vim.api.nvim_buf_set_keymap(0, 'o', ' ', '', { noremap = true })
+
+-- buffers
 
 -- lazygit
 vim.api.nvim_set_keymap('n', '<leader>Z', '<cmd>LazyGit<cr>', { noremap = true, silent = true })
@@ -34,7 +35,7 @@ vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fd', "<cmd>lua require('telescope.builtin').diagnostics()<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fi', "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>fw', "<cmd>Telescope telescope-cargo-workspace switch<cr>", { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<leader>fw', "<cmd>Telescope telescope-cargo-workspace switch<cr>", { noremap = true })
 
 -- DAP
 -- vim.api.nvim_set_keymap('n', '<leader>db', "<cmd>lua require('dap').toggle_breakpoint()<cr>", { noremap = true })
@@ -65,6 +66,3 @@ vim.api.nvim_set_keymap('n', '<leader>v', '<cmd>tabnew<cr><cmd>Oil<cr>', { norem
 -- Neorg
 -- vim.api.nvim_set_keymap('n', '<leader>ne', '<cmd>Neorg index<cr>', { noremap = true })
 -- vim.api.nvim_set_keymap('n', '<leader>nr', '<cmd>Neorg return<cr>', { noremap = true })
---
--- barbar (tabs)
---

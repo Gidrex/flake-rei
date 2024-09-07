@@ -11,8 +11,7 @@ let
       };
     };
 in {
-  home.packages = [
-  ];
+  home.packages = [];
 
   programs.neovim = {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
