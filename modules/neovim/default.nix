@@ -113,16 +113,12 @@ in {
       {
         plugin = fromGitHub "4c3bc2cd46085b36b2873c1ae9086aee404b3d90" "main" "apple/pkl-neovim";
       }
-      (fromGitHub "f30f899c30d91bb35574ff5962103f00cc4ea23a" "main" "MattCairns/telescope-cargo-workspace.nvim")
+      { # ru lang support
+        plugin = fromGitHub "e952abbea092e420b128936a0c284fb522612c3a" "main" "powerman/vim-plugin-ruscmd";
+      }
       {
         plugin = pkgs.vimPlugins.oil-nvim;
-        config = "
-          require('oil').setup({
-              view_options = {
-              show_icons = false,
-              },
-              })
-          ";
+        config = "require('oil').setup({ view_options = { show_icons = false, },})";
         type = "lua";
       }
       {
