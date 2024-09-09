@@ -38,17 +38,17 @@
         tx = "tmux";
         nv = "nvim";
         nf = "nvim $(fzf)";
+        suvi = "sudo nvim";
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
         calc = "~/github/calc.rs/wrapper.sh";
-        "nix-shell-init" = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
+        nix-shell-init = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
+        wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
 
         # zellij
         zl = "zellij";
         zla = "zellij attach";
         zln = "zellij --session";
-
-        wine = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine";
       };
 
       interactiveShellInit = ''
