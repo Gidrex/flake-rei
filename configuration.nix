@@ -226,7 +226,7 @@
     ark
 
     # Boxes
-    fuse winePackages.unstable winetricks
+    fuse winePackages.stable winetricks
     protonup protontricks
     lutris
     distrobox podman
