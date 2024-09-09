@@ -47,6 +47,8 @@
         zl = "zellij";
         zla = "zellij attach";
         zln = "zellij --session";
+
+        wine = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine";
       };
 
       interactiveShellInit = ''

@@ -226,8 +226,7 @@
     ark
 
     # Virtualisation
-     winePackages.stableFull winetricks winePackages.fonts
-
+    winePackages.stableFull winetricks winePackages.fonts
     protonup protontricks
     lutris
     distrobox podman
