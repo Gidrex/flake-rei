@@ -225,8 +225,9 @@
     qimgv
     ark
 
-    # Boxes
-    fuse winePackages.stable winetricks
+    # Virtualisation
+     winePackages.stableFull winetricks winePackages.fonts
+
     protonup protontricks
     lutris
     distrobox podman
