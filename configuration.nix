@@ -189,7 +189,7 @@
     kitty fish alacritty nushell starship
 
     # Dev
-    gradle openjdk jdk8 sdkmanager
+    gradle sdkmanager #openjdk 
     python3 python312Packages.pip virtualenv python3Packages.psutil
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
