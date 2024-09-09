@@ -114,7 +114,7 @@ in {
         plugin = fromGitHub "4c3bc2cd46085b36b2873c1ae9086aee404b3d90" "main" "apple/pkl-neovim";
       }
       { # ru lang support
-        plugin = fromGitHub "e952abbea092e420b128936a0c284fb522612c3a" "main" "powerman/vim-plugin-ruscmd";
+        plugin = fromGitHub "e952abbea092e420b128936a0c284fb522612c3a" "master" "powerman/vim-plugin-ruscmd";
       }
       {
         plugin = pkgs.vimPlugins.oil-nvim;
