@@ -24,6 +24,12 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.wrap = false
 vim.opt.colorcolumn = '0' -- was 100
 
+-- Supporting ru lang
+vim.o.encoding = 'utf-8'
+vim.o.fileencoding = 'utf-8'
+vim.o.fileencodings = 'utf-8,cp1251,koi8-r,latin1'
+vim.o.langmap = 'АA,БB,ВV,ГG,ДD,ЕE,ЁYo,ЖZh,ЗZ,ИI,ЙY,КK,ЛL,МM,НN,ОO,ПP,РR,СS,ТT,УU,ФF,ХKh,ЦTs,ЧCh,ШSh,ЩShch,Ъ,ЫY,Ь,ЭE,ЮYu,ЯYa'
+
 vim.cmd([[
 set completeopt=menu,menuone,noselect
 ]])
