@@ -58,7 +58,7 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "nord";
+        color_theme = "Default";
       };
     };
     direnv.enable = true;
