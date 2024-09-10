@@ -21,16 +21,16 @@ signal=1
 command=~/.config/i3blocks/battery/battery_info.sh
 interval=3
 
-[CPU]
-full_text= 0.00% 
-command=~/.config/i3blocks/cpu/cpu_info.sh
-interval=repeat
-color=#FFFFFF
+# [CPU]
+# full_text= 0.00% 
+# command=~/.config/i3blocks/cpu/cpu_info.sh
+# interval=repeat
+# color=#FFFFFF
 
-[MEM]
-command=free -h | awk '/Mem:/ { printf("   %5s/%s \n", $3, $2) }'
-interval=1
-color=#FFFFFF
+# [MEM]
+# command=free -h | awk '/Mem:/ { printf("   %5s/%s \n", $3, $2) }'
+# interval=1
+# color=#FFFFFF
 
 [TIME_DATE]
 command=date +" %d %b, %a  %H:%M:%S |"

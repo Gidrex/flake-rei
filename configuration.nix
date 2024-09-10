@@ -169,7 +169,7 @@
     git-filter-repo
 
     # fun
-    neofetch
+    fastfetch
 
     # university learning & documents
     zip unzip rar unrar
