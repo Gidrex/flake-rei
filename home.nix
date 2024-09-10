@@ -57,9 +57,9 @@
     lazygit.enable = true;
     btop = {
       enable = true;
-      settings = {
-        color_theme = "Default";
-      };
+      extraConfig = ''
+      color_theme = "Default"
+      '';
     };
     direnv.enable = true;
 
