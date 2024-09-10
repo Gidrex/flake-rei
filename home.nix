@@ -58,7 +58,8 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "nord";
+        "color_theme" = "nord";
+        # vim_keys = true;
       };
     };
     direnv.enable = true;
