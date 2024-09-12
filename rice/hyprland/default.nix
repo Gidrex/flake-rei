@@ -14,9 +14,6 @@
     # kanshi # >1 display
   ];
 
-  services.xserver.enable = false;
-  services.dbus.enable = true;
-
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = true; # enable when configure extraConfig
