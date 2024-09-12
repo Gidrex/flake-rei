@@ -2,7 +2,7 @@
 {
   imports = [ 
     ./hardware-configuration.nix
-    # ./rice/i3
+    ./rice/i3
   ];
 
   security.polkit.enable = true;
@@ -270,10 +270,10 @@
       model = "pc105";
       options = "grp:alt_shift_toggle";
     };
-    # displayManager.lightdm = {
-    #   background = ./assets/nix.png;
-    #   enable  = true;
-    # };
+    displayManager.lightdm = {
+      background = ./assets/nix.png;
+      enable  = true;
+    };
   };
   environment.variables.PATH = "${pkgs.stdenv.cc}/bin:/usr/bin";
   environment.variables.CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
