@@ -101,7 +101,7 @@ in {
       pkgs.vimPlugins.lazygit-nvim
       {
         plugin= pkgs.vimPlugins.nvim-code-action-menu;
-        config = "require('nvim-code-action-menu').setup()";
+        config = "require('nvim-code-action-menu').setup{}";
         type = "lua";
       }
       # {
