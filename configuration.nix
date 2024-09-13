@@ -197,7 +197,7 @@
     nodejs yarn deno
     rustup cargo rust-script
     flutter dart
-    gcc libclang cmake gnumake pkg-config freetype
+    gcc libclang clang-tools cmake gnumake pkg-config glibc libcxx
     libstdcxx5 
     sqlite sqlite-utils
 
@@ -254,6 +254,7 @@
     xorg.libXfixes
     xorg.libXrandr
     xorg.xmodmap
+    freetype
 
     # Gaming
     mangohud
