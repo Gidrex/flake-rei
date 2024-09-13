@@ -8,35 +8,41 @@
     # ./rice/hyprland
     # ./modules/android-sdk # broken
     # ./rice/sway
-  ]; 
-
-  home.packages = with pkgs; [
-    # theming
-    tokyo-night-gtk
-    catppuccin
-    catppuccin-kvantum
-
-    # Apps
-    spicetify-cli spotifywm
-
-    # LSP Servers
-    pyright
-    cmake-language-server
-    nil
-    rust-analyzer
-    ansible-language-server
-    nodePackages_latest.dockerfile-language-server-nodejs
-    nodePackages.vim-language-server
-    lua-language-server
-    buf-language-server
-    vscode-langservers-extracted
-    nixpkgs-fmt
   ];
+  home = { 
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-    TERM = "alacritty";
+    packages = with pkgs; [
+      # theming
+      tokyo-night-gtk
+      catppuccin
+      catppuccin-kvantum
+
+      # Apps
+      spicetify-cli spotifywm
+
+      # LSP Servers
+      pyright
+      cmake-language-server
+      nil
+      rust-analyzer
+      ansible-language-server
+      nodePackages_latest.dockerfile-language-server-nodejs
+      nodePackages.vim-language-server
+      lua-language-server
+      buf-language-server
+      vscode-langservers-extracted
+      nixpkgs-fmt
+    ];
+
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      TERM = "alacritty";
+    };
+    username = "gidrex";
+    homeDirectory = "/home/gidrex";
+    enableNixpkgsReleaseCheck = false;
+    stateVersion = "24.05";
   };
 
   # Theming
@@ -141,8 +147,4 @@
   };
 
   programs.home-manager.enable = true;
-  home.username = "gidrex";
-  home.homeDirectory = "/home/gidrex";
-  home.enableNixpkgsReleaseCheck = false;
-  home.stateVersion = "24.05";
 }
