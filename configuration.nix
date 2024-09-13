@@ -87,12 +87,12 @@
   };
 
   # Docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
+  virtualisation = {
+    docker.enable = true;
+    docker.rootless.enable = true;
+    docker.rootless.setSocketVariable = true;
+    containers.enable = true;
   };
-  virtualisation.containers.enable = true;
   users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
   programs = {

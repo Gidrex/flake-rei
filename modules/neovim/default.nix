@@ -11,11 +11,22 @@ let
       };
     };
 in {
-  home.packages = [];
-
+  home.packages = with pkgs; [
+    # LSP Servers
+    pyright
+    cmake-language-server
+    nil
+    rust-analyzer
+    ansible-language-server
+    nodePackages_latest.dockerfile-language-server-nodejs
+    nodePackages.vim-language-server
+    lua-language-server
+    buf-language-server
+    vscode-langservers-extracted
+    nixpkgs-fmt
+  ];
   programs.neovim = {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
-
     plugins = [
       # Theme
       {

@@ -10,7 +10,6 @@
     # ./rice/sway
   ];
   home = { 
-
     packages = with pkgs; [
       # theming
       tokyo-night-gtk
@@ -19,19 +18,6 @@
 
       # Apps
       spicetify-cli spotifywm
-
-      # LSP Servers
-      pyright
-      cmake-language-server
-      nil
-      rust-analyzer
-      ansible-language-server
-      nodePackages_latest.dockerfile-language-server-nodejs
-      nodePackages.vim-language-server
-      lua-language-server
-      buf-language-server
-      vscode-langservers-extracted
-      nixpkgs-fmt
     ];
 
     sessionVariables = {
