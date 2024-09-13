@@ -1,6 +1,5 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 require'lspconfig'.clangd.setup{
-  cmd = { "clangd" }, -- Путь к clangd, если он не в PATH, укажи полный путь
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = require('lspconfig').util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
   single_file_support = true,
