@@ -2,18 +2,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 require'lspconfig'.clangd.setup{
   capabilities=capabilities
 }
-require'lspconfig'.ccls.setup{
-  init_options = {
-    compilationDatabaseDirectory = "build",
-    index = {
-      threads = 0,
-    },
-    cache = {
-      directory = ".ccls-cache",
-    },
-  },
-  capabilities = capabilities,
-}
 -- require'lspconfig'.rust_analyzer.setup{capabilities=capabilities} -- This is setup by rust-tools
 require'lspconfig'.cmake.setup{capabilities=capabilities}
 require'lspconfig'.dockerls.setup{capabilities=capabilities}
