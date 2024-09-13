@@ -29,6 +29,7 @@
     nodePackages.vim-language-server
     lua-language-server
     buf-language-server
+    eslint
   ];
 
   home.sessionVariables = {
