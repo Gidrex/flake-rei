@@ -30,7 +30,7 @@
     lua-language-server
     buf-language-server
     nodePackages.eslint
-    vscode-eslint-language-server
+    vscode-langservers-extracted
   ];
 
   home.sessionVariables = {
