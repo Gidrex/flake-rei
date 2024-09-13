@@ -5,21 +5,6 @@ require'lspconfig'.eslint.setup{
   capabilities = capabilities,
 }
 require'lspconfig'.dartls.setup{capabilities=capabilities}
-require'lspconfig'.rnix.setup{
-  capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cf', '<cmd>lua vim.lsp.buf.format{ async = true }<CR>', { noremap = true, silent = true })
-  end,
-  settings = {
-    nix = {
-      formatting = {
-        enable = true,
-        command = "nixpkgs-fmt"
-      }
-    }
-  }
-}
 require'lspconfig'.clangd.setup{capabilities=capabilities}
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
 require'lspconfig'.cmake.setup{capabilities=capabilities}
