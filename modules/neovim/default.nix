@@ -99,11 +99,6 @@ in {
       pkgs.vimPlugins.nvim-web-devicons
       # pkgs.vimPlugins.surround-nvim # again?
       pkgs.vimPlugins.lazygit-nvim
-      {
-        plugin= pkgs.vimPlugins.nvim-code-action-menu;
-        config = "require('nvim-code-action-menu').setup{}";
-        type = "lua";
-      }
       # {
       #   plugin = pkgs.vimPlugins.neorg;
       #   config = builtins.readFile ./config/setup/neorg.lua;
