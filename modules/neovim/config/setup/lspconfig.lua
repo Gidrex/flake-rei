@@ -1,4 +1,9 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+require'lspconfig'.eslint.setup{
+  capabilities = capabilities,
+  root_dir = require('lspconfig').util.root_pattern('.eslintrc.js', '.eslintrc.json', '.git'),
+  filetypes = { "javascript", "javascriptreact" },
+}
 require'lspconfig'.clangd.setup{capabilities=capabilities}
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
 require'lspconfig'.cmake.setup{capabilities=capabilities}
