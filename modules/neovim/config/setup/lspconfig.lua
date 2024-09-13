@@ -4,7 +4,6 @@ require'lspconfig'.clangd.setup{
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = require('lspconfig').util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
   single_file_support = true,
-  capabilities = capabilities,
 }
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities} -- This is setup by rust-tools
 require'lspconfig'.cmake.setup{capabilities=capabilities}
