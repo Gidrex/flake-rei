@@ -197,7 +197,7 @@
     nodejs yarn deno
     rustup cargo rust-script
     flutter dart
-    gcc libclang clang cmake gnumake pkg-config freetype
+    gcc libclang cmake gnumake pkg-config freetype
     libstdcxx5 
     sqlite sqlite-utils
 
