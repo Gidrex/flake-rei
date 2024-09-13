@@ -1,11 +1,6 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-require'lspconfig'.clangd.setup{
-  cmd = { "clangd" },
-  filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_dir = require('lspconfig').util.root_pattern("compile_commands.json", "compile_flags.txt", ".git"),
-  single_file_support = true,
-}
-require'lspconfig'.rust_analyzer.setup{capabilities=capabilities} -- This is setup by rust-tools
+require'lspconfig'.clangd.setup{capabilities=capabilities}
+require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
 require'lspconfig'.cmake.setup{capabilities=capabilities}
 require'lspconfig'.dockerls.setup{capabilities=capabilities}
 require'lspconfig'.nil_ls.setup{capabilities=capabilities}
