@@ -1,24 +1,22 @@
 require('lspsaga').setup({
-  -- Настройки по умолчанию
   ui = {
     border = 'rounded',
   },
   symbol_in_winbar = {
-    enable = false,  -- Отключите, если не хотите символы в winbar
+    enable = false,
   },
   code_action = {
     keys = {
-      quit = "<Esc>", -- Клавиша выхода из меню
-      exec = "<CR>",  -- Клавиша подтверждения действия
+      quit = "<Esc>",
+      exec = "<CR>",
     },
   },
   finder = {
     keys = {
-      edit = "<CR>",  -- Клавиша для открытия найденного
-      vsplit = "v",   -- Клавиша для вертикального разделения
-      split = "s",    -- Клавиша для горизонтального разделения
-      quit = { "q", "<Esc>" },  -- Клавиши для выхода из поиска
+      edit = "<CR>",
+      vsplit = "v",
+      split = "s",
+      quit = { "q", "<Esc>" },
     },
   },
-  -- Другие настройки по желанию
 })
