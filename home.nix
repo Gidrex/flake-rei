@@ -30,6 +30,7 @@
     lua-language-server
     buf-language-server
     vscode-langservers-extracted
+    nixpkgs-fmt
   ];
 
   home.sessionVariables = {
