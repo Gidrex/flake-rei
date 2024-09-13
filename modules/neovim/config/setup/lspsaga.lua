@@ -1,4 +1,7 @@
 require('lspsaga').setup({
+  lightbulb = {
+    enable = false,
+  },
   ui = {
     border = 'rounded',
   },
