@@ -1,6 +1,4 @@
 -- my combos
-vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>tabp<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>tabn<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', 'x', '"_x', { noremap = true, silent = true })
 

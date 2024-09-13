@@ -55,7 +55,12 @@ in {
         config = builtins.readFile ./config/setup/lspconfig.lua;
         type = "lua";
       }
-      pkgs.vimPlugins.plenary-nvim
+      # pkgs.vimPlugins.plenary-nvim
+      {
+        plugin = pkgs.vimPlugins.lspsaga-nvim;
+        config = builtins.readFile ./config/setup/lspsaga.lua;
+        type = "lua";
+      }
 
       # Telescope
       {
