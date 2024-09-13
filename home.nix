@@ -29,7 +29,6 @@
     nodePackages.vim-language-server
     lua-language-server
     buf-language-server
-    nodePackages.eslint
     vscode-langservers-extracted
   ];
 

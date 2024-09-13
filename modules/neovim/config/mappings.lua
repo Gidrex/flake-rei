@@ -1,7 +1,8 @@
 -- my combos
-vim.api.nvim_set_keymap('n', '<C-PageUp>', '<cmd>tabp<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-PageDown>', '<cmd>tabn<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<cmd>tabp<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>tabn<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'x', '"_x', { noremap = true, silent = true })
 
 -- leader to space
 vim.g.mapleader = ' '

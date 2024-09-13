@@ -1,15 +1,10 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 require'lspconfig'.eslint.setup{
-  cmd = { "vscode-eslint-language-server", "--stdio" },
+  cmd = { "vscode-eslint-language-server" },
   capabilities = capabilities,
-  root_dir = require('lspconfig').util.root_pattern('.eslintrc.js', '.eslintrc.json', '.git'),
-  filetypes = { "javascript", "javascriptreact" },
-  settings = {
-    format = { enable = true },
-    lintTask = { enable = true },
-    run = "onType",
-  },
 }
+require'lspconfig'.dartls.setup{capabilities=capabilities}
 require'lspconfig'.clangd.setup{capabilities=capabilities}
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
 require'lspconfig'.cmake.setup{capabilities=capabilities}
@@ -54,15 +49,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<leader>wl', function()
-      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-    end, opts)
+    vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
     vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>CodeActionMenu<cr>', { noremap = true })
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<leader>fm', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
+    vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format { async = true } end, opts)
   end,
 })
