@@ -18,6 +18,11 @@ require'lspconfig'.pyright.setup{
     python = {
       analysis = {
         typeCheckingMode = "off",
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true,
+        autoSearchPaths = true,
+        diagnosticSeverityOverrides = {
+          reportMissingImports = "none"
       }
     }
   }
