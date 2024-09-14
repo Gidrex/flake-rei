@@ -23,6 +23,7 @@ require'lspconfig'.pyright.setup{
         autoSearchPaths = true,
         diagnosticSeverityOverrides = {
           reportMissingImports = "none"
+        }
       }
     }
   }
