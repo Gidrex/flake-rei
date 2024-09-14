@@ -15,9 +15,6 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
-
-      # Apps
-      spicetify-cli spotifywm
     ];
 
     sessionVariables = {
@@ -25,6 +22,7 @@
       VISUAL = "nvim";
       TERM = "alacritty";
     };
+
     username = "gidrex";
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
@@ -101,36 +99,32 @@
         user.signingkey = "~/.ssh/id_rsa.pub";
         core.whitespace = "trailing-space,space-before-tab";
         core.editor = "nvim";
-        safe.directory = [
-          "/nix/store/c9fxvvl8n4v0w679p82wpgspzn4kyqbr-flutter-wrapped-3.22.2-sdk-links"
-          "/nix/store/a62pd11p4cywpm0rh0i092s10dx1wm6m-flutter-wrapped-3.22.2-sdk-links"
-        ];
-      };
-    };
-  };
-
-  services = {
-    spotifyd = {
-      enable = true;
-      settings.global = {
-        device_name = "nix";
-        username = "Gidrex";
-        password_cmd = "pass show spotifyd";
-        backend = "alsa";
-        dbus_type = "session"; # "system" for no graphic
-        bitrate = 320;
-        volume_normalisation = true;
-        autoplay = true;
-        proxy = "http://127.0.0.1:8889";
       };
     };
 
-    udiskie = {
-      enable = true;
-      tray = "auto";
-      automount = true;
-    };
-  };
+    services = {
+      spotifyd = {
+        enable = true;
+        settings.global = {
+          device_name = "nix";
+          username = "Gidrex";
+          password_cmd = "pass show spotifyd";
+          backend = "alsa";
+          dbus_type = "session"; # "system" for no graphic
+          bitrate = 320;
+          volume_normalisation = true;
+          autoplay = true;
+          proxy = "http://127.0.0.1:8889";
+        };
+      };
 
-  programs.home-manager.enable = true;
+      udiskie = {
+        enable = true;
+        tray = "auto";
+        automount = true;
+      };
+    };
+
+    programs.home-manager.enable = true;
+  };
 }
