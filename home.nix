@@ -101,6 +101,7 @@
         core.editor = "nvim";
       };
     };
+  };
 
     services = {
       spotifyd = {
@@ -124,6 +125,5 @@
         automount = true;
       };
     };
-  };
     programs.home-manager.enable = true;
 }
