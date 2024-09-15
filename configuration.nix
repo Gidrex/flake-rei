@@ -217,9 +217,8 @@
     drawio gimp krita
     audio-recorder kazam obs-studio
     spotify-cli-linux spotifywm
-    scanmem
     anydesk
-    mate.mate-media pw-volume
+    gnomeExtensions.advanced-volume-control
 
     # Open with
     feh gthumb
