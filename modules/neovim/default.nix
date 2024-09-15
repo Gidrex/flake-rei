@@ -26,6 +26,7 @@ in {
     nixpkgs-fmt
     typescript-language-server
     eslint_d
+    nodePackages.gradle-language-server
   ];
   programs.neovim = {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];

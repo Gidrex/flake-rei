@@ -207,7 +207,7 @@
 
     # Apps
     firefox ungoogled-chromium 
-    libsForQt5.dolphin libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop vesktop 
     onlyoffice-bin_latest
@@ -219,7 +219,6 @@
     spotify-cli-linux spotifywm
     anydesk
     pavucontrol
-    gnomeExtensions.advanced-volume-control
 
     # Open with
     feh gthumb
