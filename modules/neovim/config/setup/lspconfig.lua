@@ -1,11 +1,5 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-require'lspconfig'.eslint.setup{
-  cmd = { "eslint_d" },
-  capabilities = capabilities,
-}
-require'lspconfig'.javascript_language_server.setup{capabilities=capabilities}
-require'lspconfig'.tsserver.setup{capabilities=capabilities}
 require'lspconfig'.dartls.setup{capabilities=capabilities}
 require'lspconfig'.clangd.setup{capabilities=capabilities}
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
@@ -31,6 +25,8 @@ require'lspconfig'.pyright.setup{
   }
 }
 require'lspconfig'.vimls.setup{}
+require'lspconfig'.eslint.setup{ cmd = { "eslint_d" }, capabilities = capabilities, }
+require'lspconfig'.tsserver.setup{capabilities=capabilities}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
