@@ -218,6 +218,7 @@
     audio-recorder kazam obs-studio
     spotify-cli-linux spotifywm
     anydesk
+    pavucontrol
     gnomeExtensions.advanced-volume-control
 
     # Open with
