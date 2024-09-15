@@ -219,6 +219,7 @@
     spotify-cli-linux spotifywm
     scanmem
     anydesk
+    mate.mate-media
 
     # Open with
     feh gthumb
