@@ -1,10 +1,9 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require'lspconfig'.eslint.setup{
-  cmd = { "vscode-eslint-language-server" },
+  cmd = { "eslint_d" },
   capabilities = capabilities,
 }
-
 require'lspconfig'.javascript_language_server.setup{capabilities=capabilities}
 require'lspconfig'.tsserver.setup{capabilities=capabilities}
 require'lspconfig'.dartls.setup{capabilities=capabilities}

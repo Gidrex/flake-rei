@@ -24,6 +24,8 @@ in {
     buf-language-server
     vscode-langservers-extracted
     nixpkgs-fmt
+    typescript-language-server
+    eslint_d
   ];
   programs.neovim = {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
