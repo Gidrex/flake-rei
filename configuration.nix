@@ -195,6 +195,7 @@
     gdb
     lua 
     nodejs yarn deno
+    typescript typescript
     rustup cargo rust-script
     flutter dart
     gcc clang clang-tools cmake gnumake pkg-config glibc libcxx
