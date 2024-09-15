@@ -9,34 +9,15 @@
     # ./modules/android-sdk # broken
     # ./rice/sway
   ];
-  home = { 
-    packages = with pkgs; [
-      # theming
-      tokyo-night-gtk
-      catppuccin
-      catppuccin-kvantum
-    ];
-
-    sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-      TERM = "alacritty";
-    };
-
-    username = "gidrex";
-    homeDirectory = "/home/gidrex";
-    enableNixpkgsReleaseCheck = false;
-    stateVersion = "24.05";
-  };
 
   # Theming
   catppuccin.flavor = "mocha";
   catppuccin.accent = "lavender";
   gtk.catppuccin.enable = true;
-
-  # excludes
+  #   Excludes
   programs.zellij.catppuccin.enable = false;
 
+  # Programs
   programs = {
     firefox.enable = true;
     gpg.enable = true;
@@ -103,27 +84,46 @@
     };
   };
 
-    services = {
-      spotifyd = {
-        enable = true;
-        settings.global = {
-          device_name = "nix";
-          username = "Gidrex";
-          password_cmd = "pass show spotifyd";
-          backend = "alsa";
-          dbus_type = "session"; # "system" for no graphic
-          bitrate = 320;
-          volume_normalisation = true;
-          autoplay = true;
-          proxy = "http://127.0.0.1:8889";
-        };
-      };
-
-      udiskie = {
-        enable = true;
-        tray = "auto";
-        automount = true;
+  # Services
+  services = {
+    spotifyd = {
+      enable = true;
+      settings.global = {
+        device_name = "nix";
+        username = "Gidrex";
+        password_cmd = "pass show spotifyd";
+        backend = "alsa";
+        dbus_type = "session"; # "system" for no graphic
+        bitrate = 320;
+        volume_normalisation = true;
+        autoplay = true;
+        proxy = "http://127.0.0.1:8889";
       };
     };
-    programs.home-manager.enable = true;
+    udiskie = {
+      enable = true;
+      tray = "auto";
+      automount = true;
+    };
+  };
+
+  # home-manager options
+  programs.home-manager.enable = true;
+  home = { 
+    packages = with pkgs; [
+      # theming
+      tokyo-night-gtk
+      catppuccin
+      catppuccin-kvantum
+    ];
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+      TERM = "alacritty";
+    };
+    username = "gidrex";
+    homeDirectory = "/home/gidrex";
+    enableNixpkgsReleaseCheck = false;
+    stateVersion = "24.05";
+  };
 }
