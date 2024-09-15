@@ -4,6 +4,9 @@ require'lspconfig'.eslint.setup{
   cmd = { "vscode-eslint-language-server" },
   capabilities = capabilities,
 }
+
+require'lspconfig'.javascript_language_server.setup{capabilities=capabilities}
+-- require'lspconfig'.tsserver.setup{capabilities=capabilities}
 require'lspconfig'.dartls.setup{capabilities=capabilities}
 require'lspconfig'.clangd.setup{capabilities=capabilities}
 require'lspconfig'.rust_analyzer.setup{capabilities=capabilities}
