@@ -1,46 +1,46 @@
 { pkgs, ... }: 
 {
-programs.tmux = {
-  enable = true;
-  baseIndex = 1;
-  clock24 = true;
-  keyMode = "vi";
-  shortcut = "a";
-  terminal = "screen-256color";
-  mouse = true;
-  historyLimit = 5000;
-  disableConfirmationPrompt = true;
-  customPaneNavigationAndResize = true;
-  tmuxinator.enable = true;
+  programs.tmux = {
+    enable = true;
+    baseIndex = 1;
+    clock24 = true;
+    keyMode = "vi";
+    shortcut = "a";
+    terminal = "screen-256color";
+    mouse = true;
+    historyLimit = 5000;
+    disableConfirmationPrompt = true;
+    customPaneNavigationAndResize = true;
+    tmuxinator.enable = true;
 
-  plugins = with pkgs.tmuxPlugins; [
-  {
-    plugin = catppuccin;
-    extraConfig = ''
+    plugins = with pkgs.tmuxPlugins; [
+      {
+	plugin = catppuccin;
+	extraConfig = ''
       set -g @plugin 'catppuccin/tmux'
       set -g @tilish-navigate 'on'
-    '';
-  }
-  {
-    plugin = tilish;
-    extraConfig = "set -g @plugin 'jabirali/tmux-tilish'";
-  }
-  {
-    plugin = resurrect;
-    extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-  }
-  {
-    plugin = continuum;
-    extraConfig = "
+	'';
+      }
+      {
+	plugin = tilish;
+	extraConfig = "set -g @plugin 'jabirali/tmux-tilish'";
+      }
+      {
+	plugin = resurrect;
+	extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      }
+      {
+	plugin = continuum;
+	extraConfig = "
       set -g @plugin 'tmux-plugins/tmux-continuum'
       # autosave
       set -g @continuum-restore 'on'
       set -g @continuum-save-interval '10' # minutes 
-      ";
-  }
+	  ";
+      }
 
-  ];
-  extraConfig = ''
+    ];
+    extraConfig = ''
     set-option -gas terminal-overrides "*:Tc" # true color support
     set-option -gas terminal-overrides "*:RGB" # true color support
     set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
@@ -58,7 +58,7 @@ programs.tmux = {
     set -g @resurrect-dir $resurrect_dir
     set -g @resurrect-hook-post-save-all '~/.tmux/post_save.sh $resurrect_dir/last'
     '';
-};
+  };
 
   # Create module script
   home.file.".tmux/post_save.sh" = {
