@@ -19,7 +19,6 @@
 
   # Programs
   programs = {
-    nh.enable = true;
     firefox.enable = true;
     gpg.enable = true;
     zoxide.enable = true;
@@ -121,6 +120,11 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       TERM = "alacritty";
+      PATH = lib.concatStringsSep ":" [
+        "${pkgs.stdenv.cc}/bin"
+        "/usr/bin"
+        "${config.home.homeDirectory}/.cargo/bin"
+  ];
     };
     username = "gidrex";
     homeDirectory = "/home/gidrex";
