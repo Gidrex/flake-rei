@@ -2,25 +2,14 @@
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
+
     settings = {
       session.hide_status_bar = true;
       default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
       on_force_close = "quit";
-layout = {
-        tabs = [
-          { name = "1"; panes = [ { command = ""; } ]; }
-          { name = "2"; panes = [ { command = ""; } ]; }
-          { name = "3"; panes = [ { command = ""; } ]; }
-          { name = "4"; panes = [ { command = ""; } ]; }
-          { name = "5"; panes = [ { command = ""; } ]; }
-          { name = "6"; panes = [ { command = ""; } ]; }
-          { name = "7"; panes = [ { command = ""; } ]; }
-          { name = "8"; panes = [ { command = ""; } ]; }
-          { name = "9"; panes = [ { command = ""; } ]; }
-        ];
-      };
+      copy_command = "xclip -selection clipboard";
 
       theme = "Catppuccin";
       themes.Catppuccin = {
