@@ -19,6 +19,7 @@
 
   # Programs
   programs = {
+    nh.enable = true;
     firefox.enable = true;
     gpg.enable = true;
     zoxide.enable = true;
