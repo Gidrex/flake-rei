@@ -9,7 +9,7 @@
       mouse_mode = false;
       on_force_close = "quit";
 default_tab = {
-        name = "${index}";
+        name = "111";
       };
 
       theme = "Catppuccin";
