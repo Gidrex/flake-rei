@@ -29,7 +29,7 @@
       opacityRules = [
         "94:class_g = 'Thunar'"
         "90:class_g = 'Spotube'"
-        "94:class_g = 'Alacritty'"
+        "95:class_g = 'Alacritty'"
       ];
     };
   };
