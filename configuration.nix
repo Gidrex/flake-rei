@@ -158,7 +158,7 @@
     imagemagick
     fd ripgrep procs jq 
     nix-inspect nix-prefetch-github
-    calc
+    calc libqalculate
 
     # web & security
     openssl
