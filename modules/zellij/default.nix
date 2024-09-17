@@ -9,7 +9,8 @@
       pane_frames = false;
       mouse_mode = false;
       on_force_close = "quit";
-      copy_command = "xclip -selection clipboard";
+      auto_layout = true;
+      disable_session_metadata = true;
 
       theme = "Catppuccin";
       themes.Catppuccin = {
