@@ -111,8 +111,7 @@
     };
     picom = {
       enable = true;
-      backend = "glx";
-      
+      # backend = "glx";
     };
   };
 
