@@ -278,7 +278,9 @@
       enable  = true;
     };
   };
-  environment.variables.PATH = "${pkgs.stdenv.cc}/bin:/usr/bin";
+  environment.variables.PATH = "${pkgs.stdenv.cc}/bin:/usr/bin"
+    + "${config.home.homeDirectory}/.cargo/bin:"
+    ;
   environment.variables.CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
 
   # flatpak
