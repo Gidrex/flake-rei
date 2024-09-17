@@ -109,9 +109,8 @@
       enable = true;
       script = "polybar bar &amp;";
     };
-    picom = {
+    conky = {
       enable = true;
-      # backend = "glx";
     };
   };
 
