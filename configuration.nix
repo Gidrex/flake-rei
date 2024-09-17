@@ -20,7 +20,6 @@
     };
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  nix.gc.automatic = true; #Garbage collector
 
   # Networking
   networking = {
@@ -108,7 +107,7 @@
       # flake = "${config.homeDirectory}/flake-rei";
       enable = true;
       clean.enable = true;
-      clean.extraArgs = "--keep 5 --keep-since 7d";
+      clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
   };
 
@@ -284,12 +283,11 @@
       enable  = true;
     };
   };
+
+  # Variables
   environment.variables = {
     CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    # profileRelativeEnvVars = {
-    #   PATH = [ "/home/gidrex/.cargo/bin" ];
-    # };
   };
 
   # Looking glass TODO

@@ -120,12 +120,11 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       TERM = "alacritty";
-      PATH = lib.concatStringsSep ":" [
-        "${pkgs.stdenv.cc}/bin"
-        "/usr/bin"
-        "${config.home.homeDirectory}/.cargo/bin"
-  ];
     };
+    sessionPath = [
+      "$(HOME)/.cargo/bin"
+    ];
+    
     username = "gidrex";
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
