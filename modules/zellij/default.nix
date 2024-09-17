@@ -8,8 +8,18 @@
       pane_frames = false;
       mouse_mode = false;
       on_force_close = "quit";
-default_tab = {
-        name = "111";
+layout = {
+        tabs = [
+          { name = "1"; panes = [ { command = ""; } ]; }
+          { name = "2"; panes = [ { command = ""; } ]; }
+          { name = "3"; panes = [ { command = ""; } ]; }
+          { name = "4"; panes = [ { command = ""; } ]; }
+          { name = "5"; panes = [ { command = ""; } ]; }
+          { name = "6"; panes = [ { command = ""; } ]; }
+          { name = "7"; panes = [ { command = ""; } ]; }
+          { name = "8"; panes = [ { command = ""; } ]; }
+          { name = "9"; panes = [ { command = ""; } ]; }
+        ];
       };
 
       theme = "Catppuccin";
