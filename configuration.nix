@@ -288,9 +288,6 @@
     CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
     QT_QPA_PLATFORMTHEME = "qt5ct";
   };
-  profileRelativeEnvVars = {
-    PATH = [ "/home/username/.cargo/bin" ];
-  };
 
   # Looking glass TODO
   # virtualisation.libvirtd = {
