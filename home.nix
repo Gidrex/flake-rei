@@ -29,7 +29,9 @@
     yazi = {
       enable = true;
       shellWrapperName = "y";
-      flavor = "tokyo-night";
+      settings = {
+        flavor = "tokyo-night";
+      };
       flavors = {
         tokyo-night = pkgs.fetchFromGitHub {
           owner = "BennyOe";
