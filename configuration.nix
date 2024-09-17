@@ -158,6 +158,7 @@
     imagemagick
     fd ripgrep procs jq 
     nix-inspect nix-prefetch-github
+    calc
 
     # web & security
     openssl
