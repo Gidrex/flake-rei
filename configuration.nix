@@ -165,7 +165,7 @@
     coreutils-prefixed pinentry
 
     # term tools
-    xsel ffmpeg
+    xsel ffmpeg killall
     file hexyl procs broot chafa dig
     imagemagick
     fd ripgrep procs jq 
