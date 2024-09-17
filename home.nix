@@ -38,9 +38,8 @@
           repo = "tokyo-night.yazi";
           rev = "main";
           sha256 = "112r9b7gan3y4shm0dfgbbgnxasi7ywlbk1pksdbpaglkczv0412";
-
         };
-    };
+      };
     };
     lazygit.enable = true;
     btop = {
@@ -145,7 +144,7 @@
     sessionPath = [
       "$HOME/.cargo/bin"
     ];
-    
+
     username = "gidrex";
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
