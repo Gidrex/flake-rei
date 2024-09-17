@@ -126,7 +126,7 @@
       # polybar dependencies
       zscroll
 
-      wmctrl
+      wmctrl xdotool
     ];
     sessionVariables = {
       EDITOR = "nvim";
