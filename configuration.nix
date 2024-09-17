@@ -283,6 +283,7 @@ environment.variables = {
       + ":~/.cargo/bin"
     ;
   CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
+  QT_QPA_PLATFORMTHEME = "qt5ct";
 };
   # Looking glass TODO
   # virtualisation.libvirtd = {
@@ -293,7 +294,6 @@ environment.variables = {
   # programs.virt-manager.enable = true;
   # services.dbus.packages = [ pkgs.dbus ];
 
-  QT_QPA_PLATFORMTHEME = "qt5ct";
 
   # flatpak
   services.flatpak.enable = true;
