@@ -29,12 +29,7 @@
     yazi = {
       enable = true;
       shellWrapperName = "y";
-      theme = {
-        background = "#000000";
-        foreground = "#FFFFFF";
-        selection = "#444444";
-        normal = "#CCCCCC";
-      };
+      flavor = "tokyo-night";
     };
     lazygit.enable = true;
     btop = {
