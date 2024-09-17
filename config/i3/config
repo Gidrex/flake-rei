@@ -10,7 +10,7 @@ set $super 	Mod4
 #################################################################
 
 bindsym $super+F1 		exec io.github.zen_browser.zen
-bindsym $super+F2 		exec nemo
+bindsym $super+F2 		exec thunar
 bindsym $super+F3		exec telegram-desktop
 bindsym $super+F4		exec alacritty -e yazi
 bindsym $super+P 		exec kitty -e nmtui
@@ -176,10 +176,6 @@ mode "resize" {
 
 for_window [class=feh|Lxappearance|Pavucontrol|pick-colour-picker] floating enable
 for_window [class=".*"] border pixel 1
-for_window [class="Conky"] floating enable
-for_window [class="Conky"] border pixel 0
-for_window [class="Conky"] floating enable
-for_window [class="Conky"] move absolute position 0 0
 
 #################################
 #		i3 bar		#

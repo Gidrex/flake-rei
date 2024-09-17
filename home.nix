@@ -26,7 +26,10 @@
     alacritty.catppuccin.enable = false;
     mangohud.enable = true;
     # looking-glass-client.enable = true;
-    yazi.enable = true;
+    yazi = {
+      enable = true;
+      shellWrapperName = "y";
+    };
     lazygit.enable = true;
     btop = {
       enable = true;
@@ -109,9 +112,6 @@
       enable = true;
       script = "polybar bar &amp;";
     };
-    conky = {
-      enable = true;
-    };
   };
 
   # home-manager options
@@ -122,11 +122,6 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
-
-      # polybar dependencies
-      zscroll
-
-      wmctrl xdotool
     ];
     sessionVariables = {
       EDITOR = "nvim";

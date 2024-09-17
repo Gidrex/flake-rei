@@ -33,7 +33,6 @@
         "..." = "cd ../../";
         "...." = "cd ../../../";
         grep = "rg";
-        yz = "yazi";
         rb = "~/flake-rei/backup.sh && sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         tx = "tmux";
