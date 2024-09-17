@@ -109,6 +109,10 @@
       enable = true;
       script = "polybar bar &amp;";
     };
+    picom = {
+      enable = true;
+      backend = "glx";
+    };
   };
 
   # home-manager options

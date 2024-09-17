@@ -42,7 +42,7 @@ exec nitrogen --restore
 exec gxkb
 exec parcellite
 exec qv2ray
-exec polybar top
+# exec polybar top
 
 # Rebind capslock to escape
 exec setxkbmap -option caps:none
@@ -182,11 +182,10 @@ for_window [class=".*"] border pixel 1
 #################################
 
 # hide/unhide i3status bar
-# bindsym $super+m bar mode toggle
-
+bindsym $super+m bar mode toggle
+bindsym $super+n bar mode invisible
 bar {
     mode invisible
-    # status_command i3status
     status_command i3blocks
     position top
     padding 0px
