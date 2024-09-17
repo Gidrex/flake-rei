@@ -278,10 +278,22 @@
       enable  = true;
     };
   };
-  environment.variables.PATH = "${pkgs.stdenv.cc}/bin:/usr/bin"
-    + "${config.home.homeDirectory}/.cargo/bin:"
+environment.variables = {
+  PATH = "${pkgs.stdenv.cc}/bin:/usr/bin"
+      + ":~/.cargo/bin"
     ;
-  environment.variables.CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
+  CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
+};
+  # Looking glass TODO
+  # virtualisation.libvirtd = {
+  #   enable = true;
+  #   qemu.package = pkgs.qemu_kvm;
+  #   qemu.ovmf.enable = true;
+  # };
+  # programs.virt-manager.enable = true;
+  # services.dbus.packages = [ pkgs.dbus ];
+
+  QT_QPA_PLATFORMTHEME = "qt5ct";
 
   # flatpak
   services.flatpak.enable = true;
@@ -296,17 +308,6 @@
   services.udev.extraRules = ''
   SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
   '';
-
-  # Looking glass TODO
-  # virtualisation.libvirtd = {
-  #   enable = true;
-  #   qemu.package = pkgs.qemu_kvm;
-  #   qemu.ovmf.enable = true;
-  # };
-  # programs.virt-manager.enable = true;
-  # services.dbus.packages = [ pkgs.dbus ];
-
-  environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
 
   system.stateVersion = "24.11";
 }
