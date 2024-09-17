@@ -176,6 +176,10 @@ mode "resize" {
 
 for_window [class=feh|Lxappearance|Pavucontrol|pick-colour-picker] floating enable
 for_window [class=".*"] border pixel 1
+for_window [class="Conky"] floating enable
+for_window [class="Conky"] border pixel 0
+for_window [class="Conky"] floating enable
+for_window [class="Conky"] move absolute position 0 0
 
 #################################
 #		i3 bar		#
