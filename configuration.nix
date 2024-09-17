@@ -232,7 +232,7 @@
     spotify-cli-linux spotifywm
     anydesk
     pavucontrol
-    cinnamon.nemo
+    cinnamon.nemo-with-extensions
 
     # Open with
     feh gthumb
