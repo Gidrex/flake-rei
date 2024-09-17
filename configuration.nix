@@ -279,9 +279,11 @@
     };
   };
 environment.variables = {
-  PATH = "${pkgs.stdenv.cc}/bin:/usr/bin"
-      + ":~/.cargo/bin"
-    ;
+PATH = [
+    "${pkgs.stdenv.cc}/bin"
+    "/usr/bin"
+    "~/.cargo/bin"
+  ];
   CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
   QT_QPA_PLATFORMTHEME = "qt5ct";
 };
