@@ -112,6 +112,7 @@
     picom = {
       enable = true;
       backend = "glx";
+      
     };
   };
 
