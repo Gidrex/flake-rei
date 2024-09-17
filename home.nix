@@ -29,17 +29,6 @@
     yazi = {
       enable = true;
       shellWrapperName = "y";
-      settings = {
-        flavor = "tokyo-night";
-      };
-      flavors = {
-        tokyo-night = pkgs.fetchFromGitHub {
-          owner = "BennyOe";
-          repo = "tokyo-night.yazi";
-          rev = "main";
-          sha256 = "112r9b7gan3y4shm0dfgbbgnxasi7ywlbk1pksdbpaglkczv0412";
-        };
-      };
     };
     lazygit.enable = true;
     btop = {
