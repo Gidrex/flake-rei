@@ -105,7 +105,10 @@
       tray = "auto";
       automount = true;
     };
-    polybar.enable = true;
+    polybar = {
+      enable = true;
+      script = "polybar bar &amp;";
+    };
   };
 
   # home-manager options
