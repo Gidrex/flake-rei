@@ -171,7 +171,7 @@
     fd ripgrep procs jq 
     nix-inspect nix-prefetch-github
     calc libqalculate
-    xwininfo
+    xorg.xwininfo
 
     # web & security
     openssl
