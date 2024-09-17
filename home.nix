@@ -119,6 +119,9 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
+
+      # polybar dependencies
+      zscroll
     ];
     sessionVariables = {
       EDITOR = "nvim";
