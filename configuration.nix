@@ -215,7 +215,7 @@
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
     drawio gimp krita
-    audio-recorder kazam obs-studio
+    obs-studio
     spotify-cli-linux spotifywm
     anydesk
     pavucontrol
