@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, config, lib, ... }:
 {
   imports = [
     ./modules/neovim
