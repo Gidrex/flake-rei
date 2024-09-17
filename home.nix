@@ -120,6 +120,8 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       TERM = "alacritty";
+      CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
+      QT_QPA_PLATFORMTHEME = "qt5ct";
     };
     sessionPath = [
       "$HOME/.cargo/bin"
