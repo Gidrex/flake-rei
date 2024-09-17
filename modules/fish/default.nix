@@ -4,6 +4,7 @@
     starship.enableFishIntegration = false;
     zellij.enableFishIntegration = false;
     zoxide.enableFishIntegration = true;
+    yazi.enableFishIntegration = true;
     fish = {
       enable = true;
       plugins = [
