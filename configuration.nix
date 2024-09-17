@@ -285,6 +285,7 @@ environment.variables = {
   CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
   QT_QPA_PLATFORMTHEME = "qt5ct";
 };
+
   # Looking glass TODO
   # virtualisation.libvirtd = {
   #   enable = true;
