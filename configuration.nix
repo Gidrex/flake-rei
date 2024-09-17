@@ -104,7 +104,7 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nh = {
-      flake = "~/flake-rei";
+      flake = "${builtins.getHome}/flake-rei";
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
