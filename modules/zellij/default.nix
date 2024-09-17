@@ -10,7 +10,6 @@
       mouse_mode = false;
       on_force_close = "quit";
       auto_layout = false;
-      disable_session_metadata = true;
 
       theme = "Catppuccin";
       themes.Catppuccin = {
