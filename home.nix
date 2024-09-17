@@ -122,7 +122,7 @@
       TERM = "alacritty";
     };
     sessionPath = [
-      "$(HOME)/.cargo/bin"
+      "$HOME/.cargo/bin"
     ];
     
     username = "gidrex";
