@@ -94,15 +94,18 @@
   };
   users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
+  # Programs
   programs = {
-    thunar.enable = true;
-    thunar.plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
     steam.enable = true;
     gamescope.enable = true;
     gamemode.enable = true;
     fish.enable = true;
     zsh.enable = true;
     command-not-found.enable = false;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
+    };
     nh = {
       flake = "/home/gidrex/flake-rei";
       enable = true;
@@ -127,13 +130,17 @@
   # Services
   services = {
     openssh.enable = true;
-    udisks2.enable = true; # auto mount flash usb
-    udisks2.mountOnMedia = true;
     deluge.enable = true;
-    printing.enable = true;
-    printing.drivers = with pkgs; [ pantum-driver ];
     blueman.enable = true;
     onlyoffice.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ pantum-driver ];
+    };
+    udisks2 = {
+      enable = true; # auto mount flash usb
+      mountOnMedia = true;
+    };
   };
 
   # Fonts
@@ -225,6 +232,7 @@
     spotify-cli-linux spotifywm
     anydesk
     pavucontrol
+    cinnamon.nemo
 
     # Open with
     feh gthumb
