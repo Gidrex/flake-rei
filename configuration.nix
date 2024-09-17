@@ -105,7 +105,7 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nh = {
-      flake = "${config.home.homeDirectory}/flake-rei";
+      # flake = "${config.homeDirectory}/flake-rei";
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d";
@@ -287,6 +287,9 @@
   environment.variables = {
     CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
     QT_QPA_PLATFORMTHEME = "qt5ct";
+    # profileRelativeEnvVars = {
+    #   PATH = [ "/home/gidrex/.cargo/bin" ];
+    # };
   };
 
   # Looking glass TODO
