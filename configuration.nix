@@ -1,5 +1,5 @@
 { config, pkgs, ... }: 
-  {
+{
   imports = [ 
     ./hardware-configuration.nix
     ./rice/i3
@@ -105,7 +105,7 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nh = {
-      flake = $HOME/flake-rei;
+      flake = "${config.home.homeDirectory}/flake-rei";
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d";
@@ -287,33 +287,34 @@
   environment.variables = {
     CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    profileRelativeEnvVars = {
-      PATH = [ "/home/username/.cargo/bin" ];
-    };
+  };
+  profileRelativeEnvVars = {
+    PATH = [ "/home/username/.cargo/bin" ];
+  };
 
-    # Looking glass TODO
-    # virtualisation.libvirtd = {
-    #   enable = true;
-    #   qemu.package = pkgs.qemu_kvm;
-    #   qemu.ovmf.enable = true;
-    # };
-    # programs.virt-manager.enable = true;
-    # services.dbus.packages = [ pkgs.dbus ];
+  # Looking glass TODO
+  # virtualisation.libvirtd = {
+  #   enable = true;
+  #   qemu.package = pkgs.qemu_kvm;
+  #   qemu.ovmf.enable = true;
+  # };
+  # programs.virt-manager.enable = true;
+  # services.dbus.packages = [ pkgs.dbus ];
 
 
-    # flatpak
-    services.flatpak.enable = true;
-    xdg.portal = {
-      enable = true; 
-      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-      config.common.default = "*";
-    };
+  # flatpak
+  services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true; 
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config.common.default = "*";
+  };
 
-    # ergonomic keyboard
-    hardware.keyboard.qmk.enable = true;
-    services.udev.extraRules = ''
+  # ergonomic keyboard
+  hardware.keyboard.qmk.enable = true;
+  services.udev.extraRules = ''
   SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
-    '';
+  '';
 
-    system.stateVersion = "24.11";
-  }
+  system.stateVersion = "24.11";
+}
