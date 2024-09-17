@@ -8,6 +8,9 @@
       pane_frames = false;
       mouse_mode = false;
       on_force_close = "quit";
+default_tab = {
+        name = "${index}";
+      };
 
       theme = "Catppuccin";
       themes.Catppuccin = {
