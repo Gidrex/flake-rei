@@ -37,13 +37,13 @@
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         tx = "tmux";
         nv = "nvim";
-        nf = "nvim $(fzf --preview "bat {}" --preview-window=right:30%:wrap)";
+        nf = ''nvim $(fzf --preview "bat {}" --preview-window=right:30%:wrap)'';
         suvi = "sudo nvim";
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
         nix-shell-init = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
-        zz = ''z "$(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)"'';
+        zz = ''z $(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)'';
 
         # zellij
         zl = "zellij";
