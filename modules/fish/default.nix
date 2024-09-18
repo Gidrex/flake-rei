@@ -79,8 +79,8 @@
         -p 'pacman -Si "$fifc_extracted"'
       '';
       functions = {
-        nz.body = ''
-          function nz
+        search_file_zoxide.body = ''
+          function search_file_zoxide
               set dir (zoxide query -l | fzf --height 40% --prompt="Directory: ") 
               if test -z "$dir"
                   return
