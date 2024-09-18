@@ -246,7 +246,7 @@
     winePackages.stableFull winetricks winePackages.fonts
     protonup protontricks
     lutris
-    distrobox podman
+    distrobox distrobox-tui podman
     qemu_kvm libvirt bridge-utils
 
     # Rice
