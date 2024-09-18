@@ -32,6 +32,7 @@
         la = "ls -al --no-user";
         "..." = "cd ../../";
         "...." = "cd ../../../";
+        "....." = "cd ../../../../";
         grep = "rg";
         rb = "~/flake-rei/backup.sh && sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
@@ -41,6 +42,7 @@
         trans = "crow -s en -t ru -e yandex -b";
         nix-shell-init = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
+        "-" = "z -";
 
         # custom fzf scripts
         nf = ''nvim $(find . -type f | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
@@ -69,17 +71,17 @@
       '';
 
       shellInit = ''
-      # fifc \
-      #   -n test -f "$fifc_candidate" \
-      #   -p _fifc_preview_file \
-      #   -o _fifc_open_file
-
       fifc \
-        -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
-        -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'" \
-        -e '.*/(.*?)\\h.*' \
-        -f "--query ' '" \
-        -p 'pacman -Si "$fifc_extracted"'
+        -n test -f "$fifc_candidate" \
+        -p _fifc_preview_file \
+        -o _fifc_open_file
+
+      # fifc \
+      #   -r '^(pacman|paru)(\\h*\\-S)?\\h+' \
+      #   -s "pacman --color=always -Ss "$fifc_token" | string match -r \'^[^\\h+].*\'" \
+      #   -e '.*/(.*?)\\h.*' \
+      #   -f "--query ' '" \
+      #   -p 'pacman -Si "$fifc_extracted"'
       '';
       functions = {
         search_files = {
