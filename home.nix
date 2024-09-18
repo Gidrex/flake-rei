@@ -62,7 +62,7 @@
     bat = {
       enable = true;
       config.style = "numbers";
-      # config.theme = "Nord";
+      config.theme = "Nord";
       config.pager = "less -FR";
       config.color = "always";
     };
