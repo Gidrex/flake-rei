@@ -27,7 +27,7 @@
     alacritty = {
       enable = true;
       catppuccin.enable = false;
-      extraOptions = builtins.readFile ./config/alacritty.toml;
+      extraConfig = builtins.readFile ./config/alacritty.toml;
     };
     yazi = {
       enable = true;
