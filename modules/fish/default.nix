@@ -43,7 +43,7 @@
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
 
         # custom fzf scripts
-        nf = ''nvim $(find . -type f -name ".*" -or -not -path '*/.*' | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
+        nf = ''nvim $(find . -type f | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
         zz = ''z $(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)'';
         nz = "search_files";
 
