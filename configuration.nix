@@ -168,7 +168,7 @@
     xsel ffmpeg killall
     file hexyl procs broot chafa dig
     imagemagick
-    fd ripgrep procs jq 
+    fd ripgrep procs jq dust
     nix-inspect nix-prefetch-github
     calc libqalculate
     wmctrl
