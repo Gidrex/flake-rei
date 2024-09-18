@@ -79,6 +79,23 @@
         -f "--query ' '" \
         -p 'pacman -Si "$fifc_extracted"'
       '';
+      functions = {
+        search_files = {
+          body = ''
+          function search_files
+              set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
+              if test -z "$dir"
+                  return
+              end
+              set file (find "$dir" -type d -name ".local" -prune -o -type f -print 2>/dev/null | fzf --preview "bat {}" --preview-window=right:50%:wrap)
+              if test -z "$file"
+                  return
+              end
+              nvim "$file"
+          end
+          '';
+        };
+      };
     };
   };
 }
