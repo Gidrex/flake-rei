@@ -37,7 +37,7 @@
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         tx = "tmux";
         nv = "nvim";
-        nf = ''nvim $(find . -type f -name ".*" -or -not -path '*/.*' | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
+        nf = ''nvim $(find . -type f -name ".*" | grep -v "\.local" | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
         suvi = "sudo nvim";
         trans = "crow -s en -t ru -e yandex -b";
         nix-shell-init = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
