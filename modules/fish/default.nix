@@ -44,8 +44,9 @@
 
         # custom fzf scripts
         nf = ''nvim $(find . -type f | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
-        zz = ''z $(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)'';
         nz = "search_files";
+        zz = "z $(find . -type d | fzf)";
+        zx = ''z $(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)'';
 
         # zellij
         zl = "zellij";
