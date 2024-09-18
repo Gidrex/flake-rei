@@ -27,7 +27,7 @@
     alacritty = {
       enable = true;
       catppuccin.enable = false;
-config = ''
+settings = ''
       ${builtins.readFile ./config/alacritty.toml}
     '';
     };
