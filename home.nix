@@ -109,9 +109,6 @@
       tray = "auto";
       automount = true;
     };
-    dunst = {
-      enable = true;
-    };
   };
 
   # home-manager options
