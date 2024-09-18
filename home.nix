@@ -24,7 +24,7 @@
     zoxide.enable = true;
     alacritty.enable = true;
     alacritty.catppuccin.enable = false;
-    alacritty.config = builtins.readFile ~/.config/alacritty/alacritty.toml;
+    alacritty.config = builtins.readFile ./config/alacritty.toml;
     mangohud.enable = true;
     # looking-glass-client.enable = true;
     yazi = {
