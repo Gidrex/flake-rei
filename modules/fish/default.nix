@@ -37,7 +37,7 @@
         rbn = "sudo nixos-rebuild switch --upgrade-all --flake ~/flake-rei";
         tx = "tmux";
         nv = "nvim";
-        nf = "nvim $(fzf)";
+        nf = "nvim $(fzf --preview "bat {}" --preview-window=right:30%:wrap)";
         suvi = "sudo nvim";
         lights = "sudo chmod a+wr /sys/class/backlight/intel_backlight/brightness"; # yea, Im stupid, questions?
         trans = "crow -s en -t ru -e yandex -b";
