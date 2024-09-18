@@ -82,7 +82,7 @@
         search_files = {
           body = ''
           function search_files
-              set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
+              set dir (zoxide query -l | fzf --height 40% --prompt="Directory: ") 
               if test -z "$dir"
                   return
               end
