@@ -62,7 +62,8 @@
     bat = {
       enable = true;
       config.style = "numbers";
-      config.theme = "Nord";
+      # config.theme = "Nord";
+      catppuccin.enable = true;
       config.pager = "less -FR";
       config.color = "always";
     };
