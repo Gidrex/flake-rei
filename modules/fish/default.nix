@@ -79,8 +79,7 @@
         -p 'pacman -Si "$fifc_extracted"'
       '';
       functions = {
-        nz = {
-          body = ''
+        nz.body = ''
           function nz
               set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
               if test -z "$dir"
@@ -93,8 +92,7 @@
               z "$dir"
               nvim "$file"
           end
-          '';
-        };
+        '';
       };
     };
   };
