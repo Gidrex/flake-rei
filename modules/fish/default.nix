@@ -44,7 +44,6 @@
 
         # custom fzf scripts
         nf = ''nvim $(find . -type f -name ".*" -or -not -path '*/.*' | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
-        nz = ''nvim $(zoxide query -l | fzf --preview "bat {}" --preview-window=right:50%:wrap | xargs -I{} find {} -type f | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
         zz = ''z $(zoxide query -l | fzf --preview "eza -T --level 2 --icons=always {}" --preview-window=right:30%:wrap)'';
 
         # zellij
@@ -80,7 +79,7 @@
         -p 'pacman -Si "$fifc_extracted"'
       '';
       functions = {
-        search_files = {
+        nz = {
           body = ''
           function search_files
               set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
@@ -91,6 +90,7 @@
               if test -z "$file"
                   return
               end
+              z "$dir"
               nvim "$file"
           end
           '';
