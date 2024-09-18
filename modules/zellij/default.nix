@@ -8,7 +8,7 @@
       default_layout = "compact";
       pane_frames = false;
       mouse_mode = false;
-      on_force_close = "quit";
+      # on_force_close = "quit";
       auto_layout = false;
 
       theme = "Catppuccin";
