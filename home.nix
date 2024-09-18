@@ -109,9 +109,8 @@
       tray = "auto";
       automount = true;
     };
-    polybar = {
+    dunst = {
       enable = true;
-      script = "polybar bar &amp;";
     };
   };
 
