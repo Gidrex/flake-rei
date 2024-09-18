@@ -79,9 +79,10 @@
         -p 'pacman -Si "$fifc_extracted"'
       '';
       functions = {
-        search_file_zoxide.body = ''
-          function search_file_zoxide
-              set dir (zoxide query -l | fzf --height 40% --prompt="Directory: ") 
+        search_files = {
+          body = ''
+          function search_files
+              set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
               if test -z "$dir"
                   return
               end
@@ -89,10 +90,10 @@
               if test -z "$file"
                   return
               end
-              z "$dir"
               nvim "$file"
           end
-        '';
+          '';
+        };
       };
     };
   };
