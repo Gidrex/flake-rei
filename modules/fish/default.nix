@@ -81,7 +81,7 @@
       functions = {
         nz.body = ''
           function nz
-              set dir (zoxide query -l | fzf --height 40% --prompt="Выбери директорию: ") 
+              set dir (zoxide query -l | fzf --height 40% --prompt="Directory: ") 
               if test -z "$dir"
                   return
               end
