@@ -86,10 +86,12 @@
               if test -z "$dir"
                   return
               end
-              set file (find "$dir" -type d -name ".local" -prune -o -type f -print 2>/dev/null | fzf --preview "bat {}" --preview-window=right:50%:wrap)
+
+              set file (find "$dir" -type f -print 2>/dev/null | fzf --preview "bat {}" --preview-window=right:50%:wrap)
               if test -z "$file"
                   return
               end
+
               nvim "$file"
           end
           '';
