@@ -31,6 +31,7 @@
         "90:class_g = 'Spotube'"
         "96:class_g = 'Alacritty'"
         "96:class_g = 'kitty.kitty'"
+        "96:class_g = 'zen-alpha'"
       ];
     };
   };

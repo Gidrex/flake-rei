@@ -1,7 +1,7 @@
 { pkgs, ... }: 
 {
   programs = {
-    starship.enableFishIntegration = true;
+    starship.enableFishIntegration = false;
     zellij.enableFishIntegration = false;
     zoxide.enableFishIntegration = true;
     yazi.enableFishIntegration = true;
