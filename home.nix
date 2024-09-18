@@ -22,10 +22,13 @@
     firefox.enable = true;
     gpg.enable = true;
     zoxide.enable = true;
-    alacritty.enable = true;
-    alacritty.catppuccin.enable = false;
     mangohud.enable = true;
     # looking-glass-client.enable = true;
+    alacritty = {
+      enable = true;
+      catppuccin.enable = false;
+      extraConfig = builtins.readFile ./config/alacritty.toml;
+    };
     yazi = {
       enable = true;
       shellWrapperName = "y";
