@@ -182,12 +182,19 @@ for_window [class=".*"] border pixel 1
 #################################
 
 # hide/unhide i3status bar
-bindsym $super+m bar mode dock
-bindsym $super+n bar mode invisible
-bindsym $super+n bar mode hide
+bindsym $super+b mode "$mode_bar"
+set $mode_bar (d)ock, (h)ide, (i)nvisible,
+
+mode "$mode_bar" {
+    bindsym d	    bar mode dock,	mode "default"
+    bindsym h	    bar mode hide,	mode "default"
+    bindsym i	    bar mode invisible,	mode "default"
+    bindsym Return			mode "default"
+    bindsym Escape			mode "default"
+}
 
 bar {
-    mode invisible
+    mode dock
     status_command i3blocks
     position top
     padding 0px
@@ -235,12 +242,12 @@ bindsym $super+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, (s)uspend, (r)eboot, shutdo(w)n, switch-(u)ser,
 
 mode "$mode_system" {
-    bindsym l 			exec $Locker,	 				mode "default"
-    bindsym s 			exec $Locker && systemctl suspend,  		mode "default"
-    bindsym e 			exec i3 exit,	    				mode "default"
-    bindsym r 			exec reboot,		 		    	mode "default"
-    bindsym w 			exec shutdown now,				mode "default"
-    bindsym u			exec dm-tool switch-to-greeter,			mode "default"
+    bindsym l	    exec $Locker,			mode "default"
+    bindsym s	    exec $Locker && systemctl suspend,	mode "default"
+    bindsym e	    exec i3 exit,	    		mode "default"
+    bindsym r	    exec reboot,		     	mode "default"
+    bindsym w	    exec shutdown now,			mode "default"
+    bindsym u	    exec dm-tool switch-to-greeter,	mode "default"
 
     # exit system mode: "Enter" or "Escape" (bind to do nothing)
     bindsym Return 								mode "default"
