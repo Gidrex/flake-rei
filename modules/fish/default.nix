@@ -95,7 +95,7 @@
               if test -z "$file"
                   return
               end
-              z "$dir"
+              # z "$dir"
               nvim "$file"
           end
           '';

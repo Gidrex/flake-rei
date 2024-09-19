@@ -184,6 +184,8 @@ for_window [class=".*"] border pixel 1
 # hide/unhide i3status bar
 bindsym $super+m bar mode dock
 bindsym $super+n bar mode invisible
+bindsym $super+n bar mode hide
+
 bar {
     mode invisible
     status_command i3blocks
