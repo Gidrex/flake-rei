@@ -277,7 +277,7 @@
   ];
 
   # Electron <3 .!.
-  # nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
   # xserver conf
   services.xserver = {
