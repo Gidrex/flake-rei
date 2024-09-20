@@ -33,7 +33,6 @@
         "96:class_g = 'kitty'"
         "96:class_g = 'zen-alpha'"
         "96:class_g = 'Navigator.zen-alpha'"
-        "96:class_g = 'ONLYOFFICE'"
         "96:class_g = 'vesktop'"
       ];
     };

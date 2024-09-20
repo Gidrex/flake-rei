@@ -225,7 +225,7 @@
     webtorrent_desktop
     telegram-desktop vesktop 
     onlyoffice-bin_latest
-    logseq figma-linux
+    logseq
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
     drawio gimp krita
@@ -277,7 +277,7 @@
   ];
 
   # Electron <3 .!.
-  nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
+  # nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
   # xserver conf
   services.xserver = {
