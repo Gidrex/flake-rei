@@ -33,6 +33,12 @@
         {
           name = "full-border";
           src = "yazi-rs/plugins:full-border";
+          initLua = ''
+            require("full-border"):setup()
+            require("full-border"):setup {
+              type = ui.Border.ROUNDED,
+            }
+          '';
         }
       ];
     };
