@@ -14,12 +14,11 @@
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
-    # ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
+    yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, /*ayugram-desktop,*/ ... }: let
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, yazi, ... }: let
     system = "x86_64-linux";
-    # pkgs = import nixpkgs { system = system; };
   in {
     nixosConfigurations = {
       rei = nixpkgs.lib.nixosSystem {
@@ -40,10 +39,22 @@
           }
           {
             environment.systemPackages = [
-              byedpi.packages.${system}.default 
-              # ayugram-desktop.packages.${system}.default
+              byedpi.packages.${system}.default
+              yazi.packages.${system}.default
             ];
           }
+        ];
+      };
+    };
+
+    # Установка Yazi для конкретного пользователя
+    homeConfigurations = {
+      "gidrex@rei" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ({ pkgs, ... }: {
+            home.packages = [ yazi.packages.${pkgs.system}.default ];
+          })
         ];
       };
     };
