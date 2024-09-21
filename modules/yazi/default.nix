@@ -27,7 +27,7 @@ in
       };
       # plugin.prepend_fetchers = [{
       #   id = "mime";
-      #   if = "!mime";
+      #   if = "!mime"; # error, because "if" is nix lang operator :( 
       #   name = "*";
       #   run = "mime-ext";
       #   prio = "high";

@@ -74,3 +74,8 @@ vim.api.nvim_set_keymap('n', 'gr', '<cmd>Lspsaga rename<CR>', { noremap = true, 
 vim.api.nvim_set_keymap('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
+
+-- hop
+
+vim.api.nvim_set_keymap('n', '<leader>jj', '<cmd>HopPattern<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>jl', '<cmd>HopVeritcal<CR>', { noremap = true, silent = true })

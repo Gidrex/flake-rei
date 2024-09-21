@@ -166,7 +166,7 @@
 
     # term tools
     xsel ffmpeg killall xclip
-    file hexyl procs broot chafa dig
+    file hexyl procs broot dig
     imagemagick
     fd ripgrep procs jq dust
     nix-inspect nix-prefetch-github
@@ -190,7 +190,7 @@
     pandoc
 
     # dependencies
-    alsa-utils ueberzugpp poppler
+    alsa-utils ueberzugpp poppler chafa
 
     # why Im garbage collector?
     micro

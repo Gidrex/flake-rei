@@ -39,7 +39,11 @@ in {
       }     
       pkgs.vimPlugins.rose-pine
 
-      # Useful plugins
+      {
+        plugin = pkgs.vimPlugins.yazi-nvim;
+        config = builtins.readFile ./config/setup/yazi.lua;
+        type = "lua";
+      }
       {
         plugin = pkgs.vimPlugins.hop-nvim;
         config = "require'hop'.setup{ keys = 'etovxqpdygfblzhckisuran', case_insensitive = true, char2_fallback_key = '<CR>'}";
