@@ -41,7 +41,7 @@ in {
 
       {
         plugin = pkgs.vimPlugins.yazi-nvim;
-        config = builtins.readFile ./config/setup/yazi.lua;
+        config = "require('yazi').setup{}";
         type = "lua";
       }
       {
