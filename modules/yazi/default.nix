@@ -1,4 +1,4 @@
-{ pkgs, yazi, ... }:
+{ pkgs, yazi, nixpkgs, ... }:
 
 let
   yaziPluginsRep = pkgs.fetchFromGitHub {
