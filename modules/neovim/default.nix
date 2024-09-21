@@ -107,7 +107,7 @@ in {
       pkgs.vimPlugins.vim-sleuth
       pkgs.vimPlugins.vim-repeat
       {
-        plugin = fromGitHub "UuKvWCPP4biV2OP18+OAookRxfpKfjBgm+1KMaf1z30=" "main" "rebelot/kanagawa.nvim";
+        plugin = fromGitHub "f491b0fe68fffbece7030181073dfe51f45cda81" "main" "rebelot/kanagawa.nvim";
         type = "lua";
       }
 
