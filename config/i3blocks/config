@@ -33,5 +33,5 @@ interval=3
 # color=#FFFFFF
 
 [TIME_DATE]
-command=date +" %d %b, %a  %H:%M:%S |"
+command=date +" %d.%m  %a  %H:%M:%S |"
 interval=1
