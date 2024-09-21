@@ -60,8 +60,8 @@
     bat = {
       enable = true;
       config.style = "numbers";
-      # config.theme = "Nord";
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
+      config.theme = "Nord";
       config.pager = "less -FR";
       config.color = "always";
     };
