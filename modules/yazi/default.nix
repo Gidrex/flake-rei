@@ -8,7 +8,7 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 
-  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" ];
+  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" "smart-filter" ];
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
@@ -26,6 +26,7 @@ in
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
+        { on   = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
       ];
     };
   };
