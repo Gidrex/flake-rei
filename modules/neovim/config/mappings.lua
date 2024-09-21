@@ -78,4 +78,6 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { no
 -- hop
 
 vim.api.nvim_set_keymap('n', '<leader>jj', '<cmd>HopPattern<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>jl', '<cmd>HopVeritcal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>jw', '<cmd>HopWord<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'f', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'F', '<cmd>HopLineStart<CR>', { noremap = true, silent = true })
