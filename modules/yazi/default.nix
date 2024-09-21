@@ -17,12 +17,14 @@ in
     enable = true;
     shellWrapperName = "y";
     plugins = plugins;
+
     initLua = ''
       require("full-border"):setup { type = ui.Border.ROUNDED, }
     '';
     keymap = {
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
+        { on = "N"; run = "bat --style=numbers --paging=always $f"; desc = "Preview file with line numbers"; }
       ];
     };
   };
