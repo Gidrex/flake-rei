@@ -41,7 +41,11 @@ in {
 
       {
         plugin = pkgs.vimPlugins.yazi-nvim;
-        config = "require('yazi').setup{}";
+        config = ''
+          vim.keymap.set("n", "<leader>-", function()
+            require("yazi").yazi()
+          end)
+        '';
         type = "lua";
       }
       {
