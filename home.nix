@@ -29,6 +29,12 @@
     yazi = {
       enable = true;
       shellWrapperName = "y";
+      plugins = [
+        {
+          name = "full-border";
+          src = "yazi-rs/plugins:full-border";
+        }
+      ];
     };
     lazygit.enable = true;
     btop = {
