@@ -37,7 +37,7 @@
           owner = "yazi-rs";
           repo = "plugins";
           rev = "main";
-          sha256 = lib.fakeSha256;
+          sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
         } + "/full-border.yazi";
       };
       initLua = ''
