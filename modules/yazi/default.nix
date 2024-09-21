@@ -20,7 +20,6 @@ in
 
   programs.yazi = {
     enable = true;
-    package = yazi.packages.${nixpkgs.system}.default;
     shellWrapperName = "y";
     plugins = plugins;
 
