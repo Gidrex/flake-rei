@@ -29,7 +29,7 @@ in
       preview = {
         enabled = true;
         mime_handlers = {
-          "text/*" = "bat --style=numbers --paging=always";
+          "text/*" = "bat";
           "image/*" = "ueberzugpp";
           "video/*" = "ffplay";
         };
