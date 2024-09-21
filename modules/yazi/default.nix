@@ -24,7 +24,6 @@ in
     keymap = {
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
-        { on = "N"; run = "bat --style=numbers --paging=always $f"; desc = "Preview file with line numbers"; }
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
       ];
     };

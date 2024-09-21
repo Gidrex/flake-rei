@@ -190,7 +190,7 @@
     pandoc
 
     # dependencies
-    alsa-utils ueberzug
+    alsa-utils ueberzugpp
 
     # why Im garbage collector?
     micro
