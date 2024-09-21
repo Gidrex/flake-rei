@@ -31,7 +31,7 @@ in
       };
       plugin.prepend_fetchers = [{
         id = "mime";
-        if_cond = "!mime";
+        if = "!mime";
         name = "*";
         run = "mime-ext";
         prio = "high";
