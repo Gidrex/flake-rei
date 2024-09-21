@@ -108,6 +108,7 @@ in {
       pkgs.vimPlugins.vim-repeat
       {
         plugin = fromGitHub "UuKvWCPP4biV2OP18+OAookRxfpKfjBgm+1KMaf1z30=" "rebelot" "kanagawa.nvim";
+        type = "lua";
       }
       {
         plugin = fromGitHub "afd76df166ed0f223ede1071e0cfde8075cc4a24" "main" "TabbyML/vim-tabby";
