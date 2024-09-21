@@ -107,13 +107,7 @@ in {
       pkgs.vimPlugins.vim-sleuth
       pkgs.vimPlugins.vim-repeat
       {
-        plugin = fromGitHub lib.fakeSha256 "rebelot" "kanagawa.nvim";
-        type = "lua";
-      }
-      {
-        plugin = fromGitHub "afd76df166ed0f223ede1071e0cfde8075cc4a24" "main" "TabbyML/vim-tabby";
-        config = ''vim.cmd([[ let g:tabby_keybinding_accept = '<Tab>']])
-        '';
+        plugin = fromGitHub "UuKvWCPP4biV2OP18+OAookRxfpKfjBgm+1KMaf1z30=" "main" "rebelot/kanagawa.nvim";
         type = "lua";
       }
 
