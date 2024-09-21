@@ -30,7 +30,7 @@ in
         enabled = true;
         mime_handlers = {
           "text/*" = "bat --style=numbers --paging=always";
-          "image/*" = "ueberzug";
+          "image/*" = "ueberzugpp";
           "video/*" = "ffplay";
         };
       };
