@@ -8,7 +8,7 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 
-  pluginsList = [ "full-border" "max-preview" ];
+  pluginsList = [ "full-border" "max-preview" "jump-to-char" ];
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
@@ -25,6 +25,7 @@ in
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
         { on = "N"; run = "bat --style=numbers --paging=always $f"; desc = "Preview file with line numbers"; }
+        { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
       ];
     };
   };
