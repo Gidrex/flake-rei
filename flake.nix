@@ -47,7 +47,6 @@
       };
     };
 
-    # Установка Yazi для конкретного пользователя
     homeConfigurations = {
       "gidrex@rei" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
