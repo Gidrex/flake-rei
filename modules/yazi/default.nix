@@ -18,17 +18,16 @@ in
     shellWrapperName = "y";
     plugins = plugins;
 
-    plugin.prepend_fetchers = {
-      id = "mime";
-      "if" = "!mime";
-      name = "*";
-      run = "mime-ext";
-      prio = "high";
-    };
-
     initLua = ''
       require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
+      table.insert(plugin.prepend_fetchers, {
+        id = "mime",
+        if_cond = "!mime",
+        name = "*",
+        run = "mime-ext",
+        prio = "high"
+      })
     '';
 
     keymap = {
