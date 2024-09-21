@@ -138,11 +138,11 @@ in {
       { # ru lang support
         plugin = fromGitHub "e952abbea092e420b128936a0c284fb522612c3a" "master" "powerman/vim-plugin-ruscmd";
       }
-      # {
-      #   plugin = pkgs.vimPlugins.oil-nvim;
-      #   config = "require('oil').setup({ view_options = { show_icons = false, },})";
-      #   type = "lua";
-      # }
+      {
+        plugin = pkgs.vimPlugins.oil-nvim;
+        config = "require('oil').setup({ view_options = { show_icons = false, },})";
+        type = "lua";
+      }
       {
         plugin = pkgs.vimPlugins.fidget-nvim;
         config = "require('fidget').setup{}";
