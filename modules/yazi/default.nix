@@ -18,15 +18,23 @@ in
     shellWrapperName = "y";
     plugins = plugins;
 
-    settings.plugin.prepend_fetchers = [
-      {
-        id = "mime";
-        if_cond = "!mime";
-        name = "*";
-        run = "mime-ext";
-        prio = "high";
-      }
-    ];
+    settings = {
+      plugin.prepend_fetchers = [{
+          id = "mime";
+          if_cond = "!mime";
+          name = "*";
+          run = "mime-ext";
+          prio = "high";
+        }];
+      preview = {
+        enabled = true;
+        mime_handlers = {
+          "text/*" = "bat --style=numbers --paging=always";
+          "image/*" = "ueberzug";
+          "video/*" = "ffplay";
+        };
+      };
+    };
 
     initLua = ''
       require("full-border"):setup { type = ui.Border.ROUNDED, }
