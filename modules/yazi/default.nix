@@ -19,15 +19,15 @@ in
     plugins = plugins;
 
     initLua = ''
-      require("full-border"):setup { type = ui.Border.ROUNDED, }
+      # require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
     '';
     keymap = {
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
+        { on = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
-        { on   = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
       ];
     };
   };
