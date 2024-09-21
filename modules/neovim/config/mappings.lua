@@ -59,9 +59,8 @@ vim.api.nvim_set_keymap('n', '<C-e>', '<cmd>lua require("harpoon.ui").toggle_qui
 -- vim.api.nvim_set_keymap('n', '<leader>he', '<cmd>ClangdSwitchSourceHeader<cr>', { noremap = true, silent = true })
 
 -- Oil
-vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Oil<cr>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>v', '<cmd>tabnew<cr><cmd>Oil<cr>', { noremap = true, silent = true })
-
+-- vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Oil<cr>', { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<leader>v', '<cmd>tabnew<cr><cmd>Oil<cr>', { noremap = true, silent = true })
 
 -- Neorg
 -- vim.api.nvim_set_keymap('n', '<leader>ne', '<cmd>Neorg index<cr>', { noremap = true })
