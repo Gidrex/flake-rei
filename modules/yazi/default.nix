@@ -19,7 +19,7 @@ in
     plugins = plugins;
 
     initLua = ''
-      # require("full-border"):setup { type = ui.Border.ROUNDED, }
+      -- require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
     '';
     keymap = {
