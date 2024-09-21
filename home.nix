@@ -1,10 +1,11 @@
-{  pkgs, lib, ... }:
+{  pkgs, ... }:
 {
   imports = [
     ./modules/neovim
     ./modules/tmux
     ./modules/fish
     ./modules/zellij
+    ./modules/yazi
     # ./rice/hyprland
     # ./modules/android-sdk # broken
     # ./rice/sway
@@ -28,23 +29,6 @@
     # looking-glass-client.enable = true;
     lazygit.enable = true;
     direnv.enable = true;
-
-    yazi = {
-      enable = true;
-      shellWrapperName = "y";
-      plugins = {
-        full-border = pkgs.fetchFromGitHub {
-          owner = "yazi-rs";
-          repo = "plugins";
-          rev = "main";
-          sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
-        } + "/full-border.yazi";
-      };
-      initLua = ''
-      -- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
-        require("full-border"):setup { type = ui.Border.ROUNDED, }
-      '';
-    };
 
     btop = {
       enable = true;
