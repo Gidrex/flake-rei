@@ -21,7 +21,7 @@ in
     settings.plugin.prepend_fetchers = [
       {
         id = "mime";
-        if = "!mime";
+        if_cond = "!mime";
         name = "*";
         run = "mime-ext";
         prio = "high";
