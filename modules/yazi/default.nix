@@ -8,7 +8,7 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 in
-{
+  {
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -22,5 +22,10 @@ in
       -- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
         require("full-border"):setup { type = ui.Border.ROUNDED, }
     '';
+    keymap = {
+      manager.prepend_keymap = [
+        { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
+      ];
+    };
   };
 }
