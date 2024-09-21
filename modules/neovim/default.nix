@@ -108,6 +108,7 @@ in {
       pkgs.vimPlugins.vim-repeat
       {
         plugin = fromGitHub "f491b0fe68fffbece7030181073dfe51f45cda81" "master" "rebelot/kanagawa.nvim";
+        config = builtins.readFile ./config/setup/kanagawa.lua;
         type = "lua";
       }
 
