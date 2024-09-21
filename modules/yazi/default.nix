@@ -19,13 +19,13 @@ in
     plugins = plugins;
 
     settings = {
-      plugin.prepend_fetchers = [{
-          id = "mime";
-          if_cond = "!mime";
-          name = "*";
-          run = "mime-ext";
-          prio = "high";
-        }];
+      # plugin.prepend_fetchers = [{
+      #     id = "mime";
+      #     if_cond = "!mime";
+      #     name = "*";
+      #     run = "mime-ext";
+      #     prio = "high";
+      #   }];
       preview = {
         enabled = true;
         mime_handlers = {
