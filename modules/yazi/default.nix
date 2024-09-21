@@ -18,10 +18,21 @@ in
     shellWrapperName = "y";
     plugins = plugins;
 
+    settings = {
+      plugin.prepend_fetchers = {
+        id = "mime";
+        "if" = "!mime";
+        name = "*";
+        run = "mime-ext";
+        prio = "high";
+      };
+    };
+
     initLua = ''
       require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
     '';
+
     keymap = {
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
