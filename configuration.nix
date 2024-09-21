@@ -190,7 +190,7 @@
     pandoc
 
     # dependencies
-    alsa-utils ueberzugpp poppler imagemagick.
+    alsa-utils ueberzugpp poppler
 
     # why Im garbage collector?
     micro
