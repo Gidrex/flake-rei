@@ -40,20 +40,8 @@
           {
             environment.systemPackages = [
               byedpi.packages.${system}.default
-              yazi.packages.${system}.default
             ];
           }
-        ];
-      };
-    };
-
-    homeConfigurations = {
-      "gidrex@rei" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ({ pkgs, ... }: {
-            home.packages = [ yazi.packages.${pkgs.system}.default ];
-          })
         ];
       };
     };
