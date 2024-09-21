@@ -45,5 +45,16 @@
         ];
       };
     };
+
+    homeConfigurations = {
+      "gidrex@rei" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ({ pkgs, ... }: {
+            programs.yazi.package = yazi.packages.${nixpkgs.system}.default;
+          })
+        ];
+      };
+    };
   };
 }
