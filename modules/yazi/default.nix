@@ -23,11 +23,6 @@ in
       preview = {
         enabled = true;
         image_preloader = false;
-        mime_handlers = {
-          "text/*" = "bat";
-          "video/*" = "ffplay";
-          "image/*" = "ueberzugpp"; 
-        };
         image_delay = 0;
       };
       # plugin.prepend_fetchers = [{
