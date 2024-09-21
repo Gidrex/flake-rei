@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, lib, ... }:
 {
   imports = [
     ./modules/neovim
@@ -26,30 +26,35 @@
     alacritty.catppuccin.enable = false;
     mangohud.enable = true;
     # looking-glass-client.enable = true;
+    lazygit.enable = true;
+    direnv.enable = true;
+
     yazi = {
       enable = true;
       shellWrapperName = "y";
       plugins = [
         {
-          name = "full-border";
-          src = "yazi-rs/plugins:full-border";
-        }
+      name = "full-border";
+      src = pkgs.fetchFromGitHub {
+        owner = "yazi-rs";
+        repo = "plugins";
+        rev = "main";
+        sha256 = lib.fakeSha256;
+      };
+    }
       ];
       initLua = ''
-        require("full-border"):setup()
-        require("full-border"):setup {
-          type = ui.Border.ROUNDED,
-        }
+      -- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
+        require("full-border"):setup { type = ui.Border.ROUNDED, }
       '';
     };
-    lazygit.enable = true;
+
     btop = {
       enable = true;
       extraConfig = ''
       color_theme = "Default"
       '';
     };
-    direnv.enable = true;
 
     fzf = {
       enable = true;
