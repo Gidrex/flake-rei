@@ -8,7 +8,7 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 
-  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" "smart-filter" "no-status" ];
+  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" "smart-filter" "no-status" "mime-ext" ];
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
@@ -19,7 +19,7 @@ in
     plugins = plugins;
 
     initLua = ''
-      -- require("full-border"):setup { type = ui.Border.ROUNDED, }
+      require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
     '';
     keymap = {
