@@ -14,7 +14,7 @@
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
-    yazi.url = "github:sxyazi/yazi/nixos-nighlty";
+    yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, byedpi, yazi, ... }: let
@@ -51,7 +51,9 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           ({ pkgs, ... }: {
-            programs.yazi.package = yazi.nightly.packages.${nixpkgs.system}.default;
+
+            # Yazi:
+            programs.yazi.package = yazi.packages.${nixpkgs.system}.default;
             nix.settings = {
               extra-substituters = [ "https://yazi.cachix.org" ];
               extra-trusted-public-keys = [ "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k=" ];
