@@ -136,14 +136,5 @@
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
-    file = {
-      ".config/yazi/yazi.conf".text = ''
-      [bindings]
-      open_with_prompt = fzf --prompt="Choose program: " --preview="bat {file}" | xargs -I{} sh -c "{} {file}"
-
-      [keybindings]
-      O = open_with_prompt
-      '';
-    };
   };
 }
