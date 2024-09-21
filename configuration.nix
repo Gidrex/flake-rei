@@ -151,6 +151,7 @@
     jetbrains-mono
     _0xproto
     times-newer-roman
+    hack-font
   ];
 
   # Packets
