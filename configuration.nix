@@ -203,13 +203,13 @@
     kitty fish alacritty nushell starship
 
     # Dev
-    gradle sdkmanager #openjdk 
+    gradle sdkmanager
+    openjdk 
     python3 python312Packages.pip virtualenv python3Packages.psutil
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
     lua 
-    nodejs yarn deno
-    typescript
+    nodejs yarn deno typescript
     rustup cargo rust-script
     flutter dart
     gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5 ncurses
