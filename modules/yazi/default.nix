@@ -19,21 +19,23 @@ in
     plugins = plugins;
 
     settings = {
-      # plugin.prepend_fetchers = [{
-      #     id = "mime";
-      #     if_cond = "!mime";
-      #     name = "*";
-      #     run = "mime-ext";
-      #     prio = "high";
-      #   }];
+      concurrency = 2;
       preview = {
         enabled = true;
+        image_preloader = false;
         mime_handlers = {
           "text/*" = "bat";
-          "image/*" = "ueberzugpp";
           "video/*" = "ffplay";
         };
+        image_delay = 0;
       };
+      plugin.prepend_fetchers = [{
+        id = "mime";
+        if_cond = "!mime";
+        name = "*";
+        run = "mime-ext";
+        prio = "high";
+      }];
     };
 
     initLua = ''
