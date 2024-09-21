@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{  pkgs, lib, ... }:
 {
   imports = [
     ./modules/neovim
@@ -34,12 +34,12 @@
       shellWrapperName = "y";
       plugins = [
         {
-          full-border = pkgs.lib.fileSource (pkgs.fetchFromGitHub {
+          full-border = pkgs.fetchFromGitHub {
             owner = "yazi-rs";
             repo = "plugins";
             rev = "main";
             sha256 = "1bww7cw81m8mxz1vn0fjwvfvr48yj820290vvdv2dqddslcj6f61";
-          }) + "/full-border.yazi";
+          } + "/full-border.yazi";
         }
       ];
       initLua = ''
