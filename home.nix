@@ -34,14 +34,13 @@
       shellWrapperName = "y";
       plugins = [
         {
-      name = "full-border";
-      src = pkgs.fetchFromGitHub {
-        owner = "yazi-rs";
-        repo = "plugins";
-        rev = "main";
-        sha256 = lib.fakeSha256;
-      };
-    }
+          full-border = pkgs.fetchFromGitHub {
+            owner = "yazi-rs";
+            repo = "plugins";
+            rev = "main";
+            sha256 = lib.fakeSha256;
+          };
+        }
       ];
       initLua = ''
       -- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
