@@ -1,4 +1,4 @@
-{ pkgs, yazi, nixpkgs, ... }:
+{ pkgs, ... }:
 
 let
   yaziPluginsRep = pkgs.fetchFromGitHub {
@@ -8,16 +8,11 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 
-  pluginsList = [ "full-border" "max-preview" "jump-to-char" ];
+  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" ];
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
 {
-  programs.yazi.package = yazi.packages.${nixpkgs.system}.default;
-  nix.settings.extra-substituters = [ "https://yazi.cachix.org" ];
-  nix.settings.extra-trusted-public-keys = [ "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k=" ];
-  nixpkgs.overlays = [ yazi.overlays.default ];
-
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -30,6 +25,7 @@ in
       manager.prepend_keymap = [
         { on = "T"; run = "plugin --sync max-preview"; desc = "Maximize or restore preview"; }
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
+        { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
       ];
     };
   };
