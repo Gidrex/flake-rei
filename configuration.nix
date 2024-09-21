@@ -143,17 +143,19 @@
     };
   };
 
-  # Fonts
-  fonts.fontconfig.enable = true;
-fonts.fontconfig.defaultFonts.monospace = [ "Hack Nerd Font" ];
-  fonts.packages = with pkgs; [
+# Fonts
+fonts = {
+  fontconfig.enable = true;
+  fontconfig.defaultFonts.monospace = [ "Hack Nerd Font" ];
+  packages = with pkgs; [
     nerdfonts
     noto-fonts
     jetbrains-mono
     _0xproto
     times-newer-roman
-    hack-font
+    # hack-font
   ];
+};
 
   # Packets
   nixpkgs.config.allowUnfree = true;
