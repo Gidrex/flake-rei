@@ -109,6 +109,18 @@
     };
   };
 
+  # Overlays
+  nixpkgs.overlays = [
+    (self: super: {
+      onefetch = super.onefetch.overrideAttrs (oldAttrs: {
+        postInstall = ''
+          wrapProgram $out/bin/onefetch \
+          --add-flags "--no-art --no-color-palette --no-title --number-of-authors 0"
+          '';
+      });
+    })
+  ];
+
   # home-manager options
   programs.home-manager.enable = true;
   home = { 
