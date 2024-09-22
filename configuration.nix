@@ -143,21 +143,31 @@
     };
   };
 
-# Fonts
-fonts = {
-  fontconfig.enable = true;
-  fontconfig.defaultFonts.monospace = [ "Hack" ];
-  packages = with pkgs; [
-    nerdfonts
-    noto-fonts
-    jetbrains-mono
-    _0xproto
-    times-newer-roman
-    hack-font
-    source-code-pro
-    sudo-font
+  # Overlays
+  nixpkgs.overlays = [
+    (self: super: { onefetch = super.onefetch.overrideAttrs (oldAttrs: {
+      postInstall = ''
+          wrapProgram $out/bin/onefetch \
+          --add-flags "--no-art --no-color-palette --no-title --number-of-authors 0"
+          '';
+    });})
   ];
-};
+
+  # Fonts
+  fonts = {
+    fontconfig.enable = true;
+    fontconfig.defaultFonts.monospace = [ "Hack" ];
+    packages = with pkgs; [
+      nerdfonts
+      noto-fonts
+      jetbrains-mono
+      _0xproto
+      times-newer-roman
+      hack-font
+      source-code-pro
+      sudo-font
+    ];
+  };
 
   # Packets
   nixpkgs.config.allowUnfree = true;
