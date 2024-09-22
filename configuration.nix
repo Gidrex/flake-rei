@@ -189,7 +189,7 @@ fonts = {
     git-filter-repo
 
     # fun
-    fastfetch screenfetch
+    fastfetch screenfetch starfetch
 
     # university learning & documents
     zip unzip rar unrar
@@ -202,7 +202,7 @@ fonts = {
     micro
 
     # I want to learn it
-    github-copilot-cli
+    # github-copilot-cli
     # ---------------------------------------------- #
 
     # Shells
