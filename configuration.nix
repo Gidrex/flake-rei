@@ -310,6 +310,8 @@ fonts = {
   # programs.virt-manager.enable = true;
   # services.dbus.packages = [ pkgs.dbus ];
 
+  # qt
+  qt.enable = false;
 
   # flatpak
   services.flatpak.enable = true;
