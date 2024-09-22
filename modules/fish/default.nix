@@ -71,6 +71,7 @@
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
 
       search_files
+      starfetch -c magenta
       '';
 
       shellInit = ''
