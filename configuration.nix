@@ -226,7 +226,7 @@ fonts = {
     flameshot pick-colour-picker
 
     # Apps
-    firefox ungoogled-chromium nyxt
+    firefox ungoogled-chromium #nyxt
     # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop vesktop 
