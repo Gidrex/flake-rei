@@ -12,7 +12,7 @@ let
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
-{
+  {
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -24,11 +24,6 @@ in
         enabled = true;
         image_preloader = false;
         image_delay = 0;
-        command = ''
-          if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-            onefetch --no-art --no-color-palette --no-title --number-of-authors 0
-          fi
-        '';
       };
       # plugin.prepend_fetchers = [{
       #   id = "mime";
