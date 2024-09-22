@@ -155,8 +155,6 @@ fonts = {
     times-newer-roman
     hack-font
     source-code-pro
-    iosevka
-    terminus_font
     sudo-font
   ];
 };
@@ -191,7 +189,7 @@ fonts = {
     git-filter-repo
 
     # fun
-    fastfetch
+    fastfetch screenfetch
 
     # university learning & documents
     zip unzip rar unrar
