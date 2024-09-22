@@ -189,7 +189,7 @@ fonts = {
     git-filter-repo
 
     # fun
-    fastfetch screenfetch starfetch ghfetch
+    fastfetch screenfetch starfetch ghfetch onefetch
 
     # university learning & documents
     zip unzip rar unrar
