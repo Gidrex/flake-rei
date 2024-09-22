@@ -146,7 +146,7 @@
 # Fonts
 fonts = {
   fontconfig.enable = true;
-  fontconfig.defaultFonts.monospace = [ "Hack Nerd Font" ];
+  # fontconfig.defaultFonts.monospace = [ "Hack Nerd Font" ];
   packages = with pkgs; [
     nerdfonts
     noto-fonts
