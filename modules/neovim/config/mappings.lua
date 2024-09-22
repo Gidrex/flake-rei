@@ -75,10 +75,10 @@ vim.api.nvim_set_keymap('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { no
 vim.api.nvim_set_keymap('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
 
 -- hop
-vim.api.nvim_set_keymap('n', 'f', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'f', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', 'f', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'F', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'F', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('x', 'F', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'F', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'F', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'F', '<cmd>HopChar1CurrentLine<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'f', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', 'f', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'f', '<cmd>HopChar1<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', 'F', '<cmd>HopLineStart<CR>', { noremap = true, silent = true })
