@@ -202,7 +202,7 @@ fonts = {
     micro
 
     # I want to learn it
-    lynx elinks
+    github-copilot-cli
     # ---------------------------------------------- #
 
     # Shells
@@ -226,7 +226,7 @@ fonts = {
     flameshot pick-colour-picker
 
     # Apps
-    firefox ungoogled-chromium 
+    firefox ungoogled-chromium nyxt
     # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop vesktop 
