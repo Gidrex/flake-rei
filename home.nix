@@ -88,9 +88,8 @@
 
   # Services
   services = {
-    spotifyd = {
-      enable = true;
-      settings.global = {
+      spotifyd.enable = true;
+      spotifyd.settings.global = {
         device_name = "nix";
         username = "Gidrex";
         password_cmd = "pass show spotifyd";
@@ -101,13 +100,14 @@
         autoplay = true;
         proxy = "http://127.0.0.1:8889";
       };
-    };
+    
+
     udiskie = {
       enable = true;
       tray = "auto";
       automount = true;
-
     };
+
     picom = {
       enable = true;
       # inactiveOpacity = 0.98;

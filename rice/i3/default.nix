@@ -9,7 +9,6 @@
   ];
 
   services = {
-    displayManager.defaultSession = "none+i3";
     xserver = {
       windowManager.i3.enable = true;
       windowManager.i3.extraPackages = with pkgs; [ kitty i3status i3lock i3blocks ];

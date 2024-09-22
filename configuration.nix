@@ -5,6 +5,7 @@
     ./rice/i3
   ];
 
+  # Global system
   security.polkit.enable = true;
   boot = {
     binfmt.emulatedSystems = ["aarch64-linux"];
@@ -21,6 +22,21 @@
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # Rice
+  displayManager.defaultSession = "none+i3";
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us,ru";
+      model = "pc105";
+      options = "grp:alt_shift_toggle";
+    };
+    displayManager.lightdm = {
+      background = ./assets/nix.png;
+      enable  = true;
+    };
+  };
+
   # Networking
   networking = {
     # proxy.httpProxy = "http://127.0.0.1:8889";
@@ -35,7 +51,6 @@
   i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_GB.UTF-8/UTF-8" ];
 
   # Audio
-  # sound.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -284,20 +299,6 @@
 
   # Electron <3 .!.
   nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
-
-  # xserver conf
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us,ru";
-      model = "pc105";
-      options = "grp:alt_shift_toggle";
-    };
-    displayManager.lightdm = {
-      background = ./assets/nix.png;
-      enable  = true;
-    };
-  };
 
   # Looking glass TODO
   # virtualisation.libvirtd = {
