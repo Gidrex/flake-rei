@@ -226,7 +226,7 @@
     flameshot pick-colour-picker
 
     # Apps
-    firefox ungoogled-chromium nyxt
+    firefox ungoogled-chromium
     # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop vesktop 
@@ -322,8 +322,7 @@
 
   # ergonomic keyboard
   hardware.keyboard.qmk.enable = true;
-  services.udev.extraRules = ''
-  SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
-  '';
+  services.udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
 
+  system.stateVersion = "24.11";
 }
