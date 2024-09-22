@@ -2,7 +2,7 @@
 {
   imports = [ 
     ./hardware-configuration.nix
-    ./rice/i3
+    # ./rice/i3
   ];
 
   # Global system

@@ -32,9 +32,7 @@
 
     btop = {
       enable = true;
-      extraConfig = ''
-      color_theme = "Default"
-      '';
+      extraConfig = ''color_theme = "Default"'';
     };
 
     fzf = {
@@ -88,19 +86,18 @@
 
   # Services
   services = {
-      spotifyd.enable = true;
-      spotifyd.settings.global = {
-        device_name = "nix";
-        username = "Gidrex";
-        password_cmd = "pass show spotifyd";
-        backend = "alsa";
-        dbus_type = "session"; # "system" for no graphic
-        bitrate = 320;
-        volume_normalisation = true;
-        autoplay = true;
-        proxy = "http://127.0.0.1:8889";
-      };
-    
+    spotifyd.enable = true;
+    spotifyd.settings.global = {
+      device_name = "nix";
+      username = "Gidrex";
+      password_cmd = "pass show spotifyd";
+      backend = "alsa";
+      dbus_type = "session"; # "system" for no graphic
+      bitrate = 320;
+      volume_normalisation = true;
+      autoplay = true;
+      proxy = "http://127.0.0.1:8889";
+    };
 
     udiskie = {
       enable = true;
@@ -138,6 +135,12 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
+
+      # ricing
+      libexecinfo
+      i3 i3lock-fancy
+      gxkb parcellite
+      kitty i3status i3lock i3blocks
     ];
     sessionVariables = {
       EDITOR = "nvim";
@@ -155,5 +158,10 @@
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
+  };
+
+  # ricing with i3
+  xsession.windowManager.i3 = {
+    enable = true;
   };
 }
