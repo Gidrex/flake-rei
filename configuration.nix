@@ -153,7 +153,7 @@ fonts = {
     jetbrains-mono
     _0xproto
     times-newer-roman
-    # hack-font
+    hack-font
   ];
 };
 
