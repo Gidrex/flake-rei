@@ -232,7 +232,7 @@ fonts = {
     telegram-desktop vesktop 
     onlyoffice-bin_latest
     logseq
-    androidStudioPackages.canary
+    androidStudioPackages.canary github-desktop
     mysql-workbench dbeaver-bin sqlitebrowser
     drawio gimp krita
     obs-studio
