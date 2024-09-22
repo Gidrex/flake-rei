@@ -312,6 +312,7 @@ fonts = {
 
   # qt
   qt.enable = false;
+  qt.platformTheme = "gtk2";
 
   # flatpak
   services.flatpak.enable = true;
