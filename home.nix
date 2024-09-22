@@ -107,6 +107,7 @@
       tray = "auto";
       automount = true;
 
+    };
     picom = {
       enable = true;
       # inactiveOpacity = 0.98;
@@ -126,7 +127,6 @@
         "96:class_g = 'Navigator.zen-alpha'"
         "96:class_g = 'vesktop'"
       ];
-    };
     };
   };
 

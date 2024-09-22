@@ -16,5 +16,4 @@
       desktopManager.xterm.enable = false;
     };
   };
-
 }
