@@ -173,7 +173,7 @@ fonts = {
     # term tools
     xsel ffmpeg killall xclip
     file hexyl procs broot dig
-    imagemagick
+    imagemagick pastel
     fd ripgrep procs jq dust
     nix-inspect nix-prefetch-github
     calc libqalculate
