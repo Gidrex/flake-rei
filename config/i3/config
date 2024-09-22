@@ -52,7 +52,7 @@ exec xmodmap -e "keycode 66 = Escape"
 #		SYSTEM:		#
 #################################
 
-font pango: JetBrainsMono Nerd Font 11
+font pango: SauceCodePro Nerd Font Semi-Bold 11
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp 	  exec light -A 5% 	#; exec notify-send 'brightness up 5%'
