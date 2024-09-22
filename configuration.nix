@@ -220,7 +220,7 @@
     flutter dart
     gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5 ncurses
     sqlite sqlite-utils
-    clisp
+    clisp sbcl
 
     # Utility
     flameshot pick-colour-picker
@@ -326,5 +326,4 @@
   SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
   '';
 
-  system.stateVersion = "24.11";
 }
