@@ -1,5 +1,5 @@
 {
-  description = "Gidrex NixOS configuration";
+  description = "Gidrex NixOS flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";

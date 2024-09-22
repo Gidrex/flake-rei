@@ -1,6 +1,6 @@
 require('lualine').setup {
     options = {
-        theme = 'rose-pine',
+        theme = 'catppuccin-mocha',
         section_separators = {' < ', ' < '},
         icons_enabled = true,
     },
