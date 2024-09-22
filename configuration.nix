@@ -70,7 +70,6 @@
   # Android
   services.udev.packages = [ pkgs.android-udev-rules ];
   programs.adb.enable = true;
-  config.android_sdk.accept_license = true;
 
   # Graphics
   boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];
