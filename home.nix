@@ -106,7 +106,7 @@
     };
 
     picom = {
-      enable = true;
+      enable = false;
       # inactiveOpacity = 0.98;
       activeOpacity = 1;
       fade = false;
