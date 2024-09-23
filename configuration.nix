@@ -23,20 +23,54 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Rice
-  # services.displayManager.defaultSession = "none+i3";
-  services.displayManager.defaultSession = "hyprland";
-  services.displayManager.enable = false;
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us,ru";
-      model = "pc105";
-      options = "grp:alt_shift_toggle";
+  services = {
+    # displayManager.defaultSession = "none+i3";
+    displayManager.defaultSession = "hyprland";
+    displayManager.enable = false;
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us,ru";
+        model = "pc105";
+        options = "grp:alt_shift_toggle";
+      };
+      displayManager.lightdm = {
+        background = ./assets/nix.png;
+        enable  = false;
+      };
     };
-    displayManager.lightdm = {
-      background = ./assets/nix.png;
-      enable  = true;
+
+    # Audio
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      jack.enable = true;
     };
+
+    # Android
+    udev.packages = [ pkgs.android-udev-rules ];
+    xserver.videoDrivers = ["nvidia"];
+
+    # Services
+
+    openssh.enable = true;
+    deluge.enable = true;
+    blueman.enable = true;
+    onlyoffice.enable = true;
+    printing = {
+      enable = true;
+      drivers = with pkgs; [ pantum-driver ];
+    };
+    udisks2 = {
+      enable = true; # auto mount flash usb
+      mountOnMedia = true;
+    };
+
+
+    # flatpak
+    flatpak.enable = true;
+    udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
   };
 
   # Networking
@@ -50,15 +84,7 @@
   # Locale
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_GB.UTF-8";
-  i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_GB.UTF-8/UTF-8" ];
-
-  # Audio
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };  
+  i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_GB.UTF-8/UTF-8" ];  
   hardware.bluetooth.enable = true;
 
   # User
@@ -68,14 +94,10 @@
     description = "Alexander";
     extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
   };
-
-  # Android
-  services.udev.packages = [ pkgs.android-udev-rules ];
   programs.adb.enable = true;
 
   # Graphics
   boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];
-  services.xserver.videoDrivers = ["nvidia"];
   hardware = {
     graphics = {
       enable = true;
@@ -140,22 +162,6 @@
       Type = "oneshot";
       ExecStart = "/run/current-system/sw/bin/chmod a+wr /sys/class/backlight/intel_backlight/brightness";
       RemainAfterExit = true;
-    };
-  };
-
-  # Services
-  services = {
-    openssh.enable = true;
-    deluge.enable = true;
-    blueman.enable = true;
-    onlyoffice.enable = true;
-    printing = {
-      enable = true;
-      drivers = with pkgs; [ pantum-driver ];
-    };
-    udisks2 = {
-      enable = true; # auto mount flash usb
-      mountOnMedia = true;
     };
   };
 
@@ -320,9 +326,6 @@
   # qt
   qt.enable = false;
   qt.platformTheme = "gtk2";
-
-  # flatpak
-  services.flatpak.enable = true;
   xdg.portal = {
     enable = true; 
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
@@ -331,7 +334,6 @@
 
   # ergonomic keyboard
   hardware.keyboard.qmk.enable = true;
-  services.udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
 
   system.stateVersion = "24.11";
 }
