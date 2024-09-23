@@ -224,14 +224,13 @@
 
     # Dev
     gradle sdkmanager
-    openjdk 
     python3 python312Packages.pip virtualenv python3Packages.psutil
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
     lua 
     nodejs yarn deno typescript
     rustup cargo rust-script
-    flutter dart
+    dart
     gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5 ncurses
     sqlite sqlite-utils
     clisp sbcl
@@ -294,6 +293,10 @@
 
     # Gaming
     mangohud
+  ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    openjdk flutter
   ];
 
   # Electron <3 .!.

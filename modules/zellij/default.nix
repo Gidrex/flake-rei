@@ -7,7 +7,7 @@
       # session.hide_status_bar = true; # what?
       default_layout = "compact";
       pane_frames = false;
-      mouse_mode = false;
+      mouse_mode = true;
       # on_force_close = "quit";
       auto_layout = false;
 
