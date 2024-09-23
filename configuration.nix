@@ -23,7 +23,9 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Rice
-  services.displayManager.defaultSession = "none+i3";
+  # services.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.enable = false;
   services.xserver = {
     enable = true;
     xkb = {

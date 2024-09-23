@@ -21,9 +21,4 @@
     # nvidiaPatches = true;
     # extraConfig = builtins.readFile ../../config/hyprland.conf;
   };
-programs.wayland = {
-    enable = true;
-    compositor = "hyprland";
-  };
-
 } 
