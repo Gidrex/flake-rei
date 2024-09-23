@@ -110,9 +110,8 @@
       dynamicBoost.enable = true;
       modesetting.enable = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-      modeset = true;
-      # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       prime = {
         offload.enable = true;
         offload.enableOffloadCmd = true;
