@@ -277,6 +277,10 @@
     # Rice
     xorg.xf86videofbdev xorg.xkbcomp
     lxappearance nitrogen rofi dmenu fzf pavucontrol
+    libexecinfo
+    i3 i3lock-fancy
+    gxkb parcellite
+    i3status i3lock i3blocks
 
     # Drivers
     blueman playerctl
