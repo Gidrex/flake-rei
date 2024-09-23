@@ -24,9 +24,8 @@
 
   # Rice
   services = {
-    # displayManager.defaultSession = "none+i3";
-    displayManager.defaultSession = "hyprland";
-    displayManager.enable = false;
+    displayManager.defaultSession = "hyprland"; # "none+i3"
+    # displayManager.enable = false;
     xserver = {
       enable = true;
       xkb = {
