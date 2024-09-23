@@ -24,7 +24,7 @@
   # Rice
   services = {
     displayManager.defaultSession = "hyprland"; # "none+i3"
-    # displayManager.enable = false;
+    displayManager.enable = false;
     xserver = {
       enable = true;
       xkb = {
@@ -32,10 +32,10 @@
         model = "pc105";
         options = "grp:alt_shift_toggle";
       };
-      displayManager.lightdm = {
-        background = ./assets/nix.png;
-        enable  = false;
-      };
+      # displayManager.lightdm = {
+      #   background = ./assets/nix.png;
+      #   enable  = false;
+      # };
     };
 
     # Audio
@@ -48,7 +48,6 @@
 
     # Android
     udev.packages = [ pkgs.android-udev-rules ];
-    xserver.videoDrivers = ["nvidia"];
 
     # Services
 
@@ -95,6 +94,7 @@
   programs.adb.enable = true;
 
   # Graphics
+  services.xserver.videoDrivers = ["nvidia"];
   boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];
   hardware = {
     graphics = {
@@ -111,6 +111,7 @@
       modesetting.enable = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
       package = config.boot.kernelPackages.nvidiaPackages.beta;
+      modeset = true;
       # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       prime = {
         offload.enable = true;
