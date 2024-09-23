@@ -23,7 +23,7 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Rice
-  services.displayManager.defaultSession = "i3";
+  services.displayManager.defaultSession = "i3wm";
   services.xserver = {
     enable = true;
     xkb = {
