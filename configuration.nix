@@ -23,12 +23,6 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Rice
-  # i3
-  services.xserver = {
-    windowManager.i3.enable = true;
-    windowManager.i3.extraPackages = with pkgs; [ kitty i3status i3blocks ];
-    desktopManager.xterm.enable = false;
-  };
   services.displayManager.defaultSession = "none+i3";
   services.xserver = {
     enable = true;
