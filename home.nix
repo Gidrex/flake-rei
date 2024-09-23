@@ -135,12 +135,6 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
-
-      # ricing
-      libexecinfo
-      i3 i3lock-fancy
-      gxkb parcellite
-      kitty i3status i3lock i3blocks
     ];
     sessionVariables = {
       EDITOR = "nvim";
