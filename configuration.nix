@@ -231,7 +231,7 @@
     nodejs yarn deno typescript
     rustup cargo rust-script
     dart
-    gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5
+    gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5 ncurses
     sqlite sqlite-utils
     clisp sbcl
 

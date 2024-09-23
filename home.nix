@@ -135,8 +135,6 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
-
-      ncurses
     ];
     sessionVariables = {
       EDITOR = "nvim";
