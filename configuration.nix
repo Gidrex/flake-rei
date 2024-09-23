@@ -26,7 +26,7 @@
     displayManager.defaultSession = "hyprland"; # "none+i3"
     displayManager.enable = false;
     xserver = {
-      enable = true;
+      enable = false;
       xkb = {
         layout = "us,ru";
         model = "pc105";
