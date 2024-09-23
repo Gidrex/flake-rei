@@ -1,1 +1,255 @@
-/nix/store/zi6hsy7b6xj9k92avdysvl43dbp0czjw-home-manager-files/.config/i3/config
+#########################################
+#		Variabes:		#
+#########################################
+
+set $alt 	Mod1
+set $super 	Mod4
+
+#################################################################
+#		Commonly Used Application Keybinds:		#
+#################################################################
+
+bindsym $super+F1 		exec io.github.zen_browser.zen
+bindsym $super+F2 		exec thunar
+bindsym $super+F3		exec telegram-desktop
+bindsym $super+F4		exec alacritty -e yazi
+bindsym $super+P 		exec kitty -e nmtui
+bindsym $super+O 		exec blueman-manager
+bindsym Print 		  	exec flameshot gui
+bindsym $super+t	  	exec alacritty
+bindsym $super+d 	  	exec rofi -show
+
+#########################################
+#		AUTOSTART:		#
+#########################################
+
+
+# ------------------------ShadowSocks Variables------------------------ #
+# 🇫🇮 Helsinki (Finland)
+# set $Hel_ss $(pass show ss-hel)
+# 🇹🇷 Istanbul (Turkey)
+# set $Ist_ss $(pass show ss-ist)
+# 🇮🇹	Milan (Italy)
+# set $Mil_ss $(pass show ss-mil)
+# --------------------------------------------------------------------- #
+
+# ShadowSocks startup:
+# exec sslocal --server-url $Hel_ss --local-addr localhost:1092 --protocol http -d
+# exec sslocal --server-url $Mil_ss --local-addr localhost:1091 --protocol http -d
+# exec sslocal --server-url $Ist_ss --local-addr localhost:1090 --protocol http -d
+
+exec nitrogen --restore
+exec gxkb
+exec parcellite
+exec qv2ray
+# exec polybar top
+
+# Rebind capslock to escape
+exec setxkbmap -option caps:none
+exec xmodmap -e "keycode 66 = Escape"
+
+#################################
+#		SYSTEM:		#
+#################################
+
+font pango: SauceCodePro Nerd Font Semi-Bold 11
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp 	  exec light -A 5% 	#; exec notify-send 'brightness up 5%'
+bindsym XF86MonBrightnessDown	  exec light -U 5% 	#; exec notify-send 'brightness down 5%'
+exec light -S 60
+
+# Change volume
+bindsym XF86AudioRaiseVolume 	exec amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume 	exec amixer -q sset Master 5%-
+bindsym XF86AudioMute 		exec amixer -q sset Master toggle
+
+# Music control
+bindsym XF86AudioNext 			exec playerctl next
+bindsym XF86AudioPrev 			exec playerctl previous
+bindsym XF86AudioPlay 			exec playerctl play-pause
+bindsym XF86AudioStop 			exec playerctl stop
+
+####################################################
+#		WINDOW MANIPULATION		   #
+####################################################
+
+# Kill focused window
+bindsym $super+q kill
+
+# Change focus
+bindsym $super+Left 	focus left
+bindsym $super+Down 	focus down
+bindsym $super+Up	focus up
+bindsym $super+Right 	focus right
+
+# Move focused window
+bindsym $super+Shift+Left 	move left
+bindsym $super+Shift+Down 	move down
+bindsym $super+Shift+Up 	move up
+bindsym $super+Shift+Right 	move right
+
+# Splits
+bindsym $super+h split h
+bindsym $super+v split v
+
+# Enter fullscreen
+bindsym $super+f fullscreen toggle
+
+# Change container layout split
+bindsym $super+s layout toggle split
+
+# Toggle tiling / floating
+bindsym $super+space floating toggle
+
+# Use Mouse+$super to drag floating windows
+floating_modifier $super
+
+# Change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# Toggle sticky
+bindsym $super+Shift+s sticky toggle
+
+# Focus the parent container
+bindsym $super+a focus parent
+
+# Move the currently focused window to the scratchpad
+bindsym $super+plus move scratchpad
+bindsym $super+minus scratchpad show
+
+# Navigate workspaces next / previous
+bindsym $super+Next workspace next
+bindsym $super+k workspace next
+bindsym $super+Prior workspace prev
+bindsym $super+j workspace prev
+
+# Switch to workspace
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+
+# Move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+
+# Move to workspace with focused container
+bindsym $super+Ctrl+1 move container to workspace 1; workspace 1
+bindsym $super+Ctrl+2 move container to workspace 2; workspace 2
+bindsym $super+Ctrl+3 move container to workspace 3; workspace 3
+bindsym $super+Ctrl+4 move container to workspace 4; workspace 4
+bindsym $super+Ctrl+5 move container to workspace 5; workspace 5
+bindsym $super+Ctrl+6 move container to workspace 6; workspace 6
+bindsym $super+Ctrl+7 move container to workspace 7; workspace 7
+bindsym $super+Ctrl+8 move container to workspace 8; workspace 8
+bindsym $super+Ctrl+9 move container to workspace 9; workspace 9
+
+# Reload the configuration file
+bindsym $super+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r restart
+
+# Resize window (you can also use the mouse for that)
+bindsym $super+r mode "resize"
+
+mode "resize" {
+    bindsym Left    resize shrink width	    5 px or 5 ppt
+    bindsym Down    resize grow height	    5 px or 5 ppt
+    bindsym Up	    resize shrink height    5 px or 5 ppt
+    bindsym Right   resize grow width	    5 px or 5 ppt
+    bindsym Return  mode "default"
+}
+
+for_window [class=feh|Lxappearance|Pavucontrol|pick-colour-picker] floating enable
+for_window [class=".*"] border pixel 1
+
+#################################
+#		i3 bar		#
+#################################
+
+# hide/unhide i3status bar
+bindsym $super+b mode "$mode_bar"
+set $mode_bar (d)ock, (h)ide, (i)nvisible,
+
+mode "$mode_bar" {
+    bindsym d	    bar mode dock,	mode "default"
+    bindsym h	    bar mode hide,	mode "default"
+    bindsym i	    bar mode invisible,	mode "default"
+    bindsym Return			mode "default"
+    bindsym Escape			mode "default"
+}
+
+bar {
+    mode dock
+    status_command i3blocks
+    position top
+    padding 0px
+    colors {
+	background 			#000000
+	statusline 			#FFFFFF
+	separator  			#666666
+	focused_workspace  	#7463B0 #7463B0 #FFFFFF
+	active_workspace   	#0A0A0A #0A0A0A #ff0000
+	inactive_workspace 	#212121 #212121 #B5B5B5
+	urgent_workspace   	#2F343A #900000 #FFFFFF
+#	binding_mode      	#2F343A #900000 #FFFFFF
+    }
+}
+
+#####################################
+#		COLORS		    #
+#####################################
+
+# colour of:    	     border	background       text 		indicator 	child_border
+client.focused              #bf616a 	#2f343f 	#d8dee8 	#bf616a 	#0bd9e0
+client.focused_inactive     #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.unfocused            #ffffff 	#ffffff 	#d8dee8 	#ffffff 	#000000
+client.urgent               #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.placeholder          #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.background           #0f0f0f
+
+
+#################################################
+#		GAPS / BORDER SETTINGS		#
+#################################################
+
+gaps inner 0
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+#################################################
+#		SYSTEM MANAGER COMMANDS		#
+#################################################
+
+set $Locker i3lock-fancy -g
+
+bindsym $super+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, (s)uspend, (r)eboot, shutdo(w)n, switch-(u)ser,
+
+mode "$mode_system" {
+    bindsym l	    exec $Locker,			mode "default"
+    bindsym s	    exec $Locker && systemctl suspend,	mode "default"
+    bindsym e	    exec i3 exit,	    		mode "default"
+    bindsym r	    exec reboot,		     	mode "default"
+    bindsym w	    exec shutdown now,			mode "default"
+    bindsym u	    exec dm-tool switch-to-greeter,	mode "default"
+
+    # exit system mode: "Enter" or "Escape" (bind to do nothing)
+    bindsym Return 								mode "default"
+    bindsym Escape 								mode "default"
+}
