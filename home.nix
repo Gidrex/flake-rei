@@ -135,6 +135,8 @@
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
+
+      ncurses
     ];
     sessionVariables = {
       EDITOR = "nvim";
@@ -155,7 +157,5 @@
   };
 
   # ricing with i3
-  xsession.windowManager.i3 = {
-    enable = true;
-  };
+  xsession.windowManager.i3.enable = true;
 }
