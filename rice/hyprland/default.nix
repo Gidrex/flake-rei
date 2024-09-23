@@ -2,6 +2,7 @@
 {
 
   home.packages = with pkgs; [
+    hyprland 
     hyprpaper
     wlr-randr
     xwayland
@@ -19,6 +20,10 @@
     systemd.enable = false; # enable when configure extraConfig
     # nvidiaPatches = true;
     # extraConfig = builtins.readFile ../../config/hyprland.conf;
+  };
+programs.wayland = {
+    enable = true;
+    compositor = "hyprland";
   };
 
 } 

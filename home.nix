@@ -6,7 +6,7 @@
     ./modules/fish
     ./modules/zellij
     ./modules/yazi
-    # ./rice/hyprland
+    ./rice/hyprland
     # ./modules/android-sdk # broken
     # ./rice/sway
   ];
@@ -156,7 +156,7 @@
 
   # ricing with i3
   xsession.windowManager.i3 = {
-    enable = true;
+    enable = false;
     extraConfig = builtins.readFile ./config/i3/config;
   };
 }
