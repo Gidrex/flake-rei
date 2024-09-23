@@ -157,6 +157,6 @@
   # ricing with i3
   xsession.windowManager.i3 = {
     enable = true;
-    extraConfig = builtins.readFile ./config/i3/config_old;
+    extraConfig = builtins.readFile ./config/i3/config;
   };
 }
