@@ -106,7 +106,7 @@
     };
 
     picom = {
-      enable = false;
+      enable = true;
       # inactiveOpacity = 0.98;
       activeOpacity = 1;
       fade = false;
@@ -152,11 +152,5 @@
     homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
-  };
-
-  # ricing with i3
-  xsession.windowManager.i3 = {
-    enable = true;
-    extraConfig = builtins.readFile ./config/i3/config;
   };
 }
