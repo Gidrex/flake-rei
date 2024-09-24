@@ -27,6 +27,7 @@
     displayManager.enable = true;
     xserver = {
       enable = true;
+      desktopManager.xterm.enable = false;
       xkb = {
         layout = "us,ru";
         model = "pc105";
