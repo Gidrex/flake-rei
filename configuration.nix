@@ -27,6 +27,7 @@
     displayManager.enable = true;
     xserver = {
       enable = true;
+      windowManager.i3.enable = true;
       desktopManager.xterm.enable = false;
       xkb = {
         layout = "us,ru";
