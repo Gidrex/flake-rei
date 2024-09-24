@@ -6,7 +6,7 @@
     ./modules/fish
     ./modules/zellij
     ./modules/yazi
-    ./rice/hyprland
+    # ./rice/hyprland
     # ./modules/android-sdk # broken
     # ./rice/sway
   ];
@@ -141,7 +141,7 @@
       VISUAL = "nvim";
       TERM = "alacritty";
       CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
-      QT_QPA_PLATFORMTHEME = "qt5ct";
+      # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
     sessionPath = [
       "$HOME/.cargo/bin"
@@ -156,7 +156,7 @@
 
   # ricing with i3
   xsession.windowManager.i3 = {
-    enable = false;
+    enable = true;
     extraConfig = builtins.readFile ./config/i3/config;
   };
 }

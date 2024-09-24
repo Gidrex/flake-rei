@@ -23,19 +23,19 @@
 
   # Rice
   services = {
-    displayManager.defaultSession = "hyprland"; # "none+i3"
-    displayManager.enable = false;
+    displayManager.defaultSession = "none+i3"; # "none+i3"
+    displayManager.enable = true;
     xserver = {
-      enable = false;
+      enable = true;
       xkb = {
         layout = "us,ru";
         model = "pc105";
         options = "grp:alt_shift_toggle";
       };
-      # displayManager.lightdm = {
-      #   background = ./assets/nix.png;
-      #   enable  = false;
-      # };
+      displayManager.lightdm = {
+        background = ./assets/nix.png;
+        enable  = true;
+      };
     };
 
     # Audio
