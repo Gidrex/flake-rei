@@ -23,7 +23,7 @@
 
   # Rice
   services = {
-    displayManager.defaultSession = "xfce+i3"; # "none+i3"
+    displayManager.defaultSession = "none+i3"; # "none+i3"
     displayManager.enable = true;
     xserver = {
       enable = true;
