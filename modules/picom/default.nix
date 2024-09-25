@@ -8,10 +8,10 @@
       blur = { 
         method = "gaussian";
         size = 10;
-        deviation = 5.0;
+        deviation = 7.0;
       };
     };
-    fade = false;
+    fade = true;
     vSync = true;
     shadow = true;
     fadeDelta = 4;
@@ -24,6 +24,8 @@
       "96:class_g = 'kitty'"
       "92:class_g = 'zen-alpha'"
       "90:class_g = 'vesktop'"
+      "80:class_g = 'Nitrogen'"
+      "95:class_g = 'TelegramDesktop'"
     ];
   };
 }
