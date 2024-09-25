@@ -28,6 +28,7 @@
     xserver = {
       enable = true;
       windowManager.i3.enable = true;
+      windowManager.i3.package = pkgs.i3-gaps;
       desktopManager.xterm.enable = false;
       xkb = {
         layout = "us,ru";
