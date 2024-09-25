@@ -38,8 +38,7 @@ in
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
         { on = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
-        # { on = [ "e" "d" ]; run = "lua open_file_with_dragon"; desc = "Open file with Dragon"; }
-        { on   = "<C-c>"; run  = ''shell 'dragon -x -i -T "$1"' --confirm''; desc = "Open shell here"; }
+        { on   = [ "e" "d" ]; run  = ''shell 'dragon -x -i -T "$1"' --confirm''; desc = "Drag & Drop file"; }
       ];
     };
   };
