@@ -111,6 +111,11 @@
       activeOpacity = 1;
       settings = {
         corner-radius = 15;
+        blur = { 
+          method = "gaussian";
+          size = 10;
+          deviation = 5.0;
+        };
       };
       fade = false;
       vSync = true;
