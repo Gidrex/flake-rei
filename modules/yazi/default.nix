@@ -8,7 +8,7 @@ let
     sha256 = "3F7RIg2CZH/jo+XhG0n4Zfspgi/77Hve421j0p3Og+Q=";
   };
 
-  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" "smart-filter" "no-status" ];
+  pluginsList = [ "full-border" "max-preview" "jump-to-char" "chmod" "smart-filter" "no-status" "hide-preview" ];
   plugins = builtins.listToAttrs (map (pluginName: { name = pluginName; value = yaziPluginsRep + "/${pluginName}.yazi"; }) pluginsList);
 
 in
@@ -40,6 +40,7 @@ in
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
         { on = [ "e" "d" ]; run  = ''shell 'dragon -x -i -T "$1"' --confirm''; desc = "Drag & Drop file"; }
         { on = [ "g" "r" ]; run = ''shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm''; desc = "back to the root of repository"; }
+        { on   = [ "e" "t" ]; run  = "plugin --sync hide-preview"; desc = "Hide or show preview"; }
       ];
     };
   };
