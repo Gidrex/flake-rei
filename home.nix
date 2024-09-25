@@ -107,7 +107,7 @@
 
     picom = {
       enable = true;
-      # inactiveOpacity = 0.98;
+      inactiveOpacity = 1;
       activeOpacity = 1;
       settings = {
         corner-radius = 15;
@@ -124,12 +124,12 @@
       fadeSteps = [0.02 0.5];
       backend = "glx";
       opacityRules = [
-        "94:class_g = 'Thunar'"
+        "90:class_g = 'Thunar'"
         "90:class_g = 'Spotube'"
-        "96:class_g = 'Alacritty'"
+        "92:class_g = 'Alacritty'"
         "96:class_g = 'kitty'"
-        "96:class_g = 'zen-alpha'"
-        "96:class_g = 'vesktop'"
+        "92:class_g = 'zen-alpha'"
+        "90:class_g = 'vesktop'"
       ];
     };
   };
