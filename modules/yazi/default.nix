@@ -34,7 +34,7 @@ in
       function open_file_with_dragon()
           local selected_file = Yazi.get_selected_file()
           if selected_file then
-            os.execute("${pkgs.dragon}/bin/dragon " .. selected_file)
+            os.execute("dragon " .. selected_file)
           else
             print("No file selected")
           end
