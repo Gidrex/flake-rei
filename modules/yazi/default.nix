@@ -31,14 +31,14 @@ in
       require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
 
-      function open_file_with_dragon()
-          local selected_file = Yazi.get_selected_file()
-          if selected_file then
-            os.execute("dragon " .. selected_file)
-          else
-            print("No file selected")
-          end
+      function open_with_dragon()
+        local selected_file = Yazi.get_selected_file()
+        if selected_file then
+          os.execute("${pkgs.dragon}/bin/dragon " .. string.format('"%s"', selected_file))
+        else
+          Yazi.log("Нет выбранного файла для открытия через Dragon")
         end
+      end
     '';
 
     keymap = {
