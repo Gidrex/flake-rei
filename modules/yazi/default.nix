@@ -30,6 +30,15 @@ in
     initLua = ''
       require("full-border"):setup { type = ui.Border.ROUNDED, }
       require("no-status"):setup()
+
+      function open_file_with_dragon()
+          local selected_file = Yazi.get_selected_file()
+          if selected_file then
+            os.execute("${pkgs.dragon}/bin/dragon " .. selected_file)
+          else
+            print("No file selected")
+          end
+        end
     '';
 
     keymap = {
@@ -38,7 +47,7 @@ in
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
         { on = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
-        { on = [ "e" "d" ]; run = "${pkgs.dragon}/bin/dragon {file}"; desc = "Open file with Dragon"; }
+        { on = [ "e" "d" ]; run = "lua open_file_with_dragon"; desc = "Open file with Dragon"; }
       ];
     };
   };
