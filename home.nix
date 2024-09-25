@@ -109,6 +109,9 @@
       enable = true;
       # inactiveOpacity = 0.98;
       activeOpacity = 1;
+      settings = {
+        corner-radius = 15;
+      };
       fade = false;
       vSync = true;
       shadow = true;
