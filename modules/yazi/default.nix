@@ -39,6 +39,7 @@ in
         { on = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
         { on   = [ "e" "d" ]; run  = ''shell 'dragon -x -i -T "$1"' --confirm''; desc = "Drag & Drop file"; }
+        { on = [ "g" "r" ]; run = ''shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm''; desc = "back to the root of repository"; }
       ];
     };
   };
