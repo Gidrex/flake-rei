@@ -38,7 +38,7 @@ in
         { on = "f"; run  = "plugin jump-to-char"; desc = "Jump to char"; }
         { on = "F"; run  = "plugin smart-filter"; desc = "Smart filter"; }
         { on = [ "c" "m" ]; run  = "plugin chmod"; desc = "Chmod on selected files"; }
-        { on = [ "e" "d" ]; run = "${pkgs.dragon}/bin/dragon"; desc = "Open file with Dragon"; }
+        { on = [ "e" "d" ]; run = "${pkgs.dragon}/bin/dragon {file}"; desc = "Open file with Dragon"; }
       ];
     };
   };
