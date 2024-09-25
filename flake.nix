@@ -14,10 +14,9 @@
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
-    yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, yazi, ... }: 
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ... }: 
     let
       system = "x86_64-linux";
     in {
@@ -43,22 +42,6 @@
                 byedpi.packages.${system}.default
               ];
             }
-          ];
-        };
-      };
-
-      homeConfigurations = {
-        "gidrex@rei" = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [
-            ({ pkgs, ... }: {
-
-              # Yazi:
-              programs.yazi.package = yazi.packages.${nixpkgs.system}.default;
-              nix.settings.extra-substituters = [ "https://yazi.cachix.org" ];
-              nix.settings.extra-trusted-public-keys = [ "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k=" ];
-              # nixpkgs.overlays = [ yazi.overlays.default ]; # idk
-            })
           ];
         };
       };
