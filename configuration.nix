@@ -194,7 +194,7 @@
     coreutils-prefixed pinentry
 
     # term tools
-    xsel ffmpeg killall xclip
+    xsel ffmpeg killall xclip fzf xdragon
     file hexyl procs broot dig
     imagemagick pastel
     fd ripgrep procs jq dust
@@ -208,7 +208,7 @@
     shadowsocks-rust shadowsocks-libev 
     wireguard-tools udp2raw inetutils v2ray qv2ray
     crow-translate
-    ytfzf yt-dlp
+    ytfzf yt-dlp 
     git-filter-repo
 
     # fun
@@ -279,7 +279,7 @@
 
     # Rice
     xorg.xf86videofbdev xorg.xkbcomp
-    lxappearance nitrogen rofi dmenu fzf pavucontrol
+    lxappearance nitrogen rofi dmenu pavucontrol
     libexecinfo
     i3 i3lock-fancy
     gxkb parcellite
