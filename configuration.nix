@@ -284,7 +284,7 @@
     i3 i3lock-fancy
     gxkb parcellite
     i3status i3lock i3blocks
-    cmatrix
+    cmatrix glava
 
     # Drivers
     blueman playerctl
