@@ -59,8 +59,10 @@
       };
 
       interactiveShellInit = ''
+      # function init
       function fish_greeting
       end
+      search_files
 
       set -x http_proxy http://127.0.0.1:8889
       set -x https_proxy http://127.0.0.1:8889
@@ -70,8 +72,7 @@
       set -Ux fifc_editor nvim
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
 
-      search_files
-      starfetch -c magenta
+      # starfetch -c magenta
       '';
 
       shellInit = ''
