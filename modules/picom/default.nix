@@ -27,6 +27,7 @@
       "80:class_g = 'Nitrogen'"
       "95:class_g = 'TelegramDesktop'"
       "92:class_g = 'Logseq'"
+      "92:class_g = 'steam'"
     ];
   };
 }
