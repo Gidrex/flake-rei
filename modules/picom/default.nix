@@ -18,16 +18,16 @@
     fadeSteps = [0.02 0.9];
     backend = "glx";
     opacityRules = [
-      "90:class_g = 'Thunar'"
-      "90:class_g = 'Spotube'"
-      "92:class_g = 'Alacritty'"
       "96:class_g = 'kitty'"
-      "92:class_g = 'zen-alpha'"
-      "90:class_g = 'vesktop'"
-      "80:class_g = 'Nitrogen'"
       "95:class_g = 'TelegramDesktop'"
+      "92:class_g = 'Alacritty'"
       "92:class_g = 'Logseq'"
       "92:class_g = 'steam'"
+      "92:class_g = 'zen-alpha'"
+      "90:class_g = 'Thunar'"
+      "90:class_g = 'Spotube'"
+      "90:class_g = 'vesktop'"
+      "80:class_g = 'Nitrogen'"
     ];
   };
 }
