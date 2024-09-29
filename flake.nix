@@ -41,6 +41,7 @@
             {
               environment.systemPackages = [
                 byedpi.packages.${system}.default
+                ayugram-desktop.packages.${system}.default
               ];
             }
           ];

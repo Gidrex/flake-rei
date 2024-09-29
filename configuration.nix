@@ -1,4 +1,4 @@
-{ config, pkgs, ayugram-desktop, ... }: 
+{ config, pkgs, ... }: 
 {
   imports = [ 
     ./hardware-configuration.nix
@@ -257,7 +257,6 @@
     webtorrent_desktop
     telegram-desktop vesktop 
     onlyoffice-bin_latest
-    ayugram-desktop.packages.${pkgs.system}.default
     logseq
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
