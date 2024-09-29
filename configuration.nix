@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ayugram-desktop, ... }: 
 {
   imports = [ 
     ./hardware-configuration.nix
