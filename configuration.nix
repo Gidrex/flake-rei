@@ -256,8 +256,8 @@
     # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop vesktop 
-    inputs.ayugram-desktop.packages.${pkgs.system}.default
     onlyoffice-bin_latest
+    inputs.ayugram-desktop.packages.${pkgs.system}.default
     logseq
     androidStudioPackages.canary
     mysql-workbench dbeaver-bin sqlitebrowser
