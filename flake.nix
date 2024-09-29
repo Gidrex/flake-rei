@@ -14,7 +14,7 @@
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
-    inputs.ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
+    ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: 
