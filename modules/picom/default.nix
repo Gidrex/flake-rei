@@ -20,7 +20,6 @@
     opacityRules = [
       "96:class_g = 'kitty'"
       "93:class_g = 'TelegramDesktop'"
-      "93:class_g = 'AyuGramDesktop'"
       "92:class_g = 'Alacritty'"
       "92:class_g = 'Logseq'"
       "92:class_g = 'steam'"
@@ -28,6 +27,7 @@
       "90:class_g = 'Thunar'"
       "90:class_g = 'Spotube'"
       "90:class_g = 'vesktop'"
+      "85:class_g = 'AyuGramDesktop'"
       "80:class_g = 'Nitrogen'"
     ];
   };
