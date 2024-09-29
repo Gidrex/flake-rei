@@ -19,7 +19,8 @@
     backend = "glx";
     opacityRules = [
       "96:class_g = 'kitty'"
-      "95:class_g = 'TelegramDesktop'"
+      "93:class_g = 'TelegramDesktop'"
+      "93:class_g = 'AyuGramDesktop'"
       "92:class_g = 'Alacritty'"
       "92:class_g = 'Logseq'"
       "92:class_g = 'steam'"
