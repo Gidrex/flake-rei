@@ -194,7 +194,7 @@
     # --------------- Terminal tools --------------- #
     # musthave
     neovim tldr
-    pciutils gnutls usbutils util-linux wget grc
+    pciutils gnutls usbutils util-linux wget
     acpi sysstat
     htop
     coreutils-prefixed pinentry
@@ -207,6 +207,7 @@
     nix-inspect nix-prefetch-github
     calc libqalculate
     wmctrl
+    tailspin grc
 
     # web & security
     openssl
