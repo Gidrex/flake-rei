@@ -73,6 +73,9 @@ in {
         config = builtins.readFile ./config/setup/lspconfig.lua;
         type = "lua";
       }
+      pkgs.vimPlugins.mason-nvim
+      pkgs.vimPlugins.mason-lspconfig-nvim
+
       # pkgs.vimPlugins.plenary-nvim
       {
         plugin = pkgs.vimPlugins.lspsaga-nvim;
