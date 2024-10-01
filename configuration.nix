@@ -194,7 +194,7 @@
     # --------------- Terminal tools --------------- #
     # musthave
     neovim tldr
-    pciutils gnutls usbutils util-linux wget
+    pciutils gnutls usbutils util-linux wget grc
     acpi sysstat
     htop
     coreutils-prefixed pinentry
