@@ -25,13 +25,9 @@ require'lspconfig'.pyright.setup{
   }
 }
 require'lspconfig'.vimls.setup{}
--- require'lspconfig'.eslint.setup{ cmd = { "eslint_d" }, capabilities = capabilities, }
--- require'lspconfig'.tsserver.setup{capabilities=capabilities}
 
-require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = { "tsserver", "eslint" },
-})
+-- require("mason").setup()
+-- require("mason-lspconfig").setup({ ensure_installed = { "tsserver", "eslint" }, })
 
 require'lspconfig'.eslint.setup{ cmd = { "eslint_d" }, capabilities = capabilities, }
 require'lspconfig'.tsserver.setup{capabilities=capabilities}
