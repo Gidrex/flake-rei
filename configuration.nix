@@ -175,8 +175,6 @@
   # Fonts
   fonts = {
     enableDefaultPackages = false;
-    fontconfig.enable = true;
-    fontconfig.defaultFonts.monospace = [ "Hack" ];
     packages = with pkgs; [
       times-newer-roman
       hack-font
@@ -197,7 +195,12 @@
       caladea
       carlito
     ];
-    fontconfig.defaultFonts.emoji = [ "Twitter Color Emoji" ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts.monospace = [ "Hack" ];
+      defaultFonts.emoji = [ "Twitter Color Emoji" ];
+    };
   };
 
   # Packets
