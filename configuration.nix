@@ -195,7 +195,7 @@
       caladea
       carlito
     ];
-    emoji = [ "Twitter Color Emoji" ];
+    fontconfig.defaultFonts.emoji = [ "Twitter Color Emoji" ];
   };
 
   # Packets
