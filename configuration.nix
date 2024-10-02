@@ -179,6 +179,8 @@
     fontconfig.defaultFonts.monospace = [ "Hack" ];
     packages = with pkgs; [
       times-newer-roman
+      hack-font
+
       jetbrains-mono
       noto-fonts-lgc-plus
       noto-fonts-cjk-sans
