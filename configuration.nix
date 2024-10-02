@@ -174,18 +174,28 @@
 
   # Fonts
   fonts = {
+    enableDefaultPackages = false;
     fontconfig.enable = true;
     fontconfig.defaultFonts.monospace = [ "Hack" ];
     packages = with pkgs; [
-      nerdfonts
-      noto-fonts
-      jetbrains-mono
-      _0xproto
       times-newer-roman
-      hack-font
-      source-code-pro
-      sudo-font
+      jetbrains-mono
+      noto-fonts-lgc-plus
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      twitter-color-emoji
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+
+      # unicode coverage
+      unifont
+      symbola
+
+      # metric-compatible fonts
+      gyre-fonts
+      caladea
+      carlito
     ];
+    emoji = [ "Twitter Color Emoji" ];
   };
 
   # Packets
