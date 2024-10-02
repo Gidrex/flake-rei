@@ -22,7 +22,6 @@
   # Programs
   programs = {
     firefox.enable = true;
-    steam.enable = true;
     gpg.enable = true;
     zoxide.enable = true;
     alacritty.enable = true;

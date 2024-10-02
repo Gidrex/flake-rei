@@ -285,6 +285,7 @@
     anydesk
     pavucontrol
     nemo-with-extensions
+    steam
 
     # Open with
     feh gthumb
