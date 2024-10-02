@@ -44,6 +44,7 @@
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
         copy = "xclip -selection clipboard";
         fetch = "screenfetch 2>/dev/null";
+        browser = "io.github.zen_browser.zen";
 
         # custom fzf scripts
         nf = ''nvim $(find . -type f | fzf --preview "bat {}" --preview-window=right:50%:wrap)'';
