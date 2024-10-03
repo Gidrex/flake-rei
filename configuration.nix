@@ -31,21 +31,19 @@
 
   # Rice
   services = {
-    displayManager.defaultSession = "none+i3"; # "none+i3"
+    displayManager.defaultSession = "none+i3";
     displayManager.enable = true;
     xserver = {
       enable = true;
       windowManager.i3.enable = true;
       windowManager.i3.package = pkgs.i3-gaps;
       desktopManager.xterm.enable = false;
+      displayManager.lightdm.background = ./assets/nix.png;
+      displayManager.lightdm.enable = true;
       xkb = {
         layout = "us,ru";
         model = "pc105";
         options = "grp:alt_shift_toggle";
-      };
-      displayManager.lightdm = {
-        background = ./assets/nix.png;
-        enable  = true;
       };
     };
 
@@ -244,10 +242,6 @@
     # dependencies
     alsa-utils ueberzugpp poppler chafa
 
-    # why Im garbage collector?
-    micro
-
-    # I want to learn it
     # github-copilot-cli
     # ---------------------------------------------- #
 
