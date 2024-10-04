@@ -80,9 +80,8 @@
     # proxy.httpProxy = "http://127.0.0.1:8889";
     # proxy.allProxy = "socks5://localhost:1089";
     hostName = "rei";
-    networkmanager.enable = false;
+    networkmanager.enable = true;
   };
-  services.connman.enable = true;
 
   # Locale
   time.timeZone = "Europe/Moscow";
