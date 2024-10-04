@@ -224,7 +224,7 @@
     tailspin grc
 
     # TUI(s)
-    bluetuith
+    bluetuith impala
 
     # web & security
     openssl
