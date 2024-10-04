@@ -33,7 +33,7 @@
 
     gh = {
       enable = true;
-      extensions = with pkgs; [ gh-s ];
+      extensions = with pkgs; [ gh-s gh-copilot ];
     };
 
     btop = {
