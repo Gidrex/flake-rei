@@ -30,6 +30,7 @@
     # looking-glass-client.enable = true;
     lazygit.enable = true;
     direnv.enable = true;
+    gh.enable = true;
 
     btop = {
       enable = true;
