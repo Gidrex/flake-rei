@@ -253,7 +253,7 @@
     nodejs yarn deno typescript
     rustup cargo rust-script
     dart
-    gcc clang clang-tools cmake gnumake pkg-config glibc libcxx libstdcxx5 ncurses
+    gcc clang clang-tools cmake gnumake glibc libcxx libstdcxx5 ncurses
     sqlite sqlite-utils
     clisp sbcl
 
@@ -310,7 +310,7 @@
     xarchiver
     vulkan-tools vulkan-loader vulkan-validation-layers
     dotnetCorePackages.sdk_6_0_1xx
-    acpid
+    acpid dbus pkg-config
 
     # Dependencies
     xorg.libX11

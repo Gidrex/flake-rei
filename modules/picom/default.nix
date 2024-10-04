@@ -27,7 +27,7 @@
       "90:class_g = 'Thunar'"
       "90:class_g = 'Spotube'"
       "90:class_g = 'vesktop'"
-      "85:class_g = 'AyuGramDesktop'"
+      "95:class_g = 'AyuGramDesktop'"
       "80:class_g = 'Nitrogen'"
     ];
   };
