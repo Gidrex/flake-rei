@@ -71,7 +71,6 @@
       enable = true; # auto mount flash usb
       mountOnMedia = true;
     };
-    connman.enable = true;
     flatpak.enable = true;
     udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
   };
@@ -81,8 +80,9 @@
     # proxy.httpProxy = "http://127.0.0.1:8889";
     # proxy.allProxy = "socks5://localhost:1089";
     hostName = "rei";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
   };
+  services.connman.enable = true;
 
   # Locale
   time.timeZone = "Europe/Moscow";
