@@ -225,7 +225,7 @@
 
     # web & security
     openssl
-    cloak pass
+    cloak pass sshpass
     shadowsocks-rust shadowsocks-libev 
     wireguard-tools udp2raw inetutils v2ray qv2ray
     crow-translate

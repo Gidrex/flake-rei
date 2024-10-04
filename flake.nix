@@ -17,7 +17,7 @@
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
   };
 
-  outputs = { self, nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: 
+  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, ... }: 
     let
       system = "x86_64-linux";
     in {
