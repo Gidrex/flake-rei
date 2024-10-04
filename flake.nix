@@ -15,7 +15,7 @@
     byedpi.url = "github:Gidrex/byedpi-nix";
     catppuccin.url = "github:catppuccin/nix";
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
-    bluetui.url = "https://github.com/pythops/bluetui";
+    bluetui.url = "github:pythops/bluetui";
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, bluetui, ... }: 
