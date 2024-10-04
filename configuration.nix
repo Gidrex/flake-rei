@@ -219,9 +219,6 @@
     wmctrl
     tailspin grc
 
-    # TUI(s)
-    bluetuith impala
-
     # web & security
     openssl
     cloak pass sshpass
