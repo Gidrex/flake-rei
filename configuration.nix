@@ -59,7 +59,6 @@
     udev.packages = [ pkgs.android-udev-rules ];
 
     # Services
-
     openssh.enable = true;
     deluge.enable = true;
     blueman.enable = true;
@@ -72,9 +71,7 @@
       enable = true; # auto mount flash usb
       mountOnMedia = true;
     };
-
-
-    # flatpak
+    connman.enable = true;
     flatpak.enable = true;
     udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
   };
