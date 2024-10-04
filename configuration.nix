@@ -223,6 +223,9 @@
     wmctrl
     tailspin grc
 
+    # TUI(s)
+    bluetuith
+
     # web & security
     openssl
     cloak pass sshpass
