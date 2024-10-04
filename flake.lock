@@ -20,9 +20,27 @@
         "type": "github"
       }
     },
-    "byedpi": {
+    "bluetui": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1725219884,
+        "narHash": "sha256-QrrO7fWFqOEmb+af8DFbe6iuDnIvGNkCUwhkGktco4o=",
+        "owner": "pythops",
+        "repo": "bluetui",
+        "rev": "ced9f86a4ff0f980bd7f1dab654a8bebbdf8f5c6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pythops",
+        "repo": "bluetui",
+        "type": "github"
+      }
+    },
+    "byedpi": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1723051015,
@@ -143,6 +161,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1721949857,
+        "narHash": "sha256-DID446r8KsmJhbCzx4el8d9SnPiE8qa6+eEQOJ40vR0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a1cc729dcbc31d9b0d11d86dc7436163548a9665",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1723049121,
         "narHash": "sha256-9qxV4dsvhQHeQetFsYIELCZgp4DRRdv/HOl2YD3mjQw=",
         "owner": "NixOS",
@@ -156,7 +190,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1722813957,
         "narHash": "sha256-IAoYyYnED7P8zrBFMnmp7ydaJfwTnwcnqxUElC1I26Y=",
@@ -174,12 +208,13 @@
     "root": {
       "inputs": {
         "ayugram-desktop": "ayugram-desktop",
+        "bluetui": "bluetui",
         "byedpi": "byedpi",
         "catppuccin": "catppuccin",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       }
     },
     "systems": {
