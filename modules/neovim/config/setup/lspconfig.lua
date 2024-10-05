@@ -25,8 +25,8 @@ require'lspconfig'.pyright.setup{
   }
 }
 require'lspconfig'.vimls.setup{}
-require'lspconfig'.eslint.setup{ cmd = { "eslint_d" }, capabilities = capabilities, }
-require'lspconfig'.tsserver.setup{capabilities=capabilities}
+-- require'lspconfig'.eslint.setup{ cmd = { "eslint_d" }, capabilities = capabilities, }
+-- require'lspconfig'.tsserver.setup{capabilities=capabilities}
 require'lspconfig'.gradle_ls.setup{capabilities=capabilities}
 
 -- Global mappings.
