@@ -25,7 +25,7 @@ in {
     nixpkgs-fmt
     typescript-language-server
     eslint_d
-    # nodePackages.gradle-language-server # not exist
+    lua54Packages.luarocks-nix
   ];
   programs.neovim = {
     extraPackages = with pkgs; [ luajitPackages.lua-utils-nvim ];
