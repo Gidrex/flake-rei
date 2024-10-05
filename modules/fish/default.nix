@@ -75,8 +75,6 @@
 
       set -Ux fifc_editor nvim
       set -U fifc_exa_opts  --oneline --icons --git --tree --level 2
-
-      # starfetch -c magenta
       '';
 
       shellInit = ''
@@ -95,19 +93,26 @@
       functions = {
         search_files = {
           body = ''
-          function search_files
-              set dir (zoxide query -l | fzf --height 40% --prompt="Directory: ") 
-              if test -z "$dir"
-                  return
-              end
+            set -l options "screenfetch 2>/dev/null" \
+                               "fastfetch" \
+                               "ghfetch -u Gidrex -c magenta --access-token (pass show github_token)" \
+                               "starfetch -c magenta"
 
-              set file (find "$dir" -type f -print 2>/dev/null | fzf --preview "bat {}" --preview-window=right:50%:wrap)
-              if test -z "$file"
-                  return
-              end
-              # z "$dir"
-              nvim "$file"
-          end
+                set -l selected_command (printf "%s\n" $options | fzf --height 40% --reverse)
+
+                if test -n "$selected_command"
+                    eval $selected_command
+                else
+                    echo "Команда не выбрана."
+                end
+            end
+          '';
+        };
+        fetch = {
+          body = ''
+
+
+      starfetch -c magenta
           '';
         };
       };
