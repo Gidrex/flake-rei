@@ -33,10 +33,7 @@
 
     gh = {
       enable = true;
-      settings = {
-        git_protocol = "ssh";
-        GITHUB_TOKEN = "${pkgs.pass}/bin/pass github_token";
-      };
+      settings.git_protocol = "ssh";
       extensions = with pkgs; [ gh-s gh-copilot ];
     };
 
@@ -136,6 +133,9 @@
       "$HOME/.cargo/bin"
       "$HOME/go/bin"
     ];
+    extraSessionVariables = {
+      GITHUB_TOKEN = builtins.readFile "${pkgs.pass}/bin/pass" + " github_token";
+    };
 
     username = "gidrex";
     homeDirectory = "/home/gidrex";
