@@ -136,8 +136,6 @@
       "$HOME/go/bin"
     ];
 
-    username = "gidrex";
-    homeDirectory = "/home/gidrex";
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
   };

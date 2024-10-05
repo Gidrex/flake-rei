@@ -25,7 +25,7 @@
   outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, bluetui, ... }: 
     let
       system = "x86_64-linux";
-      username = "gidrex";
+      name = "gidrex";
     in {
       nixosConfigurations = {
         rei = nixpkgs.lib.nixosSystem {
@@ -37,11 +37,15 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.${username} = { config, lib, pkgs, ... }: {
+              home-manager.users.${name} = { config, lib, pkgs, ... }: {
                 imports = [
                   ./home.nix
                   catppuccin.homeManagerModules.catppuccin
                 ];
+                home = {
+                  username = name;
+                  homeDirectory = "/home/${name}";
+                };
               };
             }
             {
