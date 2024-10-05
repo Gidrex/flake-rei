@@ -124,7 +124,7 @@
                     case "starfetch"
                         starfetch -c magenta
                     case '*'
-                        echo "Команда не выбрана."
+                        echo "Error"
                 end
             end
           '';
