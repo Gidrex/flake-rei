@@ -44,11 +44,10 @@
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
         copy = "xclip -selection clipboard";
         fetch = ''echo -e "
-          screenfetch 2>/dev/null\n
-          fastfetch\n
+          screenfetch 2>/dev/null
+          fastfetch
           ghfetch -u Gidrex -c magenta --access-token $(pass show github_token)
-        "\
-        | fzf | sh'';
+        " | fzf | sh'';
         browser = "io.github.zen_browser.zen";
 
         # custom fzf scripts
