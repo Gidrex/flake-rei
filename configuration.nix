@@ -310,9 +310,13 @@
     vulkan-tools vulkan-loader vulkan-validation-layers
     dotnetCorePackages.sdk_6_0_1xx
     acpid dbus pkg-config
+    freetype
 
-    # Dependencies
-    (with xorg; [
+    # Gaming
+    mangohud
+
+    # xorg dependencies
+  ] ++ lib.flatten [(with xorg; [
       xf86videofbdev
       xkbcomp
       libX11
@@ -323,12 +327,8 @@
       libXrender
       libXxf86vm
       xrandr
-    ])
-    freetype
+    ])];
 
-    # Gaming
-    mangohud
-  ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     openjdk flutter
