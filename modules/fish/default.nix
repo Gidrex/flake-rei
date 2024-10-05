@@ -111,15 +111,20 @@
         fetch = {
           body = ''
             function fetch
-                set -l options "screenfetch 2>/dev/null" \
-                               "fastfetch" \
-                               "ghfetch -u Gidrex -c magenta --access-token (pass show github_token)" \
-                               "starfetch -c magenta"
-                set -l selected_command (printf "%s\n" $options | fzf --height 40% --reverse)
-                if test -n "$selected_command"
-                    eval $selected_command
-                else
-                    echo "Команда не выбрана."
+                set -l commands "screenfetch" "fastfetch" "ghfetch" "starfetch"
+                set -l selected_command (printf "%s\n" $commands | fzf --height 40% --reverse)
+
+                switch $selected_command
+                    case "screenfetch"
+                        screenfetch 2>/dev/null
+                    case "fastfetch"
+                        fastfetch
+                    case "ghfetch"
+                        ghfetch -u Gidrex -c magenta --access-token (pass show github_token)
+                    case "starfetch"
+                        starfetch -c magenta
+                    case '*'
+                        echo "Команда не выбрана."
                 end
             end
           '';
