@@ -312,20 +312,19 @@
     acpid dbus pkg-config
 
     # Dependencies
-
-    (with pkgs; [
-    xf86videofbdev
-    xkbcomp
-    libX11
-    libxcb
-    libXcursor
-    libXrandr
-    libXi
-    libXrender
-    libXxf86vm
-    xrandr
-    freetype
+    (with xorg; [
+      xf86videofbdev
+      xkbcomp
+      libX11
+      libxcb
+      libXcursor
+      libXrandr
+      libXi
+      libXrender
+      libXxf86vm
+      xrandr
     ])
+    freetype
 
     # Gaming
     mangohud
