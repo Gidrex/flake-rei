@@ -35,6 +35,7 @@
       enable = true;
       settings = {
         git_protocol = "ssh";
+        GITHUB_TOKEN = "${pkgs.pass}/bin/pass github_token";
       };
       extensions = with pkgs; [ gh-s gh-copilot ];
     };
@@ -129,7 +130,6 @@
       VISUAL = "nvim";
       TERM = "alacritty";
       CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
-      GITHUB_TOKEN = "$(pass github_token)";
       # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
     sessionPath = [
