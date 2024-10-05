@@ -43,7 +43,12 @@
         nix-shell-init = "touch default.nix && echo '{ pkgs ? import <nixpkgs> {} }:' > default.nix && echo '' >> default.nix && echo 'pkgs.mkShell {' >> default.nix && echo '  buildInputs = with pkgs; [' >> default.nix && echo '    # add your own packets' >> default.nix && echo '  ];' >> default.nix && echo '}' >> default.nix";
         wine-ru = "LANG=ru_RU.UTF-8 LC_ALL=ru_RU.UTF-8 wine '$@'";
         copy = "xclip -selection clipboard";
-        fetch = "screenfetch 2>/dev/null";
+        fetch = ''echo -e "
+          screenfetch 2>/dev/null\n
+          fastfetch\n
+          ghfetch -u Gidrex -c magenta --access-token $(pass show github_token)
+        "\
+        | fzf | sh'';
         browser = "io.github.zen_browser.zen";
 
         # custom fzf scripts
