@@ -129,6 +129,7 @@
       VISUAL = "nvim";
       TERM = "alacritty";
       CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
+      GITHUB_TOKEN = "$(pass github_token)";
       # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
     sessionPath = [

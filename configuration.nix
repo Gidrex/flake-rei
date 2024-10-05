@@ -292,7 +292,6 @@
     qemu_kvm libvirt bridge-utils
 
     # Rice
-    xorg.xf86videofbdev xorg.xkbcomp
     lxappearance nitrogen rofi dmenu pavucontrol
     libexecinfo
     i3 i3lock-fancy
@@ -313,11 +312,20 @@
     acpid dbus pkg-config
 
     # Dependencies
-    xorg.libX11
-    xorg.libXfixes
-    xorg.libXrandr
-    xorg.xmodmap
+
+    (with pkgs; [
+    xf86videofbdev
+    xkbcomp
+    libX11
+    libxcb
+    libXcursor
+    libXrandr
+    libXi
+    libXrender
+    libXxf86vm
+    xrandr
     freetype
+    ])
 
     # Gaming
     mangohud
