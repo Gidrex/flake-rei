@@ -122,7 +122,7 @@
                 case '*'
                   echo "Error."
                 end
-              end
+            end
           '';
         };
       };
