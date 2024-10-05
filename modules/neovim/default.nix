@@ -76,6 +76,16 @@ in {
         config = builtins.readFile ./config/setup/lspsaga.lua;
         type = "lua";
       }
+      {
+        plugin = pkgs.vimPlugins.mason-nvim;
+        config = ''require("mason").setup()'';
+        type = "lua";
+      }
+      {
+        plugin = pkgs.vimPlugins.mason-lspconfig-nvim;
+        config = ''require("mason-lspconfig").setup()'';
+        type = "lua";
+      }
 
       # Telescope
       {
@@ -110,11 +120,6 @@ in {
       pkgs.vimPlugins.nvim-web-devicons
       # pkgs.vimPlugins.surround-nvim # again?
       pkgs.vimPlugins.lazygit-nvim
-      # {
-      #   plugin = pkgs.vimPlugins.neorg;
-      #   config = builtins.readFile ./config/setup/neorg.lua;
-      #   type = "lua";
-      # }
       {
         plugin = fromGitHub "6218a401824c5733ac50b264991b62d064e85ab2" "main" "m-demare/hlargs.nvim";
         config = "require('hlargs').setup()";
