@@ -121,7 +121,7 @@
                   starfetch -c magenta
                 case '*'
                   echo "Error."
-                end
+              end
             end
           '';
         };
