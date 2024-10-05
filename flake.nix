@@ -42,10 +42,8 @@
                   ./home.nix
                   catppuccin.homeManagerModules.catppuccin
                 ];
-                home = {
-                  username = name;
-                  homeDirectory = "/home/${name}";
-                };
+                home.username = name;
+                home.homeDirectory = "/home/${name}";
               };
             }
             {
