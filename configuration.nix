@@ -316,7 +316,7 @@
     mangohud
 
     # xorg dependencies
-  ] ++ lib.flatten [(with xorg; [
+  ] (with xorg; [
       xf86videofbdev
       xkbcomp
       libX11
@@ -327,7 +327,7 @@
       libXrender
       libXxf86vm
       xrandr
-    ])];
+    ]);
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
