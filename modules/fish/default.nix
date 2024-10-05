@@ -107,7 +107,7 @@
         fetch = {
           body = ''
             function fetch
-              set -l commands "screenfetch" "fastfetch" "ghfetch" "starfetch"
+              set -l commands "screenfetch" "fastfetch" "ghfetch" "starfetch" "onefetch"
               set -l selected_command (printf "%s\n" $commands | fzf --height 40% --reverse)
 
               switch $selected_command
@@ -119,6 +119,8 @@
                   ghfetch -u Gidrex -c magenta --access-token (pass show github_token)
                 case "starfetch"
                   starfetch -c magenta
+                case "onefetch"
+                  onefetch --no-art --no-color-palette --no-title --number-of-authors 0
                 case '*'
                   echo "Error."
               end
