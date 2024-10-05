@@ -54,7 +54,7 @@
 
         # zellij
         zl = "zellij";
-        zla = "zellij attach";
+        zla = "zellij attach $(zellij ls -s | fzf)";
         zln = "zellij --session";
         zls = "zellij ls";
       };
