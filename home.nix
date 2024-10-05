@@ -122,6 +122,7 @@
       catppuccin
       catppuccin-kvantum
     ];
+
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
@@ -129,12 +130,16 @@
       CHROME_EXECUTABLE = "/run/current-system/sw/bin/chromium";
       # QT_QPA_PLATFORMTHEME = "qt5ct";
     };
+
     sessionPath = [
       "$HOME/.cargo/bin"
       "$HOME/go/bin"
     ];
+
     extraSessionVariables = {
-      GITHUB_TOKEN = builtins.readFile "${pkgs.pass}/bin/pass" + " github_token";
+      GITHUB_TOKEN = builtins.readFile (pkgs.runCommand "get-github-token" {} ''
+        pass github_token > $out
+      '');
     };
 
     username = "gidrex";
