@@ -136,11 +136,10 @@
       "$HOME/go/bin"
     ];
 
-    extraSessionVariables = {
-      GITHUB_TOKEN = builtins.readFile (pkgs.runCommand "get-github-token" {} ''
+    extraSessionVariables.GITHUB_TOKEN = builtins.readFile (pkgs.runCommand "get-github-token" {} ''
         pass github_token > $out
-      '');
-    };
+        '');
+    
 
     username = "gidrex";
     homeDirectory = "/home/gidrex";

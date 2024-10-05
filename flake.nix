@@ -10,6 +10,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
@@ -21,6 +25,7 @@
   outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, bluetui, ... }: 
     let
       system = "x86_64-linux";
+      username = "gidrex";
     in {
       nixosConfigurations = {
         rei = nixpkgs.lib.nixosSystem {
@@ -32,7 +37,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.gidrex = { config, lib, pkgs, ... }: {
+              home-manager.users.${username} = { config, lib, pkgs, ... }: {
                 imports = [
                   ./home.nix
                   catppuccin.homeManagerModules.catppuccin
