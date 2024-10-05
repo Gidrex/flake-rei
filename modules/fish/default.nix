@@ -62,6 +62,7 @@
       function fish_greeting
       end
       search_files
+      fetch
 
       set -x http_proxy http://127.0.0.1:8889
       set -x https_proxy http://127.0.0.1:8889
