@@ -1,15 +1,14 @@
 { pkgs, lib, ... }: 
 let
-  fromGitHub = rev: ref: repo:
-    pkgs.vimUtils.buildVimPlugin {
-      pname = "${lib.strings.sanitizeDerivationName repo}";
-      version = ref;
-      src = builtins.fetchGit {
-        url = "https://github.com/${repo}.git";
-        ref = ref;
-        rev = rev;
-      };
+  fromGitHub = rev: ref: repo: pkgs.vimUtils.buildVimPlugin {
+    pname = "${lib.strings.sanitizeDerivationName repo}";
+    version = ref;
+    src = builtins.fetchGit {
+      url = "https://github.com/${repo}.git";
+      ref = ref;
+      rev = rev;
     };
+  };
 in {
   home.packages = with pkgs; [
     # LSP Servers
@@ -37,7 +36,6 @@ in {
         config = "vim.cmd[[colorscheme catppuccin-mocha]]";
         type = "lua";
       }     
-      pkgs.vimPlugins.rose-pine
 
       {
         plugin = pkgs.vimPlugins.yazi-nvim;
@@ -73,10 +71,6 @@ in {
         config = builtins.readFile ./config/setup/lspconfig.lua;
         type = "lua";
       }
-      # pkgs.vimPlugins.mason-nvim
-      # pkgs.vimPlugins.mason-lspconfig-nvim
-
-      # pkgs.vimPlugins.plenary-nvim
       {
         plugin = pkgs.vimPlugins.lspsaga-nvim;
         config = builtins.readFile ./config/setup/lspsaga.lua;
@@ -169,26 +163,7 @@ in {
       }
       {
         plugin = pkgs.vimPlugins.noice-nvim;
-        config = ''
-          require("noice").setup({
-              lsp = {
-              -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-              override = {
-              ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-              ["vim.lsp.util.stylize_markdown"] = true,
-              ["cmp.entry.get_documentation"] = true,
-              },
-              },
-              -- you can enable a preset for easier configuration
-              presets = {
-              bottom_search = true, -- use a classic bottom cmdline for search
-              command_palette = true, -- position the cmdline and popupmenu together
-              long_message_to_split = true, -- long messages will be sent to a split
-              inc_rename = false, -- enables an input dialog for inc-rename.nvim
-              lsp_doc_border = false, -- add a border to hover docs and signature help
-              },
-              })
-        '';
+        config = builtins.readFile ./config/setup/noice.lua;
         type = "lua";
       }
 

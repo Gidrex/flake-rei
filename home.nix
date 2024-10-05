@@ -8,7 +8,6 @@
     ./modules/yazi
     ./modules/picom
     # ./rice/hyprland
-    # ./modules/android-sdk # broken
     # ./rice/sway
   ];
 

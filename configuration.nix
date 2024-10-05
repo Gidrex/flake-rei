@@ -316,18 +316,7 @@
     mangohud
 
     # xorg dependencies
-  ] ++ lib.flatten [(with xorg; [
-      xf86videofbdev
-      xkbcomp
-      libX11
-      libxcb
-      libXcursor
-      libXrandr
-      libXi
-      libXrender
-      libXxf86vm
-      xrandr
-    ])];
+  ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
