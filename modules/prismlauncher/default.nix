@@ -11,15 +11,9 @@ in {
   home.packages = with pkgs; [ prismlauncher ];
 
 home.activation.copyPrismLauncherThemes = ''
-    TARGET_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
-    mkdir -p "$TARGET_DIR"
+    PRISM_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
 
-    if [ ! -d "$TARGET_DIR/icons" ]; then
-      cp -r ${Themes}/icons "$TARGET_DIR/"
-    fi
-
-    if [ ! -d "$TARGET_DIR/themes" ]; then
-      cp -r ${Themes}/themes "$TARGET_DIR/"
-    fi
+    cp -r ${Themes}/icons "$PRISM_DIR/"
+    cp -r ${Themes}/themes "$PRISM_DIR/"
   '';
 }
