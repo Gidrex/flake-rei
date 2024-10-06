@@ -15,6 +15,6 @@ in {
 
     cp -rn ${Themes}/icons "$PRISM_DIR/"
     cp -rn ${Themes}/themes "$PRISM_DIR/"
-    cp -rn ${Themes}/cats "$PRISM_DIR/"
+    cp -rn ${Themes}/cats/* "$PRISM_DIR/catpacks/"
   '';
 }
