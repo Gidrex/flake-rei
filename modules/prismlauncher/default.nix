@@ -36,6 +36,6 @@ in {
     cp -rn ${Themes}/themes "$PRISM_DIR/"
     cp -rn ${Themes}/cats/* "$PRISM_DIR/catpacks/"
 
-    ${rustCompareFiles}/bin/compare-files ./myprism.cfg "$PRISM_DIR/prismlauncher.cfg"
+    ${rustCompareFiles}/bin/compare-files ~/flake-rei/modules/prismlauncher/myprism.cfg "$PRISM_DIR/prismlauncher.cfg"
   '';
 }
