@@ -10,10 +10,11 @@ let
 in {
   home.packages = with pkgs; [ prismlauncher ];
 
-home.activation.copyPrismLauncherThemes = ''
+  home.activation.copyPrismLauncherThemes = ''
     PRISM_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
 
     cp -rn ${Themes}/icons "$PRISM_DIR/"
     cp -rn ${Themes}/themes "$PRISM_DIR/"
+    cp -rn ${Themes}/cats "$PRISM_DIR/"
   '';
 }
