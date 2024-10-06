@@ -7,8 +7,8 @@
     ./modules/zellij
     ./modules/yazi
     ./modules/picom
-    # ./rice/hyprland
     ./modules/prismlauncher
+    # ./rice/hyprland
     # ./rice/sway
   ];
 
