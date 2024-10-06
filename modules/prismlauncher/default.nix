@@ -12,7 +12,7 @@ let
     pname = "compare-files";
     version = "0.1.0";
     src = ./compare;
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
+    cargoSha256 = "BCS/3e9gZeoc2hJ+goA5H13lrEjBACFTYIzx0bcNwkM=";
   };
   runCompareFiles = pkgs.writeShellScriptBin "run-compare-files" ''
     #!/usr/bin/env bash
