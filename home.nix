@@ -8,6 +8,7 @@
     ./modules/yazi
     ./modules/picom
     # ./rice/hyprland
+    ./modules/prismlauncher
     # ./rice/sway
   ];
 
@@ -17,13 +18,6 @@
   gtk.catppuccin.enable = true;
   #   Excludes
   programs.zellij.catppuccin.enable = false;
-
-  xdg = {
-    enable = true;
-    mimeApps.defaultApplications = {
-      "pdf" = "zathura";
-    };
-  };
 
   # Programs
   programs = {
@@ -132,7 +126,6 @@
 
       # Gaming
       mangohud
-      prismlauncher
 
       # Utility
       flameshot pick-colour-picker
