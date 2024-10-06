@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, lib, ... }:
 let
   Themes = pkgs.fetchFromGitHub {
     owner = "PrismLauncher";
@@ -9,5 +9,9 @@ let
 
 in {
   home.packages = with pkgs; [ prismlauncher ];
-  home.file.".local/share/PrismLauncher/Themes".source = Themes;
+
+  home.activation.copyPrismLauncherThemes = lib.hm.dag.entryAfter ["home.file"] "copyThemes" ''
+    cp -r ${Themes}/icons "${config.home.homeDirectory}/.local/share/PrismLauncher/"
+    cp -r ${Themes}/themes "${config.home.homeDirectory}/.local/share/PrismLauncher/"
+  '';
 }
