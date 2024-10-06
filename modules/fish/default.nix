@@ -30,6 +30,7 @@
         "!!" = "eval sudo (history | head -n1 | string trim)";
         ls = "eza";
         la = "ls -al --no-user";
+        tail = "tspin";
         "..." = "cd ../../";
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
