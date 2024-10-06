@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
   prismLauncherThemes = builtins.fetchGit {
     url = "https://github.com/PrismLauncher/Themes.git";
     rev = "main";
-    sha256 = lib.fakeSha256;
+    sha256 = "0000000000000000000000000000000000000000000000000000";
   };
 in {
   home.packages = with pkgs; [ prismlauncher ];
