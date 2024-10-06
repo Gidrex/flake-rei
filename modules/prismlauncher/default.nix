@@ -15,6 +15,5 @@ home.activation.copyPrismLauncherThemes = ''
 
     cp -rn ${Themes}/icons "$PRISM_DIR/"
     cp -rn ${Themes}/themes "$PRISM_DIR/"
-    fi
   '';
 }
