@@ -13,6 +13,5 @@ in {
   home.activation.copyPrismLauncherThemes = ''
     cp -r ${Themes}/icons"${config.home.homeDirectory}/.local/share/PrismLauncher/"
     cp -r ${Themes}/themes"${config.home.homeDirectory}/.local/share/PrismLauncher/"
-    cp -r ${Themes}/cats"${config.home.homeDirectory}/.local/share/PrismLauncher/"
   '';
 }
