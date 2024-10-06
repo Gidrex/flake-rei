@@ -245,7 +245,7 @@
     kitty fish alacritty nushell starship
 
     # Dev
-    gradle sdkmanager
+    gradle sdkmanager openjdk flutter
     python3 python312Packages.pip virtualenv python3Packages.psutil
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
@@ -319,9 +319,6 @@
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    openjdk flutter
-  ];
 
   # Electron <3 .!.
   nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
