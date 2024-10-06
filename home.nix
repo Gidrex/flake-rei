@@ -18,6 +18,13 @@
   #   Excludes
   programs.zellij.catppuccin.enable = false;
 
+  xdg = {
+    enable = true;
+    mimeApps.defaultApplications = {
+      "pdf" = "zathura";
+    };
+  };
+
   # Programs
   programs = {
     firefox.enable = true;
@@ -115,11 +122,43 @@
   # home-manager options
   programs.home-manager.enable = true;
   home = { 
+    # Packages
     packages = with pkgs; [
+
       # theming
       tokyo-night-gtk
       catppuccin
       catppuccin-kvantum
+
+      # Gaming
+      mangohud
+      prismlauncher
+
+      # Utility
+      flameshot pick-colour-picker
+
+      # Apps
+      firefox ungoogled-chromium
+      # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
+      webtorrent_desktop
+      telegram-desktop vesktop 
+      onlyoffice-bin_latest
+      logseq
+      androidStudioPackages.canary
+      mysql-workbench dbeaver-bin sqlitebrowser
+      drawio gimp krita
+      obs-studio
+      spotify-cli-linux spotifywm
+      anydesk
+      pavucontrol
+      nemo-with-extensions
+      steam
+
+      # Open with
+      feh gthumb qimgv # img
+      evince zathura # pdf
+      mpv # audio
+      ark # zip
     ];
 
     sessionVariables = {

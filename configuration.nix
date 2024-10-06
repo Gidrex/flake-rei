@@ -257,33 +257,6 @@
     sqlite sqlite-utils
     clisp sbcl
 
-    # Utility
-    flameshot pick-colour-picker
-
-    # Apps
-    firefox ungoogled-chromium
-    # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
-    webtorrent_desktop
-    telegram-desktop vesktop 
-    onlyoffice-bin_latest
-    logseq
-    androidStudioPackages.canary
-    mysql-workbench dbeaver-bin sqlitebrowser
-    drawio gimp krita
-    obs-studio
-    spotify-cli-linux spotifywm
-    anydesk
-    pavucontrol
-    nemo-with-extensions
-    steam
-
-    # Open with
-    feh gthumb
-    evince zathura # pdf
-    mpv
-    qimgv
-    ark
-
     # Virtualisation
     winePackages.stableFull winetricks winePackages.fonts
     protonup protontricks
@@ -312,12 +285,8 @@
     acpid dbus pkg-config
     freetype
 
-    # Gaming
-    mangohud
-    prismlauncher
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
-
   programs.nix-ld.enable = true;
 
   # Electron <3 .!.
