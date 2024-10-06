@@ -13,7 +13,8 @@ in {
 home.activation.copyPrismLauncherThemes = ''
     PRISM_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
 
-    cp -r ${Themes}/icons "$PRISM_DIR/"
-    cp -r ${Themes}/themes "$PRISM_DIR/"
+    cp -rn ${Themes}/icons "$PRISM_DIR/"
+    cp -rn ${Themes}/themes "$PRISM_DIR/"
+    fi
   '';
 }
