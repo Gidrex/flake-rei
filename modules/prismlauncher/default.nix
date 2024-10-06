@@ -10,8 +10,10 @@ let
   copyThemes = ''
     PRISM_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
 
-    cp -rn ${Themes}/{icons,themes} "$PRISM_DIR/"
-    cp -rn ${Themes}/cats/* "$PRISM_DIR/catpacks/"
+    mkdir -p "$PRISM_DIR/catpacks"
+    cp -r ${Themes}/icons "$PRISM_DIR/"
+    cp -r ${Themes}/themes "$PRISM_DIR/"
+    cp -r ${Themes}/cats/* "$PRISM_DIR/catpacks/"
   '';
 
   updateConfig = ''
@@ -19,8 +21,7 @@ let
     MY_CONFIG=./myprism.cfg
     TARGET_CONFIG="$PRISM_DIR/prismlauncher.cfg"
 
-    awk -F '=' 'NR==FNR { a[$1]=$2; next } $1 in a { $2=a[$1] }1' OFS='=' "$MY_CONFIG" "$TARGET_CONFIG" > "$TARGET_CONFIG.tmp"
-    mv "$TARGET_CONFIG.tmp" "$TARGET_CONFIG"
+    awk -F '=' 'NR==FNR { a[$1]=$2; next } $1 in a { $2=a[$1] }1' OFS='=' "$MY_CONFIG" "$TARGET_CONFIG" > "$TARGET_CONFIG.tmp" && mv "$TARGET_CONFIG.tmp" "$TARGET_CONFIG"
   '';
 
 in {
