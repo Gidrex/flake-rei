@@ -2,7 +2,7 @@
 
 let
   zellijSessionTree = pkgs.fetchurl {
-    url = "https://github.com/laperlej/zellij-session-tree/releases/latest/download/zellij-session-tree.wasm";
+    url = "https://github.com/laperlej/zellij-sessionizer/releases/download/v0.4.0/zellij-sessionizer.wasm";
     sha256 = "PJbHxXbcEeyPvAh7RkMOK/t7GskaVY2bSZqi7rigk1o=";
   };
 in
