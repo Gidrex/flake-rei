@@ -109,7 +109,7 @@
         fetch = {
           body = ''
             function fetch
-              set -l commands "screenfetch" "fastfetch" "ghfetch" "starfetch" "onefetch"
+              set -l commands "screenfetch" "fastfetch" "ghfetch" "starfetch" "onefetch" "ipfetch"
               set -l selected_command (printf "%s\n" $commands | fzf --height 40% --reverse)
 
               switch $selected_command
@@ -123,6 +123,8 @@
                   starfetch -c magenta
                 case "onefetch"
                   onefetch --no-art --no-color-palette --no-title --number-of-authors 0
+                case "ipfetch"
+                  ipfetch
                 case '*'
                   echo "Error."
               end
