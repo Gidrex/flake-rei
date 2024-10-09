@@ -1,4 +1,12 @@
-{
+{ pkgs, ... }:
+
+let
+  zellijSessionTree = pkgs.fetchurl {
+    url = "https://github.com/laperlej/zellij-session-tree/releases/latest/download/zellij-session-tree.wasm";
+    sha256 = "PJbHxXbcEeyPvAh7RkMOK/t7GskaVY2bSZqi7rigk1o=";
+  };
+in
+  {
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
@@ -33,16 +41,10 @@
         bright_white = "#D9E0EE";
       };
     };
-    plugins = [
-      {
-        name = "zellij-sessionizer";
-        source = {
-          git = {
-            url = "https://github.com/laperlej/zellij-sessionizer";
-            rev = "main";
-          };
-        };
-      }
-    ];
+  };
+
+  home.file = {
+    ".config/zellij/plugins/zellij-session-tree.wasm".source = zellijSessionTree;
   };
 }
+
