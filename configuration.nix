@@ -229,7 +229,7 @@
     git-filter-repo
 
     # fun
-    fastfetch screenfetch starfetch ghfetch onefetch
+    fastfetch screenfetch starfetch ghfetch onefetch ipfetch
 
     # university learning & documents
     zip unzip rar unrar

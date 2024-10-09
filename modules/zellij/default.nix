@@ -1,10 +1,11 @@
 { pkgs, config, ... }:
 
 let
-  zellijSessionTree = pkgs.fetchurl {
+  sessionTree = pkgs.fetchurl {
     url = "https://github.com/laperlej/zellij-sessionizer/releases/download/v0.4.0/zellij-sessionizer.wasm";
     sha256 = "8ZQ1br0moNAaj/eSBSKbz3hP6sYTTix0uNQXk77C0Hc=";
   };
+
 in
   {
   programs.zellij = {
@@ -43,13 +44,10 @@ in
     };
   };
 
-
-  home.activation.makeDir = ''
-    mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins
-  '';
-
-  home.file = {
-    ".config/zellij/plugins/zellij-session-tree.wasm".source = zellijSessionTree;
+  # Plugins setup
+  home = {
+    activation.makeDir = ''mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins'';
+    file.".config/zellij/plugins/zellij-session-tree.wasm".source = sessionTree;
   };
 }
 
