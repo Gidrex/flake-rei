@@ -56,6 +56,7 @@
         zl = "zellij";
         zla = "zellij attach $(zellij ls -s | fzf)";
         zln = "zellij --session";
+        zlk = "zl kill-session $(zellij ls -s | fzf)";
       };
 
       interactiveShellInit = ''

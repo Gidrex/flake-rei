@@ -35,6 +35,4 @@ fn main() {
         file.write_all(content2.as_bytes())
             .expect("Unable to write to file2");
     }
-
-    println!("Comparison complete. File2 updated if needed.");
 }
