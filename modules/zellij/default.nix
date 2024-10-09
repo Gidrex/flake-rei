@@ -33,5 +33,16 @@
         bright_white = "#D9E0EE";
       };
     };
+    plugins = [
+      {
+        name = "zellij-sessionizer";
+        source = {
+          git = {
+            url = "https://github.com/laperlej/zellij-sessionizer";
+            rev = "main";
+          };
+        };
+      }
+    ];
   };
 }
