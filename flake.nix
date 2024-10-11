@@ -2,7 +2,7 @@
   description = "Gidrex NixOS flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # impermanence.url = "github:nix-community/impermanence"; # TODO
     home-manager = {
