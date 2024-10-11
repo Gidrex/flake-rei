@@ -137,6 +137,7 @@
       telegram-desktop vesktop 
       onlyoffice-bin_latest
       logseq
+      androidStudioPackages.canary
       mysql-workbench dbeaver-bin sqlitebrowser
       drawio gimp krita
       obs-studio
