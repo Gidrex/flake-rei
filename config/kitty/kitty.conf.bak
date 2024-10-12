@@ -1,0 +1,4 @@
+# BEGIN_KITTY_THEME
+# Base2Tone Lavender Dark
+include current-theme.conf
+# END_KITTY_THEME
