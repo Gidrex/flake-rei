@@ -15,7 +15,7 @@ in
     settings = {
       # session.hide_status_bar = true; # what?
       default_layout = "compact";
-      pane_frames = true;
+      pane_frames = false;
       mouse_mode = true;
       auto_layout = true;
 
