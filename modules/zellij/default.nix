@@ -17,7 +17,7 @@ in
       default_layout = "compact";
       pane_frames = true;
       mouse_mode = true;
-      auto_layout = false;
+      auto_layout = true;
 
       theme = "Catppuccin";
       themes.Catppuccin = {
