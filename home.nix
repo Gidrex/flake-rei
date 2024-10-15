@@ -22,10 +22,10 @@
   xdg = {
     enable = true;
     mimeApps.defaultApplications = {
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "onlyoffice.desktop" ];
-      "application/vnd.ms-excel" = [ "onlyoffice.desktop" ];
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "onlyoffice.desktop" ];
-      "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "onlyoffice.desktop" ];
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "DesktopEditors.ONLYOFFICE" ];
+      "application/vnd.ms-excel" = [ "DesktopEditors.ONLYOFFICE" ];
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "DesktopEditors.ONLYOFFICE" ];
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [ "DesktopEditors.ONLYOFFICE" ];
     };
   };
 
