@@ -5,11 +5,10 @@ vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-
-font_family      monospace
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+# font_family      monospace
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
 
 #: You can specify different fonts for the bold/italic/bold-italic
 #: variants. To get a full list of supported fonts use the `kitty
@@ -17,13 +16,12 @@ bold_italic_font auto
 #: the OSes font system. Setting them manually is useful for font
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
+# font_family      Operator Mono
+# bold_font        Operator Mono Medium
+# italic_font      Operator Mono Book Italic
+# bold_italic_font Operator Mono Medium Italic
 
-font_family      Operator Mono Book
-bold_font        Operator Mono Medium
-italic_font      Operator Mono Book Italic
-bold_italic_font Operator Mono Medium Italic
-
-font_size 13.0
+font_size 14.0
 
 #: Font size (in pts)
 
@@ -146,22 +144,20 @@ box_drawing_scale 0.001, 1, 1.5, 2
 # : }}}
 
 #: Cursor customization {{{
-
-cursor #cccccc
+# cursor #cccccc
 
 #: Default cursor color
-
-cursor_text_color #111111
+# cursor_text_color #111111
 
 #: Choose the color of text under the cursor. If you want it rendered
 #: with the background color of the cell underneath instead, use the
 #: special keyword: background
 
-cursor_shape block
+cursor_shape beam
 
 #: The cursor shape can be one of (block, beam, underline)
 
-cursor_beam_thickness 1.5
+cursor_beam_thickness 1.8
 
 #: Defines the thickness of the beam cursor (in pts)
 
@@ -169,7 +165,7 @@ cursor_underline_thickness 2.0
 
 #: Defines the thickness of the underline cursor (in pts)
 
-cursor_blink_interval -1
+cursor_blink_interval 0
 
 #: The interval (in seconds) at which to blink the cursor. Set to zero
 #: to disable blinking. Negative values mean use system default. Note
@@ -240,8 +236,7 @@ mouse_hide_wait 3.0
 #: typing text. Disabled by default on macOS as getting it to work
 #: robustly with the ever-changing sea of bugs that is Cocoa is too
 #: much effort.
-
-url_color #0087bd
+# url_color #0087bd
 url_style curly
 
 #: The color and style for highlighting URLs on mouse-over. url_style
@@ -478,17 +473,14 @@ placement_strategy center
 #: this option. Using a value of center means the cell area will be
 #: placed centrally. A value of top-left means the padding will be on
 #: only the bottom and right edges.
-
-active_border_color #00ff00
+# active_border_color #00ff00
 
 #: The color for the border of the active window. Set this to none to
 #: not draw borders around the active window.
-
-inactive_border_color #cccccc
+# inactive_border_color #cccccc
 
 #: The color for the border of inactive windows
-
-bell_border_color #ff5a00
+# bell_border_color #ff5a00
 
 #: The color for the border of inactive windows in which a bell has
 #: occurred
@@ -604,17 +596,15 @@ active_tab_title_template none
 
 #: Template to use for active tabs, if not specified falls back to
 #: tab_title_template.
-
-active_tab_foreground   #000
-active_tab_background   #eee
+# active_tab_foreground   #000
+# active_tab_background   #eee
 active_tab_font_style   bold-italic
-inactive_tab_foreground #444
-inactive_tab_background #999
+# inactive_tab_foreground #444
+# inactive_tab_background #999
 inactive_tab_font_style normal
 
 #: Tab bar colors and styles
-
-tab_bar_background none
+# tab_bar_background none
 
 #: Background color for the tab bar. Defaults to using the terminal
 #: background color.
@@ -622,9 +612,8 @@ tab_bar_background none
 #: }}}
 
 #: Color scheme {{{
-
-foreground #e6e6dc
-background #002635
+# foreground #e6e6dc
+# background #002635
 
 #: The foreground and background colors
 
@@ -679,13 +668,11 @@ dim_opacity 0.75
 
 #: How much to dim text that has the DIM/FAINT attribute set. One
 #: means no dimming and zero means fully dimmed (i.e. invisible).
-
-selection_foreground #000000
+# selection_foreground #000000
 
 #: The foreground for text selected with the mouse. A value of none
 #: means to leave the color unchanged.
-
-selection_background #fffacd
+# selection_background #fffacd
 
 #: The background for text selected with the mouse.
 
@@ -693,68 +680,54 @@ selection_background #fffacd
 #: The 16 terminal colors. There are 8 basic colors, each color has a
 #: dull and bright version. You can also set the remaining colors from
 #: the 256 color table as color16 to color255.
-
-color0       #00384d
-color8       #517f8d
+# color0       #00384d
+# color8       #517f8d
 
 #: black
-
-color1       #c43061
-color9       #ff5a67
+# color1       #c43061
+# color9       #ff5a67
 
 #: red
-
-color2       #7fc06e
-color10      #9cf087
+# color2       #7fc06e
+# color10      #9cf087
 
 #: green
-
-color3       #f08e48
-color11      #ffcc1b
+# color3       #f08e48
+# color11      #ffcc1b
 
 #: yellow
-
-color4       #1c8db2
-color12      #7eb2dd
+# color4       #1c8db2
+# color12      #7eb2dd
 
 #: blue
-
-color5       #c694ff
-color13      #fb94ff
+# color5       #c694ff
+# color13      #fb94ff
 
 #: magenta
-
-color6       #00cccc
-color14      #00ffff
+# color6       #00cccc
+# color14      #00ffff
 
 #: cyan
-
-color7       #77929e
-color15      #b7cff9
+# color7       #77929e
+# color15      #b7cff9
 
 #: white
-
-mark1_foreground black
+# mark1_foreground black
 
 #: Color for marks of type 1
-
-mark1_background #98d3cb
+# mark1_background #98d3cb
 
 #: Color for marks of type 1 (light steel blue)
-
-mark2_foreground black
+# mark2_foreground black
 
 #: Color for marks of type 2
-
-mark2_background #f2dcd3
+# mark2_background #f2dcd3
 
 #: Color for marks of type 1 (beige)
-
-mark3_foreground black
+# mark3_foreground black
 
 #: Color for marks of type 3
-
-mark3_background #f274bc
+# mark3_background #f274bc
 
 #: Color for marks of type 1 (violet)
 
@@ -878,8 +851,7 @@ term xterm-kitty
 #: }}}
 
 #: OS specific tweaks {{{
-
-macos_titlebar_color system
+# macos_titlebar_color system
 
 #: Change the color of the kitty window's titlebar on macOS. A value
 #: of system means to use the default system color, a value of
@@ -1314,6 +1286,14 @@ map kitty_mod+delete clear_terminal reset active
 # }}}
 
 # BEGIN_KITTY_THEME
-# Base4Tone_Classic_P Dark
+# Tokyo Night Storm
 include current-theme.conf
 # END_KITTY_THEME
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="SauceCodePro Nerd Font"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
