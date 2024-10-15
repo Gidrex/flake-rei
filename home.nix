@@ -19,6 +19,10 @@
   #   Excludes
   programs.zellij.catppuccin.enable = false;
 
+  xdg = {
+    enable = true;
+  };
+
   # Programs
   programs = {
     firefox.enable = true;
