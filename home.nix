@@ -25,7 +25,7 @@
 
   # Programs
   programs = {
-    firefox.enable = true;
+    # firefox.enable = true;
     gpg.enable = true;
     zoxide.enable = true;
     alacritty.enable = true;
@@ -135,7 +135,7 @@
       flameshot pick-colour-picker
 
       # Apps
-      firefox ungoogled-chromium
+      ungoogled-chromium
       # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
       webtorrent_desktop
       telegram-desktop vesktop 
