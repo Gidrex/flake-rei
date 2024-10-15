@@ -55,7 +55,11 @@
               environment.systemPackages = [
                 byedpi.packages.${system}.default
                 ayugram-desktop.packages.${system}.default
-                zjstatus.packages.${system}.default
+              ];
+              nixpkgs.overlays = [
+                (final: prev: {
+                  zjstatus = zjstatus.packages.${prev.system}.default;
+                })
               ];
             }
           ];
