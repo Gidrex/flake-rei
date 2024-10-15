@@ -18,7 +18,7 @@
     fadeSteps = [0.02 0.9];
     backend = "glx";
     opacityRules = [
-      "96:class_g = 'kitty'"
+      "93:class_g = 'kitty'"
       "93:class_g = 'TelegramDesktop'"
       "93:class_g = 'Alacritty'"
       "92:class_g = 'Logseq'"
