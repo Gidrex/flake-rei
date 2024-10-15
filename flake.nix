@@ -15,14 +15,19 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # }; # TODO
 
+    catppuccin.url = "github:catppuccin/nix";
+
     # Users pkgs(flakes)
     byedpi.url = "github:Gidrex/byedpi-nix";
-    catppuccin.url = "github:catppuccin/nix";
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
-    bluetui.url = "github:pythops/bluetui";
+    zjstatus.url = "github:dj95/zjstatus";
+    
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, byedpi, ayugram-desktop, bluetui, ... }: 
+  outputs = { 
+    nixpkgs, home-manager, catppuccin, # system affecting
+    byedpi, ayugram-desktop, zjstatus, # packages
+    ... }: 
     let
       system = "x86_64-linux";
       name = "gidrex";
@@ -50,7 +55,7 @@
               environment.systemPackages = [
                 byedpi.packages.${system}.default
                 ayugram-desktop.packages.${system}.default
-                bluetui.packages.${system}.default
+                zjstatus.packages.${system}.default
               ];
             }
           ];
