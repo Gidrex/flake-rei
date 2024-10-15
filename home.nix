@@ -21,7 +21,7 @@
 
   xdg = {
     enable = true;
-    mimeApplications = {
+    mimeApps.defaultApplications = {
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [ "onlyoffice.desktop" ];
       "application/vnd.ms-excel" = [ "onlyoffice.desktop" ];
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [ "onlyoffice.desktop" ];
