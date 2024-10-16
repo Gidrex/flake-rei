@@ -293,13 +293,13 @@
   nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
   # Looking glass TODO
-  # virtualisation.libvirtd = {
-  #   enable = true;
-  #   qemu.package = pkgs.qemu_kvm;
-  #   qemu.ovmf.enable = true;
-  # };
-  # programs.virt-manager.enable = true;
-  # services.dbus.packages = [ pkgs.dbus ];
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.package = pkgs.qemu_kvm;
+    qemu.ovmf.enable = true;
+  };
+  programs.virt-manager.enable = true;
+  services.dbus.packages = [ pkgs.dbus ];
 
   # qt
   qt.enable = false;
