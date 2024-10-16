@@ -15,7 +15,7 @@ in
       genericName = "Knowledge Management Tool";
       comment = "Open-source knowledge management and collaboration tool";
       exec = "logseq";
-      icon = ${loseq-icon};
+      icon = "${loseq-icon}";
       terminal = false; 
       type = "Application";
       categories = [ "Utility" ];
