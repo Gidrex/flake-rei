@@ -2,6 +2,7 @@
 {
   imports = [ 
     ./hardware-configuration.nix
+    ./packages/appimage
   ];
 
   # Global system
