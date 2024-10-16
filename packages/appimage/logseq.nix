@@ -1,7 +1,7 @@
 { 
-  lib, 
-  appimageTools, 
-  fetchurl,
+lib, 
+appimageTools, 
+fetchurl,
 }:
 
 let
@@ -18,23 +18,21 @@ let
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
 in
-appimageTools.wrapType1 {
-  inherit name src;
+  appimageTools.wrapType1 {
+    inherit name src;
 
-extraInstallCommands = ''
-  mv $out/bin/${name} $out/bin/${pname}
-  # install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
-  # substituteInPlace $out/share/applications/${pname}.desktop --replace-fail 'Exec=AppRun' 'Exec=${pname}'
-  cp -r ${appimageContents}/usr/share/icons $out/share
-'';
+    extraInstallCommands = ''
+    mv $out/bin/${name} $out/bin/${pname}
+    cp -r ${appimageContents}/usr/share/icons $out/share
+    '';
 
-  meta = {
-    description = "Logseq, open-source outliner for knowledge management and collaboration";
-    homepage = "https://logseq.com/";
-    downloadPage = "https://github.com/logseq/logseq/releases";
-    license = lib.licenses.agpl3Plus;
-    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
-    maintainers = with lib.maintainers; [ idk ];
-    platforms = [ "x86_64-linux" ];
-  };
-}
+    meta = {
+      description = "Logseq, open-source outliner for knowledge management and collaboration";
+      homepage = "https://logseq.com/";
+      downloadPage = "https://github.com/logseq/logseq/releases";
+      license = lib.licenses.agpl3Plus;
+      sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+      maintainers = with lib.maintainers; [ idk ];
+      platforms = [ "x86_64-linux" ];
+    };
+  }

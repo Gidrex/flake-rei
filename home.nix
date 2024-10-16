@@ -8,6 +8,9 @@
     ./modules/yazi
     ./modules/picom
     ./modules/prismlauncher
+
+    ./packages/appimage
+
     # ./rice/hyprland
     # ./rice/sway
   ];
