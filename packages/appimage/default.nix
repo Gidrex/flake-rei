@@ -39,7 +39,7 @@ in
         icon = "${zen-icon}";
         terminal = false; 
         type = "Application";
-        categories = [ "Network", "WebBrowser" ];
+        categories = [ "Network" "WebBrowser" ];
         mimeType = [ "application/x-zenbrowser" ];
         startupNotify = true;
       };
