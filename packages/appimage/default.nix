@@ -12,7 +12,7 @@
       icon = "${pkgs.logseq-appimage}/share/icons/hicolor/512x512/apps/logseq.png";
       terminal = false;
       type = "Application";
-      categories = "Utility;";
+      categories = [ "Utility" ];
       mimeType = "application/x-logseq";
       startupNotify = true;
     };
