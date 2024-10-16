@@ -152,6 +152,7 @@
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
+    appimage.enable = true;
   };
 
   # Screen lighting
@@ -250,7 +251,7 @@
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
     lua 
-    nodePackages_latest.nodejs yarn deno typescript electron
+    nodePackages_latest.nodejs yarn deno typescript
     rustup cargo rust-script
     dart
     gcc clang clang-tools cmake gnumake glibc
@@ -291,17 +292,13 @@
 
   # Logseq fix
   nixpkgs.overlays = [
-    (
-      final: prev: {
-        logseq = prev.logseq.override {
-          electron = prev.electron_27;
-        };
-      }
-    )
+    ( final: prev: {
+      logseq = prev.logseq.override {
+        electron = prev.electron_27;
+      };
+    })
   ];
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-27.3.11"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
   # Looking glass TODO
   virtualisation.libvirtd = {
