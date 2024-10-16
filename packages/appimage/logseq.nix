@@ -12,7 +12,6 @@ let
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
 in
-  {
   appimageTools.wrapType1 {
   inherit name src;
 
@@ -30,5 +29,4 @@ in
     maintainers = with lib.maintainers; [ idk ];
     platforms = [ "x86_64-linux" ];
   };
-}
 }
