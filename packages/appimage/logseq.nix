@@ -11,6 +11,7 @@ let
   };
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
+
 in
   appimageTools.wrapType1 {
     inherit name src;

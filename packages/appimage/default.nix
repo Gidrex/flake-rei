@@ -16,8 +16,8 @@ let
 
   # home-manager
 in
-{
-  home.packages = with pkgs; [
+  {
+  home.packages = [
     logseq
     zenBrowser
   ];
