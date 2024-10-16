@@ -12,21 +12,23 @@ let
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
 in
+  {
   appimageTools.wrapType1 {
-    inherit name src;
+  inherit name src;
 
-    extraInstallCommands = ''
+  extraInstallCommands = ''
     mv $out/bin/${name} $out/bin/${pname}
     cp -r ${appimageContents}/usr/share/icons $out/share
-    '';
+  '';
 
-    meta = {
-      description = "Logseq, open-source outliner for knowledge management and collaboration";
-      homepage = "https://logseq.com/";
-      downloadPage = "https://github.com/logseq/logseq/releases";
-      license = lib.licenses.agpl3Plus;
-      sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
-      maintainers = with lib.maintainers; [ idk ];
-      platforms = [ "x86_64-linux" ];
-    };
-  }
+  meta = {
+    description = "Logseq, open-source outliner for knowledge management and collaboration";
+    homepage = "https://logseq.com/";
+    downloadPage = "https://github.com/logseq/logseq/releases";
+    license = lib.licenses.agpl3Plus;
+    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+    maintainers = with lib.maintainers; [ idk ];
+    platforms = [ "x86_64-linux" ];
+  };
+}
+}
