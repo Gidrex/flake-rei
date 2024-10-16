@@ -250,7 +250,7 @@
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
     lua 
-    nodePackages_latest.nodejs yarn deno typescript
+    nodePackages_latest.nodejs yarn deno typescript electron
     rustup cargo rust-script
     dart
     gcc clang clang-tools cmake gnumake glibc
