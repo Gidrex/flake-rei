@@ -258,7 +258,7 @@
     clisp sbcl
 
     # Virtualisation
-    winePackages.stableFull winetricks winePackages.fonts wine-staging
+    winePackages.stableFull winetricks winePackages.fonts wine-staging samba
     protonup protontricks
     lutris
     distrobox podman
