@@ -152,7 +152,10 @@
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
-    appimage.enable = true;
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
   };
 
   # Screen lighting
