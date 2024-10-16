@@ -9,6 +9,7 @@ in
   home.packages = with pkgs; [
     (callPackage ./logseq.nix {})
   ];
+
   xdg.desktopEntries = {
     logseq = {
       name = "Logseq";
