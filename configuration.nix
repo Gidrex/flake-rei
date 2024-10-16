@@ -290,9 +290,9 @@
   programs.nix-ld.enable = true;
 
   # Electron <3 .!.
-  nixpkgs.config.permittedInsecurePackages = [ 
-    "electron-28.3.1"
-  ];
+  # nixpkgs.config.permittedInsecurePackages = [ 
+  #   "electron-28.3.1"
+  # ];
 
   # Looking glass TODO
   virtualisation.libvirtd = {
