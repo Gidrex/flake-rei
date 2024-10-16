@@ -289,10 +289,19 @@
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
   programs.nix-ld.enable = true;
 
-  # Electron <3 .!.
-  # nixpkgs.config.permittedInsecurePackages = [ 
-  #   "electron-28.3.1"
-  # ];
+  # Logseq fix
+  nixpkgs.overlays = [
+    (
+      final: prev: {
+        logseq = prev.logseq.override {
+          electron = prev.electron_27;
+        };
+      }
+    )
+  ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-27.3.11"
+  ];
 
   # Looking glass TODO
   virtualisation.libvirtd = {
