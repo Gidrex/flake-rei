@@ -33,7 +33,7 @@ appimageTools.wrapType1 {
     downloadPage = "https://github.com/logseq/logseq/releases";
     license = lib.licenses.agpl3Plus;
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
-    maintainers = with lib.maintainers; [ yourName ];
+    maintainers = with lib.maintainers; [ idk ];
     platforms = [ "x86_64-linux" ];
   };
 }
