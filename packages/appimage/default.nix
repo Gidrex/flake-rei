@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   logseq-icon = pkgs.fetchurl {
-    url = "https://github.com/logseq/logseq/raw/master/resources/icon.png";
+    url = "https://raw.githubusercontent.com/logseq/logseq/refs/heads/master/resources/icon.png";
     sha256 = "1jg24pi88nl8ynk2zbmz4qkl2al38w28kjv8drddgi8vvqh76c77";
   };
 in
