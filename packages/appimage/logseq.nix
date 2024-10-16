@@ -5,7 +5,7 @@
 }:
 
 let
-  version = "0.10.10-alpha+nightly.20240909";
+  version = "Logseq-linux-x64-0.10.10-alpha+nightly.20240909";
   pname = "logseq";
   name = "${pname}-${version}";
 
