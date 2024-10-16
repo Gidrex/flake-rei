@@ -100,7 +100,7 @@
 
   # Graphics
   services.xserver.videoDrivers = ["nvidia"];
-  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm"];
+  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "kvm" "kvm_intel" "kvm_amd" ];
   hardware = {
     graphics = {
       enable = true;
