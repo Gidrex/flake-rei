@@ -142,6 +142,7 @@
     fish.enable = true;
     zsh.enable = true;
     command-not-found.enable = false;
+    nix-ld.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
@@ -153,7 +154,7 @@
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
     appimage = {
-      enable = true;
+        enable = true;
       binfmt = true;
     };
   };
@@ -291,17 +292,16 @@
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
-  programs.nix-ld.enable = true;
 
   # Logseq fix
-  nixpkgs.overlays = [
-    ( final: prev: {
-      logseq = prev.logseq.override {
-        electron = prev.electron_27;
-      };
-    })
-  ];
-  nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
+  # nixpkgs.overlays = [
+  #   ( final: prev: {
+  #     logseq = prev.logseq.override {
+  #       electron = prev.electron_27;
+  #     };
+  #   })
+  # ];
+  # nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
   # Looking glass TODO
   virtualisation.libvirtd = {

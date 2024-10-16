@@ -146,7 +146,6 @@
       webtorrent_desktop
       telegram-desktop vesktop 
       onlyoffice-bin_latest
-      logseq
       mysql-workbench dbeaver-bin sqlitebrowser
       drawio gimp krita
       obs-studio
