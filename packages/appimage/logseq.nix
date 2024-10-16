@@ -21,21 +21,12 @@ in
 appimageTools.wrapType1 {
   inherit name src;
 
-  extraInstallCommands = ''
-    mkdir -p $out/share/applications
-    echo "[Desktop Entry]
-    Name=Logseq
-    Exec=logseq
-    Icon=logseq
-    Type=Application
-    Categories=Utility;" > $out/share/applications/logseq.desktop
-
-    mv $out/bin/${name} $out/bin/${pname}
-    install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
-    substituteInPlace $out/share/applications/${pname}.desktop \
-      --replace-fail 'Exec=AppRun' 'Exec=${pname}'
-    cp -r ${appimageContents}/usr/share/icons $out/share
-  '';
+extraInstallCommands = ''
+  mv $out/bin/${name} $out/bin/${pname}
+  # install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
+  # substituteInPlace $out/share/applications/${pname}.desktop --replace-fail 'Exec=AppRun' 'Exec=${pname}'
+  cp -r ${appimageContents}/usr/share/icons $out/share
+'';
 
   meta = {
     description = "Logseq, open-source outliner for knowledge management and collaboration";
