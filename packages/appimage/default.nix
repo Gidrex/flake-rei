@@ -8,7 +8,7 @@ in
   {
   home.packages = with pkgs; [
     (callPackage ./logseq.nix {})
-    (callPackage ./zen-browser.nix.nix {})
+    (callPackage ./zen-browser.nix {})
   ];
 
   xdg.desktopEntries = {
