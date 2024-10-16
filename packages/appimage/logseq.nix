@@ -5,13 +5,13 @@
 }:
 
 let
-  version = "Logseq-linux-x64-0.10.10-alpha+nightly.20240909";
+  version = "0.10.10-alpha+nightly.20241015";
   pname = "logseq";
   name = "${pname}-${version}";
 
   src = fetchurl {
     url = "https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x64-${version}.AppImage";
-    hash = "17g9f97ksbca2qkrc1bcraj0my9fn33k4m64n2ind4a2qs9z6bqz";
+    hash = "1wjz1qs70iy56scybn6q4nr4nh1bzml4y2jghwlaklq5jy1m41mh";
   };
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
