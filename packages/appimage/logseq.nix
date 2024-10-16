@@ -1,8 +1,4 @@
-{ 
-lib, 
-appimageTools, 
-fetchurl,
-}:
+{ lib, appimageTools, fetchurl, ... }:
 
 let
   version = "0.10.10-alpha+nightly.20241015";
