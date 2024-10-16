@@ -13,7 +13,7 @@ logseq = {
       terminal = false;
       type = "Application";
       categories = [ "Utility" ];
-      mimeType = "application/x-logseq";
+      mimeType = [ "application/x-logseq" ];
       startupNotify = true;
     };
   };
