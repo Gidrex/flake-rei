@@ -4,12 +4,12 @@
     (callPackage ./logseq.nix {})
   ];
   xdg.desktopEntries = {
-    logseq = {
+logseq = {
       name = "Logseq";
       genericName = "Knowledge Management Tool";
       comment = "Open-source knowledge management and collaboration tool";
-      exec = "${pkgs.logseq-appimage}/bin/logseq";
-      icon = "${pkgs.logseq-appimage}/share/icons/hicolor/512x512/apps/logseq.png";
+      exec = "${pkgs.logseq}/bin/logseq";  # Указываем logseq из callPackage
+      icon = "${pkgs.logseq}/share/icons/hicolor/512x512/apps/logseq.png";  # Иконка оттуда же
       terminal = false;
       type = "Application";
       categories = [ "Utility" ];
