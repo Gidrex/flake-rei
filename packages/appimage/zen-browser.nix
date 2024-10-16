@@ -7,7 +7,7 @@ let
 
   src = fetchurl {
     url = "https://github.com/zen-browser/desktop/releases/download/${version}/${pname}.AppImage";
-    hash = "sha256-sAZSg5cF06koh08KT2j9K0BLsiXY2OWZNsVHcDQOX/I=";
+    hash = "sha256-rvMDVDXEpsZk1CDMhS8b8QiM2hTYFMmkKt/uEk76Xrc=";
   };
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
