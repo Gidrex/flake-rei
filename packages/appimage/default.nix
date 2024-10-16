@@ -1,6 +1,6 @@
 { pkgs, ... }:
  let
-    icon = pkgs.fetchurl {
+    logseq-icon = pkgs.fetchurl {
       url = "https://github.com/logseq/logseq/raw/master/resources/icon.png";
       sha256 = "1jg24pi88nl8ynk2zbmz4qkl2al38w28kjv8drddgi8vvqh76c77";
     };
@@ -15,7 +15,7 @@ logseq = {
       genericName = "Knowledge Management Tool";
       comment = "Open-source knowledge management and collaboration tool";
       exec = "logseq";
-      icon = "https://github.com/logseq/logseq/blob/master/resources/icon.png";
+      icon = loseq-icon;
       terminal = false; 
       type = "Application";
       categories = [ "Utility" ];
