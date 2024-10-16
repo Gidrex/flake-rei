@@ -24,7 +24,7 @@ in
       description = "Beautifully designed, privacy-focused, and packed with features.";
       homepage = "https://zen-browser.app/";
       license = lib.licenses.mpl20;
-      maintainers = with lib.maintainers; [ idk ];
+      maintainers = with lib.maintainers; [ mauro-balades BrhmDev kristijanribaric ];
       platforms = [ "x86_64-linux" ];
     };
   }
