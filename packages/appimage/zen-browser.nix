@@ -1,7 +1,7 @@
 { lib, appimageTools, fetchurl, ... }:
 
 let
-  version = "0.10.10-alpha+nightly.20241015";
+  version = "1.0.1-a.10";
   pname = "zen-generic";
   name = "${pname}-${version}";
 
