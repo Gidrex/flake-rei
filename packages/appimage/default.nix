@@ -7,7 +7,7 @@ let
   };
   zen-icon = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/zen-browser/desktop/6d0753c5e9e054a420c28dc207220c5ff4694a9d/docs/assets/zen-black.svg";
-    sha256 = "1jg24pi88nl8ynk2zbmz4qkl2al38w28kjv8drddgi8vvqh76c77";
+    sha256 = "sha256-Znq9w477B3nxbytLUud2eLvNBwFhd3ZyiuOyXqLPyFQ=";
   };
 
   # Packages
