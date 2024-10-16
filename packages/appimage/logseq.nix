@@ -11,7 +11,9 @@ let
 
   src = fetchurl {
     url = "https://github.com/logseq/logseq/releases/download/nightly/Logseq-linux-x64-${version}.AppImage";
-    hash = "sha256-q09hDmeca+CaeQNVqy3Bv5q5teLQ7032M9IWVSBd0kk=";
+
+    # ❯ nix-prefetch-github logseq logseq --rev nightly
+    hash = "sha256-sAZSg5cF06koh08KT2j9K0BLsiXY2OWZNsVHcDQOX/I=";
   };
 
   appimageContents = appimageTools.extractType1 { inherit name src; };
