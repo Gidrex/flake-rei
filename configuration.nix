@@ -291,8 +291,7 @@
 
   # Electron <3 .!.
   nixpkgs.config.permittedInsecurePackages = [ 
-    "electron-27.3.11"
-    "electron-27.3.1.3"
+    "electron-28.3.1"
   ];
 
   # Looking glass TODO
