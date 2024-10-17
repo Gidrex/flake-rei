@@ -41,6 +41,7 @@ in
         { on = [ "g" "r" ]; run = ''shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm''; desc = "back to the root of repository"; }
         { on   = [ "e" "t" ]; run  = "plugin --sync hide-preview"; desc = "Hide or show preview"; }
         { on = [ "e" "d" ]; run  = ''shell 'dragon -T "$@"' --confirm''; desc = "Drag & Drop file"; }
+        { on = "Ctrl+e"; run = ''shell 'read -p "Enter command: " cmd; eval "$cmd {file}"' --confirm''; desc = "Open selected file with custom command"; }
       ];
     };
   };
