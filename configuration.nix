@@ -303,7 +303,7 @@
   # ];
   # nixpkgs.config.permittedInsecurePackages = [ "electron-27.3.11" ];
 
-  # Looking glass TODO
+  # Looking glass
   virtualisation.libvirtd = {
     enable = true;
     qemu.package = pkgs.qemu_kvm;
