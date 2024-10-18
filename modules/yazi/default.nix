@@ -25,6 +25,15 @@ in
         image_preloader = false;
         image_delay = 0;
       };
+
+      reveal = [
+        { run = "${pkgs.vim}/bin/vim \"$1\""; block = true; desc = "Edit with vim"; for = "unix"; }
+        { run = "shell '$1'"; desc = "Open with ..."; for = "unix"; }
+        { run = "xdg-open \"$(dirname '$1')\""; desc = "Reveal"; for = "linux"; }
+        { run = "open -R \"$1\""; desc = "Reveal"; for = "macos"; }
+        { run = "explorer /select,\"%1\""; orphan = true; desc = "Reveal"; for = "windows"; }
+        { run = "exiftool \"$1\"; echo 'Press enter to exit'; read _"; block = true; desc = "Show EXIF"; for = "unix"; }
+      ];
     };
 
     initLua = ''
