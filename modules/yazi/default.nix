@@ -27,12 +27,8 @@ in
       };
 
       reveal = [
-        { run = "${pkgs.vim}/bin/vim \"$1\""; block = true; desc = "Edit with vim"; for = "unix"; }
-        { run = "shell '$1'"; desc = "Open with ..."; for = "unix"; }
         { run = "xdg-open \"$(dirname '$1')\""; desc = "Reveal"; for = "linux"; }
-        { run = "open -R \"$1\""; desc = "Reveal"; for = "macos"; }
-        { run = "explorer /select,\"%1\""; orphan = true; desc = "Reveal"; for = "windows"; }
-        { run = "exiftool \"$1\"; echo 'Press enter to exit'; read _"; block = true; desc = "Show EXIF"; for = "unix"; }
+        { run = "${pkgs.exiftool}/bin/exiftool \"$1\"; echo 'Press enter to exit'; read _"; block = true; desc = "Show EXIF"; for = "unix"; }
       ];
     };
 
@@ -50,7 +46,7 @@ in
         { on = [ "g" "r" ]; run = ''shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm''; desc = "back to the root of repository"; }
         { on   = [ "e" "t" ]; run  = "plugin --sync hide-preview"; desc = "Hide or show preview"; }
         { on = [ "e" "d" ]; run  = ''shell 'dragon -T "$@"' --confirm''; desc = "Drag & Drop file"; }
-        { on = ["e" "e" ]; run = ''shell 'read -p "Enter command: " cmd; eval "$cmd {file}"' --confirm''; desc = "Open selected file with custom command"; }
+        { on = ["e" "e" ]; run = "shell '$1'"; desc = "Open selected file with custom command"; }
       ];
     };
   };
