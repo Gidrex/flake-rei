@@ -149,7 +149,6 @@
       spotify-cli-linux spotifywm
       anydesk
       pavucontrol
-      nemo-with-extensions
       steam
 
       # Open with
