@@ -216,7 +216,7 @@
 
     # term tools
     xsel ffmpeg killall xclip fzf xdragon
-    file hexyl procs broot dig
+    file hexyl procs broot dig exiftool
     imagemagick pastel
     fd ripgrep procs jq dust
     nix-inspect nix-prefetch-github
