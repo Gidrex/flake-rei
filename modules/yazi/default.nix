@@ -25,11 +25,6 @@ in
         image_preloader = false;
         image_delay = 0;
       };
-
-      reveal = [
-        { run = "xdg-open \"$(dirname '$1')\""; desc = "Reveal"; for = "linux"; }
-        { run = "${pkgs.exiftool}/bin/exiftool \"$1\"; echo 'Press enter to exit'; read _"; block = true; desc = "Show EXIF"; for = "unix"; }
-      ];
     };
 
     initLua = ''
@@ -46,7 +41,7 @@ in
         { on = [ "g" "r" ]; run = ''shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm''; desc = "back to the root of repository"; }
         { on   = [ "e" "t" ]; run  = "plugin --sync hide-preview"; desc = "Hide or show preview"; }
         { on = [ "e" "d" ]; run  = ''shell 'dragon -T "$@"' --confirm''; desc = "Drag & Drop file"; }
-        { on = ["e" "e" ]; run = "shell '$1'"; desc = "Open selected file with custom command"; }
+        { on = ["e" "e" ]; run = "shell '$@'"; desc = "Open selected file with custom command"; }
       ];
     };
   };
