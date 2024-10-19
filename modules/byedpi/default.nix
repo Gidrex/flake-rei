@@ -1,6 +1,5 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }: with lib;
 
-with lib;
 let
   cfg = config.services.byedpi;
 
@@ -43,7 +42,11 @@ in
         RestartSec = "5s";
       };
     };
+
     networking.firewall.allowedTCPPorts = with cfg; optionals openFirewall [ socksPort ];
-    environment.systemPackages = [ pkgs.byedpi ];
+    environment.systemPackages = with pkgs; [ 
+      byedpi
+      neofetch
+    ];
   };
 }
