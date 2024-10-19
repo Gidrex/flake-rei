@@ -174,7 +174,7 @@
 
   # Fonts
   fonts = {
-    enableDefaultPackages = false;
+    enableDefaultPackages = true;
     packages = with pkgs; [
       times-newer-roman
       hack-font
