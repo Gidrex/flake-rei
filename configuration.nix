@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./modules/byedpi
   ];
 
   # Global system
@@ -82,18 +83,6 @@
     hostName = "rei";
     networkmanager.enable = true;
   };
-
-  # spoof DPI
-  # systemd.user.services.spoofdpi = {
-  #   enable = true;
-  #   after = [ "network.target" ];
-  #   wantedBy = [ "default.target" ];
-  #   description = "YouTube in Russia";
-  #   serviceConfig = {
-  #     type = "simple";
-  #     ExecStart = "${pkgs.spoofdpi}/bin/spoofdpi";
-  #   };
-  # };
 
   # Locale
   time.timeZone = "Europe/Moscow";
@@ -225,7 +214,6 @@
     acpi sysstat
     htop
     coreutils-prefixed pinentry
-    byedpi
 
     # term tools
     xsel ffmpeg killall xclip fzf xdragon
