@@ -83,6 +83,18 @@
     networkmanager.enable = true;
   };
 
+  # spoof DPI
+  # systemd.user.services.spoofdpi = {
+  #   enable = true;
+  #   after = [ "network.target" ];
+  #   wantedBy = [ "default.target" ];
+  #   description = "YouTube in Russia";
+  #   serviceConfig = {
+  #     type = "simple";
+  #     ExecStart = "${pkgs.spoofdpi}/bin/spoofdpi";
+  #   };
+  # };
+
   # Locale
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -213,7 +225,7 @@
     acpi sysstat
     htop
     coreutils-prefixed pinentry
-    spoofdpi
+    byedpi
 
     # term tools
     xsel ffmpeg killall xclip fzf xdragon

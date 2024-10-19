@@ -18,7 +18,6 @@
     catppuccin.url = "github:catppuccin/nix";
 
     # Users pkgs(flakes)
-    byedpi.url = "github:Gidrex/byedpi-nix";
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
     zjstatus.url = "github:dj95/zjstatus";
     
@@ -26,7 +25,7 @@
 
   outputs = { 
     nixpkgs, home-manager, catppuccin, # system affecting
-    byedpi, ayugram-desktop, zjstatus, # packages
+    ayugram-desktop, zjstatus, # packages
     ... }: 
     let
       system = "x86_64-linux";
@@ -53,7 +52,6 @@
             }
             {
               environment.systemPackages = [
-                byedpi.packages.${system}.default
                 ayugram-desktop.packages.${system}.default
               ];
 
