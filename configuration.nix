@@ -1,6 +1,6 @@
 { config, pkgs, ... }: 
 {
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
   ];
 
@@ -94,7 +94,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers" ];
   };
   programs.adb.enable = true;
 
@@ -154,7 +154,7 @@
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
     appimage = {
-        enable = true;
+      enable = true;
       binfmt = true;
     };
   };
@@ -213,6 +213,7 @@
     acpi sysstat
     htop
     coreutils-prefixed pinentry
+    spoofdpi
 
     # term tools
     xsel ffmpeg killall xclip fzf xdragon
