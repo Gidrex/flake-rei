@@ -43,12 +43,7 @@ in
         RestartSec = "5s";
       };
     };
-    networking.firewall = {
-      allowedTCPPorts = with cfg; optionals openFirewall [ socksPort ];
-    };
-    environment = {
-      systemPackages = [ pkgs.byedpi ];
-    };
+    networking.firewall.allowedTCPPorts = with cfg; optionals openFirewall [ socksPort ];
+    environment.systemPackages = [ pkgs.byedpi ];
   };
-
 }
