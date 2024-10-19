@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/byedpi
+    ./modules/byedpi/default.nix
   ];
 
   # Global system
