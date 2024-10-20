@@ -311,6 +311,7 @@
     dotnetCorePackages.sdk_6_0_1xx
     acpid dbus pkg-config
     freetype
+    mesa glfw
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
