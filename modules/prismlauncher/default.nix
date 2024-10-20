@@ -10,6 +10,7 @@ let
 in {
   home.packages = with pkgs; [ 
     prismlauncher 
+    zulu17
   ];
 
   home.activation.copyPrismLauncherThemes = ''

@@ -274,7 +274,7 @@
 
     # Java
     openjdk
-    openjdk17 zulu17
+    openjdk17
     openjdk8
 
     # Python
