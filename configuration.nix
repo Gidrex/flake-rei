@@ -274,10 +274,13 @@
     openjdk17 
     openjdk8
 
+    # Python
+    python3 python312Packages.pip
+    python312Packages.tkinter 
+
     # Others
     sqlite sqlite-utils
     clisp sbcl # functional env
-    python3 
     lua 
     # ---------------------------------------------- #
 
