@@ -133,6 +133,7 @@
 
       # Gaming
       mangohud
+      logmein-hamachi
 
       # Utility
       flameshot pick-colour-picker
