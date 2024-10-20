@@ -271,7 +271,7 @@
 
     # Java
     openjdk
-    openjdk17 
+    openjdk17 zulu17
     openjdk8
 
     # Python
@@ -313,6 +313,9 @@
     freetype
     mesa glfw
     gnome.zenity
+
+    # Apps
+    prismlauncher 
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
