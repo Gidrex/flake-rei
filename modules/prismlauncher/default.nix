@@ -9,6 +9,7 @@ let
 
 in {
   home.packages = with pkgs; [ 
+    prismlauncher 
   ];
 
   home.activation.copyPrismLauncherThemes = ''
