@@ -30,8 +30,10 @@
     trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
   };
 
-  # Rice
+  # Services
   services = {
+
+    # Rice
     displayManager.defaultSession = "none+i3";
     displayManager.enable = true;
     xserver = {
@@ -59,7 +61,7 @@
     # Android
     udev.packages = [ pkgs.android-udev-rules ];
 
-    # Services
+    # Others
     openssh.enable = true;
     deluge.enable = true;
     blueman.enable = true;
@@ -272,7 +274,7 @@
 
     # Java
     openjdk
-    openjdk17
+    openjdk17 zulu17
     openjdk8
 
     # Python
@@ -314,6 +316,9 @@
     freetype
     mesa glfw
     zenity
+
+    # Apps
+    prismlauncher 
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
