@@ -116,8 +116,8 @@
       dynamicBoost.enable = true;
       modesetting.enable = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-      # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       prime = {
         offload.enable = true;
         offload.enableOffloadCmd = true;
@@ -271,7 +271,7 @@
 
     # Java
     openjdk
-    openjdk17 zulu17
+    openjdk17
     openjdk8
 
     # Python
@@ -313,9 +313,6 @@
     freetype
     mesa glfw
     zenity
-
-    # Apps
-    prismlauncher 
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
