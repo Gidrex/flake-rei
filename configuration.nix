@@ -312,7 +312,7 @@
     acpid dbus pkg-config
     freetype
     mesa glfw
-    gnome.zenity
+    zenity
 
     # Apps
     prismlauncher 
