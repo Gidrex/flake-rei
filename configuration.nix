@@ -251,22 +251,34 @@
     kitty fish alacritty nushell starship
 
     # -------------------- Dev --------------------- #
-    gradle sdkmanager flutter
+    # Rust
+    rustup cargo
+    rust-script
+    lldb # debug
+
+    # C/C++
+    gcc clang clang-tools cmake gnumake
+    gdb # debug
+    glibc
+
+    # Java script
+    nodePackages_latest.nodejs typescript
+    yarn deno
+
+    # Android dev
+    dart flutter
+    gradle sdkmanager
 
     # Java
-    openjdk openjdk8 openjdk17 
-    zulu17
+    openjdk
+    openjdk17 
+    openjdk8
 
-    python3 
-    gdb
-    lua 
-    nodePackages_latest.nodejs yarn deno typescript
-    rustup cargo rust-script
-    dart
-    gcc clang clang-tools cmake gnumake glibc
+    # Others
     sqlite sqlite-utils
-    clisp sbcl
-
+    clisp sbcl # functional env
+    python3 
+    lua 
     # ---------------------------------------------- #
 
     # Virtualisation

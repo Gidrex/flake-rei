@@ -8,7 +8,10 @@ let
   };
 
 in {
-  home.packages = with pkgs; [ prismlauncher ];
+  home.packages = with pkgs; [ 
+    prismlauncher 
+    zulu17
+  ];
 
   home.activation.copyPrismLauncherThemes = ''
     PRISM_DIR="${config.home.homeDirectory}/.local/share/PrismLauncher"
