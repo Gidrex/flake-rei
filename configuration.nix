@@ -250,10 +250,14 @@
     # Shells
     kitty fish alacritty nushell starship
 
-    # Dev
-    gradle sdkmanager openjdk openjdk8 openjdk17 flutter
-    python3 python312Packages.pip virtualenv python3Packages.psutil
-    python312Packages.huggingface-hub python312Packages.tkinter
+    # -------------------- Dev --------------------- #
+    gradle sdkmanager flutter
+
+    # Java
+    openjdk openjdk8 openjdk17 
+    zulu17
+
+    python3 
     gdb
     lua 
     nodePackages_latest.nodejs yarn deno typescript
@@ -262,6 +266,8 @@
     gcc clang clang-tools cmake gnumake glibc
     sqlite sqlite-utils
     clisp sbcl
+
+    # ---------------------------------------------- #
 
     # Virtualisation
     winePackages.stableFull winetricks winePackages.fonts wine-staging samba
