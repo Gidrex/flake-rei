@@ -64,6 +64,7 @@
     deluge.enable = true;
     blueman.enable = true;
     onlyoffice.enable = true;
+    logmein-hamachi.enable = true;
     printing = {
       enable = true;
       drivers = with pkgs; [ pantum-driver ];
@@ -100,8 +101,8 @@
   programs.adb.enable = true;
 
   # Graphics
-  services.xserver.videoDrivers = ["nvidia"];
-  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "kvm" "kvm_intel" "kvm_amd" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
+  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "kvm" "kvm_intel" ];
   hardware = {
     graphics = {
       enable = true;
@@ -116,8 +117,8 @@
       dynamicBoost.enable = true;
       modesetting.enable = true;
       # package = config.boot.kernelPackages.nvidiaPackages.stable;
-      # package = config.boot.kernelPackages.nvidiaPackages.beta;
-      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       prime = {
         offload.enable = true;
         offload.enableOffloadCmd = true;
