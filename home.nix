@@ -141,7 +141,7 @@
       ungoogled-chromium
       # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
       webtorrent_desktop
-      telegram-desktop vesktop 
+      telegram-desktop
       onlyoffice-bin_latest
       mysql-workbench dbeaver-bin sqlitebrowser
       drawio gimp krita
