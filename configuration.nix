@@ -251,7 +251,7 @@
     kitty fish alacritty nushell starship
 
     # Dev
-    gradle sdkmanager openjdk openjdk17 flutter
+    gradle sdkmanager openjdk openjdk8 openjdk17 flutter
     python3 python312Packages.pip virtualenv python3Packages.psutil
     python312Packages.huggingface-hub python312Packages.tkinter
     gdb
