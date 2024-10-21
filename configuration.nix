@@ -66,7 +66,7 @@
     deluge.enable = true;
     blueman.enable = true;
     onlyoffice.enable = true;
-    # logmein-hamachi.enable = true;
+    logmein-hamachi.enable = true;
     printing = {
       enable = true;
       drivers = with pkgs; [ pantum-driver ];
