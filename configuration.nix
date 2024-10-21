@@ -319,6 +319,7 @@
 
     # Apps
     prismlauncher 
+    haguichi
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
