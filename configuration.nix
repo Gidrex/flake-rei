@@ -123,8 +123,8 @@
       powerManagement.finegrained = true;
       dynamicBoost.enable = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-      # package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       # package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       prime = {
         offload.enable = true;
@@ -320,7 +320,7 @@
     dotnetCorePackages.sdk_6_0_1xx
     acpid dbus pkg-config
     freetype
-    mesa glfw
+    mesa glfw mesa-demos
     dialog
 
     # Apps
