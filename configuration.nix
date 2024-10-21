@@ -341,6 +341,7 @@
     qemu.ovmf.enable = true;
   };
   programs.virt-manager.enable = true;
+  programs.haguichi.enable = true;
   services.dbus.packages = [ pkgs.dbus ];
 
   # qt
