@@ -233,6 +233,7 @@
     calc libqalculate
     wmctrl
     tailspin grc
+    dpkg
 
     # web & security
     openssl
