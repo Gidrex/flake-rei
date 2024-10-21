@@ -85,7 +85,7 @@
     # proxy.allProxy = "socks5://localhost:1089";
     hostName = "rei";
     networkmanager.enable = true;
-    firewall.enable = true;
+    firewall.enable = false;
 
     # Hamachi open ports
     firewall.allowedTCPPorts = [12975];
