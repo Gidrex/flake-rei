@@ -46,8 +46,8 @@ in
 
   # Plugins setup
   home = {
-    activation.makeDir = ''mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins'';
-    file.".config/zellij/plugins/zellij-session-tree.wasm".source = plguin-zjstatus;
+    activation.makeDir = "mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins";
+    file."${config.home.homeDirectory}.config/zellij/plugins/zellij-session-tree.wasm".source = plguin-zjstatus;
   };
 }
 
