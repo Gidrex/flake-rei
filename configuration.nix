@@ -321,6 +321,7 @@
     acpid dbus pkg-config
     freetype
     mesa glfw
+    dialog
 
     # Apps
     prismlauncher 
