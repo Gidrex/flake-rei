@@ -85,11 +85,11 @@
     # proxy.allProxy = "socks5://localhost:1089";
     hostName = "rei";
     networkmanager.enable = true;
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [12975];
-      allowedUDPPorts = [17771];
-    };
+    firewall.enable = true;
+
+    # Hamachi open ports
+    firewall.allowedTCPPorts = [12975];
+    firewall.allowedUDPPorts = [17771];
   };
 
   # Locale
@@ -321,7 +321,6 @@
     acpid dbus pkg-config
     freetype
     mesa glfw
-    zenity
 
     # Apps
     prismlauncher 
