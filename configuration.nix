@@ -147,6 +147,7 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nix-ld.enable = true;
+    haguichi.enable = true;
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
@@ -341,7 +342,6 @@
     qemu.ovmf.enable = true;
   };
   programs.virt-manager.enable = true;
-  programs.haguichi.enable = true;
   services.dbus.packages = [ pkgs.dbus ];
 
   # qt
