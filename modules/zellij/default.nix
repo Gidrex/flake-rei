@@ -1,4 +1,3 @@
-{ pkgs, config, ... }:
 {
   programs.zellij = {
     enable = true;
@@ -34,11 +33,5 @@
         bright_white = "#D9E0EE";
       };
     };
-  };
-
-  # Plugins setup
-  home = {
-    activation.makeDir = "mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins";
-    file."${config.home.homeDirectory}/.config/zellij/plugins/zjstatus.wasm".source = "${pkgs.zjstatus}/bin/zjstatus.wasm";
   };
 }
