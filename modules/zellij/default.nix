@@ -39,6 +39,6 @@
   # Plugins setup
   home = {
     activation.makeDir = "mkdir -p ${config.home.homeDirectory}/.config/zellij/plugins";
-    file."${pkgs.zjstatus/bin}/.config/zellij/plugins/zellij-session-tree.wasm".source = "${pkgs.zjstatus}/bin/zjstatus.wasm";
+    file."${config.home.homeDirectory}.config/zellij/plugins/zellij-session-tree.wasm".source = "${pkgs.zjstatus}/bin/zjstatus.wasm";
   };
 }
