@@ -85,6 +85,11 @@
     # proxy.allProxy = "socks5://localhost:1089";
     hostName = "rei";
     networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [12975];
+      allowedUDPPorts = [17771];
+    };
   };
 
   # Locale
