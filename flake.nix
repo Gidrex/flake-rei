@@ -19,17 +19,17 @@
 
     # Users pkgs(flakes)
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
-    zjstatus.url = "github:dj95/zjstatus";
     prismlauncher = {
       url = "github:PrismLauncher/PrismLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "";
     };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };   
 
   outputs = { 
     nixpkgs, home-manager, catppuccin, # system affecting
-    ayugram-desktop, zjstatus, prismlauncher, # packages
+    ayugram-desktop, prismlauncher, zen-browser, # packages
     ... }: 
     let
       system = "x86_64-linux";
@@ -43,6 +43,13 @@
             catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
             {
+              environment.systemPackages = [
+                ayugram-desktop.packages.${system}.default
+                prismlauncher.packages.${system}.default
+                zen-browser.packages."${system}".default
+              ];
+            }
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.${name} = { config, lib, pkgs, ... }: {
@@ -53,18 +60,6 @@
                 home.username = name;
                 home.homeDirectory = "/home/${name}";
               };
-            }
-            {
-              environment.systemPackages = [
-                ayugram-desktop.packages.${system}.default
-                prismlauncher.packages.${system}.default
-              ];
-
-              nixpkgs.overlays = [
-                (final: prev: {
-                  zjstatus = zjstatus.packages.${prev.system}.default;
-                })
-              ];
             }
           ];
         };
