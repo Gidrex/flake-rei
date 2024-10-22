@@ -25,7 +25,7 @@
 
   outputs = { 
     nixpkgs, home-manager, catppuccin, # system affecting
-    ayugram-desktop, zjstatus, # packages
+    ayugram-desktop, zjstatus, prismlauncher, # packages
     ... }: 
     let
       system = "x86_64-linux";
@@ -53,6 +53,7 @@
             {
               environment.systemPackages = [
                 ayugram-desktop.packages.${system}.default
+                prismlauncher.packages.${system}.default
               ];
 
               nixpkgs.overlays = [
