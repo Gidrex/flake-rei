@@ -20,8 +20,12 @@
     # Users pkgs(flakes)
     ayugram-desktop.url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
     zjstatus.url = "github:dj95/zjstatus";
-    
-  };
+    prismlauncher = {
+      url = "github:PrismLauncher/PrismLauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-compat.follows = "";
+    };
+  };   
 
   outputs = { 
     nixpkgs, home-manager, catppuccin, # system affecting
