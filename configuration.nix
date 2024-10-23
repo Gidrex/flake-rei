@@ -241,6 +241,7 @@
     crow-translate
     ytfzf yt-dlp 
     git-filter-repo
+    john
 
     # fun
     fastfetch screenfetch starfetch ghfetch onefetch ipfetch
