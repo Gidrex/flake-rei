@@ -71,6 +71,7 @@
     deluge.enable = true;
     blueman.enable = true;
     onlyoffice.enable = true;
+    gnome.gnome-keyring.enable = true;
     printing = {
       enable = true;
       drivers = with pkgs; [ pantum-driver ];
