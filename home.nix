@@ -170,6 +170,7 @@
     sessionPath = [
       "$HOME/.cargo/bin"
       "$HOME/go/bin"
+      "/usr/bin"
     ];
 
     enableNixpkgsReleaseCheck = false;
