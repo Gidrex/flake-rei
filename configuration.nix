@@ -288,7 +288,7 @@
     python312Packages.tkinter 
 
     # Others
-    sqlite sqlite-utils
+    sqlite sqlite-utils mysql
     clisp sbcl # functional env
     lua 
     # ---------------------------------------------- #
