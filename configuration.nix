@@ -324,8 +324,32 @@
     mesa glfw mesa-demos
     dialog
 
+    # Gaming
+    mangohud
+    logmein-hamachi
+
+    # Utility
+    flameshot pick-colour-picker
+
     # Apps
-    haguichi
+    ungoogled-chromium
+    # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
+    webtorrent_desktop
+    telegram-desktop
+    onlyoffice-bin_latest
+    mysql-workbench dbeaver-bin sqlitebrowser
+    drawio gimp krita
+    obs-studio
+    spotify-cli-linux spotifywm
+    anydesk
+    pavucontrol
+    steam
+
+    # Open with
+    feh gthumb qimgv # img
+    evince zathura # pdf
+    mpv # audio
+    ark # zip
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
