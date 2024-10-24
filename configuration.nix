@@ -333,7 +333,6 @@
 
     # Apps
     ungoogled-chromium
-    # libsForQt5.qtstyleplugin-kvantum libsForQt5.qt5ct
     webtorrent_desktop
     telegram-desktop
     onlyoffice-bin_latest
