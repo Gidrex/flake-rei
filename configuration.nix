@@ -280,6 +280,7 @@
     gradle sdkmanager
 
     # Java
+    javaPackages.openjfx21
     openjdk
     openjdk17
     openjdk8
