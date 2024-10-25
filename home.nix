@@ -40,7 +40,6 @@
     lazygit = {
       enable = true;
       settings.gui = {
-        showIcons = false;
         nerdFontsVersion = "3";
       };
     };
