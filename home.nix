@@ -39,11 +39,6 @@
 
     lazygit = {
       enable = true;
-      settings = {
-        gui = {
-          nerdFontsVersion = 3;
-        };
-      };
     };
 
     gh = {
