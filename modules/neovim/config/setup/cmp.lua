@@ -95,4 +95,4 @@ cmp.setup.cmdline(':', {
   })
 })
 
-
+vim.cmd [[autocmd CursorHold * lua vim.lsp.buf.hover()]]
