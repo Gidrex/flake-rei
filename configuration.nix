@@ -245,7 +245,7 @@
     john
 
     # fun
-    fastfetch screenfetch starfetch ghfetch onefetch ipfetch
+    fastfetch neofetch screenfetch starfetch ghfetch onefetch ipfetch
 
     # university learning & documents
     zip unzip rar unrar
