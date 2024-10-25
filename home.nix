@@ -41,6 +41,7 @@
       enable = true;
       settings = {
         showIcons = false;
+        nerdFontsVersion = "3";
       };
     };
 
