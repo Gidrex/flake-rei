@@ -36,13 +36,7 @@
     mangohud.enable = true;
     looking-glass-client.enable = true;
     direnv.enable = true;
-
-    lazygit = {
-      enable = true;
-      settings.gui.theme = {
-        lightTheme = true;
-      };
-    };
+    lazygit.enable = true;
 
     gh = {
       enable = true;
