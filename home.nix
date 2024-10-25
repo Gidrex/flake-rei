@@ -35,8 +35,14 @@
     alacritty.catppuccin.enable = false;
     mangohud.enable = true;
     looking-glass-client.enable = true;
-    lazygit.enable = true;
     direnv.enable = true;
+
+    lazygit = {
+      enable = true;
+      settings = {
+        showIcons = false;
+      };
+    };
 
     gh = {
       enable = true;
