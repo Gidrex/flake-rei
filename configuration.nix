@@ -356,6 +356,7 @@
     pavucontrol
     steam
     virtualbox
+    vesktop
 
     # Open with
     feh gthumb qimgv # img
