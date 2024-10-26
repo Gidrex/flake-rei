@@ -1,6 +1,6 @@
 { config, pkgs, ... }: 
 let
-  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: rec {
+  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: {
     # Добавляем нужные аргументы запуска для прокси, заменяя старые
     buildCommand = ''
       mkdir -p $out/bin
