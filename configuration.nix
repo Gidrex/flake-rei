@@ -345,6 +345,10 @@
     pavucontrol
     steam
     vesktop
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
 
     # Open with
     feh gthumb qimgv # img
