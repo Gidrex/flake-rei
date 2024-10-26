@@ -146,6 +146,7 @@
 
   # Virtualisation
   virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   # Programs
   programs = {
@@ -348,6 +349,7 @@
     pavucontrol
     steam
     virtualbox
+    virtualboxHostModules
 
     # Open with
     feh gthumb qimgv # img
