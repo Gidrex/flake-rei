@@ -1,12 +1,7 @@
 { config, pkgs, ... }: 
 let
-  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: {
-    # Добавляем нужные аргументы запуска для прокси, заменяя старые
-    buildCommand = ''
-      mkdir -p $out/bin
-      cp ${oldAttrs.src}/bin/discord $out/bin/
-
-      # Патч для использования прокси
+  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: rec {
+    postInstall = ''
       wrapProgram $out/bin/discord \
         --set PROXY_ADDRESS "http://localhost:8889"
     '';
