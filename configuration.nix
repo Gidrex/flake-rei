@@ -147,9 +147,10 @@
   # Virtualisation
   virtualisation = {
     virtualbox = {
-      guest.enable = true;
       host.enable = true;
       host.enableExtensionPack = true;
+      guest.enable = true;
+      guest.dragAndDrop = true;
     };
   };
   users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
