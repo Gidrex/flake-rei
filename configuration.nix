@@ -347,7 +347,7 @@
     anydesk
     pavucontrol
     steam
-    virtualbox
+    # virtualbox
 
     # Open with
     feh gthumb qimgv # img
