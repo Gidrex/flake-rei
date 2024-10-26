@@ -142,11 +142,14 @@
     docker.rootless.setSocketVariable = true;
     containers.enable = true;
   };
-  users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
+  users.extraGroups.docker.members = [ "username-with-access-to-socket" "user-with-access-to-virtualbox" ];
 
   # Virtualisation
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation = {
+    virtualbox.guest.enable = true;
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
+  };
 
   # Programs
   programs = {
