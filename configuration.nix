@@ -344,6 +344,7 @@
     anydesk
     pavucontrol
     steam
+    virtialbox
 
     # Open with
     feh gthumb qimgv # img
