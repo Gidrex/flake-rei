@@ -348,6 +348,10 @@
     (pkgs.discord.override {
       withOpenASAR = true;
       withVencord = true;
+    }).overrideAttrs (oldAttrs: {
+      postInstall = ''
+        wrapProgram $out/bin/discord --set HTTP_PROXY http://localhost:8889 --set HTTPS_PROXY http://localhost:8889
+      '';
     })
 
     # Open with
