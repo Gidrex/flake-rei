@@ -144,17 +144,6 @@
   };
   users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
-  # Virtualisation
-  virtualisation = {
-    virtualbox = {
-      host.enable = true;
-      host.enableExtensionPack = true;
-      guest.enable = true;
-      guest.dragAndDrop = true;
-    };
-  };
-  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" "gidrex" ];
-
   # Programs
   programs = {
     gamescope.enable = true;
@@ -355,7 +344,6 @@
     anydesk
     pavucontrol
     steam
-    virtualbox
     vesktop
 
     # Open with
