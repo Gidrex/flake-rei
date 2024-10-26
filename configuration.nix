@@ -1,4 +1,17 @@
 { config, pkgs, ... }: 
+let
+  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: rec {
+    # Добавляем нужные аргументы запуска для прокси, заменяя старые
+    buildCommand = ''
+      mkdir -p $out/bin
+      cp ${oldAttrs.src}/bin/discord $out/bin/
+
+      # Патч для использования прокси
+      wrapProgram $out/bin/discord \
+        --set PROXY_ADDRESS "http://localhost:8889"
+    '';
+  });
+in
 {
   imports = [
     ./hardware-configuration.nix
@@ -345,12 +358,7 @@
     pavucontrol
     steam
     vesktop
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    }).overrideAttrs (oldAttrs: {
-      postInstall = ''wrapProgram $out/bin/discord --set HTTP_PROXY http://localhost:8889 --set HTTPS_PROXY http://localhost:8889'';
-    })
+    discordWithProxy
 
     # Open with
     feh gthumb qimgv # img
