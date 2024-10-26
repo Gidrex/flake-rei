@@ -144,6 +144,9 @@
   };
   users.extraGroups.docker.members = [ "username-with-access-to-socket" ];
 
+  # Virtualisation
+  virtualisation.virtualbox.guest.enable = true;
+
   # Programs
   programs = {
     gamescope.enable = true;
