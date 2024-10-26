@@ -349,7 +349,6 @@
     pavucontrol
     steam
     virtualbox
-    virtualboxHostModules
 
     # Open with
     feh gthumb qimgv # img
