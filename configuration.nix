@@ -1,12 +1,4 @@
 { config, pkgs, ... }: 
-let
-  discordWithProxy = pkgs.discord.overrideAttrs (oldAttrs: rec {
-    postInstall = ''
-      wrapProgram $out/bin/discord \
-        --set PROXY_ADDRESS "http://localhost:8889"
-    '';
-  });
-in
 {
   imports = [
     ./hardware-configuration.nix
@@ -80,6 +72,7 @@ in
     blueman.enable = true;
     onlyoffice.enable = true;
     gnome.gnome-keyring.enable = true;
+    postgresql.enable = true;
     printing = {
       enable = true;
       drivers = with pkgs; [ pantum-driver ];
@@ -353,7 +346,6 @@ in
     pavucontrol
     steam
     vesktop
-    discordWithProxy
 
     # Open with
     feh gthumb qimgv # img
