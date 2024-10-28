@@ -48,7 +48,7 @@
       desktopManager.xterm.enable = false;
       displayManager.lightdm.background = ./assets/nix.png;
       displayManager.lightdm.enable = true;
-      xkb = {
+      xkb = { 
         layout = "us,ru";
         model = "pc105";
         options = "grp:alt_shift_toggle";
@@ -214,7 +214,10 @@
   };
 
   # Packets
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [ "electron" ];
+  };
   environment.systemPackages = with pkgs; [
     # --------------- Terminal tools --------------- #
     # musthave
@@ -247,6 +250,7 @@
 
     # fun
     fastfetch neofetch screenfetch starfetch ghfetch onefetch ipfetch
+    cmatrix glava
 
     # university learning & documents
     zip unzip rar unrar
@@ -259,7 +263,9 @@
     # ---------------------------------------------- #
 
     # Shells
-    kitty fish alacritty nushell starship
+    kitty alacritty
+    fish nushell
+    starship
 
     # -------------------- Dev --------------------- #
     # Rust
@@ -292,7 +298,7 @@
 
     # Others
     sqlite sqlite-utils mysql
-    clisp sbcl # functional env
+    clisp sbcl # functional lang env
     lua 
     # ---------------------------------------------- #
 
@@ -309,7 +315,6 @@
     i3 i3lock-fancy
     gxkb parcellite
     i3status i3lock i3blocks
-    cmatrix glava
 
     # Drivers
     blueman playerctl
@@ -326,26 +331,40 @@
     mesa glfw mesa-demos
     dialog
 
-    # Gaming
-    mangohud
-    logmein-hamachi
+    # -------------------- Apps -------------------- #
+    ungoogled-chromium
+    webtorrent_desktop
+    obs-studio
+
+    # db viev
+    mysql-workbench dbeaver-bin
+    sqlitebrowser
+    pgadmin4
+
+    # draw
+    gimp krita
+    drawio
+
+    # media
+    spotify-cli-linux spotifywm
+
+    # keep in touch with my bros
+    telegram-desktop
+    vesktop
+
+    # bussines / university
+    onlyoffice-bin_latest
+    anydesk
 
     # Utility
     flameshot pick-colour-picker
 
-    # Apps
-    ungoogled-chromium
-    webtorrent_desktop
-    telegram-desktop
-    onlyoffice-bin_latest
-    mysql-workbench dbeaver-bin sqlitebrowser
-    drawio gimp krita
-    obs-studio
-    spotify-cli-linux spotifywm
-    anydesk
-    pavucontrol
+    # Gaming
+
     steam
-    vesktop
+    mangohud
+    logmein-hamachi
+    # ---------------------------------------------- #
 
     # Open with
     feh gthumb qimgv # img
@@ -355,7 +374,6 @@
 
     # xorg dependencies
   ] ++ lib.flatten [(with xorg; [ xf86videofbdev xkbcomp libX11 libxcb libXcursor libXrandr libXi libXrender libXxf86vm xrandr ])];
-  nixpkgs.config.permittedInsecurePackages = [ "electron" ];
 
   # Logseq fix
   # nixpkgs.overlays = [
