@@ -25,7 +25,7 @@
   nix.settings = {
     auto-optimise-store = true;
     flake-registry = null;
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [ "nix-command" "flakes" ];
     substituters = [ "https://cache.garnix.io" ];
 
     trusted-substituters = [ "https://prismlauncher.cachix.org" ];
@@ -208,8 +208,12 @@
 
     fontconfig = {
       enable = true;
-      defaultFonts.monospace = [ "Hack" ];
-      defaultFonts.emoji = [ "Twitter Color Emoji" ];
+      defaultFonts = {
+        monospace = [ "Hack" ];
+        serif = [ "Hack" ];
+        sansSerif = [ "Hack" ];
+        emoji = [ "Twitter Color Emoji" ];
+      };
     };
   };
 
@@ -252,8 +256,9 @@
     fastfetch neofetch screenfetch starfetch ghfetch onefetch ipfetch
     cmatrix glava
 
-    # university learning & documents
-    zip unzip rar unrar
+    # university & documents
+    zip unzip 
+    rar unrar
     pandoc
 
     # dependencies
