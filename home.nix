@@ -39,7 +39,7 @@
     lazygit = {
       enable = true;
       settings = {
-        gui.theme.showIcons = true;
+        gui.theme.showIcons = [ "3" ];
       };
     };
 
