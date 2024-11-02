@@ -39,7 +39,7 @@
     lazygit = {
       enable = true;
       settings = {
-        theme.nerdFontsVersion = "3";
+        gui.theme.nerdFontsVersion = "3";
       };
     };
 
