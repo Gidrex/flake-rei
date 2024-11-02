@@ -8,7 +8,7 @@
   # Global system
   security.polkit.enable = true;
   boot = {
-    binfmt.emulatedSystems = ["aarch64-linux"];
+    binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
     loader = {
       systemd-boot.enable = false;
@@ -30,7 +30,7 @@
 
     trusted-substituters = [ "https://prismlauncher.cachix.org" ];
     trusted-public-keys = [ 
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" 
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "prismlauncher.cachix.org-1:9/n/FGyABA2jLUVfY+DEp4hKds/rwO+SCOtbOkDzd+c="
     ];
   };
@@ -48,7 +48,7 @@
       desktopManager.xterm.enable = false;
       displayManager.lightdm.background = ./assets/nix.png;
       displayManager.lightdm.enable = true;
-      xkb = { 
+      xkb = {
         layout = "us,ru";
         model = "pc105";
         options = "grp:alt_shift_toggle";
@@ -365,7 +365,6 @@
     flameshot pick-colour-picker
 
     # Gaming
-
     steam
     mangohud
     logmein-hamachi

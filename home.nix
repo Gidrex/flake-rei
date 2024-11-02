@@ -36,7 +36,12 @@
     mangohud.enable = true;
     looking-glass-client.enable = true;
     direnv.enable = true;
-    lazygit.enable = true;
+    lazygit = {
+      enable = true;
+      settings = {
+        theme.nerdFontsVersion = "3";
+      };
+    };
 
     gh = {
       enable = true;
