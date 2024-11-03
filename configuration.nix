@@ -157,15 +157,21 @@
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
     };
+
     nh = {
       flake = "/home/gidrex/flake-rei";
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep 5 --keep-since 7d"; # instead of nix.gc.automatic = true;
     };
+
     appimage = {
       enable = true;
       binfmt = true;
+    };
+
+    impermanence = {
+      enable = true;
     };
   };
 
