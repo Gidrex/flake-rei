@@ -91,6 +91,21 @@
         "type": "github"
       }
     },
+    "impermanence": {
+      "locked": {
+        "lastModified": 1730403150,
+        "narHash": "sha256-W1FH5aJ/GpRCOA7DXT/sJHFpa5r8sq2qAUncWwRZ3Gg=",
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "rev": "0d09341beeaa2367bac5d718df1404bf2ce45e6f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "impermanence",
+        "type": "github"
+      }
+    },
     "libnbtplusplus": {
       "flake": false,
       "locked": {
@@ -215,6 +230,7 @@
         "catppuccin": "catppuccin",
         "flake-utils": "flake-utils_2",
         "home-manager": "home-manager",
+        "impermanence": "impermanence",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "prismlauncher": "prismlauncher",

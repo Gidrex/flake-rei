@@ -169,10 +169,6 @@
       enable = true;
       binfmt = true;
     };
-
-    impermanence = {
-      enable = true;
-    };
   };
 
   # Screen lighting
@@ -417,4 +413,8 @@
   hardware.keyboard.qmk.enable = true;
 
   system.stateVersion = "24.11";
+environment.persistence."/persistent" = {
+    enable = true;  # NB: Defaults to true, not needed
+    hideMounts = true;
+    };
 }
