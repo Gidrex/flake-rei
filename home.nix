@@ -38,11 +38,9 @@
     direnv.enable = true;
     lazygit = {
       enable = true;
-      settings = [
-        {
-          gui.theme.showIcons = [ "3" ];
-        }
-      ];
+      settings = {
+        gui.theme.showIcons = "3";
+      };
     };
 
     gh = {
