@@ -51,7 +51,9 @@
 
     btop = {
       enable = true;
-      extraConfig = ''color_theme = "Default"'';
+      settings = {
+        color_theme = "horizon";
+      };
     };
 
     fzf = {
