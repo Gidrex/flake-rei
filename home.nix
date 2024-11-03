@@ -55,6 +55,8 @@
         color_theme = "horizon";
         vim_keys = false;
         graph_symbol = "block";
+        graph_symbol_cpu = "braille";
+        graph_symbol_net = "braille";
         show_battery = false;
       };
     };
