@@ -54,6 +54,9 @@
       settings = {
         color_theme = "horizon";
         vim_keys = false;
+        proc_sorting = "memory";
+        proc_gradient = false;
+        proc_per_core = false;
         graph_symbol = "block";
         graph_symbol_cpu = "braille";
         graph_symbol_net = "braille";
