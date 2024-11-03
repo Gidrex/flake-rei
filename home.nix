@@ -53,6 +53,9 @@
       enable = true;
       settings = {
         color_theme = "horizon";
+        vim_keys = false;
+        graph_symbol = "block";
+        show_battery = false;
       };
     };
 
