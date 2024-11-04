@@ -413,8 +413,4 @@
   hardware.keyboard.qmk.enable = true;
 
   system.stateVersion = "24.11";
-  environment.persistence."/" = {
-    enable = true;
-    hideMounts = true;
-  };
 }
