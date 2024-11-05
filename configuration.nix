@@ -248,7 +248,7 @@
     openssl
     cloak pass sshpass
     shadowsocks-rust shadowsocks-libev 
-    wireguard-tools udp2raw inetutils v2ray qv2ray
+    wireguard-tools udp2raw inetutils
     crow-translate
     ytfzf yt-dlp 
     git-filter-repo
