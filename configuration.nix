@@ -83,6 +83,7 @@
     };
     flatpak.enable = true;
     udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
+    v2raya.enable = true;
   };
 
   # Networking
@@ -248,7 +249,7 @@
     openssl
     cloak pass sshpass
     shadowsocks-rust shadowsocks-libev 
-    wireguard-tools udp2raw inetutils v2ray qv2ray v2raya
+    wireguard-tools udp2raw inetutils v2ray qv2ray
     crow-translate
     ytfzf yt-dlp 
     git-filter-repo
