@@ -154,6 +154,8 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nix-ld.enable = true;
+    programs.ladybird.enable = true;
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-media-tags-plugin ];
