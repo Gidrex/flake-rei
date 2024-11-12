@@ -111,7 +111,7 @@
 
   # Graphics
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "kvm" "kvm_intel" ];
+  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" ];
   hardware = {
     graphics = {
       enable = true;
@@ -250,7 +250,7 @@
     openssl
     cloak pass sshpass
     shadowsocks-rust shadowsocks-libev 
-    inetutils qv2ray xray
+    inetutils qv2ray-unstable xray
     crow-translate
     ytfzf yt-dlp 
     git-filter-repo
