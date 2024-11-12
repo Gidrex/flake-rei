@@ -250,7 +250,7 @@
     openssl
     cloak pass sshpass
     shadowsocks-rust shadowsocks-libev 
-    inetutils qv2ray-unstable xray
+    inetutils qv2ray xray
     crow-translate
     ytfzf yt-dlp 
     git-filter-repo
