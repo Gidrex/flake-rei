@@ -154,7 +154,6 @@
     zsh.enable = true;
     command-not-found.enable = false;
     nix-ld.enable = true;
-    ladybird.enable = true;
 
     thunar = {
       enable = true;
