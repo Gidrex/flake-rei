@@ -84,6 +84,7 @@
     flatpak.enable = true;
     udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
     v2raya.enable = true;
+    v2ray.enable = true;
   };
 
   # Networking
