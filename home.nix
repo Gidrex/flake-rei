@@ -53,7 +53,7 @@
       enable = true;
       settings = {
         color_theme = "horizon";
-        vim_keys = false;
+        vim_keys = true;
         proc_sorting = "memory";
         proc_gradient = false;
         proc_per_core = false;
