@@ -249,9 +249,8 @@
     # web & security
     openssl
     cloak pass sshpass
-    shadowsocks-rust shadowsocks-libev 
-    inetutils qv2ray xray
-    crow-translate
+    inetutils qv2ray
+    speedtest-cli crow-translate
     ytfzf yt-dlp 
     git-filter-repo
     john
