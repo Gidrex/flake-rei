@@ -348,7 +348,7 @@
     # db viev
     mysql-workbench dbeaver-bin
     sqlitebrowser
-    pgadmin4
+    pgcli
 
     # draw
     gimp krita
