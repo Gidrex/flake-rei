@@ -308,7 +308,7 @@
     sqlite sqlite-utils mysql
     clisp sbcl # functional lang env
     lua 
-    dosbox # assembler
+    dosbox nasm # assembler
     # ---------------------------------------------- #
 
     # Virtualisation
