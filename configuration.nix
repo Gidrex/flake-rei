@@ -368,7 +368,7 @@
 
     # Utility
     flameshot pick-colour-picker
-    gnome-disk-utility
+    gnome-disk-utility etcher
 
     # Gaming
     steam
