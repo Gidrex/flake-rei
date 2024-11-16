@@ -356,6 +356,7 @@
 
     # media
     spotify-cli-linux spotifywm
+    revolt-desktop
 
     # keep in touch with my bros
     telegram-desktop
