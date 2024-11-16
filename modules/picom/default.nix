@@ -23,7 +23,7 @@
       "93:class_g = 'Alacritty'"
       "92:class_g = 'Logseq'"
       "92:class_g = 'steam'"
-      "94:class_g = 'zen-alpha'"
+      # "94:class_g = 'zen-alpha'"
       "92:class_g = 'PrismLauncher'"
       "90:class_g = 'Thunar'"
       "90:class_g = 'Spotube'"
