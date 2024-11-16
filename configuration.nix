@@ -368,7 +368,7 @@
 
     # Utility
     flameshot pick-colour-picker
-    gnome-disk-utility ventoy
+    gnome-disk-utility unetbootin
 
     # Gaming
     steam
