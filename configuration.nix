@@ -368,7 +368,7 @@
 
     # Utility
     flameshot pick-colour-picker
-    gnome-disk-utility etcher
+    gnome-disk-utility ventoy
 
     # Gaming
     steam
