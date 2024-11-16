@@ -367,6 +367,7 @@
 
     # Utility
     flameshot pick-colour-picker
+    gnome-disk-utility
 
     # Gaming
     steam
