@@ -417,5 +417,23 @@
   # ergonomic keyboard
   hardware.keyboard.qmk.enable = true;
 
+  # zapret
+  networking.firewall = {
+    enable = true;
+    extraCommands = ''
+    iptables -t nat -A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports 8888
+    iptables -t nat -A OUTPUT -p tcp --dport 443 -j REDIRECT --to-ports 8888
+    '';
+  };
+  services.squid = {
+    enable = true;
+    http_port = 8888;
+    extraConfig = ''
+    acl localhost src 127.0.0.1/32
+    http_access allow localhost
+    http_access deny all
+    '';
+  };
+
   system.stateVersion = "24.11";
 }
