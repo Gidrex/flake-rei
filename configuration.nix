@@ -427,8 +427,8 @@
   };
   services.squid = {
     enable = true;
-    http_port = 8888;
     extraConfig = ''
+    http_port 8888
     acl localhost src 127.0.0.1/32
     http_access allow localhost
     http_access deny all
