@@ -254,6 +254,7 @@
     ytfzf yt-dlp 
     git-filter-repo
     john
+    zapret
 
     # fun
     fastfetch neofetch screenfetch starfetch ghfetch onefetch ipfetch
