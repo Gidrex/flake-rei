@@ -224,7 +224,10 @@
   # Packets
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "electron" ];
+    permittedInsecurePackages = [
+      "electron"
+      "squid-6.10"
+    ];
   };
   environment.systemPackages = with pkgs; [
     # --------------- Terminal tools --------------- #
