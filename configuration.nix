@@ -377,6 +377,7 @@
     steam
     mangohud
     logmein-hamachi
+    scanmem
     # ---------------------------------------------- #
 
     # Open with
