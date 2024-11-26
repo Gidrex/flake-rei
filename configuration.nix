@@ -102,9 +102,10 @@
   };
   hardware.bluetooth = {
     enable = true;
-    extraConfig = ''
-      AutoEnable=true
-    '';
+    settings = {
+      AutoEnable = "true";
+      ControllerMode = "bredr";
+    };
   };
 
 
