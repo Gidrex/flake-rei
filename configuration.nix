@@ -113,7 +113,7 @@
     enable = true;
     settings = {
       Policy.AutoEnable = "true";
-      ControllerMode = "bredr";
+      General.ControllerMode = "bredr";
     };
   };
 
