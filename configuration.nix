@@ -112,7 +112,7 @@
   hardware.bluetooth = {
     enable = true;
     settings = {
-      Policy.AutoEnable="true";
+      Policy.AutoEnable = "true";
       ControllerMode = "bredr";
     };
   };
