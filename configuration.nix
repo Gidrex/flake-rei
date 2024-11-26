@@ -74,6 +74,7 @@
     onlyoffice.enable = true;
     gnome.gnome-keyring.enable = true;
     postgresql.enable = true;
+    joycond.enable = true;
     printing = {
       enable = true;
       drivers = with pkgs; [ pantum-driver ];
