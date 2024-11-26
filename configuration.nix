@@ -26,10 +26,6 @@
   };
   powerManagement = {
     enable = true;
-    runtimePowerManagement = {
-      enable = false;
-      enableUSB = false;
-    };
   };
 
   # Nix
@@ -104,7 +100,11 @@
     hostName = "rei";
     networkmanager.enable = true;
   };
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    package = pkgs.bluezFull;
+  };
+
 
   # Locale
   time.timeZone = "Europe/Moscow";
@@ -161,6 +161,10 @@
   programs = {
     gamescope.enable = true;
     gamemode.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
     fish.enable = true;
     zsh.enable = true;
     command-not-found.enable = false;
