@@ -104,7 +104,6 @@
     enable = true;
     settings = {
       General.FastConnectable = "true";
-      Policy.FastConnectable = "true";
     };
   };
 
