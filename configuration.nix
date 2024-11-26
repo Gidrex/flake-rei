@@ -397,8 +397,7 @@
     mangohud
     logmein-hamachi
     scanmem # game conqueror
-    evtest # gamepad
-    xboxdrv
+    evtest joystick xboxdrv # gamepad
     # ---------------------------------------------- #
 
     # Open with
