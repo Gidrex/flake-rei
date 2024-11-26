@@ -128,6 +128,8 @@
       enable32Bit = true;
       extraPackages = with pkgs; [ vaapiVdpau libvdpau-va-gl mesa.drivers ];
     };
+
+hardware.steam.enableControllers = true;
     nvidia = {
       open = false;
       nvidiaSettings = true;
