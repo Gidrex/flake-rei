@@ -103,7 +103,7 @@
   hardware.bluetooth = {
     enable = true;
     settings = {
-      # General.FastConnectable = "true";
+      General.FastConnectable = "true";
     };
   };
 
