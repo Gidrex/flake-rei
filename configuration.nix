@@ -21,7 +21,6 @@
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
-      "usbcore.autosuspend=-1"
       "hid_nintendo"
     ];
     loader = {
