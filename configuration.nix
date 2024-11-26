@@ -82,7 +82,6 @@
       mountOnMedia = true;
     };
     flatpak.enable = true;
-    udev.extraRules = ''SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"'';
     v2raya.enable = true;
   };
 
@@ -418,8 +417,13 @@
     config.common.default = "*";
   };
 
-  # ergonomic keyboard
+  # Devices
   hardware.keyboard.qmk.enable = true;
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
+    SUBSYSTEM=="input", ATTRS{name}=="Nintendo Switch Pro Controller", MODE="0666"
+    SUBSYSTEM=="input", ATTRS{name}=="*Joy-Con*", MODE="0666"
+  '';
 
   system.stateVersion = "24.11";
 }
