@@ -103,7 +103,6 @@
   hardware.bluetooth = {
     enable = true;
     settings = {
-      AutoEnable = "true";
       FastConnectable = "true";
     };
   };
