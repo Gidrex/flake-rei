@@ -399,7 +399,7 @@
     logmein-hamachi
     scanmem # game conqueror
     evtest # gamepad
-    # xboxdrv
+    xboxdrv
     # ---------------------------------------------- #
 
     # Open with
