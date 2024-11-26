@@ -358,6 +358,7 @@
     i3status i3lock i3blocks
 
     # Drivers
+    glibcLocales
     blueman playerctl
     vulkan-validation-layers
     cloudflared
