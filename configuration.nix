@@ -10,6 +10,10 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
+    kernelParams = [
+      "usbcore.autosuspend=-1"
+      "hid_nintendo.debug=1"
+    ];
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
@@ -18,6 +22,13 @@
       grub.enable = true;
       grub.efiSupport = true;
       grub.device = "nodev";
+    };
+  };
+  powerManagement = {
+    enable = true;
+    runtimePowerManagement = {
+      enable = false;
+      enableUSB = false;
     };
   };
 
