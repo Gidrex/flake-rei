@@ -378,7 +378,7 @@
     mangohud
     logmein-hamachi
     scanmem # game conqueror
-    joycond evtest # gamepad
+    evtest # gamepad
     # ---------------------------------------------- #
 
     # Open with
@@ -422,6 +422,8 @@
   hardware.keyboard.qmk.enable = true;
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="057E", GROUP="plugdev", MODE="0666"
+
     SUBSYSTEM=="input", ATTRS{name}=="Nintendo Switch Pro Controller", MODE="0666"
     SUBSYSTEM=="input", ATTRS{name}=="*Joy-Con*", MODE="0666"
   '';
