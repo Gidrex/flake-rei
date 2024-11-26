@@ -102,6 +102,9 @@
   };
   hardware.bluetooth = {
     enable = true;
+    extraConfig = ''
+      AutoEnable=true
+    '';
   };
 
 
@@ -121,7 +124,7 @@
 
   # Graphics
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" ];
+  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "hidp" ];
   hardware = {
     graphics = {
       enable = true;
@@ -438,7 +441,6 @@
   hardware.keyboard.qmk.enable = true;
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
-    SUBSYSTEM=="usb", ATTR{idVendor}=="057E", GROUP="plugdev", MODE="0666"
     SUBSYSTEM=="input", ATTRS{name}=="*Pro Controller*", MODE="0666"
   '';
 
