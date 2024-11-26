@@ -122,7 +122,7 @@
   time.timeZone = "Europe/Moscow";
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_US.UTF-8" ];
+    supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_GB.UTF-8" ];
     glibcLocales = pkgs.glibcLocales.override {
       allLocales = lib.any (x: x == "all") config.i18n.supportedLocales;
       locales = config.i18n.supportedLocales;
