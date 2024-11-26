@@ -378,7 +378,7 @@
     mangohud
     logmein-hamachi
     scanmem # game conqueror
-    joycond hid-nintendo # gamepad
+    joycond evtest # gamepad
     # ---------------------------------------------- #
 
     # Open with
