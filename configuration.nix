@@ -6,7 +6,17 @@
   ];
 
   # Global system
-  security.polkit.enable = true;
+  security.polkit = {
+    enable = true;
+    extraConfig = ''
+    polkit.addRule(function(action, subject) {
+      if (action.id == "org.freedesktop.udisks2.filesystem-mount-system" &&
+          subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
+      }
+    });
+    '';
+  };
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
