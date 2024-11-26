@@ -104,6 +104,7 @@
     enable = true;
     settings = {
       AutoEnable = "true";
+      FastConnectable = "true";
       ControllerMode = "bredr";
     };
   };
