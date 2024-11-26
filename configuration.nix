@@ -126,7 +126,7 @@
 
   # Graphics
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "hidp" ];
+  boot.kernelModules = ["nvidia" "i2c-dev" "nvidia-drm" "nvidia-modeset" "nvidia-uvm" "hidp" "hid_generic" "usbhid" ];
   hardware = {
     graphics = {
       enable = true;
@@ -400,6 +400,7 @@
     logmein-hamachi
     scanmem # game conqueror
     evtest # gamepad
+    xboxdrv
     # ---------------------------------------------- #
 
     # Open with
