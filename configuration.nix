@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }: 
 {
   imports = [
     ./hardware-configuration.nix
@@ -120,8 +120,14 @@
 
   # Locale
   time.timeZone = "Europe/Moscow";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_US.UTF-8" "en_GB.UTF-8" ];  
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_US.UTF-8" "en_GB.UTF-8" ];
+    glibcLocales = pkgs.glibcLocales.override {
+      allLocales = lib.any (x: x == "all") config.i18n.supportedLocales;
+      locales = config.i18n.supportedLocales;
+    };
+  };  
 
   # User
   users.users.gidrex = {
@@ -254,7 +260,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "electron"
+    "electron"
     ];
   };
   environment.systemPackages = with pkgs; [
@@ -447,7 +453,7 @@
     enable = true; 
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
     config.common.default = "*";
-  };
+};
 
   # Devices
   hardware.keyboard.qmk.enable = true;
@@ -460,10 +466,10 @@
   environment.variables = {
     SDL_GAMECONTROLLERCONFIG = ''0500d71f7e0500000920000001800000,Nintendo Switch Pro Controller,a:b1,b:b0,back:b9,dpdown:h0.4,dpleft:h0.8,dpright:h0.2,dpup:h0.1,guide:b11,leftshoulder:b5,leftstick:b12,lefttrigger:b7,leftx:a0,lefty:a1,rightshoulder:b6,rightstick:b13,righttrigger:b8,rightx:a2,righty:a3,start:b10,x:b2,y:b3,hint:SDL_GAMECONTROLLER_USE_BUTTON_LABELS:=1,platform:Linux'';
     SDL_HINT_JOYSTICK_HIDAPI = "1";
-    SDL_HINT_JOYSTICK_HIDAPI_SWITCH = "1";
-    SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS = "0";
-    SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE = "0";
-  };
+      SDL_HINT_JOYSTICK_HIDAPI_SWITCH = "1";
+  SDL_HINT_JOYSTICK_HIDAPI_JOY_CONS = "0";
+  SDL_HINT_JOYSTICK_HIDAPI_GAMECUBE = "0";
+};
 
-  system.stateVersion = "24.11";
-}
+system.stateVersion = "24.11";
+  }
