@@ -407,7 +407,8 @@
     mangohud
     logmein-hamachi
     scanmem # game conqueror
-    evtest xboxdrv linuxConsoleTools # gamepad
+    evtest xboxdrv linuxConsoleTools SDL2 # gamepad
+    sdl-jstest
     # ---------------------------------------------- #
 
     # Open with
