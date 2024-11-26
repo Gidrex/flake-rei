@@ -407,7 +407,7 @@
     mangohud
     logmein-hamachi
     scanmem # game conqueror
-    evtest joystick xboxdrv # gamepad
+    evtest joystick xboxdrv linuxConsoleTools # gamepad
     # ---------------------------------------------- #
 
     # Open with
