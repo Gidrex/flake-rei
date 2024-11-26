@@ -103,7 +103,7 @@
   hardware.bluetooth = {
     enable = true;
     settings = {
-      AutoEnable = true;
+      AutoEnable = "true";
       ControllerMode = "bredr";
     };
   };
