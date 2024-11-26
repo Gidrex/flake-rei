@@ -134,7 +134,7 @@
     shell = pkgs.fish;
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "input" "plugdev" "libvirtd" "kvm" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "input" "docker" "vboxusers" "plugdev" "libvirtd" "kvm" "adbusers" ];
   };
   programs.adb.enable = true;
 
