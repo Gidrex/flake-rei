@@ -93,12 +93,12 @@
     hostName = "rei";
     networkmanager.enable = true;
   };
+  hardware.bluetooth.enable = true;
 
   # Locale
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.supportedLocales = [ "ru_RU.UTF-8/UTF-8" "en_GB.UTF-8/UTF-8" ];  
-  hardware.bluetooth.enable = true;
 
   # User
   users.users.gidrex = {
@@ -377,7 +377,8 @@
     steam
     mangohud
     logmein-hamachi
-    scanmem
+    scanmem # game conqueror
+    joycond
     # ---------------------------------------------- #
 
     # Open with
