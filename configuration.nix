@@ -10,7 +10,7 @@
   boot = {
     binfmt.emulatedSystems = [ "aarch64-linux" ];
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
-    boot.extraModulePackages = with config.boot.kernelPackages; [ hid-nintendo ];
+    extraModulePackages = with config.boot.kernelPackages; [ hid-nintendo ];
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
