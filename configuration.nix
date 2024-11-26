@@ -453,6 +453,7 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
     SUBSYSTEM=="input", ATTRS{name}=="Pro Controller", MODE="0666"
+    SUBSYSTEM=="input", ATTRS{name}=="Pro Controller (IMU)", OPTIONS+="ignore_device"
     KERNEL=="event*", SUBSYSTEM=="input", MODE="0666", GROUP="input"
   '';
   environment.variables = {
