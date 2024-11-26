@@ -129,7 +129,6 @@
       extraPackages = with pkgs; [ vaapiVdpau libvdpau-va-gl mesa.drivers ];
     };
 
-hardware.steam.enableControllers = true;
     nvidia = {
       open = false;
       nvidiaSettings = true;
@@ -165,6 +164,7 @@ hardware.steam.enableControllers = true;
     steam = {
       enable = true;
       gamescopeSession.enable = true;
+      remotePlay.openFirewall = false;
     };
     fish.enable = true;
     zsh.enable = true;
@@ -439,9 +439,7 @@ hardware.steam.enableControllers = true;
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0x1038", GROUP="plugdev", MODE="0666"
     SUBSYSTEM=="usb", ATTR{idVendor}=="057E", GROUP="plugdev", MODE="0666"
-
-    SUBSYSTEM=="input", ATTRS{name}=="Nintendo Switch Pro Controller", MODE="0666"
-    SUBSYSTEM=="input", ATTRS{name}=="*Joy-Con*", MODE="0666"
+    SUBSYSTEM=="input", ATTRS{name}=="*Pro Controller*", MODE="0666"
   '';
 
   system.stateVersion = "24.11";
