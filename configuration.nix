@@ -22,7 +22,7 @@
     kernelPackages = pkgs.pkgs.linuxPackages_xanmod_latest;
     kernelParams = [
       "usbcore.autosuspend=-1"
-      "hid_nintendo.debug=1"
+      "hid_nintendo"
     ];
     loader = {
       systemd-boot.enable = false;
@@ -114,6 +114,7 @@
     enable = true;
     settings = {
       Policy.AutoEnable="true";
+      ControllerMode = "bredr";
     };
   };
 
