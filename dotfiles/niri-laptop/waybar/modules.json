@@ -1,0 +1,112 @@
+{
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%d.%m}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#b4befe'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weekdays": "<span color='#89b4fa'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+  "niri/language": {
+    "format-en": "🇺🇸",
+    "format-ru": "🇷🇺"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "pulseaudio": {
+    "format": " {volume}% {icon}",
+    "format-muted": "󰝟",
+    "format-source": "{volume}% ",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰆟",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "󰓃",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-off": "",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
+  },
+  "user": {
+    "format": "{user}",
+    "interval": 10,
+    "icon": false
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 1
+  }
+}

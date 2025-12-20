@@ -1,0 +1,222 @@
+#########################################
+#		Variabes:		#
+#########################################
+
+set $alt		    Mod1
+set $super		  Mod4
+set $HOME		    /home/gidrex
+set $XDG		    XDG_PICTURES_DIR=$HOME/Pictures XDG_DOWNLOAD_DIR=$HOME/Downloads XDG_RUNTIME_DIR=/tmp/swaytmp
+
+set $browser		    /home/$USER/.local/share/AppImage/ZenBrowser.AppImage
+set $terminal		    foot
+set $screenshot_save	    grim -g "$(slurp -d -c '#62f0d8')"
+set $screenshot_copy	    grimshot copy area
+set $launcher env "GDK_SCALE=1.25 $XDG" tofi-drun
+
+###########################################################
+#		Commonly Used Application Keybinds:               #
+###########################################################
+
+bindsym $super+F1 		exec $browser
+bindsym $super+F3		exec telegram-desktop
+bindsym $super+P 		exec $terminal nmtui
+bindsym $super+O 		exec blueman-manager
+bindsym $super+c		exec copyq --start-server show
+bindsym Print 		  	exec $screenshot_copy
+bindsym $alt+Print	  	exec $screenshot_save
+bindsym $super+t	  	exec $terminal
+bindsym $super+d	  	exec $launcher
+
+#########################################
+#		AUTOSTART:		#
+#########################################
+exec wl-paste -p
+# exec qv2ray
+exec copyq
+# exec xfce4-session
+exec swaymsg "workspace 1; exec $browser"
+exec swaymsg "workspace 2"
+exec pulseaudio --daemonize=no --exit-idle-time=-
+exec waybar
+
+#################################
+#		SYSTEM:		#
+#################################
+
+font pango: SauceCodePro Nerd Font Semi-Bold 16
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp 	  exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown	  exec brightnessctl s 5%-
+
+# Change volume
+bindsym XF86AudioRaiseVolume		exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume		exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute			exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Music control
+bindsym XF86AudioNext			exec playerctl next
+bindsym XF86AudioPrev			exec playerctl previous 
+bindsym XF86AudioPlay			exec playerctl play-pause
+
+input * {
+    xkb_layout us,ru
+    xkb_options grp:alt_shift_toggle,caps:escape
+}
+
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
+output eDP-1 {
+    resolution 1920x1080
+    bg ./wallpaper.png fill
+}
+
+####################################################
+#		WINDOW MANIPULATION		   #
+####################################################
+
+# Kill focused window
+bindsym $super+q kill
+
+# Change focus
+bindsym $super+Left		focus left
+bindsym $super+Down		focus down
+bindsym $super+Up	        focus up
+bindsym $super+Right		focus right
+
+# Move focused window
+bindsym $super+Shift+Left 	move left
+bindsym $super+Shift+Down 	move down
+bindsym $super+Shift+Up 	move up
+bindsym $super+Shift+Right 	move right
+
+# Splits
+bindsym $super+h split h
+bindsym $super+v split v
+
+# Window modes
+bindsym $super+f fullscreen toggle
+bindsym $super+s layout toggle split
+bindsym $super+g floating toggle
+floating_modifier $super
+bindsym $super+space focus mode_toggle
+
+bindsym $super+equal move scratchpad
+bindsym $super+minus scratchpad show
+
+# Toggle sticky
+bindsym $super+Shift+s sticky toggle
+
+# Focus the parent container
+bindsym $super+a focus parent
+
+# Switch to workspace
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+
+# Move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+
+# Move to workspace with focused container
+bindsym $super+Ctrl+1 move container to workspace 1; workspace 1
+bindsym $super+Ctrl+2 move container to workspace 2; workspace 2
+bindsym $super+Ctrl+3 move container to workspace 3; workspace 3
+bindsym $super+Ctrl+4 move container to workspace 4; workspace 4
+bindsym $super+Ctrl+5 move container to workspace 5; workspace 5
+bindsym $super+Ctrl+6 move container to workspace 6; workspace 6
+bindsym $super+Ctrl+7 move container to workspace 7; workspace 7
+bindsym $super+Ctrl+8 move container to workspace 8; workspace 8
+bindsym $super+Ctrl+9 move container to workspace 9; workspace 9
+
+# Reload the configuration file
+bindsym $super+Shift+c reload
+
+# Restart sway inplace (preserves your layout/session, can be used to upgrade sway)
+bindsym $super+Shift+r restart
+
+# Resize window (you can also use the mouse for that)
+bindsym $super+r mode "resize"
+
+mode "resize" {
+    bindsym Left    resize shrink width	    5 px or 5 ppt
+    bindsym Down    resize grow height	    5 px or 5 ppt
+    bindsym Up	    resize shrink height    5 px or 5 ppt
+    bindsym Right   resize grow width	    5 px or 5 ppt
+    bindsym Return  mode "default"
+}
+
+default_border pixel 1
+default_floating_border none
+
+for_window [app_id="com.github.hluk.copyq"] floating enable, move position 600 100, resize set 600 400
+for_window [class="ONLYOFFICE Desktop Editors"] border pixel 3
+for_window [app_id="zen-alpha" title="Picture-in-Picture"] floating enable, move position 1276 32, resize set 635 355
+for_window [app_id="xfce-polkit"] floating enable
+
+#########################
+#		COLORS		    #
+#########################
+
+# colour of:    	     border	background       text 		indicator 	child_border
+client.focused              #bf616a 	#2f343f 	#d8dee8 	#bf616a 	#0bd9e0
+client.focused_inactive     #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.unfocused            #ffffff 	#ffffff 	#d8dee8 	#ffffff 	#000000
+client.urgent               #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.placeholder          #2f343f 	#2f343f 	#d8dee8 	#2f343f 	#2f343f
+client.background           #0f0f0f
+
+
+#################################################
+#		GAPS / BORDER SETTINGS		#
+#################################################
+
+gaps inner 5
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+#################################################
+#		SYSTEM MANAGER COMMANDS		#
+#################################################
+
+set $Locker /home/$USER/.config/sway/swaylock-fancy.sh
+
+bindsym $super+0 mode "$mode_system"
+set $mode_system (l)ock, (s)uspend, (r)eboot, shutdo(w)n,
+
+    mode "$mode_system" {
+	bindsym l	exec $Locker,		    mode "default"
+	bindsym s	exec $Locker & doas zzz,    mode "default"
+	bindsym r	exec doas reboot,	    mode "default"
+	bindsym w	exec doas shutdown now,	    mode "default"
+
+# exit system mode: "Enter" or "Escape" (bind to do nothing)
+	    bindsym Return	mode "default"
+	    bindsym Escape 	mode "default"
+    }
+
+#####################
+#	SwayFX	    #	    
+#####################
+for_window [app_id="foot"] window_blur enable, blur_xray disable, blur_passes 3, blur_radius 5, blur_noise 0.1, active_opacity 0.95, inactive_opacity 0.80, focus_opacity 1.0
+
+corner_radius 12
