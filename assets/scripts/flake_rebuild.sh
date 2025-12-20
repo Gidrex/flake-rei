@@ -22,7 +22,7 @@ if [ -z "$FLAKE_MACHINE" ]; then
 fi
 
 # Variables
-FLAKE_DIR="$HOME/flake-sysconf"
+FLAKE_DIR="$HOME/flake-rei"
 
 # Create temporary log files
 hm_log="/tmp/hm_rebuild.log"

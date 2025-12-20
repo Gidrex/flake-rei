@@ -22,9 +22,8 @@
     fish = {
       enable = true;
       shellAliases = {
-        rbn =
-          "sudo nixos-rebuild switch --flake ~/flake-sysconf/#nixos-icelake";
-        rbh = "home-manager switch --flake ~/flake-sysconf/#nixos-icelake";
+        rbn = "sudo nixos-rebuild switch --flake ~/flake-rei/#nixos-icelake";
+        rbh = "home-manager switch --flake ~/flake-rei/#nixos-icelake";
       };
     };
   };
@@ -66,7 +65,7 @@
         default-column-width { proportion 0.5; }
     }
 
-    spawn-at-startup "${pkgs.swaybg}/bin/swaybg -i ~/flake-sysconf/assets/wallpapers/red_portal.png"
+    spawn-at-startup "${pkgs.swaybg}/bin/swaybg -i ~/flake-rei/assets/wallpapers/red_portal.png"
 
     prefer-no-csd
 

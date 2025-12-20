@@ -1,4 +1,4 @@
-# Justfile for flake-sysconf
+# Justfile for flake-rei
 
 # Default recipe - list all available commands
 @default:

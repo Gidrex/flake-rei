@@ -12,8 +12,8 @@
 
     nushell.extraConfig = ''
       def rb [] {
-        ~/flake-sysconf/assets/scripts/backup.sh
-        home-manager switch --flake ~/flake-sysconf/#laptop-hypr
+        ~/flake-rei/assets/scripts/backup.sh
+        home-manager switch --flake ~/flake-rei/#laptop-hypr
       }
     '';
 

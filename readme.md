@@ -13,8 +13,8 @@ sudo systemctl start nix-daemon
 
 ### First system-build with home-manager
 ```sh
-git clone git@codeberg.org:Gidrex/flake-sysconf.git ~/flake-sysconf
-nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-sysconf/#<current machine>
+git clone git@github.com:Gidrex/flake-rei.git ~/flake-rei
+nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-rei/#<current machine>
 ```
 
 ## Building NixOS with disko for icelake machine

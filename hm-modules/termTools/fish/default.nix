@@ -33,9 +33,9 @@ in {
         zlk = "zl kill-session $(zellij ls -s | fzf)";
 
         # flake scripts
-        rbn = "FLAKE_BACKUP=0 ~/flake-sysconf/assets/scripts/flake_rebuild.sh";
-        rb = "FLAKE_BACKUP=1 ~/flake-sysconf/assets/scripts/flake_rebuild.sh";
-        hm = "home-manager switch --flake ~/flake-sysconf/#$FLAKE_MACHINE";
+        rbn = "FLAKE_BACKUP=0 ~/flake-rei/assets/scripts/flake_rebuild.sh";
+        rb = "FLAKE_BACKUP=1 ~/flake-rei/assets/scripts/flake_rebuild.sh";
+        hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
 
         # my custom scripts
         nt =
