@@ -1,6 +1,6 @@
 # Machines
 
-- `laptop-hypr` - performance station
+- `clean-niri` - pc setup with niri
 - `nixos-icelake` - Ice Lake NixOS laptop
 - `clean` - clean setup, only cli tools
 
