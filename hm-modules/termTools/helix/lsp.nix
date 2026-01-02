@@ -4,7 +4,7 @@ let
     shebangs = [ "deno" ];
     roots = [ "deno.json" "deno.jsonc" ];
     auto-format = true;
-    language-servers = [ "deno-lsp" ];
+    language-servers = [ "biome" "deno-lsp" ];
     formatter = {
       command = "${pkgs.deno}/bin/deno";
       args = [ "fmt" "-" "--options-single-quote=false" ];
@@ -56,8 +56,9 @@ in {
       taplo
       tombi
 
-      # html + css + json
+      # html + css + json + js/ts
       vscode-langservers-extracted
+      biome
 
       # yaml
       yaml-language-server
@@ -129,6 +130,11 @@ in {
     ];
 
     languages.language-server = {
+      biome = {
+        command = "biome";
+        args = [ "lsp-proxy" ];
+      };
+
       deno-lsp = {
         command = "deno";
         args = [ "lsp" ];
