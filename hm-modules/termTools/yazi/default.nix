@@ -25,16 +25,9 @@ in {
     # Plugins init
     plugins = {
       inherit (pkgs.yaziPlugins)
-        chmod
-        full-border
-        toggle-pane
-        piper
-        relative-motions
-        yatline
-        restore
-        yatline-githead
-        mediainfo
-        duckdb;
+        chmod full-border toggle-pane piper relative-motions yatline restore
+        # yatline-githead
+        mediainfo duckdb;
       inherit (yazi-plugins) open-with-cmd close-and-restore-tab;
     };
 
