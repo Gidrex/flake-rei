@@ -91,3 +91,15 @@ require("yatline-githead"):setup({
 	untracked_color = "blue",
 	untracked_symbol = "?",
 })
+
+if not ui.redraw and ui.render then
+	ui.redraw = ui.render
+end
+
+function Header:render(area)
+	return self:redraw(area)
+end
+
+function Status:render(area)
+	return self:redraw(area)
+end
