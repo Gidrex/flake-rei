@@ -23,13 +23,20 @@ in {
     shellWrapperName = "y";
 
     # Plugins init
-    plugins = with yazi-plugins;
-      lib.genAttrs [ "chmod" "full-border" "toggle-pane" "piper" ]
-      (name: yazi-rs + "/${name}.yazi") // {
-        # other plugins
-        inherit relative-motions yatline restore open-with-cmd yatline-githead
-          close-and-restore-tab mediainfo duckdb;
-      };
+    plugins = {
+      inherit (pkgs.yaziPlugins)
+        chmod
+        full-border
+        toggle-pane
+        piper
+        relative-motions
+        yatline
+        restore
+        yatline-githead
+        mediainfo
+        duckdb;
+      inherit (yazi-plugins) open-with-cmd close-and-restore-tab;
+    };
 
     settings = {
       concurrency = 2;

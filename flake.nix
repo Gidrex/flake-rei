@@ -20,25 +20,11 @@
     zjstatus.url = "github:dj95/zjstatus";
 
     # Yazi plugins
-    yazi-rs.url = "github:yazi-rs/plugins";
-    yazi-rs.flake = false;
-    relative-motions.url = "github:dedukun/relative-motions.yazi";
-    relative-motions.flake = false;
-    yatline.url = "github:imsi32/yatline.yazi";
-    yatline.flake = false;
-    restore.url = "github:boydaihungst/restore.yazi";
-    restore.flake = false;
     open-with-cmd.url = "github:Ape/open-with-cmd.yazi";
     open-with-cmd.flake = false;
-    yatline-githead.url = "github:imsi32/yatline-githead.yazi";
-    yatline-githead.flake = false;
     close-and-restore-tab.url =
       "github:MasouShizuka/close-and-restore-tab.yazi";
     close-and-restore-tab.flake = false;
-    mediainfo.url = "github:boydaihungst/mediainfo.yazi";
-    mediainfo.flake = false;
-    duckdb.url = "github:wylie102/duckdb.yazi";
-    duckdb.flake = false;
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -65,9 +51,7 @@
       moduleArgs = {
         # inherit (inputs) catppuccin-foot;
         yazi-plugins = builtins.mapAttrs (_: cleanPlugin) {
-          inherit (inputs)
-            yazi-rs relative-motions yatline restore open-with-cmd
-            yatline-githead close-and-restore-tab mediainfo duckdb;
+          inherit (inputs) open-with-cmd close-and-restore-tab;
         };
       };
 

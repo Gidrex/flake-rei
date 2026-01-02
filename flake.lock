@@ -71,22 +71,6 @@
         "type": "github"
       }
     },
-    "duckdb": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1748504465,
-        "narHash": "sha256-XQM459V3HbPgXKgd9LnAIKRQOAaJPdZA/Tp91TSGHqY=",
-        "owner": "wylie102",
-        "repo": "duckdb.yazi",
-        "rev": "3f8c8633d4b02d3099cddf9e892ca5469694ba22",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wylie102",
-        "repo": "duckdb.yazi",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -130,42 +114,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1766682973,
-        "narHash": "sha256-GKO35onS711ThCxwWcfuvbIBKXwriahGqs+WZuJ3v9E=",
+        "lastModified": 1767104570,
+        "narHash": "sha256-GKgwu5//R+cLdKysZjGqvUEEOGXXLdt93sNXeb2M/Lk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "91cdb0e2d574c64fae80d221f4bf09d5592e9ec2",
+        "rev": "e4e78a2cbeaddd07ab7238971b16468cc1d14daf",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "mediainfo": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764830600,
-        "narHash": "sha256-io3HyoUniWZu+0efZfbhXn8JoG5p2/lFeH/FguVvjSY=",
-        "owner": "boydaihungst",
-        "repo": "mediainfo.yazi",
-        "rev": "af8bdf47a1f4dcfefe433aa2134b04eb9c75a10b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "boydaihungst",
-        "repo": "mediainfo.yazi",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1766651565,
-        "narHash": "sha256-QEhk0eXgyIqTpJ/ehZKg9IKS7EtlWxF3N7DXy42zPfU=",
+        "lastModified": 1767116409,
+        "narHash": "sha256-5vKw92l1GyTnjoLzEagJy5V5mDFck72LiQWZSOnSicw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3e2499d5539c16d0d173ba53552a4ff8547f4539",
+        "rev": "cad22e7d996aea55ecab064e84834289143e44a0",
         "type": "github"
       },
       "original": {
@@ -207,54 +175,15 @@
         "type": "github"
       }
     },
-    "relative-motions": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1752096605,
-        "narHash": "sha256-9i6x/VxGOA3bB3FPieB7mQ1zGaMK5wnMhYqsq4CvaM4=",
-        "owner": "dedukun",
-        "repo": "relative-motions.yazi",
-        "rev": "a603d9ea924dfc0610bcf9d3129e7cba605d4501",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dedukun",
-        "repo": "relative-motions.yazi",
-        "type": "github"
-      }
-    },
-    "restore": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1764811194,
-        "narHash": "sha256-HfXhYe3XPKkd/ivpQB85EsZyvLiflJE0tRNGVid2A9A=",
-        "owner": "boydaihungst",
-        "repo": "restore.yazi",
-        "rev": "6395e52b3af3a8832f0249970a168c41fb92b31b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "boydaihungst",
-        "repo": "restore.yazi",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "catppuccin": "catppuccin",
         "close-and-restore-tab": "close-and-restore-tab",
         "disko": "disko",
-        "duckdb": "duckdb",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "mediainfo": "mediainfo",
         "nixpkgs": "nixpkgs",
         "open-with-cmd": "open-with-cmd",
-        "relative-motions": "relative-motions",
-        "restore": "restore",
-        "yatline": "yatline",
-        "yatline-githead": "yatline-githead",
-        "yazi-rs": "yazi-rs",
         "zjstatus": "zjstatus"
       }
     },
@@ -306,54 +235,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "yatline": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1749709910,
-        "narHash": "sha256-RkQKZQAa5U9eMWk1Q0doueJZiuP4elUJ0dM1XKLSnDo=",
-        "owner": "imsi32",
-        "repo": "yatline.yazi",
-        "rev": "88bd1c58357d472fe7e8daf9904936771fc49795",
-        "type": "github"
-      },
-      "original": {
-        "owner": "imsi32",
-        "repo": "yatline.yazi",
-        "type": "github"
-      }
-    },
-    "yatline-githead": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1748674817,
-        "narHash": "sha256-Cs8zSYtUfdCmKwIkJwQGyQNeSOmmpPvObCMnGm+32zg=",
-        "owner": "imsi32",
-        "repo": "yatline-githead.yazi",
-        "rev": "f8f969e84c39ad4215334ea5012183a2a5a6160b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "imsi32",
-        "repo": "yatline-githead.yazi",
-        "type": "github"
-      }
-    },
-    "yazi-rs": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1766569792,
-        "narHash": "sha256-G4Pqb8ct7om4UfihGr/6GoUn69HbzFVTxlulTeXZyEk=",
-        "owner": "yazi-rs",
-        "repo": "plugins",
-        "rev": "7ca66b4103d76038a5d21c9b83766967f5028116",
-        "type": "github"
-      },
-      "original": {
-        "owner": "yazi-rs",
-        "repo": "plugins",
         "type": "github"
       }
     },
