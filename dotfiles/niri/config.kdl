@@ -165,11 +165,11 @@ window-rule {
     // match app-id="equibop"
 // }
 
-window-rule {
-    match app-id="foot"
+// window-rule {
+    // match app-id="foot"
     // match app-id="app.zen_browser.zen"
-    opacity 0.95
-}
+    // opacity 0.95
+// }
 
 binds {
     Mod+D { spawn "wofi" "--show" "drun"; }
