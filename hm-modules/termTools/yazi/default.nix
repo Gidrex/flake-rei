@@ -26,7 +26,6 @@ in {
     plugins = {
       inherit (pkgs.yaziPlugins)
         chmod full-border toggle-pane piper relative-motions yatline restore
-        # yatline-githead
         mediainfo duckdb;
       inherit (yazi-plugins) open-with-cmd close-and-restore-tab;
     };
@@ -106,7 +105,7 @@ in {
       })
 
       require("full-border"):setup { type = ui.Border.ROUNDED }
-    '' + builtins.readFile ./yatline.lua;
+    '';
   };
 
   xdg.configFile."yazi/vfs.toml".text = ''
