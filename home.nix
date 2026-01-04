@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 let
   inherit (lib) mkIf mkDefault mkForce strings;
-  inherit (strings) toUpper substring toLower stringLength;
-  inherit (builtins) pathExists;
+  inherit (strings) toUpper toLower;
+  inherit (builtins) pathExists substring stringLength;
 
   username = "gidrex";
   Username = toUpper (substring 0 1 username) + toLower
