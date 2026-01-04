@@ -7,10 +7,6 @@ let
     multi = false;
   };
 
-  # Eza ignore patterns
-  ezaIgnore = [ "__pycache__" "*.egg-info" ];
-  mkIgnoreGlob = patterns: "-I '${lib.concatStringsSep "|" patterns}'";
-
 in {
   imports = [ ./keymaps.nix ];
 
@@ -73,8 +69,9 @@ in {
           "application/postscript"
         ]) ++ [
           {
-            mime = "inode/directory";
-            run = "piper -- ${pkgs.eza}/bin/eza --tree --level=3 --color=always --icons=always --group-directories-first --no-quotes ${mkIgnoreGlob ezaIgnore} {}";
+            url = "*/";
+            run = ''
+              piper -- ${pkgs.eza}/bin/eza --tree --level=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'';
           }
           {
             name = "*.md";
