@@ -25,8 +25,8 @@ in {
     # Plugins init
     plugins = {
       inherit (pkgs.yaziPlugins)
-        chmod full-border toggle-pane piper relative-motions yatline restore
-        mediainfo duckdb;
+        chmod full-border toggle-pane piper relative-motions restore mediainfo
+        duckdb;
       inherit (yazi-plugins) open-with-cmd close-and-restore-tab;
     };
 
@@ -73,12 +73,8 @@ in {
           "application/postscript"
         ]) ++ [
           {
-            name = "*/";
-            run = ''
-              piper -- ${pkgs.eza}/bin/eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes ${
-                mkIgnoreGlob ezaIgnore
-              } "$1"
-            '';
+            mime = "inode/directory";
+            run = "piper -- ${pkgs.eza}/bin/eza --tree --level=3 --color=always --icons=always --group-directories-first --no-quotes ${mkIgnoreGlob ezaIgnore} {}";
           }
           {
             name = "*.md";
