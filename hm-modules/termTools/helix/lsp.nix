@@ -143,11 +143,11 @@ in {
             enable = true;
             unstable = true;
             inlayHints = {
-              #   enumMemberValues = { enabled = true; };
-              #   functionLikeReturnTypes = { enabled = true; };
-              #   parameterNames = { enabled = "all"; };
-              #   parameterTypes = { enabled = true; };
+              functionLikeReturnTypes = { enabled = true; };
+              parameterNames = { enabled = "literals"; };
               propertyDeclarationTypes = { enabled = true; };
+              #   enumMemberValues = { enabled = true; };
+              #   parameterTypes = { enabled = true; };
               #   variableTypes = { enabled = true; };
             };
           };
