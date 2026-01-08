@@ -1,19 +1,27 @@
 { pkgs, lib, config, ... }:
 let
-  denoConfig = {
+  jsTsConfig = {
     shebangs = [ "deno" ];
-    roots = [ "deno.json" "deno.jsonc" ];
+    roots = [ "biome.json" "package.json" "deno.json" "deno.jsonc" ];
     auto-format = true;
     language-servers = [ "biome" "deno-lsp" ];
     formatter = {
-      command = "${pkgs.deno}/bin/deno";
-      args = [ "fmt" "-" "--options-single-quote=false" ];
+      command = "${pkgs.biome}/bin/biome";
+      args = [ "format" "--stdin-file-path" "file.ts" ];
     };
     indent = {
       tab-width = 2;
       unit = "  ";
     };
   };
+
+  mkJsTs = name: ext:
+    jsTsConfig // {
+      inherit name;
+      formatter = jsTsConfig.formatter // {
+        args = [ "format" "--stdin-file-path" "file.${ext}" ];
+      };
+    };
 
 in {
   home.packages = with pkgs;
@@ -116,8 +124,19 @@ in {
         name = "lua";
         auto-format = true;
       }
-      (denoConfig // { name = "typescript"; })
-      (denoConfig // { name = "javascript"; })
+      (mkJsTs "typescript" "ts")
+      (mkJsTs "javascript" "js")
+      (mkJsTs "tsx" "tsx")
+      (mkJsTs "jsx" "jsx")
+      {
+        name = "json";
+        auto-format = true;
+        language-servers = [ "biome" "vscode-json-language-server" ];
+        formatter = {
+          command = "${pkgs.biome}/bin/biome";
+          args = [ "format" "--stdin-file-path" "file.json" ];
+        };
+      }
       {
         name = "dart";
         auto-format = true;
@@ -133,6 +152,11 @@ in {
       biome = {
         command = "biome";
         args = [ "lsp-proxy" ];
+      };
+
+      vscode-json-language-server = {
+        command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+        args = [ "--stdio" ];
       };
 
       deno-lsp = {
