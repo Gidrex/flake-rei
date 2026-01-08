@@ -258,6 +258,7 @@ in {
       "$HOME/.local/bin"
       "$HOME/.nix-profile/bin"
       "$HOME/.npm-global/bin"
+      "$HOME/.deno/bin"
       "/usr/bin"
       "/opt/flutter/bin"
     ];
