@@ -211,6 +211,7 @@ in {
         hexyl
         duckdb
         libqalculate
+        tldr
 
         # fancy
         gum
