@@ -44,9 +44,10 @@ in {
 
     # apply per every term session
     interactiveShellInit = ''
-      function fish_greeting
-      end
-      fish_hybrid_key_bindings
+      set -g fish_greeting ""
+      set -g fish_key_bindings fish_hybrid_key_bindings
+      set -U -e fish_key_bindings
+
       rip completions fish | source
 
       function helixing
