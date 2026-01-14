@@ -29,7 +29,7 @@ in {
       # Nix
       nil
       nixd
-      nixfmt-classic
+      nixfmt
 
       # C/C++
       # cmake-language-server
@@ -96,7 +96,7 @@ in {
       {
         name = "nix";
         auto-format = true;
-        formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
+        formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
       }
       {
         name = "rust";
@@ -155,7 +155,8 @@ in {
       };
 
       vscode-json-language-server = {
-        command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+        command =
+          "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
         args = [ "--stdio" ];
       };
 
