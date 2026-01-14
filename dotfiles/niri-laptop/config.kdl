@@ -77,13 +77,13 @@ window-rule {
     open-on-workspace "1"
 }
 
-// workspace 5
+// workspace 4
 window-rule {
     match app-id="goofcord"
     match app-id="equibop"
     match app-id="org.telegram.desktop"
     match app-id="com.ayugram.desktop"
-    open-on-workspace "5"
+    open-on-workspace "4"
 }
 
 // workspace 5
@@ -96,6 +96,7 @@ window-rule {
 window-rule {
     match app-id="app.zen_browser.zen"
     match app-id="chromium-browser"
+    match app-id="ONLYOFFICE" 
     draw-border-with-background false
     default-column-width { proportion 1.0; }
     border {
@@ -136,7 +137,6 @@ window-rule {
 window-rule {
     match app-id="goofcord"
     match app-id="equibop"
-    match app-id="ONLYOFFICE"
     match app-id="foot"
     match app-id="clash-verge"
     match app-id="PacketTracer"
