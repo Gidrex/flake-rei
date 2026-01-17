@@ -25,6 +25,7 @@ in {
         la = "ls -al";
         md = "mkdir -p";
         h = "hx";
+        e = "$EDITOR";
 
         # zellij
         zl = "zellij";
