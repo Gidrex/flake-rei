@@ -53,7 +53,7 @@ workspace "2"
 workspace "3"
 workspace "4"
 workspace "5"
-// workspace "6"
+workspace "6"
 
 layout {
     gaps 3
@@ -147,7 +147,7 @@ window-rule {
     match app-id="equibop"
     match app-id="org.telegram.desktop"
     match app-id="com.ayugram.desktop"
-    open-on-workspace "4"
+    open-on-workspace "5"
 }
 
 window-rule {
@@ -156,7 +156,7 @@ window-rule {
     match app-id="Vial"
     match app-id="blueberry.py"
     match app-id="org.pulseaudio.pavucontrol"
-    open-on-workspace "5"
+    open-on-workspace "6"
 }
 
 // window-rule {
