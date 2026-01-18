@@ -1,19 +1,33 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
-  inherit (lib) mkIf mkDefault mkForce strings;
+  inherit (lib)
+    mkIf
+    mkDefault
+    mkForce
+    strings
+    ;
   inherit (strings) toUpper toLower;
   inherit (builtins) pathExists substring stringLength;
 
   username = "gidrex";
-  Username = toUpper (substring 0 1 username) + toLower
-    (substring 1 (stringLength username - 1) username); # gidrex -> Gidrex
+  Username =
+    toUpper (substring 0 1 username) + toLower (substring 1 (stringLength username - 1) username); # gidrex -> Gidrex
   name = "Alexander";
   mail = "Desench@proton.me";
 
-in {
+in
+{
   nix = {
     package = mkDefault pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   # Programs
@@ -104,7 +118,10 @@ in {
       enable = true;
       icons = "auto";
       git = true;
-      extraOptions = [ "--oneline" "--group-directories-first" ];
+      extraOptions = [
+        "--oneline"
+        "--group-directories-first"
+      ];
     };
 
     git = {
@@ -196,7 +213,8 @@ in {
   fonts.fontconfig.enable = true;
 
   home = {
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         # utility
         unrar
@@ -230,27 +248,40 @@ in {
         feh
 
         # fonts
-      ] ++ (with nerd-fonts; [
+      ]
+      ++ (with nerd-fonts; [
         arimo
         caskaydia-mono
         symbols-only
         sauce-code-pro
         jetbrains-mono
-      ]) ++ [ times-newer-roman ];
+      ])
+      ++ [ times-newer-roman ];
 
-    sessionVariables = builtins.listToAttrs (map (name: {
-      inherit name;
-      value = mkIf config.programs.helix.enable "hx";
-    }) [ "EDITOR" "VISUAL" ]) // {
+    sessionVariables =
+      builtins.listToAttrs (
+        map
+          (name: {
+            inherit name;
+            value = mkIf config.programs.helix.enable "hx";
+          })
+          [
+            "EDITOR"
+            "VISUAL"
+          ]
+      )
+      // {
 
-      SHELL = mkIf config.programs.fish.enable "fish";
-      TERM = mkIf config.programs.foot.enable "foot";
+        SHELL = mkIf config.programs.fish.enable "fish";
+        TERM = mkIf config.programs.foot.enable "foot";
 
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+        QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
 
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_SCREENSHOTS_DIR = "$HOME/Pictures/screenshots";
-    };
+        XDG_CONFIG_HOME = "$HOME/.config";
+        XDG_SCREENSHOTS_DIR = "$HOME/Pictures/screenshots";
+        GOOGLE_GEMINI_BASE_URL = "http://127.0.0.1:8317";
+        GEMINI_API_KEY = "sk-dummy";
+      };
 
     sessionPath = [
       "$HOME/.volta/bin"
