@@ -1,23 +1,34 @@
 { pkgs, ... }:
-let inherit (builtins) concatStringsSep genList listToAttrs;
+let
+  inherit (builtins) concatStringsSep genList listToAttrs;
 
-in {
+in
+{
   programs.fish = {
     enable = true;
-    plugins = with pkgs.fishPlugins;
-      map (plugin: {
-        name = plugin.pname;
-        src = plugin.src;
-      }) [ tide colored-man-pages ];
+    plugins =
+      with pkgs.fishPlugins;
+      map
+        (plugin: {
+          name = plugin.pname;
+          src = plugin.src;
+        })
+        [
+          tide
+          colored-man-pages
+        ];
 
     functions.gd = (builtins.readFile ./gd_function.fish);
 
     shellAliases =
       # alias for .. , ... , .... and others
-      listToAttrs (map (dots: {
-        name = concatStringsSep "" (genList (_: ".") dots);
-        value = "cd ${concatStringsSep "/" (genList (_: "..") (dots - 1))}";
-      }) (genList (i: i + 2) 5)) //
+      listToAttrs (
+        map (dots: {
+          name = concatStringsSep "" (genList (_: ".") dots);
+          value = "cd ${concatStringsSep "/" (genList (_: "..") (dots - 1))}";
+        }) (genList (i: i + 2) 5)
+      )
+      //
 
       # Base aliaeses
       {
@@ -39,8 +50,7 @@ in {
         hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
 
         # my custom scripts
-        nt =
-          "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
+        nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
       };
 
     # apply per every term session
@@ -77,6 +87,5 @@ in {
     yazi.enableFishIntegration = true;
   };
 
-  xdg.configFile."fish/completions/gd.fish".text =
-    (builtins.readFile ./gd_completion.fish);
+  xdg.configFile."fish/completions/gd.fish".text = (builtins.readFile ./gd_completion.fish);
 }

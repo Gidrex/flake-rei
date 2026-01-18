@@ -1,4 +1,10 @@
-{ lib, pkgs, config, ... }: {
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+{
   imports = [
     ./lsp.nix
 
@@ -61,8 +67,16 @@
             "file-modification-indicator"
             "read-only-indicator"
           ];
-          center = [ "version-control" "file-name" ];
-          right = [ "diagnostics" "selections" "position" "file-encoding" ];
+          center = [
+            "version-control"
+            "file-name"
+          ];
+          right = [
+            "diagnostics"
+            "selections"
+            "position"
+            "file-encoding"
+          ];
           separator = "│";
           mode = {
             normal = "NORMAL";
@@ -96,8 +110,7 @@
           A-w = ":w";
           A-q = ":q";
           space.space = ":reload-all";
-          space.q =
-            ":pipe ${pkgs.libqalculate}/bin/qalc -s 'maxdeci 2' -t -f /dev/stdin";
+          space.q = ":pipe ${pkgs.libqalculate}/bin/qalc -s 'maxdeci 2' -t -f /dev/stdin";
         };
       };
     };

@@ -1,13 +1,30 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   jsTsConfig = {
     shebangs = [ "deno" ];
-    roots = [ "biome.json" "package.json" "deno.json" "deno.jsonc" ];
+    roots = [
+      "biome.json"
+      "package.json"
+      "deno.json"
+      "deno.jsonc"
+    ];
     auto-format = true;
-    language-servers = [ "biome" "deno-lsp" ];
+    language-servers = [
+      "biome"
+      "deno-lsp"
+    ];
     formatter = {
       command = "${pkgs.biome}/bin/biome";
-      args = [ "format" "--stdin-file-path" "file.ts" ];
+      args = [
+        "format"
+        "--stdin-file-path"
+        "file.ts"
+      ];
     };
     indent = {
       tab-width = 2;
@@ -15,16 +32,24 @@ let
     };
   };
 
-  mkJsTs = name: ext:
-    jsTsConfig // {
+  mkJsTs =
+    name: ext:
+    jsTsConfig
+    // {
       inherit name;
       formatter = jsTsConfig.formatter // {
-        args = [ "format" "--stdin-file-path" "file.${ext}" ];
+        args = [
+          "format"
+          "--stdin-file-path"
+          "file.${ext}"
+        ];
       };
     };
 
-in {
-  home.packages = with pkgs;
+in
+{
+  home.packages =
+    with pkgs;
     lib.mkIf config.programs.helix.enable [
       # Nix
       nil
@@ -86,8 +111,15 @@ in {
     enable = true;
     settings = {
       # line-length = 120;
-      lint.per-file-ignores = { "__init__.py" = [ "F401" ]; };
-      lint.select = [ "E4" "E7" "E9" "F" ];
+      lint.per-file-ignores = {
+        "__init__.py" = [ "F401" ];
+      };
+      lint.select = [
+        "E4"
+        "E7"
+        "E9"
+        "F"
+      ];
     };
   };
 
@@ -108,7 +140,12 @@ in {
         };
         formatter = {
           command = "${pkgs.rustfmt}/bin/rustfmt";
-          args = [ "--edition" "2021" "--config" "tab_spaces=2" ];
+          args = [
+            "--edition"
+            "2021"
+            "--config"
+            "tab_spaces=2"
+          ];
         };
       }
       {
@@ -131,10 +168,17 @@ in {
       {
         name = "json";
         auto-format = true;
-        language-servers = [ "biome" "vscode-json-language-server" ];
+        language-servers = [
+          "biome"
+          "vscode-json-language-server"
+        ];
         formatter = {
           command = "${pkgs.biome}/bin/biome";
-          args = [ "format" "--stdin-file-path" "file.json" ];
+          args = [
+            "format"
+            "--stdin-file-path"
+            "file.json"
+          ];
         };
       }
       {
@@ -155,8 +199,7 @@ in {
       };
 
       vscode-json-language-server = {
-        command =
-          "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+        command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
         args = [ "--stdio" ];
       };
 
@@ -168,9 +211,15 @@ in {
             enable = true;
             unstable = true;
             inlayHints = {
-              functionLikeReturnTypes = { enabled = true; };
-              parameterNames = { enabled = "literals"; };
-              propertyDeclarationTypes = { enabled = true; };
+              functionLikeReturnTypes = {
+                enabled = true;
+              };
+              parameterNames = {
+                enabled = "literals";
+              };
+              propertyDeclarationTypes = {
+                enabled = true;
+              };
               #   enumMemberValues = { enabled = true; };
               #   parameterTypes = { enabled = true; };
               #   variableTypes = { enabled = true; };
@@ -182,23 +231,45 @@ in {
       rust-analyzer = {
         command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
         config = {
-          check = { command = "clippy"; };
+          check = {
+            command = "clippy";
+          };
           inlayHints = {
-            bindingModeHints = { enable = true; };
-            chainingHints = { enable = true; };
-            closingBraceHints = { enable = true; };
-            closureCaptureHints = { enable = true; };
-            closureReturnTypeHints = { enable = "always"; };
+            bindingModeHints = {
+              enable = true;
+            };
+            chainingHints = {
+              enable = true;
+            };
+            closingBraceHints = {
+              enable = true;
+            };
+            closureCaptureHints = {
+              enable = true;
+            };
+            closureReturnTypeHints = {
+              enable = "always";
+            };
             closureStyle = "impl_fn";
-            discriminantHints = { enable = "always"; };
-            expressionAdjustmentHints = { enable = "always"; };
-            implicitDrops = { enable = true; };
+            discriminantHints = {
+              enable = "always";
+            };
+            expressionAdjustmentHints = {
+              enable = "always";
+            };
+            implicitDrops = {
+              enable = true;
+            };
             lifetimeElisionHints = {
               enable = "always";
               useParameterNames = true;
             };
-            parameterHints = { enable = true; };
-            reborrowHints = { enable = "always"; };
+            parameterHints = {
+              enable = true;
+            };
+            reborrowHints = {
+              enable = "always";
+            };
             typeHints = {
               enable = true;
               hideClosureInitialization = false;
@@ -206,17 +277,28 @@ in {
             };
           };
           cargo = {
-            buildScripts = { enable = true; };
+            buildScripts = {
+              enable = true;
+            };
             features = "all";
           };
-          procMacro = { enable = true; };
-          rustfmt = { rangeFormatting = { enable = true; }; };
+          procMacro = {
+            enable = true;
+          };
+          rustfmt = {
+            rangeFormatting = {
+              enable = true;
+            };
+          };
         };
       };
 
       dart = {
         command = "${pkgs.flutter}/bin/dart";
-        args = [ "language-server" "--protocol=lsp" ];
+        args = [
+          "language-server"
+          "--protocol=lsp"
+        ];
       };
     };
   };

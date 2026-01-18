@@ -22,29 +22,38 @@
     # Yazi plugins
     open-with-cmd.url = "github:Ape/open-with-cmd.yazi";
     open-with-cmd.flake = false;
-    close-and-restore-tab.url =
-      "github:MasouShizuka/close-and-restore-tab.yazi";
+    close-and-restore-tab.url = "github:MasouShizuka/close-and-restore-tab.yazi";
     close-and-restore-tab.flake = false;
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    { nixpkgs, home-manager, ... }@inputs:
     let
       # Clean yazi plugins from docs
-      cleanPlugin = src:
+      cleanPlugin =
+        src:
         nixpkgs.lib.cleanSourceWith {
           src = src;
-          filter = path: type:
-            let baseName = baseNameOf path;
-            in !(builtins.any (suffix: nixpkgs.lib.hasSuffix suffix baseName) [
-              ".md"
-              "LICENSE"
-              ".png"
-              ".jpg"
-            ] || baseName == "README"
+          filter =
+            path: type:
+            let
+              baseName = baseNameOf path;
+            in
+            !(
+              builtins.any (suffix: nixpkgs.lib.hasSuffix suffix baseName) [
+                ".md"
+                "LICENSE"
+                ".png"
+                ".jpg"
+              ]
+              || baseName == "README"
               || nixpkgs.lib.hasInfix "LICENSE" baseName # exclude this files
-              || (type == "directory" && builtins.pathExists path
-                && builtins.length (builtins.attrNames (builtins.readDir path))
-                == 0)); # empty dirs
+              || (
+                type == "directory"
+                && builtins.pathExists path
+                && builtins.length (builtins.attrNames (builtins.readDir path)) == 0
+              )
+            ); # empty dirs
         };
 
       # Module arguments
@@ -77,16 +86,18 @@
 
         config = {
           allowunfree = false;
-          allowUnfreePredicate = pkg:
-            builtins.elem (nixpkgs.lib.getName pkg) [ "unrar" "obsidian" ];
+          allowUnfreePredicate =
+            pkg:
+            builtins.elem (nixpkgs.lib.getName pkg) [
+              "unrar"
+              "obsidian"
+            ];
         };
 
         overlays = [
           (final: prev: {
-            zjstatus =
-              inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
-            tgt =
-              inputs.tgt.packages.${prev.stdenv.hostPlatform.system}.default;
+            zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
+            tgt = inputs.tgt.packages.${prev.stdenv.hostPlatform.system}.default;
           })
         ];
       };
@@ -99,7 +110,8 @@
         clean-niri = ./machines/clean-niri; # clean setup for niri
       };
 
-    in {
+    in
+    {
       # NixOS builder
       nixosConfigurations = {
         nixos-icelake = nixpkgs.lib.nixosSystem {
@@ -111,8 +123,7 @@
             {
               nixpkgs.overlays = [
                 (final: prev: {
-                  zjstatus =
-                    inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
+                  zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
                 })
               ];
 
@@ -131,11 +142,12 @@
       };
 
       # Home Manager builder
-      homeConfigurations = nixpkgs.lib.genAttrs (builtins.attrNames machines)
-        (name:
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = commonModules ++ [ machines.${name} ];
-          });
+      homeConfigurations = nixpkgs.lib.genAttrs (builtins.attrNames machines) (
+        name:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = commonModules ++ [ machines.${name} ];
+        }
+      );
     };
 }

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   disko.devices = {
     disk = {
       main = {
@@ -14,7 +15,10 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = [ "defaults" "umask=0077" ];
+                mountOptions = [
+                  "defaults"
+                  "umask=0077"
+                ];
               };
             };
 
@@ -62,7 +66,7 @@
                   "--use-random"
                 ];
 
-                # Settings for NixOS LUKS configuration  
+                # Settings for NixOS LUKS configuration
                 settings = {
                   allowDiscards = true;
                   crypttabExtraOpts = [
@@ -150,8 +154,12 @@
     };
 
     "/boot" = {
-      options =
-        [ "defaults" "umask=0077" "iocharset=iso8859-1" "shortname=winnt" ];
+      options = [
+        "defaults"
+        "umask=0077"
+        "iocharset=iso8859-1"
+        "shortname=winnt"
+      ];
     };
   };
 

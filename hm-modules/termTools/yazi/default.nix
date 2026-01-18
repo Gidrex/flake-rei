@@ -1,4 +1,10 @@
-{ pkgs, lib, config, yazi-plugins, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  yazi-plugins,
+  ...
+}:
 let
   # Plugin helpers
   mkPreviewer = run: name: { inherit name run; };
@@ -7,10 +13,12 @@ let
     multi = false;
   };
 
-in {
+in
+{
   imports = [ ./keymaps.nix ];
 
-  home.packages = with pkgs;
+  home.packages =
+    with pkgs;
     lib.mkIf config.programs.yazi.enable [
       trash-cli # requirements for boydaihungst/restore.yazi
     ];
@@ -21,8 +29,15 @@ in {
     # Plugins init
     plugins = {
       inherit (pkgs.yaziPlugins)
-        chmod full-border toggle-pane piper relative-motions restore mediainfo
-        duckdb;
+        chmod
+        full-border
+        toggle-pane
+        piper
+        relative-motions
+        restore
+        mediainfo
+        duckdb
+        ;
       inherit (yazi-plugins) open-with-cmd close-and-restore-tab;
     };
 
@@ -33,16 +48,21 @@ in {
         image_preloader = false;
         image_delay = 0;
       };
-      mgr.ratio = [ 1 2 5 ];
-      plugin.prepend_preloaders = (map (mkPreloader "duckdb") [
-        "*.csv"
-        "*.tsv"
-        "*.json"
-        "*.parquet"
-        "*.txt"
-        "*.xlsx"
-      ])
-      # preview for images, video, audio
+      mgr.ratio = [
+        1
+        2
+        5
+      ];
+      plugin.prepend_preloaders =
+        (map (mkPreloader "duckdb") [
+          "*.csv"
+          "*.tsv"
+          "*.json"
+          "*.parquet"
+          "*.txt"
+          "*.xlsx"
+        ])
+        # preview for images, video, audio
         ++ (map (mkPreloader "mediainfo") [
           "{audio,video,image}/*"
           "application/subrip"
@@ -60,18 +80,22 @@ in {
           "*.xlsx"
           "*.db"
           "*.duckdb"
-        ]) ++ (map (name: {
-          inherit name;
-          run = "mediainfo";
-        }) [
-          "{audio,video,image}/*"
-          "application/subrip"
-          "application/postscript"
-        ]) ++ [
+        ])
+        ++ (map
+          (name: {
+            inherit name;
+            run = "mediainfo";
+          })
+          [
+            "{audio,video,image}/*"
+            "application/subrip"
+            "application/postscript"
+          ]
+        )
+        ++ [
           {
             url = "*/";
-            run = ''
-              piper -- ${pkgs.eza}/bin/eza --tree --level=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'';
+            run = ''piper -- ${pkgs.eza}/bin/eza --tree --level=3 --color=always --icons=always --group-directories-first --no-quotes "$1"'';
           }
           {
             name = "*.md";

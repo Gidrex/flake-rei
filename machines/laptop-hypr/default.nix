@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   imports = [ ../../hm-modules/wayland/waybar/hypr-laptop ];
   programs = {
     # Ricing
@@ -43,10 +44,12 @@
 
   services.swayidle = {
     enable = true;
-    events = [{
-      event = "before-sleep";
-      command = builtins.toString ../../assets/scripts/swaylock_fancy.sh;
-    }];
+    events = [
+      {
+        event = "before-sleep";
+        command = builtins.toString ../../assets/scripts/swaylock_fancy.sh;
+      }
+    ];
   };
 
   home.packages = with pkgs; [
@@ -72,19 +75,21 @@
         "application/xhtml+xml"
         "application/x-extension-xhtml"
         "application/x-extension-xht"
-      ] (_: "zen.desktop")) //
+      ] (_: "zen.desktop"))
+      //
 
-      # Feh for images
-      (lib.genAttrs [
-        "image/png"
-        "image/jpeg"
-        "image/jpg"
-        "image/gif"
-        "image/bmp"
-        "image/webp"
-        "image/tiff"
-        "image/svg+xml"
-      ] (_: "feh.desktop")) // {
+        # Feh for images
+        (lib.genAttrs [
+          "image/png"
+          "image/jpeg"
+          "image/jpg"
+          "image/gif"
+          "image/bmp"
+          "image/webp"
+          "image/tiff"
+          "image/svg+xml"
+        ] (_: "feh.desktop"))
+      // {
 
         # Zathura
         "application/pdf" = "qpdfview.desktop";

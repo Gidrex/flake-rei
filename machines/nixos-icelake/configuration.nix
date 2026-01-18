@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./hardware/optimization.nix
     ./hardware/disko.nix
@@ -22,7 +23,10 @@
   nixpkgs.config.allowUnfree = true;
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       cores = 4;
       max-jobs = 4;
     };
@@ -39,7 +43,12 @@
   # Users
   users.users.gidrex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+    ];
   };
 
   # System packages

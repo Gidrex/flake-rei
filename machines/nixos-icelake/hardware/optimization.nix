@@ -1,5 +1,6 @@
 # Ice Lake kernel parameters optimized for CHUWI CoreBook X
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   boot = {
     kernelParams = [
       # Intel CPU optimizations
@@ -131,153 +132,156 @@
 
   # Environment variables for native optimizations
   environment.variables = {
-    NIX_CFLAGS_COMPILE =
-      "-march=native -mtune=native -O3 -flto=auto -fuse-linker-plugin -ftree-vectorize -ffast-math -funroll-loops -fomit-frame-pointer";
+    NIX_CFLAGS_COMPILE = "-march=native -mtune=native -O3 -flto=auto -fuse-linker-plugin -ftree-vectorize -ffast-math -funroll-loops -fomit-frame-pointer";
     NIX_LDFLAGS = "-flto=auto -Wl,--as-needed -Wl,-O1";
   };
 
   nixpkgs = {
-    hostPlatform = lib.genAttrs [ "system" "gcc.arch" "gcc.tune" ]
-      (attr: if attr == "system" then "x86_64-linux" else "icelake-client");
+    hostPlatform = lib.genAttrs [ "system" "gcc.arch" "gcc.tune" ] (
+      attr: if attr == "system" then "x86_64-linux" else "icelake-client"
+    );
 
     overlays = [
       # Fix for hostPlatform gcc.arch overrides causing build issues
       (self: super: {
-        libopus = super.libopus.overrideDerivation
-          (oldAttrs: { patches = oldAttrs.patches; });
+        libopus = super.libopus.overrideDerivation (oldAttrs: {
+          patches = oldAttrs.patches;
+        });
       })
 
       (final: prev: {
-        linuxPackages_zen = prev.linuxPackages_zen.extend (lpself: lpsuper: {
-          kernel = lpsuper.kernel.override {
-            structuredExtraConfig = with prev.lib.kernel; {
-              MNATIVE_INTEL = yes;
-              MCORE2 = no;
-              GENERIC_CPU = no;
-              MK8 = no;
+        linuxPackages_zen = prev.linuxPackages_zen.extend (
+          lpself: lpsuper: {
+            kernel = lpsuper.kernel.override {
+              structuredExtraConfig = with prev.lib.kernel; {
+                MNATIVE_INTEL = yes;
+                MCORE2 = no;
+                GENERIC_CPU = no;
+                MK8 = no;
 
-              # Ice Lake specific CPU features
-              X86_INTEL_LPSS = yes;
-              INTEL_TH = yes;
-              INTEL_TH_PCI = yes;
-              INTEL_TH_GTH = yes;
-              INTEL_TH_STH = yes;
-              INTEL_TH_MSU = yes;
-              INTEL_TH_PTI = yes;
+                # Ice Lake specific CPU features
+                X86_INTEL_LPSS = yes;
+                INTEL_TH = yes;
+                INTEL_TH_PCI = yes;
+                INTEL_TH_GTH = yes;
+                INTEL_TH_STH = yes;
+                INTEL_TH_MSU = yes;
+                INTEL_TH_PTI = yes;
 
-              # Performance optimizations for laptop
-              PREEMPT = yes;
-              PREEMPT_VOLUNTARY = no;
-              PREEMPT_DYNAMIC = yes;
-              HZ_1000 = yes;
-              HZ_300 = no;
-              NO_HZ_FULL = yes;
+                # Performance optimizations for laptop
+                PREEMPT = yes;
+                PREEMPT_VOLUNTARY = no;
+                PREEMPT_DYNAMIC = yes;
+                HZ_1000 = yes;
+                HZ_300 = no;
+                NO_HZ_FULL = yes;
 
-              # Intel Ice Lake graphics (UHD Graphics)
-              DRM_I915 = yes;
-              DRM_I915_GVT = yes;
-              DRM_I915_USERPTR = yes;
-              DRM_I915_GVT_KVMGT = yes;
-              DRM_I915_FORCE_PROBE = freeform "1a56"; # Ice Lake GT2 device ID
+                # Intel Ice Lake graphics (UHD Graphics)
+                DRM_I915 = yes;
+                DRM_I915_GVT = yes;
+                DRM_I915_USERPTR = yes;
+                DRM_I915_GVT_KVMGT = yes;
+                DRM_I915_FORCE_PROBE = freeform "1a56"; # Ice Lake GT2 device ID
 
-              # F2FS optimizations for NVMe SSD
-              F2FS_FS = yes;
-              F2FS_STAT_FS = yes;
-              F2FS_FS_XATTR = yes;
-              F2FS_FS_POSIX_ACL = yes;
-              F2FS_FS_SECURITY = yes;
-              F2FS_CHECK_FS = yes;
-              F2FS_FS_COMPRESSION = yes;
+                # F2FS optimizations for NVMe SSD
+                F2FS_FS = yes;
+                F2FS_STAT_FS = yes;
+                F2FS_FS_XATTR = yes;
+                F2FS_FS_POSIX_ACL = yes;
+                F2FS_FS_SECURITY = yes;
+                F2FS_CHECK_FS = yes;
+                F2FS_FS_COMPRESSION = yes;
 
-              # NVMe optimizations
-              BLK_DEV_NVME = yes;
-              NVME_CORE = yes;
-              NVME_MULTIPATH = yes;
-              NVME_VERBOSE_ERRORS = yes;
-              NVME_HWMON = yes;
+                # NVMe optimizations
+                BLK_DEV_NVME = yes;
+                NVME_CORE = yes;
+                NVME_MULTIPATH = yes;
+                NVME_VERBOSE_ERRORS = yes;
+                NVME_HWMON = yes;
 
-              # TPM2 support
-              TCG_TPM = yes;
-              TCG_TIS_CORE = yes;
-              TCG_TIS = yes;
-              TCG_TIS_SPI = yes;
-              TCG_CRB = yes;
+                # TPM2 support
+                TCG_TPM = yes;
+                TCG_TIS_CORE = yes;
+                TCG_TIS = yes;
+                TCG_TIS_SPI = yes;
+                TCG_CRB = yes;
 
-              # Audio PCH
-              SND_SOC_INTEL_SKYLAKE_FAMILY = yes;
-              SND_SOC_INTEL_ICL = yes;
-              SND_SOC_SOF_INTEL_ICL = yes;
-              SND_SOC_SOF_INTEL_TOPLEVEL = yes;
+                # Audio PCH
+                SND_SOC_INTEL_SKYLAKE_FAMILY = yes;
+                SND_SOC_INTEL_ICL = yes;
+                SND_SOC_SOF_INTEL_ICL = yes;
+                SND_SOC_SOF_INTEL_TOPLEVEL = yes;
 
-              # WiFi - typical Ice Lake WiFi chips
-              IWLWIFI = yes;
-              IWLDVM = yes;
-              IWLMVM = yes;
+                # WiFi - typical Ice Lake WiFi chips
+                IWLWIFI = yes;
+                IWLDVM = yes;
+                IWLMVM = yes;
 
-              # Bluetooth
-              BT_INTEL = yes;
-              BT_BCM = yes;
+                # Bluetooth
+                BT_INTEL = yes;
+                BT_BCM = yes;
 
-              # USB
-              USB_XHCI_HCD = yes;
-              USB_XHCI_PCI = yes;
-              USB_XHCI_PLATFORM = yes;
+                # USB
+                USB_XHCI_HCD = yes;
+                USB_XHCI_PCI = yes;
+                USB_XHCI_PLATFORM = yes;
 
-              # Thunderbolt 3 support
-              THUNDERBOLT = yes;
-              USB4 = yes;
+                # Thunderbolt 3 support
+                THUNDERBOLT = yes;
+                USB4 = yes;
 
-              # RAM optimizations
-              TRANSPARENT_HUGEPAGE = yes;
-              TRANSPARENT_HUGEPAGE_ALWAYS = no;
-              TRANSPARENT_HUGEPAGE_MADVISE = yes;
-              COMPACTION = yes;
-              MIGRATION = yes;
-              KSM = yes;
+                # RAM optimizations
+                TRANSPARENT_HUGEPAGE = yes;
+                TRANSPARENT_HUGEPAGE_ALWAYS = no;
+                TRANSPARENT_HUGEPAGE_MADVISE = yes;
+                COMPACTION = yes;
+                MIGRATION = yes;
+                KSM = yes;
 
-              # Zen kernel specific optimizations
-              CC_OPTIMIZE_FOR_PERFORMANCE = yes;
-              CC_OPTIMIZE_FOR_SIZE = no;
+                # Zen kernel specific optimizations
+                CC_OPTIMIZE_FOR_PERFORMANCE = yes;
+                CC_OPTIMIZE_FOR_SIZE = no;
 
-              # Security
-              SECURITY_SELINUX = no;
-              SECURITY_APPARMOR = no;
-              SECURITY_TOMOYO = no;
-              HARDENED_USERCOPY = yes;
-              FORTIFY_SOURCE = yes;
+                # Security
+                SECURITY_SELINUX = no;
+                SECURITY_APPARMOR = no;
+                SECURITY_TOMOYO = no;
+                HARDENED_USERCOPY = yes;
+                FORTIFY_SOURCE = yes;
 
-              # Reduce kernel size - disable debugging
-              DEBUG_KERNEL = no;
-              DEBUG_INFO = no;
-              DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT = no;
-              COMPILE_TEST = no;
-              LOCALVERSION_AUTO = no;
+                # Reduce kernel size - disable debugging
+                DEBUG_KERNEL = no;
+                DEBUG_INFO = no;
+                DEBUG_INFO_DWARF_TOOLCHAIN_DEFAULT = no;
+                COMPILE_TEST = no;
+                LOCALVERSION_AUTO = no;
 
-              # Laptop specific
-              LAPTOP_MODE = yes;
-              ACPI_BATTERY = yes;
-              ACPI_AC = yes;
-              ACPI_FAN = yes;
-              ACPI_THERMAL = yes;
+                # Laptop specific
+                LAPTOP_MODE = yes;
+                ACPI_BATTERY = yes;
+                ACPI_AC = yes;
+                ACPI_FAN = yes;
+                ACPI_THERMAL = yes;
 
-              # Power management
-              INTEL_IDLE = yes;
-              INTEL_PSTATE = yes;
-              X86_INTEL_PSTATE = yes;
-              CPU_FREQ_GOV_SCHEDUTIL = yes;
-              CPU_FREQ_GOV_ONDEMAND = yes;
-              CPU_FREQ_GOV_CONSERVATIVE = yes;
-              ACPI_PROCESSOR_AGGREGATOR = yes;
+                # Power management
+                INTEL_IDLE = yes;
+                INTEL_PSTATE = yes;
+                X86_INTEL_PSTATE = yes;
+                CPU_FREQ_GOV_SCHEDUTIL = yes;
+                CPU_FREQ_GOV_ONDEMAND = yes;
+                CPU_FREQ_GOV_CONSERVATIVE = yes;
+                ACPI_PROCESSOR_AGGREGATOR = yes;
 
-              # Power saving
-              PM = yes;
-              PM_SLEEP = yes;
-              SUSPEND = yes;
-              HIBERNATION = yes;
-              PM_STD_PARTITION = freeform "/dev/disk/by-partlabel/swap";
+                # Power saving
+                PM = yes;
+                PM_SLEEP = yes;
+                SUSPEND = yes;
+                HIBERNATION = yes;
+                PM_STD_PARTITION = freeform "/dev/disk/by-partlabel/swap";
+              };
             };
-          };
-        });
+          }
+        );
       })
     ];
   };

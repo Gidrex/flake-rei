@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Enable niri compositor
@@ -41,11 +46,17 @@
     enable = true;
     wlr.enable = false; # Disable wlr portal as niri doesn't use wlroots
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-    config = { common = { default = [ "gtk" ]; }; };
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+    };
   };
 
   # Security for Wayland
-  security = { polkit.enable = true; };
+  security = {
+    polkit.enable = true;
+  };
 
   # Environment variables for niri
   environment = {
@@ -108,7 +119,7 @@
       # Screen locker
       swaylock
 
-      # Font packages  
+      # Font packages
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       noto-fonts
@@ -141,7 +152,14 @@
 
   # Users configuration for niri
   users.users.gidrex = {
-    extraGroups = [ "wheel" "networkmanager" "audio" "video" "input" "render" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "audio"
+      "video"
+      "input"
+      "render"
+    ];
   };
 
 }

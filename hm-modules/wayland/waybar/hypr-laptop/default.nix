@@ -21,10 +21,17 @@
         "custom/clock-icon"
         "custom/media"
       ];
-      modules-right = [ "pulseaudio" "privacy" "network" "tray" ];
+      modules-right = [
+        "pulseaudio"
+        "privacy"
+        "network"
+        "tray"
+      ];
 
       # Hyprland modules
-      "hyprland/submap" = { format = "{} 󱂬"; };
+      "hyprland/submap" = {
+        format = "{} 󱂬";
+      };
 
       "hyprland/language" = {
         format = "{}";
@@ -52,7 +59,18 @@
         interval = 8;
         format = "{capacity}% {icon}";
         format-charging = "{capacity}% 󱐌";
-        format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+        format-icons = [
+          "󰁺"
+          "󰁻"
+          "󰁼"
+          "󰁽"
+          "󰁾"
+          "󰁿"
+          "󰂀"
+          "󰂁"
+          "󰂂"
+          "󰁹"
+        ];
         states = {
           warning = 30;
           critical = 15;
@@ -77,7 +95,11 @@
           headset = "󰋎";
           phone = "";
           portable = "󰓃";
-          default = [ "󰕿" "󰖀" "󰕾" ];
+          default = [
+            "󰕿"
+            "󰖀"
+            "󰕾"
+          ];
         };
       };
 

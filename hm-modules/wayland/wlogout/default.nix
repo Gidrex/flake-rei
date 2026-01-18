@@ -2,7 +2,8 @@ let
   inherit (builtins) readFile toString;
   lockscreen = toString ../../../assets/scripts/swaylock_fancy.sh;
 
-in {
+in
+{
   catppuccin.wlogout = {
     enable = false;
     iconStyle = "wleave";
