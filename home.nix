@@ -49,6 +49,14 @@ in
       enable = true;
       settings.gui.nerdFontsVersion = "3";
     };
+    jujutsu = {
+      enable = true;
+      settings = {
+        user.email = "${mail}";
+        user.name = "${Username}";
+        ui.color = "always";
+      };
+    };
 
     imv = {
       settings.options = {
@@ -243,6 +251,7 @@ in
         lazydocker
         mosquitto
         deno
+        lazyjj
 
         # apps
         feh
