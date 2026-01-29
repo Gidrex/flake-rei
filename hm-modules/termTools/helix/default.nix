@@ -50,7 +50,7 @@
 
         soft-wrap = {
           enable = true;
-          # max-wrap = 120;
+          max-wrap = 120;
           wrap-at-text-width = false;
         };
 
