@@ -1,0 +1,2 @@
+[language-server.vscode-css-language-server.config]
+css = { validate = false }
