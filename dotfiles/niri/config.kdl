@@ -109,11 +109,6 @@ layer-rule {
     place-within-backdrop true
 }
 
-layer-rule {
-    match namespace="^wofi$"
-    geometry-corner-radius 16
-}
-
 prefer-no-csd // No Client-Side Decorations
 
 window-rule {
