@@ -1,5 +1,5 @@
 // ## Startup
-spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
+spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-sh-at-startup "waybar"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
@@ -9,9 +9,9 @@ spawn-sh-at-startup "swww-daemon"
 
 // ### Spawn gui's on Workspace 5
 spawn-sh-at-startup "clash-verge"
-spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects"
-spawn-sh-at-startup "pavucontrol"
-spawn-sh-at-startup "blueberry"
+spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects --gapplication-service"
+// spawn-sh-at-startup "pavucontrol"
+// spawn-sh-at-startup "blueberry"
 
 input {
     keyboard {
@@ -71,21 +71,37 @@ layout {
     }
     default-column-width { proportion 0.5; }
     focus-ring {
-        width 1
-        active-color "#ffffff"
-        inactive-color "#808080"
+        width 2
+        // active-color "#ffffff"
+        // inactive-color "#808080"
+        active-color "#07b5ef"
+        inactive-color "#ffffff00"
+        active-gradient from="#ffffff" to="#8b00ff" angle=45 in="oklch longer hue"
     }
+
     border {
-        width 1
-        active-color "#ffffff"
-        inactive-color "#808080"
+        off
+    }
+    shadow {
+        on
+        draw-behind-window false
+        softness 40
+        spread 5
+        offset x=0 y=5
+        color "#0007"
     }
 }
 
 // ## Overwiew
 overview {
-    zoom 0.5
-    workspace-shadow { off; }
+    zoom 0.45
+    workspace-shadow {
+        // off
+        softness 50
+        spread 20
+        offset x=0 y=10
+        color "#0007"
+    }
 }
 
 layer-rule {
@@ -176,18 +192,6 @@ window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     open-on-workspace "6"
 }
-
-// window-rule {
-//     opacity 0.90
-//     match app-id="goofcord"
-    // match app-id="equibop"
-// }
-
-// window-rule {
-    // match app-id="foot"
-    // match app-id="app.zen_browser.zen"
-    // opacity 0.95
-// }
 
 binds {
     Mod+D { spawn "wofi" "--show" "drun"; }
@@ -312,6 +316,10 @@ binds {
     Mod+Shift+Ctrl+T { toggle-debug-tint; }
 }
 
+clipboard {
+    disable-primary
+}
+
 animations {
     horizontal-view-movement {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
@@ -373,4 +381,11 @@ environment {
     QT_FFMPEG_DECODING_HW_DEVICE_TYPES "vaapi"
     QT_FFMPEG_ENCODING_HW_DEVICE_TYPES "vaapi"
     LIBVIRT_DEFAULT_URI "qemu:///system"
+}
+
+cursor {
+    xcursor-theme "Capitaine"
+    xcursor-size 24
+    hide-when-typing
+    hide-after-inactive-ms 10000
 }
