@@ -206,12 +206,6 @@ window-rule {
     open-on-workspace "6"
 }
 
-window-rule {
-    match title=r#".*Bitwarden.*"#
-    default-column-width { proportion 0.25; }
-    opacity 0.5
-}
-
 binds {
     Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/niri/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css" "--show drun"; }
     Mod+T { spawn "foot"; }
