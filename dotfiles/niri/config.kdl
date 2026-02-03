@@ -151,7 +151,6 @@ window-rule {
     match app-id="org.telegram.desktop"
     match app-id="com.ayugram.desktop"
     match app-id="blueberry.py"
-    match title=r#"(?i)bitwarden"#
     default-column-width { proportion 0.25; }
 }
 
@@ -205,6 +204,12 @@ window-rule {
     match app-id="blueberry.py"
     match app-id="org.pulseaudio.pavucontrol"
     open-on-workspace "6"
+}
+
+window-rule {
+    match title=r#".*Bitwarden.*"#
+    default-column-width { proportion 0.25; }
+    opacity 0.5
 }
 
 binds {
