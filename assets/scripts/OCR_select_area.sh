@@ -2,11 +2,11 @@
 
 grim -g "$(slurp)" - | \
   magick - \
+  -alpha set -background white -alpha remove \
   -modulate 100,0 \
-  -resize 300% \
+  -resize 400% \
   -density 300 \
-  -units PixelsPerInch \
-  -sharpen 0x1 \
-  +repage \
+  -bordercolor white -border 50x50 \
+  -sharpen 0x1.5 \
   png:- | \
-  tesseract - - -l rus+eng --psm 6 | wl-copy
+  tesseract - - -l rus+eng --psm 7 | wl-copy
