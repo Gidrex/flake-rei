@@ -117,8 +117,8 @@ in
         "--smart-case"
         "--hidden"
         "--follow"
-        "--heading"
         "--with-filename"
+        "--no-line-number"
       ];
     };
 
