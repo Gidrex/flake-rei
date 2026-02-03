@@ -74,8 +74,6 @@
         ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
 
-        ./hm-modules/wayland/wlogout
-
         inputs.catppuccin.homeModules.catppuccin
 
         { _module.args = moduleArgs; }
