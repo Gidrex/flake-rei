@@ -1,10 +1,10 @@
 // ## Startup
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-sh-at-startup "waybar"
+spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/niri/waybar/config --style /home/gidrex/flake-rei/dotfiles/niri/waybar/style.css --log-level off"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 // ### Wallpapers
-spawn-sh-at-startup "swaybg -m center -o DP-2 -i ~/flake-rei/assets/wallpapers/3440x1440/blur/3D_abstraction_blur.jpg"
+spawn-sh-at-startup "swaybg -m center -o DP-2 -i /home/gidrex/flake-rei/assets/wallpapers/3440x1440/blur/3D_abstraction_blur.jpg"
 spawn-sh-at-startup "swww-daemon"
 
 // ### Spawn gui's on Workspace 5
@@ -16,7 +16,7 @@ spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects --gapplication-serv
 input {
     keyboard {
         xkb {
-            file "~/.config/niri/keymap.xkb"
+            file "/home/gidrex/flake-rei/dotfiles/niri/keymap.xkb"
         }
 
         repeat-delay 200
@@ -192,7 +192,7 @@ binds {
     Mod+D { spawn "wofi" "--config" "/home/gidrex/flake-rei/dotfiles/niri/wofi/config" "--style" "/home/gidrex/flake-rei/dotfiles/niri/wofi/style.css" "--show" "drun"; }
     Mod+T { spawn "foot"; }
     Mod+V { spawn-sh "cliphist list | wofi --config /home/gidrex/flake-rei/dotfiles/niri/wofi/config --style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css -S dmenu | cliphist decode | wl-copy"; }
-    Mod+P { spawn-sh "~/flake-rei/assets/scripts/power-menu.sh"; }
+    Mod+P { spawn-sh "/home/gidrex/flake-rei/assets/scripts/power-menu.sh"; }
     Mod+X { spawn-sh "grim -g \"$(slurp)\" - | tesseract - - -l rus+eng | wl-copy"; }
 
     Mod+B { toggle-window-floating; }
