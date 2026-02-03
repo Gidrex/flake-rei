@@ -6,4 +6,4 @@
 
 # QA
 @qa:
-    which niri > /dev/null && niri validate
+    command -v niri > /dev/null && niri validate
