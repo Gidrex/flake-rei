@@ -110,6 +110,11 @@ layer-rule {
     place-within-backdrop true
 }
 
+layer-rule {
+    block-out-from "screencast"
+    match namespace="^notifications$"
+}
+
 prefer-no-csd // No Client-Side Decorations
 
 // Enable VRR
