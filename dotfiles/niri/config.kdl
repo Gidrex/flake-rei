@@ -224,7 +224,7 @@ binds {
     Mod+T { spawn "foot"; }
     Mod+V { spawn-sh "cliphist list | wofi --config /home/gidrex/flake-rei/dotfiles/niri/wofi/config --style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css -S dmenu | cliphist decode | wl-copy"; }
     Mod+P { spawn-sh "/home/gidrex/flake-rei/assets/scripts/power-menu.sh"; }
-    Mod+X { spawn-sh "grim -g \"$(slurp)\" - | tesseract - - -l rus+eng | wl-copy"; }
+    Mod+X { spawn-sh "/home/gidrex/flake-rei/assets/scripts/OCR_select_area.sh"; }
 
     Mod+B { toggle-window-floating; }
 
