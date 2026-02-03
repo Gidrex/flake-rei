@@ -1,9 +1,9 @@
 /* Main Wofi window styling */
 #window {
   background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 0%, rgba(59, 66, 82, 0.95) 100%);
-  border-radius: 20px;
+  border-radius: 16;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0);
   margin: 15px;
 }
 
@@ -17,7 +17,7 @@
 #input {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
+  border-radius: 8;
   color: #ffffff;
   font-size: 16px;
   padding: 10px;
@@ -29,7 +29,7 @@
   background: transparent;
   color: #d8dee9;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 0;
   margin: 3px 6px;
 }
 
@@ -38,7 +38,7 @@
   background: linear-gradient(45deg, rgba(129, 161, 193, 0.7) 0%, rgba(163, 190, 140, 0.7) 100%);
   color: #ffffff;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 /* Scrollable area */
