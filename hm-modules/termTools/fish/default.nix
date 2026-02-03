@@ -70,7 +70,6 @@ in
       bind -M insert \et 'commandline -f cancel; z ..; commandline -f repaint'
       bind -M insert \ee 'commandline -f cancel; helixing; commandline -f repaint'
       bind -M insert \ey 'commandline -f cancel; yazi; commandline -f repaint'
-      bind -M insert \ea 'commandline -f cancel; gemini; commandline -f repaint'
       bind -M insert \ex 'commandline -f cancel; lazygit; commandline -f repaint'
     '';
     loginShellInit = ''
