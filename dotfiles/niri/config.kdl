@@ -132,6 +132,7 @@ window-rule {
     match app-id=r#"(?i)minecraft"#
     match app-id=r#"^steam_app_"#
     match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
     match app-id="Antigravity"
     match app-id="chromiumon-demand"
     match app-id="chrome-.*"
@@ -166,11 +167,17 @@ window-rule {
     open-floating false
 }
 
+// window-rule {
+//     match app-id="foot"
+//     opacity 0.98
+// }
+
 window-rule {
     match app-id="goofcord"
     match app-id="equibop"
     match app-id=r#"(?i)steam"#
     match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
     match app-id="ONLYOFFICE"
     match app-id="clash-verge"
     match app-id="^mpv$"
@@ -403,7 +410,7 @@ environment {
 }
 
 cursor {
-    xcursor-theme "Capitaine"
+    xcursor-theme "capitaine-cursors"
     xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 10000
