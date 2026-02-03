@@ -129,6 +129,7 @@ window-rule {
     match app-id="foot"
     match app-id="Antigravity"
     match app-id="chromiumon-demand"
+    match app-id="chrome-.*"
     default-column-width { proportion 1.0; }
     draw-border-with-background false
     border {
@@ -168,6 +169,7 @@ window-rule {
     match app-id="ONLYOFFICE"
     match app-id="clash-verge"
     match app-id="^mpv$"
+    match app-id="chrome-.*"
     default-column-width { proportion 0.75; }
 }
 
@@ -175,7 +177,6 @@ window-rule {
     match app-id="app.zen_browser.zen"
     match app-id="glide-glide"
     match app-id="Yandex-browser"
-    match app-id="chromium"
     match app-id="chromium"
     open-on-workspace "1"
 }
