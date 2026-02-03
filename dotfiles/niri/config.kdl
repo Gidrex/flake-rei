@@ -388,6 +388,8 @@ gestures {
 }
 
 environment {
+    XCURSOR_THEME "capitaine-cursors"
+    XCURSOR_SIZE "24"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     QT_STYLE_OVERRIDE "kvantum"
     CLUTTER_BACKEND "wayland"
