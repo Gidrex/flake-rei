@@ -1,9 +1,13 @@
+// ## Startup
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &"
 spawn-sh-at-startup "waybar"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
-spawn-sh-at-startup "swaybg -m center -o DP-2 -i ~/flake-rei/assets/wallpapers/3440x1440/3D_abstraction.jpg" 
 
-// Workspace 5
+// ### Wallpapers
+spawn-sh-at-startup "swaybg -m center -o DP-2 -i ~/flake-rei/assets/wallpapers/3440x1440/blur/3D_abstraction_blur.jpg"
+spawn-sh-at-startup "swww-daemon"
+
+// ### Spawn gui's on Workspace 5
 spawn-sh-at-startup "clash-verge"
 spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects"
 spawn-sh-at-startup "pavucontrol"
@@ -36,7 +40,7 @@ output "DP-2" {
     scale 1.3
     transform "normal"
     position x=0 y=0
-    background-color "#111111"
+    background-color "#00000000"
 }
 
 output "eDP-1" {
@@ -56,6 +60,7 @@ workspace "5"
 workspace "6"
 
 layout {
+    background-color "#00000000"
     gaps 3
     center-focused-column "always"
     preset-column-widths {
@@ -77,12 +82,23 @@ layout {
     }
 }
 
+// ## Overwiew
 overview {
-    zoom 0.4
+    zoom 0.5
     workspace-shadow { off; }
 }
 
-prefer-no-csd
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^wofi$"
+    geometry-corner-radius 16
+}
+
+prefer-no-csd // No Client-Side Decorations
 
 window-rule {
     match app-id="app.zen_browser.zen"
