@@ -41,6 +41,7 @@ output "DP-2" {
     transform "normal"
     position x=0 y=0
     background-color "#00000000"
+    variable-refresh-rate on-demand=true
 }
 
 output "eDP-1" {
@@ -111,6 +112,14 @@ layer-rule {
 
 prefer-no-csd // No Client-Side Decorations
 
+// Enable VRR
+window-rule {
+    variable-refresh-rate true
+    match app-id="^mpv$"
+    match app-id=r#"^steam_app_"#
+    match app-id=r#"(?i)minecraft"#
+}
+
 window-rule {
     match app-id="app.zen_browser.zen"
     match app-id="Yandex-browser"
@@ -119,7 +128,7 @@ window-rule {
     match app-id=r#"^steam_app_"#
     match app-id="foot"
     match app-id="Antigravity"
-    match app-id="chromium"
+    match app-id="chromiumon-demand"
     default-column-width { proportion 1.0; }
     draw-border-with-background false
     border {
@@ -130,10 +139,19 @@ window-rule {
     }
 }
 
+// Hiden from others
+window-rule {
+    block-out-from "screencast"
+    match app-id="org.telegram.desktop"
+    match app-id="com.ayugram.desktop"
+    match title=r#"(?i)bitwarden"#
+}
+
 window-rule {
     match app-id="org.telegram.desktop"
     match app-id="com.ayugram.desktop"
     match app-id="blueberry.py"
+    match title=r#"(?i)bitwarden"#
     default-column-width { proportion 0.25; }
 }
 
@@ -150,6 +168,7 @@ window-rule {
     match app-id="foot"
     match app-id="ONLYOFFICE"
     match app-id="clash-verge"
+    match app-id="^mpv$"
     default-column-width { proportion 0.75; }
 }
 
@@ -189,7 +208,7 @@ window-rule {
 }
 
 binds {
-    Mod+D { spawn "wofi" "--config" "/home/gidrex/flake-rei/dotfiles/niri/wofi/config" "--style" "/home/gidrex/flake-rei/dotfiles/niri/wofi/style.css" "--show" "drun"; }
+    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/niri/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css" "--show drun"; }
     Mod+T { spawn "foot"; }
     Mod+V { spawn-sh "cliphist list | wofi --config /home/gidrex/flake-rei/dotfiles/niri/wofi/config --style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css -S dmenu | cliphist decode | wl-copy"; }
     Mod+P { spawn-sh "/home/gidrex/flake-rei/assets/scripts/power-menu.sh"; }
