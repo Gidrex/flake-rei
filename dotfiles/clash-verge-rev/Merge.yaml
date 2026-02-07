@@ -1,0 +1,15 @@
+prepend:
+  - 'DOMAIN-KEYWORD,fromblancwithlove,DIRECT'
+  - 'OR,((DOMAIN-SUFFIX,curseforge.com),(DOMAIN-SUFFIX,modrinth.com),(DOMAIN-SUFFIX,minecraft.net)),prefered-fallback'
+  - 'OR,((DOMAIN-KEYWORD,unrailed),(DOMAIN-KEYWORD,unrailed-online),(DOMAIN-KEYWORD,epicgames)),DIRECT'
+  - 'OR,((DOMAIN-KEYWORD,archlinux),(DOMAIN-KEYWORD,cachyos)),all-load-balance'
+  - 'OR,((GEOIP,RU),(DOMAIN-KEYWORD,yandex),(DOMAIN-SUFFIX,one-web.ru),(DOMAIN-SUFFIX,tuna.am)),DIRECT'
+  - 'GEOSITE,steam,DIRECT'
+  - 'GEOSITE,google,prefered-fallback'
+  - 'GEOSITE,github,prefered-fallback'
+  - 'DOMAIN-KEYWORD,rustdesk,all-load-balance'
+  - 'DOMAIN-SUFFIX,playfabapi.com,DIRECT'
+  - 'GEOSITE,discord,discord-url'
+append:
+  - 'MATCH,all-load-balance'
+delete: []
