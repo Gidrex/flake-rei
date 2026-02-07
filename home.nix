@@ -309,6 +309,14 @@ in
 
     enableNixpkgsReleaseCheck = false;
     stateVersion = "25.05";
+
+    #   pointerCursor = {
+    #     package = pkgs.capitaine-cursors;
+    #     name = "capitaine-cursors";
+    #     size = 24;
+    #     gtk.enable = true;
+    #     x11.enable = true;
+    #   };
   };
 
   xdg.configFile."glow/glow.yml".text = ''
