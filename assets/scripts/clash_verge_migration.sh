@@ -36,7 +36,7 @@ log_step() {
 # Paths
 PROFILES_FILE="$HOME/.local/share/io.github.clash-verge-rev.clash-verge-rev/profiles.yaml"
 PROFILES_DIR="$HOME/.local/share/io.github.clash-verge-rev.clash-verge-rev/profiles"
-SOURCE_RULES="$(dirname "$(dirname "$(dirname "$(realpath "$0")")")")/dotfiles/clash-verge-rev/rules.yaml"
+SOURCE_RULES="/home/$USER/flake-rei/dotfiles/clash-verge-rev/rules.yaml"
 
 # Validate files
 if [[ ! -f "$SOURCE_RULES" ]]; then
