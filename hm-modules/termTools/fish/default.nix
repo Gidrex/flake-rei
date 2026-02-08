@@ -70,8 +70,6 @@ in
       set -g fish_greeting ""
       set -g fish_key_bindings fish_hybrid_key_bindings
 
-      ${pkgs.rip2}/bin/rip completions fish | source
-
       ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
       ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
       ${lib.optionalString config.programs.helix.enable "bind -M insert \\ee 'commandline -f cancel; helixing; commandline -f repaint'"}
@@ -82,6 +80,10 @@ in
       tide configure --auto --style=Classic --prompt_colors='16 colors' --show_time=No --classic_prompt_separators=Round --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character' --prompt_connection=Dotted --powerline_right_prompt_frame=No --prompt_spacing=Sparse --icons='Many icons' --transient=Yes
     '';
 
+    completions = {
+      gd = builtins.readFile ./gd_completion.fish;
+      rip = pkgs.runCommand "rip-completions" { } "${pkgs.rip2}/bin/rip completions fish > $out";
+    };
   };
 
   catppuccin.fish.enable = true;
@@ -92,6 +94,4 @@ in
     yazi.enableFishIntegration = true;
     eza.enableFishIntegration = false;
   };
-
-  xdg.configFile."fish/completions/gd.fish".text = (builtins.readFile ./gd_completion.fish);
 }
