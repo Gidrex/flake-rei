@@ -48,7 +48,7 @@ in
           # my custom scripts
           nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
           hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
-          __eza_cols = "paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t";
+          __eza_cols = "if contains -- -T $argv; or contains -- --tree $argv; ${pkgs.eza}/bin/eza --icons=always $argv; else; paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t; end";
         }
       )
       // listToAttrs (
