@@ -9,6 +9,10 @@
     ! command -v niri > /dev/null || niri validate
     ! command -v nixfmt > /dev/null || (command -v fd > /dev/null && fd -e nix -X nixfmt -c || find . -name "*.nix" -exec nixfmt -c {} +)
 
+# Rebuild hm with change generation
+hm:
+    home-manager switch --flake ./#$FLAKE_MACHINE
+
 # Generate blurred versions of wallpapers in each directory (parallel processing)
 blur-wallpapers:
     #!/usr/bin/env bash
