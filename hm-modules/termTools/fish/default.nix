@@ -7,6 +7,21 @@
 let
   inherit (builtins) concatStringsSep genList listToAttrs;
 
+  mkFunc =
+    str:
+    let
+      args = lib.splitString " " str;
+      name = lib.head args;
+      cmd = lib.nth args 1;
+      flags = lib.concatStringsSep " " (lib.drop 2 args);
+    in
+    {
+      inherit name;
+      value = {
+        body = "${cmd} ${flags}${if flags == "" then "" else " "}$argv";
+        wraps = lib.last (lib.splitString "/" cmd);
+      };
+    };
 in
 {
   programs.fish = {
@@ -23,41 +38,43 @@ in
           colored-man-pages
         ];
 
-    functions.gd = (builtins.readFile ./gd_function.fish);
-
-    shellAliases =
-      # alias for .. , ... , .... and others
-      listToAttrs (
-        map (dots: {
-          name = concatStringsSep "" (genList (_: ".") dots);
-          value = "cd ${concatStringsSep "/" (genList (_: "..") (dots - 1))}";
-        }) (genList (i: i + 2) 5)
-      )
-      //
-
-      # Base aliaeses
-      {
-        ls = "${pkgs.eza}/bin/eza";
-        la = "${pkgs.eza}/bin/eza -al";
-        md = "mkdir -p";
-        h = "${pkgs.helix}/bin/hx";
-        e = "$EDITOR";
+    functions =
+      (listToAttrs (
+        map mkFunc [
+          "ls ${pkgs.eza}/bin/eza"
+          "la ${pkgs.eza}/bin/eza -al"
+          "md mkdir -p"
+          "h ${pkgs.helix}/bin/hx"
+          "zl zellij"
+          "zln zellij --session"
+        ]
+      ))
+      // (lib.mapAttrs (_: body: { inherit body; }) {
+        gd = builtins.readFile ./gd_function.fish;
+        e = "$EDITOR $argv";
 
         # zellij
-        zl = "zellij";
-        zla = "zellij attach $(zellij ls -s | ${pkgs.fzf}/bin/fzf)";
-        zln = "zellij --session";
-        zlk = "zl kill-session $(zellij ls -s | ${pkgs.fzf}/bin/fzf)";
+        zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf) $argv";
+        zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf) $argv";
 
         # my custom scripts
         nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
-      };
+        hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
+      })
+      // listToAttrs (
+        map (dots: {
+          name = concatStringsSep "" (genList (_: ".") dots);
+          value = {
+            body = "cd ${concatStringsSep "/" (genList (_: "..") (dots - 1))} $argv";
+            wraps = "cd";
+          };
+        }) (genList (i: i + 2) 5)
+      );
 
     # apply per every term session
     interactiveShellInit = ''
       set -g fish_greeting ""
       set -g fish_key_bindings fish_hybrid_key_bindings
-      set -U -e fish_key_bindings
 
       ${pkgs.rip2}/bin/rip completions fish | source
 
@@ -66,8 +83,8 @@ in
         test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
       end
 
-      bind -M insert \ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'
-      bind -M insert \et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
       ${lib.optionalString config.programs.helix.enable "bind -M insert \ee 'commandline -f cancel; helixing; commandline -f repaint'"}
       ${lib.optionalString config.programs.yazi.enable "bind -M insert \ey 'commandline -f cancel; ${pkgs.yazi}/bin/yazi; commandline -f repaint'"}
       ${lib.optionalString config.programs.lazygit.enable "bind -M insert \\ex 'commandline -f cancel; ${pkgs.lazygit}/bin/lazygit; commandline -f repaint'"}
