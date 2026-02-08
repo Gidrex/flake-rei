@@ -6,22 +6,6 @@
 }:
 let
   inherit (builtins) concatStringsSep genList listToAttrs;
-
-  mkFunc =
-    str:
-    let
-      args = lib.splitString " " str;
-      name = lib.head args;
-      cmd = lib.nth args 1;
-      flags = lib.concatStringsSep " " (lib.drop 2 args);
-    in
-    {
-      inherit name;
-      value = {
-        body = "${cmd} ${flags}${if flags == "" then "" else " "}$argv";
-        wraps = lib.last (lib.splitString "/" cmd);
-      };
-    };
 in
 {
   programs.fish = {
@@ -39,16 +23,22 @@ in
         ];
 
     functions =
-      (listToAttrs (
-        map mkFunc [
-          "ls ${pkgs.eza}/bin/eza"
-          "la ${pkgs.eza}/bin/eza -al"
-          "md mkdir -p"
-          "h ${pkgs.helix}/bin/hx"
-          "zl zellij"
-          "zln zellij --session"
-        ]
-      ))
+      (lib.mapAttrs
+        (name: fullCmd: {
+          body = "${fullCmd} $argv";
+          wraps = lib.head (lib.splitString " " (lib.last (lib.splitString "/" fullCmd)));
+        })
+        {
+          # Simple fuctions (instead of using alias)
+          ls = "${pkgs.eza}/bin/eza";
+          la = "${pkgs.eza}/bin/eza -al";
+          lt = "${pkgs.eza}/bin/eza -T";
+          md = "mkdir -p";
+          h = "${pkgs.helix}/bin/hx";
+          zl = "zellij";
+          zln = "zellij --session";
+        }
+      )
       // (lib.mapAttrs (_: body: { inherit body; }) {
         gd = builtins.readFile ./gd_function.fish;
         e = "$EDITOR $argv";
