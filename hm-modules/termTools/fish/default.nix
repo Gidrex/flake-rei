@@ -6,10 +6,12 @@
 }:
 let
   inherit (builtins) concatStringsSep genList listToAttrs;
+  eza = "paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t";
 in
 {
   programs.fish = {
     enable = true;
+    shellAliases = lib.mkForce { };
     plugins =
       with pkgs.fishPlugins;
       map
@@ -25,14 +27,14 @@ in
     functions =
       (lib.mapAttrs
         (name: fullCmd: {
-          body = "${fullCmd} $argv";
+          body = if lib.hasInfix "$argv" fullCmd then fullCmd else "${fullCmd} $argv";
           wraps = lib.head (lib.splitString " " (lib.last (lib.splitString "/" fullCmd)));
         })
         {
           # Simple fuctions (instead of using alias)
-          ls = "${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \t";
-          la = "${pkgs.eza}/bin/eza -al";
-          lt = "${pkgs.eza}/bin/eza -T";
+          ls = "${eza}";
+          la = "${eza} -al";
+          lt = "${eza} -T";
           md = "mkdir -p";
           h = "${pkgs.helix}/bin/hx";
           zl = "zellij";
@@ -73,11 +75,11 @@ in
         test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
       end
 
-      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
-      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
-      ${lib.optionalString config.programs.helix.enable "bind -M insert \ee 'commandline -f cancel; helixing; commandline -f repaint'"}
-      ${lib.optionalString config.programs.yazi.enable "bind -M insert \ey 'commandline -f cancel; ${pkgs.yazi}/bin/yazi; commandline -f repaint'"}
-      ${lib.optionalString config.programs.lazygit.enable "bind -M insert \ex 'commandline -f cancel; ${pkgs.lazygit}/bin/lazygit; commandline -f repaint'"}
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
+      ${lib.optionalString config.programs.helix.enable "bind -M insert \\ee 'commandline -f cancel; helixing; commandline -f repaint'"}
+      ${lib.optionalString config.programs.yazi.enable "bind -M insert \\ey 'commandline -f cancel; ${pkgs.yazi}/bin/yazi; commandline -f repaint'"}
+      ${lib.optionalString config.programs.lazygit.enable "bind -M insert \\ex 'commandline -f cancel; ${pkgs.lazygit}/bin/lazygit; commandline -f repaint'"}
     '';
     loginShellInit = ''
       tide configure --auto --style=Classic --prompt_colors='16 colors' --show_time=No --classic_prompt_separators=Round --powerline_prompt_heads=Round --powerline_prompt_tails=Round --powerline_prompt_style='Two lines, character' --prompt_connection=Dotted --powerline_right_prompt_frame=No --prompt_spacing=Sparse --icons='Many icons' --transient=Yes
@@ -91,6 +93,7 @@ in
     zellij.enableFishIntegration = false;
     zoxide.enableFishIntegration = true;
     yazi.enableFishIntegration = true;
+    eza.enableFishIntegration = false;
   };
 
   xdg.configFile."fish/completions/gd.fish".text = (builtins.readFile ./gd_completion.fish);
