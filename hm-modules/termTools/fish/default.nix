@@ -6,7 +6,6 @@
 }:
 let
   inherit (builtins) concatStringsSep genList listToAttrs;
-  eza = "paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t";
 in
 {
   programs.fish = {
@@ -32,27 +31,26 @@ in
         })
         {
           # Simple fuctions (instead of using alias)
-          ls = "${eza}";
-          la = "${eza} -al";
-          lt = "${eza} -T";
+          ls = "__eza_cols";
+          la = "__eza_cols -al";
+          lt = "__eza_cols -T";
           md = "mkdir -p";
           h = "${pkgs.helix}/bin/hx";
           zl = "zellij";
           zln = "zellij --session";
+          gd = builtins.readFile ./gd_function.fish;
+          e = "$EDITOR";
+
+          # zellij
+          zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
+          zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
+
+          # my custom scripts
+          nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
+          hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
+          __eza_cols = "paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t";
         }
       )
-      // (lib.mapAttrs (_: body: { inherit body; }) {
-        gd = builtins.readFile ./gd_function.fish;
-        e = "$EDITOR $argv";
-
-        # zellij
-        zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf) $argv";
-        zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf) $argv";
-
-        # my custom scripts
-        nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
-        hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
-      })
       // listToAttrs (
         map (dots: {
           name = concatStringsSep "" (genList (_: ".") dots);
