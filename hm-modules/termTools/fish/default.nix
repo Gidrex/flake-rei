@@ -48,7 +48,11 @@ in
           # my custom scripts
           nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
           hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
-          __eza_cols = "if contains -- -T $argv; or contains -- --tree $argv; ${pkgs.eza}/bin/eza --icons=always $argv; else; paste (${pkgs.eza}/bin/eza -D1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza -f1 --color=always --icons=always $argv | psub) | column -t -s \\t; end";
+          __eza_cols = "if contains -- -T $argv; or contains -- --tree $argv; ${pkgs.eza}/bin/eza --icons=always $argv; else; CLICOLOR_FORCE=1 paste (${pkgs.eza}/bin/eza --only-dirs -1 --color=always --icons=always $argv | psub) (${pkgs.eza}/bin/eza --only-files -1 --color=always --icons=always $argv | psub) | column -t -s \\t; end";
+          helixing = ''
+            set -l selection (${pkgs.fd}/bin/fd . --type file --type symlink -E '*.{png,jpg,jpeg,webp,docx,svg,pdf}' | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse --walker=file,hidden,follow -0 -1)
+            test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
+          '';
         }
       )
       // listToAttrs (
@@ -67,11 +71,6 @@ in
       set -g fish_key_bindings fish_hybrid_key_bindings
 
       ${pkgs.rip2}/bin/rip completions fish | source
-
-      function helixing
-        set -l selection (${pkgs.fd}/bin/fd . --type file --type symlink -E '*.{png,jpg,jpeg,webp,docx,svg,pdf}' | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse --walker=file,hidden,follow -0 -1)
-        test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
-      end
 
       ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
       ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
