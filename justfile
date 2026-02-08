@@ -30,3 +30,7 @@ blur-wallpapers:
             fi
         ' {} "$blur_dir"
     done
+
+# Sync clash verge config
+clash_verge_migration:
+    ./assets/scripts/clash_verge_migration.sh
