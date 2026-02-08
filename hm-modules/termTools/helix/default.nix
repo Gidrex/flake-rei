@@ -35,7 +35,6 @@
         cursorline = true;
         auto-info = true;
         color-modes = true;
-        rulers = [ 120 ];
         mouse = false;
         continue-comments = false;
         completion-replace = true;
