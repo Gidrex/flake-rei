@@ -16,9 +16,6 @@
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Zellij plugins
-    zjstatus.url = "github:dj95/zjstatus";
-
     # Yazi plugins
     open-with-cmd.url = "github:Ape/open-with-cmd.yazi";
     open-with-cmd.flake = false;
@@ -71,7 +68,7 @@
         ./hm-modules/termTools/fish
         ./hm-modules/termTools/nushell
         ./hm-modules/termTools/helix
-        ./hm-modules/termTools/zellij
+#        ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
 
         inputs.catppuccin.homeModules.catppuccin
@@ -91,13 +88,6 @@
               "obsidian"
             ];
         };
-
-        overlays = [
-          (final: prev: {
-            zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
-            tgt = inputs.tgt.packages.${prev.stdenv.hostPlatform.system}.default;
-          })
-        ];
       };
 
       # Machine configurations
