@@ -16,7 +16,7 @@ binds {
     XF86MonBrightnessDown  allow-when-locked=true { spawn-sh "qs -c noctalia-shell ipc call brightness decrease"; }
 
     // Default layout
-    Mod+A { set-column-width "50%"; }
+    Mod+A { set-column-width "45%"; }
     Mod+G { set-column-width "90%"; }
     Mod+F { set-column-width "100%"; }
 }

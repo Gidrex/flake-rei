@@ -5,7 +5,7 @@
     fish.enable = true;
     foot = {
       enable = true;
-      settings.main.font = "JetBrainsMono Nerd Font Mono:size=11";
+      settings.main.font = "JetBrainsMono Nerd Font Mono:size=9";
     };
   };
 
