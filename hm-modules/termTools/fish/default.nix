@@ -105,8 +105,8 @@ in
     interactiveShellInit = ''
       set -g fish_greeting ""
       set -g fish_key_bindings fish_hybrid_key_bindings
-      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; ${pkgs.zoxide}/bin/z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
-      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; ${pkgs.zoxide}/bin/z ..; commandline -f repaint'"}
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\ez 'commandline -f cancel; z $(${pkgs.zoxide}/bin/zoxide query -l | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse); commandline -f repaint'"}
+      ${lib.optionalString config.programs.zoxide.enable "bind -M insert \\et 'commandline -f cancel; z ..; commandline -f repaint'"}
       ${lib.optionalString config.programs.helix.enable "bind -M insert \\ee 'commandline -f cancel; helixing; commandline -f repaint'"}
       ${lib.optionalString config.programs.yazi.enable "bind -M insert \\ey 'commandline -f cancel; ${pkgs.yazi}/bin/yazi; commandline -f repaint'"}
       ${lib.optionalString config.programs.lazygit.enable "bind -M insert \\ex 'commandline -f cancel; ${pkgs.lazygit}/bin/lazygit; commandline -f repaint'"}
