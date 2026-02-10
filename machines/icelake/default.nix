@@ -5,12 +5,12 @@
     fish.enable = true;
     foot = {
       enable = true;
-      settings.main.font = "JetBrainsMono Nerd Font Mono:size=9";
+      settings.main.font = "JetBrainsMono Nerd Font Mono:size=11";
     };
   };
 
-  home.packages = [ ];
+  # home.packages = with pkgs; [ ];
 
-  home.sessionVariables.FLAKE_MACHINE = "clean";
+  home.sessionVariables.FLAKE_MACHINE = "icelake";
   home.stateVersion = "25.05";
 }

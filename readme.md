@@ -1,9 +1,9 @@
 # Machines
 
-- `clean-niri` - pc setup with niri
-- `nixos-icelake` - Ice Lake NixOS laptop
-- `clean` - clean setup, only cli tools
-
+- `tigerlake` - my laptop-doc station with tigerlake arch
+- `icelake` - my laptop with icelake arch
+- `nixos-icelake` - icelake NixOS laptop
+ 
 ## Nix installing on non-NixOS systems
 Install nix via a script or your system's package manager and sometimes you will optionally need to:
 ```sh
@@ -14,8 +14,21 @@ sudo systemctl enable --now nix-daemon.socket nix-daemon.service
 
 ### First system-build with home-manager
 ```sh
+export FLAKE_MACHINE=<machine name>
 git clone git@github.com:Gidrex/flake-rei.git ~/flake-rei
-nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-rei/#<machine> --experimental-features "nix-command flakes"
+nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-rei/#"$FLAKE_MACHINE" --experimental-features "nix-command flakes"
+```
+
+## Setup niri config are avaible for 2 machines:
+
+- tigerlake
+- icelake
+
+```sh
+export FLAKE_MACHINE=<machine name>
+mkdir -p ~/.config/niri
+ln -sf ~/flake-rei/dotfiles/niri/config_"$FLAKE_MACHINE".kdl ~/.config/niri/config.kdl
+ln -sf ~/flake-rei/dotfiles/niri/{generic/,"$FLAKE_MACHINE"/} ~/.config/niri/
 ```
 
 ## Setup rclone for Google Drive
@@ -34,16 +47,4 @@ rclone mount gdrive: ~/gdrive \
   --vfs-read-chunk-size 32M \
   --vfs-read-chunk-size-limit 2G \
   --daemon
-```
-
-## Setup niri config are avaible for 2 machines:
-
-- tigerlake
-- icelake
-
-```sh
-export NIRI_MACHINE=<machine name>
-mkdir -p ~/.config/niri
-ln -sf ~/flake-rei/dotfiles/niri/config_"$NIRI_MACHINE".kdl ~/.config/niri/config.kdl
-ln -sf ~/flake-rei/dotfiles/niri/{generic/,"$NIRI_MACHINE"/} ~/.config/niri/
 ```

@@ -68,7 +68,7 @@
         ./hm-modules/termTools/fish
         ./hm-modules/termTools/nushell
         ./hm-modules/termTools/helix
-#        ./hm-modules/termTools/zellij
+        #        ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
 
         inputs.catppuccin.homeModules.catppuccin
@@ -92,10 +92,9 @@
 
       # Machine configurations
       machines = {
-        laptop-hypr = ./machines/laptop-hypr; # perfomance station
-        nixos-icelake = ./machines/nixos-icelake; # Ice Lake NixOS laptop
-        clean = ./machines/clean; # clean setup, only cli tools
-        clean-niri = ./machines/clean-niri; # clean setup for niri
+        icelake = ./machines/icelake;
+        tigerlake = ./machines/tigerlake;
+        nixos-icelake = ./machines/nixos-icelake;
       };
 
     in

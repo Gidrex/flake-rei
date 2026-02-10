@@ -11,6 +11,6 @@
 
   home.packages = with pkgs; [ scanmem ];
 
-  home.sessionVariables.FLAKE_MACHINE = "clean-niri";
+  home.sessionVariables.FLAKE_MACHINE = "tigerlake";
   home.stateVersion = "25.05";
 }
