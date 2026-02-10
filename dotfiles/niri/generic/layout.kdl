@@ -1,0 +1,62 @@
+prefer-no-csd // No Client-Side Decorations
+
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+
+layout {
+    background-color "#00000000"
+    gaps 3
+    center-focused-column "always"
+    // preset-column-widths {
+    //     proportion 0.25
+    //     proportion 0.5
+    //     proportion 0.75
+    //     proportion 1.0
+    // }
+    focus-ring {
+        width 2
+        // active-color "#ffffff"
+        // inactive-color "#808080"
+        active-color "#07b5ef"
+        inactive-color "#ffffff00"
+        active-gradient from="#ffffff" to="#8b00ff" angle=45 in="oklch longer hue"
+    }
+
+    border {
+        off
+    }
+    shadow {
+        on
+        draw-behind-window false
+        softness 40
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+}
+
+overview {
+    zoom 0.45
+    workspace-shadow {
+        // off
+        softness 50
+        spread 20
+        offset x=0 y=10
+        color "#0007"
+    }
+}

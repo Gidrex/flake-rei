@@ -19,7 +19,10 @@ nix run --experimental-features "flakes nix-command" home-manager/master -- swit
 ```
 
 ## Setup rclone for Google Drive
-1) configure rclone with alias/name "gdisk"
+1) configure rclone with alias/name "gdrive"
+```sh
+rclone config 
+```
 2)
 ```sh
 rclone mount gdrive: ~/gdrive \
@@ -31,4 +34,16 @@ rclone mount gdrive: ~/gdrive \
   --vfs-read-chunk-size 32M \
   --vfs-read-chunk-size-limit 2G \
   --daemon
+```
+
+## Setup niri config are avaible for 2 machines:
+
+- tigerlake
+- icelake
+
+```sh
+export NIRI_MACHINE=<machine name>
+mkdir -p ~/.config/niri
+ln -sf ~/flake-rei/dotfiles/niri/config_"$NIRI_MACHINE".kdl ~/.config/niri/config.kdl
+ln -sf ~/flake-rei/dotfiles/niri/{generic/,"$NIRI_MACHINE"/} ~/.config/niri/
 ```

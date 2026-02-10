@@ -1,0 +1,7 @@
+input {
+	keyboard {
+		xkb {
+			file "/home/gidrex/flake-rei/dotfiles/niri/tigerlake/keymap.xkb"
+		}
+	}
+}

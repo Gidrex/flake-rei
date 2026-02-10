@@ -1,0 +1,4 @@
+binds {
+	Mod+P { spawn-sh "/home/gidrex/flake-rei/scripts/power-menu.sh"; }
+    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/wofi/style.css" "--show drun"; }
+}

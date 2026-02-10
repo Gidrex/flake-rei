@@ -1,0 +1,113 @@
+// All windows settings
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    block-out-from "screencast"
+    match namespace="^notifications$"
+}
+
+// Enable VRR
+window-rule {
+    variable-refresh-rate true
+    match app-id="^mpv$"
+    match app-id=r#"^steam_app_"#
+    match app-id=r#"(?i)Minecraft"#
+}
+
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="Yandex-browser"
+    match app-id="glide-glide"
+    match title="Minecraft*"
+    match app-id=r#"^steam_app_"#
+    match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
+    match app-id="Antigravity"
+    match app-id="chromiumon-demand"
+    match app-id="chrome-.*"
+    default-column-width { proportion 1.0; }
+    draw-border-with-background false
+    border {
+        width 0
+    }
+    focus-ring {
+        width 0
+    }
+}
+
+// Hiden from others
+window-rule {
+    block-out-from "screencast"
+    match app-id="org.telegram.desktop"
+    match app-id="com.ayugram.desktop"
+    match title=r#"(?i)bitwarden"#
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    match app-id="com.ayugram.desktop"
+    match app-id="blueberry.py"
+    default-column-width { proportion 0.25; }
+}
+
+window-rule {
+    match title=r#"Extension.*Aria2.*Download Panel"#
+    default-column-width { proportion 0.25; }
+    open-floating false
+}
+
+window-rule {
+    match app-id="goofcord"
+    match app-id="equibop"
+    match app-id=r#"(?i)steam"#
+    match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
+    match app-id="ONLYOFFICE"
+    match app-id="clash-verge"
+    match app-id="^mpv$"
+    match app-id="chrome-.*"
+    default-column-width { proportion 0.75; }
+}
+
+// Per workspace config
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="glide-glide"
+    match app-id="Yandex-browser"
+    match app-id="chromium"
+    open-on-workspace "1"
+}
+
+window-rule {
+    match app-id=r#"(?i)steam"#
+    match app-id=r#"(?i)prismlauncher"#
+    match app-id=r#"(?i)minecraft"#
+    match app-id=r#"(?i)HytaleClient"#
+    match app-id="Antigravity"
+    open-on-workspace "3"
+}
+
+window-rule {
+    match app-id="goofcord"
+    match app-id="equibop"
+    match app-id="org.telegram.desktop"
+    match app-id="com.ayugram.desktop"
+    open-on-workspace "5"
+}
+
+window-rule {
+    match app-id="clash-verge"
+    match app-id="com.github.wwmm.easyeffects"
+    match app-id="Vial"
+    match app-id="blueberry.py"
+    match app-id="org.pulseaudio.pavucontrol"
+    open-on-workspace "6"
+}
