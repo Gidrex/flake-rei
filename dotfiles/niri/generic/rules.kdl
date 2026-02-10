@@ -5,11 +5,6 @@ window-rule {
 }
 
 layer-rule {
-    match namespace="^wallpaper$"
-    place-within-backdrop true
-}
-
-layer-rule {
     block-out-from "screencast"
     match namespace="^notifications$"
 }
@@ -24,6 +19,7 @@ window-rule {
 
 window-rule {
     match app-id="app.zen_browser.zen"
+    match app-id="zen"
     match app-id="Yandex-browser"
     match app-id="glide-glide"
     match title="Minecraft*"
@@ -46,16 +42,9 @@ window-rule {
 // Hiden from others
 window-rule {
     block-out-from "screencast"
-    match app-id="org.telegram.desktop"
-    match app-id="com.ayugram.desktop"
+    match app-id=r#".*ayugram.*"#
+    match app-id=r#".*telegram.*"#
     match title=r#"(?i)bitwarden"#
-}
-
-window-rule {
-    match app-id="org.telegram.desktop"
-    match app-id="com.ayugram.desktop"
-    match app-id="blueberry.py"
-    default-column-width { proportion 0.25; }
 }
 
 window-rule {
@@ -64,22 +53,10 @@ window-rule {
     open-floating false
 }
 
-window-rule {
-    match app-id="goofcord"
-    match app-id="equibop"
-    match app-id=r#"(?i)steam"#
-    match app-id="foot"
-    match app-id="com.mitchellh.ghostty"
-    match app-id="ONLYOFFICE"
-    match app-id="clash-verge"
-    match app-id="^mpv$"
-    match app-id="chrome-.*"
-    default-column-width { proportion 0.75; }
-}
-
 // Per workspace config
 window-rule {
     match app-id="app.zen_browser.zen"
+    match app-id="zen"
     match app-id="glide-glide"
     match app-id="Yandex-browser"
     match app-id="chromium"
@@ -98,8 +75,8 @@ window-rule {
 window-rule {
     match app-id="goofcord"
     match app-id="equibop"
-    match app-id="org.telegram.desktop"
-    match app-id="com.ayugram.desktop"
+    match app-id=r#".*telegram.*"#
+    match app-id=r#".*ayugram.*"#
     open-on-workspace "5"
 }
 

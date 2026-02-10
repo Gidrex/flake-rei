@@ -1,6 +1,7 @@
 include "./generic/input.kdl"
 include "./generic/autostart.kdl"
 include "./generic/layout.kdl"
+include "./generic/animations.kdl"
 include "./generic/rules.kdl"
 include "./generic/binds.kdl"
 include "./generic/environment.kdl"
@@ -9,6 +10,7 @@ include "./tigerlake/input.kdl"
 include "./tigerlake/outputs.kdl"
 include "./tigerlake/autostart.kdl"
 include "./tigerlake/layout.kdl"
+include "./tigerlake/rules.kdl"
 include "./tigerlake/binds.kdl"
 include "./tigerlake/environment.kdl"
 
@@ -20,11 +22,4 @@ debug {
     render-drm-device "/dev/dri/card0"
     enable-overlay-planes
     disable-direct-scanout
-}
-
-cursor {
-    xcursor-theme "capitaine-cursors"
-    xcursor-size 24
-    hide-when-typing
-    hide-after-inactive-ms 10000
 }
