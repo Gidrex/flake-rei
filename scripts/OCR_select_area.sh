@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LANG=$(echo -e "rus\neng" | wofi --width "80px" --prompt "Lang..." --height "200px" --style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css -S dmenu)
+LANG=$(echo -e "rus\neng" | wofi --width "80px" --prompt "Lang..." --height "200px" --style /home/gidrex/flake-rei/dotfiles/wofi/style.css -S dmenu)
 
 if [ -z "$LANG" ]; then
   exit 0

@@ -222,9 +222,9 @@ window-rule {
 }
 
 binds {
-    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/niri/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css" "--show drun"; }
+    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/wofi/style.css" "--show drun"; }
     Mod+T { spawn "foot"; }
-    Mod+V { spawn-sh "cliphist list | wofi --config /home/gidrex/flake-rei/dotfiles/niri/wofi/config --style /home/gidrex/flake-rei/dotfiles/niri/wofi/style.css -S dmenu | cliphist decode | wl-copy"; }
+    Mod+V { spawn-sh "cliphist list | wofi --config /home/gidrex/flake-rei/dotfiles/wofi/config --style /home/gidrex/flake-rei/dotfiles/wofi/style.css -S dmenu | cliphist decode | wl-copy"; }
     Mod+P { spawn-sh "/home/gidrex/flake-rei/scripts/power-menu.sh"; }
     Mod+X { spawn-sh "/home/gidrex/flake-rei/scripts/OCR_select_area.sh"; }
 
