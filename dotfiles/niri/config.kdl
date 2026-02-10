@@ -1,6 +1,6 @@
 // ## Startup
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
-spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/niri/waybar/config --style /home/gidrex/flake-rei/dotfiles/niri/waybar/style.css --log-level off"
+spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/waybar/config --style /home/gidrex/flake-rei/dotfiles/waybar/style.css --log-level off"
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 
 // ### Wallpapers
