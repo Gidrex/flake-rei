@@ -4,11 +4,6 @@ window-rule {
     clip-to-geometry true
 }
 
-layer-rule {
-    block-out-from "screencast"
-    match namespace="^notifications$"
-}
-
 // Enable VRR
 window-rule {
     variable-refresh-rate true
@@ -17,6 +12,7 @@ window-rule {
     match app-id=r#"(?i)Minecraft"#
 }
 
+// No borders
 window-rule {
     match app-id="app.zen_browser.zen"
     match app-id="zen"
@@ -29,7 +25,6 @@ window-rule {
     match app-id="Antigravity"
     match app-id="chromiumon-demand"
     match app-id="chrome-.*"
-    default-column-width { proportion 1.0; }
     draw-border-with-background false
     border {
         width 0
@@ -39,12 +34,26 @@ window-rule {
     }
 }
 
-// Hiden from others
+// 1.0 proportion
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="zen"
+    match app-id="Antigravity"
+    match title="Minecraft*"
+    match app-id=r#"^steam_app_"#
+    default-column-width { proportion 1.0; }
+}
+
+// Hiden from screencast
 window-rule {
     block-out-from "screencast"
     match app-id=r#".*ayugram.*"#
     match app-id=r#".*telegram.*"#
     match title=r#"(?i)bitwarden"#
+}
+layer-rule {
+    block-out-from "screencast"
+    match namespace="^notifications$"
 }
 
 window-rule {

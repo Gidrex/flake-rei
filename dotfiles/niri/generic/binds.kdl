@@ -16,12 +16,12 @@ binds {
     Mod+9 { focus-workspace 9; }
 
     // 60% keyboard
-    Mod+Equal                           allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
-    Mod+Minus                           allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
-    Mod+0                               allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    Mod+Delete                          allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    Mod+Page_Up                         allow-when-locked=true { spawn-sh "playerctl next"; }
-    Mod+Page_Down                       allow-when-locked=true { spawn-sh "playerctl previous"; }
+    Mod+Equal      allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    Mod+Minus      allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
+    Mod+0          allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    Mod+Delete     allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    Mod+Page_Up    allow-when-locked=true { spawn-sh "playerctl next"; }
+    Mod+Page_Down  allow-when-locked=true { spawn-sh "playerctl previous"; }
 
     Mod+Shift+1 { move-column-to-workspace 1; }
     Mod+Shift+2 { move-column-to-workspace 2; }

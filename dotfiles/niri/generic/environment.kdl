@@ -22,7 +22,7 @@ environment {
 
     LIBVIRT_DEFAULT_URI "qemu:///system"
     // Force vaapi backend to prevent using the dGPU
-    // QT_MEDIA_BACKEND "ffmpeg"
-    // QT_FFMPEG_ENCODING_HW_DEVICE_TYPES "vaapi"
+    QT_MEDIA_BACKEND "ffmpeg"
+    QT_FFMPEG_ENCODING_HW_DEVICE_TYPES "vaapi"
 }
 
