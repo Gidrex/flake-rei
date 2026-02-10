@@ -15,7 +15,7 @@ sudo systemctl enable --now nix-daemon.socket nix-daemon.service
 ### First system-build with home-manager
 ```sh
 git clone git@github.com:Gidrex/flake-rei.git ~/flake-rei
-nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-rei/#<current machine>
+nix run --experimental-features "flakes nix-command" home-manager/master -- switch --flake ~/flake-rei/#<machine> --experimental-features "nix-command flakes"
 ```
 
 ## Setup rclone for Google Drive
