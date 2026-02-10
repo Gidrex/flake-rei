@@ -13,7 +13,7 @@
 
     nushell.extraConfig = ''
       def rb [] {
-        ~/flake-rei/assets/scripts/backup.sh
+        ~/flake-rei/scripts/backup.sh
         home-manager switch --flake ~/flake-rei/#laptop-hypr
       }
     '';
@@ -47,7 +47,7 @@
     events = [
       {
         event = "before-sleep";
-        command = builtins.toString ../../assets/scripts/swaylock_fancy.sh;
+        command = builtins.toString ../../scripts/swaylock_fancy.sh;
       }
     ];
   };
