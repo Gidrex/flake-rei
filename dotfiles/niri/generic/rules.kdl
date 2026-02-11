@@ -1,0 +1,98 @@
+// All windows settings
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+}
+
+// Enable VRR
+window-rule {
+    variable-refresh-rate true
+    match app-id="^mpv$"
+    match app-id=r#"^steam_app_"#
+    match app-id=r#"(?i)Minecraft"#
+}
+
+// No borders
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="zen"
+    match app-id="Yandex-browser"
+    match app-id="glide-glide"
+    match title="Minecraft*"
+    match app-id=r#"^steam_app_"#
+    match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
+    match app-id="Antigravity"
+    match app-id="chromiumon-demand"
+    match app-id="chrome-.*"
+    draw-border-with-background false
+    border {
+        width 0
+    }
+    focus-ring {
+        width 0
+    }
+}
+
+// 1.0 proportion
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="zen"
+    match app-id="Antigravity"
+    match title="Minecraft*"
+    match app-id=r#"^steam_app_"#
+    default-column-width { proportion 1.0; }
+}
+
+// Hiden from screencast
+window-rule {
+    block-out-from "screencast"
+    match app-id=r#".*ayugram.*"#
+    match app-id=r#".*telegram.*"#
+    match title=r#"(?i)bitwarden"#
+}
+layer-rule {
+    block-out-from "screencast"
+    match namespace="^notifications$"
+}
+
+window-rule {
+    match title=r#"Extension.*Aria2.*Download Panel"#
+    default-column-width { proportion 0.25; }
+    open-floating false
+}
+
+// Per workspace config
+window-rule {
+    match app-id="app.zen_browser.zen"
+    match app-id="zen"
+    match app-id="glide-glide"
+    match app-id="Yandex-browser"
+    match app-id="chromium"
+    open-on-workspace "1"
+}
+
+window-rule {
+    match app-id=r#"(?i)steam"#
+    match app-id=r#"(?i)prismlauncher"#
+    match app-id=r#"(?i)minecraft"#
+    match app-id=r#"(?i)HytaleClient"#
+    match app-id="Antigravity"
+    open-on-workspace "3"
+}
+
+window-rule {
+    match app-id="goofcord"
+    match app-id="equibop"
+    match app-id=r#".*telegram.*"#
+    match app-id=r#".*ayugram.*"#
+    open-on-workspace "5"
+}
+
+window-rule {
+    match app-id="com.github.wwmm.easyeffects"
+    match app-id="Vial"
+    match app-id="blueberry.py"
+    match app-id="org.pulseaudio.pavucontrol"
+    open-on-workspace "6"
+}
