@@ -2,7 +2,7 @@
 spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/waybar/config --style /home/gidrex/flake-rei/dotfiles/waybar/style.css --log-level off"
 
 // Wallpapers
-spawn-sh-at-startup "swaybg -m center -o DP-2 -i /home/gidrex/flake-rei/assets/wallpapers/3440x1440/blur/Oreo_cookies.jpg"
+spawn-sh-at-startup "swaybg -m center -o DP-2 -i /home/gidrex/flake-rei/assets/wallpapers/3440x1440/blur/blue_sky_with_thunders.jpg"
 spawn-sh-at-startup "swww-daemon"
 
 spawn-sh-at-startup "clash-verge"
