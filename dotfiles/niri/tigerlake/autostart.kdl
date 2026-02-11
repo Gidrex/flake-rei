@@ -4,6 +4,7 @@ spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/waybar/conf
 // Wallpapers
 spawn-sh-at-startup "swaybg -m center -o DP-2 -i /home/gidrex/flake-rei/assets/wallpapers/3440x1440/blur/blue_sky_with_thunders.jpg"
 spawn-sh-at-startup "swww-daemon"
+spawn-sh-at-startup "/home/gidrex/flake-rei/dotfiles/niri/bluring_wallpaper.sh"
 
 spawn-sh-at-startup "clash-verge"
 spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects --gapplication-service"
