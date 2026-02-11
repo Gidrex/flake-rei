@@ -1,0 +1,29 @@
+layer-rule {
+    match namespace="^noctalia-wallpaper*"
+    place-within-backdrop true
+}
+
+window-rule {
+    match app-id=r#".*ayugram.*"#
+    match app-id=r#".*telegram.*"#
+    match app-id="blueberry.py"
+    default-column-width { proportion 0.45; }
+}
+
+window-rule {
+    match app-id="goofcord"
+    match app-id="equibop"
+    match app-id=r#"(?i)steam"#
+    match app-id="foot"
+    match app-id="com.mitchellh.ghostty"
+    match app-id="ONLYOFFICE"
+    match app-id="clash-verge"
+    match app-id="^mpv$"
+    match app-id="chrome-.*"
+    default-column-width { proportion 0.9; }
+}
+
+window-rule {
+    match app-id="foot"
+    opacity 0.97
+}

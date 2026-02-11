@@ -1,0 +1,12 @@
+input {
+	keyboard {
+		xkb {
+			file "/home/gidrex/flake-rei/dotfiles/niri/tigerlake/keymap.xkb"
+		}
+	}
+}
+
+cursor {
+	xcursor-theme "capitaine-cursors"
+    xcursor-size 24
+}

@@ -1,0 +1,11 @@
+// Bar
+spawn-sh-at-startup "waybar --config /home/gidrex/flake-rei/dotfiles/waybar/config --style /home/gidrex/flake-rei/dotfiles/waybar/style.css --log-level off"
+
+// Wallpapers
+spawn-sh-at-startup "swaybg -m center -o DP-2 -i /home/gidrex/flake-rei/assets/wallpapers/3440x1440/blur/Oreo_cookies.jpg"
+spawn-sh-at-startup "swww-daemon"
+
+spawn-sh-at-startup "clash-verge"
+spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects --gapplication-service"
+// spawn-sh-at-startup "pavucontrol"
+// spawn-sh-at-startup "blueberry"

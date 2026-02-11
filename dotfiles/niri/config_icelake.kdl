@@ -1,0 +1,26 @@
+include "./generic/input.kdl"
+include "./generic/autostart.kdl"
+include "./generic/layout.kdl"
+include "./generic/animations.kdl"
+include "./generic/rules.kdl"
+include "./generic/binds.kdl"
+include "./generic/environment.kdl"
+
+include "./icelake/input.kdl"
+include "./icelake/outputs.kdl"
+include "./icelake/autostart.kdl"
+include "./icelake/layout.kdl"
+include "./icelake/rules.kdl"
+include "./icelake/binds.kdl"
+include "./icelake/environment.kdl"
+
+clipboard {
+    disable-primary
+}
+
+debug {
+    enable-overlay-planes
+    disable-direct-scanout
+    // Allows notification actions and window activation from Noctalia.
+    honor-xdg-activation-with-invalid-serial
+}

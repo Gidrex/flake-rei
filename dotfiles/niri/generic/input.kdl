@@ -1,0 +1,24 @@
+input {
+    keyboard {
+        repeat-delay 200
+        repeat-rate 40
+    }
+
+    touchpad {
+        tap
+        tap-button-map "left-right-middle"
+        accel-speed 0
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+    }
+
+    mouse {
+        accel-speed 0.0
+        accel-profile "flat"
+    }
+}
+
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 10000
+}

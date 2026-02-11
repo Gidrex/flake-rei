@@ -1,0 +1,8 @@
+output "eDP-1" {
+    mode "2560x1440@60.001"
+    scale 1.5
+    transform "normal"
+    position x=0 y=0
+    background-color "#00000000"
+    variable-refresh-rate on-demand=true
+}
