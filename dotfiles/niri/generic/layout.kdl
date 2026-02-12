@@ -20,7 +20,6 @@ gestures {
 
 layout {
     background-color "#00000000"
-    gaps 3
     center-focused-column "always"
     // preset-column-widths {
     //     proportion 0.25
@@ -36,7 +35,6 @@ layout {
         inactive-color "#ffffff00"
         active-gradient from="#ffffff" to="#8b00ff" angle=45 in="oklch longer hue"
     }
-
     border {
         off
     }

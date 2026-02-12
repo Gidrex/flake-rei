@@ -1,3 +1,11 @@
 layout {
     default-column-width { proportion 0.9; }
+    gaps 1
+
+    struts {
+        left 2
+        right 2
+        top 2
+        bottom 0
+    }
 }

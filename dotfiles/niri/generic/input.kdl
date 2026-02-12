@@ -16,6 +16,7 @@ input {
         accel-speed 0.0
         accel-profile "flat"
     }
+    warp-mouse-to-focus
 }
 
 cursor {
