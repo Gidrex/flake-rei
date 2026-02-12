@@ -24,6 +24,11 @@ window-rule {
 }
 
 window-rule {
-    match app-id="foot"
+    match app-id="foot" is-active=true
     opacity 0.97
+}
+
+window-rule {
+    match app-id="foot" is-active=false
+    opacity 0.8
 }
