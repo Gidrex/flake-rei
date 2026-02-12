@@ -43,8 +43,9 @@ binds {
     Mod+Shift+H { move-column-left; }
     Mod+Shift+L { move-column-right; }
 
-    Mod+BracketLeft { consume-or-expel-window-left; }
-    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+C { toggle-column-tabbed-display; }
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     Mod+Ctrl+Up { set-window-height "-5%"; }
     Mod+Ctrl+Down { set-window-height "+5%"; }

@@ -48,7 +48,6 @@ window-rule {
     match app-id=r#".*ayugram.*"#
     match app-id=r#".*telegram.*"#
     match title=r#"(?i)bitwarden"#
-    match app-id=".*zen" title=r#"VK"#
 }
 layer-rule {
     block-out-from "screencast"
