@@ -1,0 +1,10 @@
+allow_images=true
+hide_scroll=true
+no_actions=false
+term=foot
+width=40%
+height=60%
+# lines=10
+prompt=Select...
+mode=drun
+--show

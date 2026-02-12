@@ -1,6 +1,7 @@
 binds {
 	Mod+P { spawn-sh "/home/gidrex/flake-rei/scripts/power-menu.sh"; }
-    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/wofi/config" "--style /home/gidrex/flake-rei/dotfiles/wofi/style.css" "--show drun"; }
+    Mod+D { spawn "wofi" "--config /home/gidrex/flake-rei/dotfiles/wofi/tigerlake_config" "--style /home/gidrex/flake-rei/dotfiles/wofi/style.css" "--show drun"; }
+    Mod+V { spawn-sh "cliphist list | wofi --conf /home/gidrex/flake-rei/dotfiles/wofi/tigerlake_config --style /home/gidrex/flake-rei/dotfiles/wofi/style.css -S dmenu | cliphist decode | wl-copy -n"; }
 
     XF86AudioRaiseVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
