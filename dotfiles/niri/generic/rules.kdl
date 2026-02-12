@@ -14,8 +14,7 @@ window-rule {
 
 // No borders
 window-rule {
-    match app-id="app.zen_browser.zen"
-    match app-id="zen"
+    match app-id=".*zen"
     match app-id="Yandex-browser"
     match app-id="glide-glide"
     match title="Minecraft*"
@@ -36,8 +35,7 @@ window-rule {
 
 // 1.0 proportion
 window-rule {
-    match app-id="app.zen_browser.zen"
-    match app-id="zen"
+    match app-id=".*zen"
     match app-id="Antigravity"
     match title="Minecraft*"
     match app-id=r#"^steam_app_"#
@@ -50,6 +48,7 @@ window-rule {
     match app-id=r#".*ayugram.*"#
     match app-id=r#".*telegram.*"#
     match title=r#"(?i)bitwarden"#
+    match app-id=".*zen" title=r#"VK"#
 }
 layer-rule {
     block-out-from "screencast"
@@ -64,8 +63,7 @@ window-rule {
 
 // Per workspace config
 window-rule {
-    match app-id="app.zen_browser.zen"
-    match app-id="zen"
+    match app-id=".*zen"
     match app-id="glide-glide"
     match app-id="Yandex-browser"
     match app-id="chromium"
