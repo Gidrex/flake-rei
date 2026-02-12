@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-LANG=$(echo -e "rus\neng" | wofi --width "80px" --prompt "Lang..." --height "200px" --style /home/gidrex/flake-rei/dotfiles/wofi/style.css -S dmenu)
-
 if [ -z "$LANG" ]; then
   exit 0
 fi
@@ -15,4 +13,7 @@ grim -g "$(slurp)" - | \
   -bordercolor white -border 50x50 \
   -sharpen 0x1.5 \
   png:- | \
-  tesseract - - -l "$LANG" | wl-copy
+  tesseract - - -l "eng,rus" | wl-copy
+
+# paru -S tesseract-data-best-eng tesseract-data-best-rus tesseract-data-eng tesseract-data-rus slurp wofi imagemagick grim
+
