@@ -7,6 +7,10 @@ workspace "4"
 workspace "5"
 workspace "6"
 
+recent-windows {
+    off
+}
+
 hotkey-overlay {
     skip-at-startup
 }
