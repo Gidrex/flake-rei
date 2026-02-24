@@ -7,6 +7,6 @@ input {
 }
 
 cursor {
-	xcursor-theme "capitaine-cursors"
+	xcursor-theme "Afterglow-cursors"
     xcursor-size 24
 }

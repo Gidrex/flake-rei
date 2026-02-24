@@ -7,6 +7,7 @@ window-rule {
     match app-id=r#".*ayugram.*"#
     match app-id=r#".*telegram.*"#
     match app-id="blueberry.py"
+    match app-id="MAX"
     default-column-width { proportion 0.25; }
 }
 
