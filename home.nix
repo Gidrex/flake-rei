@@ -300,6 +300,7 @@ in
       "$HOME/.nix-profile/bin"
       "$HOME/.npm-global/bin"
       "$HOME/.deno/bin"
+      "$HOME/.opencode/bin"
       "/usr/bin"
       "/opt/flutter/bin"
     ];
