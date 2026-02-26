@@ -25,6 +25,7 @@ window-rule {
     match app-id="chromiumon-demand"
     match app-id="chrome-.*"
     match app-id="ONLYOFFICE"
+    match app-id=r#".*libreoffice.*"#
     draw-border-with-background false
     border {
         width 0

@@ -21,5 +21,6 @@ window-rule {
     match app-id="clash-verge"
     match app-id="^mpv$"
     match app-id="chrome-.*"
+    match app-id=r#".*libreoffice.*"#
     default-column-width { proportion 0.75; }
 }
