@@ -57,7 +57,6 @@ in
           md = mkFuncWrap "mkdir" "mkdir -p";
           h = mkFuncWrap "hx" "${pkgs.helix}/bin/hx";
           lj = mkFuncWrap "lazyjj" "lazyjj";
-          lg = mkFuncWrap "lazygit" "lazygit";
           j = mkFuncWrap "just" "just";
           nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
           hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
