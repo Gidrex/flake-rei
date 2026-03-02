@@ -248,6 +248,7 @@ in
         ipfetch
 
         # dev
+        just
         lazydocker
         mosquitto
         deno
