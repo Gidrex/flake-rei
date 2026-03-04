@@ -35,6 +35,12 @@ window-rule {
     }
 }
 
+window-rule {
+    match title="Glow Preview"
+    open-floating true
+    default-window-height { proportion 1.0; }
+}
+
 // 1.0 proportion
 window-rule {
     match app-id=".*zen"

@@ -323,7 +323,7 @@ in
 
   xdg.configFile."glow/glow.yml".text = ''
     style: "tokyo-night"
-    width: 130
+    width: 0
     mouse: false
   '';
 

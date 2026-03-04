@@ -109,6 +109,7 @@
           A-q = ":q";
           space.space = ":reload-all";
           space.q = ":pipe ${pkgs.libqalculate}/bin/qalc -s 'maxdeci 2' -t -f /dev/stdin";
+          space.m = ":sh foot -d error -T 'Glow Preview' glow -p -w 0 %{buffer_name} 2>/dev/null";
         };
       };
     };
