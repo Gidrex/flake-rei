@@ -65,6 +65,10 @@ in
           e = "$EDITOR";
           gd = builtins.readFile ./gd_function.fish;
 
+          # Rust
+          cr = mkFuncWrap "cargo run" "cargo run";
+          cb = mkFuncWrap "cargo build --release" "cargo build --release";
+
           # Zellij
           zl = mkFuncWrap "zellij" "zellij";
           zln = mkFuncWrap "zellij" "zellij --session";
