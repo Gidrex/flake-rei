@@ -9,9 +9,11 @@ output "DP-2" {
 
 output "eDP-1" {
     off
-    // mode "1920x1080@144.0"
-    // scale 1.0
-    // transform "normal"
-    // position x=0 y=1440
-    // background-color "#00000000"
+}
+
+output "HDMI-A-1" {
+    mode "1024x600@59.821"
+    scale 1.0
+    transform "normal"
+    position x=5000 y=5000
 }

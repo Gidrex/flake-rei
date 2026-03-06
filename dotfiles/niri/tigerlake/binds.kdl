@@ -26,4 +26,7 @@ binds {
     Mod+G { set-column-width "75%"; }
     Mod+F { set-column-width "100%"; }
 
+    // Monitor navigation
+    Mod+R { focus-monitor-next; }
+    Mod+Shift+R { move-column-to-monitor-next; }
 }
