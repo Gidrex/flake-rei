@@ -12,3 +12,4 @@ spawn-sh-at-startup "flatpak run com.github.wwmm.easyeffects --gapplication-serv
 // spawn-sh-at-startup "blueberry"
 
 spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-at-startup "foot" "-T" "Mini Monitor" "-f" "JetBrainsMono Nerd Font Mono:size=23" "btop"

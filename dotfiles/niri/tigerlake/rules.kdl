@@ -4,6 +4,7 @@ layer-rule {
 }
 
 window-rule {
+    open-on-output "DP-2"
     match app-id=r#".*ayugram.*"#
     match app-id=r#".*telegram.*"#
     match app-id="blueberry.py"
@@ -12,6 +13,7 @@ window-rule {
 }
 
 window-rule {
+    open-on-output "DP-2"
     match app-id="goofcord"
     match app-id="equibop"
     match app-id=r#"(?i)steam"#

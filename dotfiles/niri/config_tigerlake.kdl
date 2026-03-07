@@ -22,4 +22,5 @@ debug {
     render-drm-device "/dev/dri/card0"
     enable-overlay-planes
     disable-direct-scanout
+    honor-xdg-activation-with-invalid-serial
 }
