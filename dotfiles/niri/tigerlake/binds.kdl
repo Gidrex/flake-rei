@@ -8,6 +8,7 @@ binds {
     Mod+P { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     Mod+Shift+D { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+I { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    Mod+Shift+T { spawn-sh "foot -f 'JetBrainsMono Nerd Font Mono:size=23'"; }
 
     XF86AudioRaiseVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
     XF86AudioLowerVolume        allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }

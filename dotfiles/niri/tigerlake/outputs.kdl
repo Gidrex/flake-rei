@@ -15,5 +15,4 @@ output "HDMI-A-1" {
     mode "1024x600@59.821"
     scale 1.0
     transform "normal"
-    position x=5000 y=5000
 }
