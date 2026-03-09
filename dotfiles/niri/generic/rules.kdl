@@ -69,12 +69,6 @@ window-rule {
     open-floating false
 }
 
-window-rule {
-    match title="Mini Monitor"
-    open-on-output "HDMI-A-1"
-    default-column-width { proportion 1.0; }
-}
-
 // Per workspace config
 window-rule {
     match app-id=".*zen"
