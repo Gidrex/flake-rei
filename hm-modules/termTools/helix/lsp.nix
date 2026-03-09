@@ -114,12 +114,28 @@ in
       lint.per-file-ignores = {
         "__init__.py" = [ "F401" ];
       };
-      lint.select = [
-        "E4"
-        "E7"
-        "E9"
-        "F"
-      ];
+      lint = {
+        select = [
+          "E" # pycodestyle (error)
+          "W" # warns
+          "F" # pyflakes
+          "B" # bugbear
+          "C4" # flake8-comprehensions
+          "SIM" # flake8-simplify
+          "I" # isort
+          "UP" # pyupgrade
+          "PIE" # flake8-pie
+          "PGH" # pygrep-hooks
+          "PYI" # flake8-pyi
+          "RUF"
+        ];
+        ignore = [
+          "B011"
+          "E501"
+          "RUF001"
+          "RUF003"
+        ];
+      };
     };
   };
 
