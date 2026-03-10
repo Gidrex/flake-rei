@@ -255,7 +255,7 @@ in
         lazyjj
 
         # apps
-        feh
+        ytfzf
 
         # fonts
       ]
