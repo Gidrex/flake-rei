@@ -9,3 +9,6 @@ workspace "3" { open-on-output "DP-2"; }
 workspace "4" { open-on-output "DP-2"; }
 workspace "5" { open-on-output "DP-2"; }
 workspace "6" { open-on-output "DP-2"; }
+workspace "7" { open-on-output "DP-2"; }
+workspace "8" { open-on-output "DP-2"; }
+workspace "9" { open-on-output "DP-2"; }

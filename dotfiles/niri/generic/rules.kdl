@@ -17,7 +17,7 @@ window-rule {
     match app-id=".*zen"
     match app-id="Yandex-browser"
     match app-id="glide-glide"
-    match title="Minecraft*"
+    match app-id=r#"(?i)minecraft"#
     match app-id=r#"^steam_app_"#
     match app-id="foot"
     match app-id="com.mitchellh.ghostty"
@@ -28,6 +28,7 @@ window-rule {
     match app-id=r#".*libreoffice.*"#
     match app-id="clash-verge"
     match app-id="chromium"
+    match app-id="TablePlus"
     draw-border-with-background false
     border {
         width 0
@@ -49,6 +50,7 @@ window-rule {
     match app-id="Antigravity"
     match title="Minecraft*"
     match app-id=r#"^steam_app_"#
+    match app-id="TablePlus"
     default-column-width { proportion 1.0; }
 }
 
@@ -76,8 +78,6 @@ window-rule {
     match app-id="glide-glide"
     match app-id="Yandex-browser"
     match app-id="chromium"
-    match app-id=r#".*telegram.*"#
-    match app-id=r#".*ayugram.*"#
     open-on-workspace "1"
 }
 
@@ -93,6 +93,8 @@ window-rule {
 window-rule {
     match app-id="goofcord"
     match app-id="equibop"
+    match app-id=r#".*telegram.*"#
+    match app-id=r#".*ayugram.*"#
     open-on-workspace "5"
 }
 
