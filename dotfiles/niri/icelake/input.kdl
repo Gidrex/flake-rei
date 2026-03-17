@@ -7,4 +7,7 @@ input {
             model "pc105"
         }
     }
+    touchpad {
+        dwt
+    }
 }

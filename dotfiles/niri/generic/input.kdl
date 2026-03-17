@@ -6,8 +6,6 @@ input {
 
     touchpad {
         tap
-        // dwt
-        natural-scroll
         tap-button-map "left-right-middle"
         accel-speed 0
         accel-profile "adaptive"

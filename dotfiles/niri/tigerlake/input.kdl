@@ -4,6 +4,9 @@ input {
 			file "/home/gidrex/flake-rei/dotfiles/niri/tigerlake/keymap.xkb"
 		}
 	}
+	touchpad {
+        natural-scroll
+	}
 }
 
 cursor {
