@@ -6,6 +6,11 @@ input {
 	}
 	touchpad {
         natural-scroll
+        tap
+        tap-button-map "left-right-middle"
+        accel-speed 0
+        accel-profile "adaptive"
+        scroll-method "two-finger"
 	}
 }
 
