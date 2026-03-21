@@ -58,8 +58,11 @@ in
           h = mkFuncWrap "hx" "${pkgs.helix}/bin/hx";
           lj = mkFuncWrap "lazyjj" "lazyjj";
           j = mkFuncWrap "just" "just";
+
+          # Complex commands
           nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
           hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
+          gm = "npm install -g @google/gemini-cli@latest && gemini";
 
           # Direct commands
           e = "$EDITOR";
