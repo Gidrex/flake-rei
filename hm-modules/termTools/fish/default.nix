@@ -64,7 +64,7 @@ in
           hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
           gm = "npm install -g @google/gemini-cli@latest && gemini";
 
-          # Direct commands
+          #  commands
           e = "$EDITOR";
           gd = builtins.readFile ./gd_function.fish;
 
@@ -81,10 +81,12 @@ in
           # Logic
           __eza_cols = "if contains -- -T \$argv; or contains -- --tree \$argv; or test (count \$argv) -gt 1; ${pkgs.eza}/bin/eza --icons=always \$argv; else; CLICOLOR_FORCE=1 paste (${pkgs.eza}/bin/eza --only-dirs -1 --color=always --icons=always \$argv | psub) (${pkgs.eza}/bin/eza --only-files -1 --color=always --icons=always \$argv | psub) | column -t -s \\t; end";
 
+          # Fzf based
           helixing = ''
             set -l selection (${pkgs.fd}/bin/fd . --type file --type symlink -E '*.{png,jpg,jpeg,webp,docx,svg,pdf}' | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse --walker=file,hidden,follow -0 -1)
             test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
           '';
+          csv = "csvlens $(fd --extension csv | fzf)";
         }
       )
       // listToAttrs (

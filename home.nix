@@ -37,6 +37,7 @@ in
     nix-your-shell.enable = true;
     fish.enable = true;
     helix.enable = true;
+    neovim.enable = true;
     yazi = {
       enable = true;
       package = pkgs.yazi;

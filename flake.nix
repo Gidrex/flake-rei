@@ -68,6 +68,7 @@
         ./hm-modules/termTools/fish
         ./hm-modules/termTools/nushell
         ./hm-modules/termTools/helix
+        ./hm-modules/termTools/neovim
         #        ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
 
