@@ -3,6 +3,8 @@
   ...
 }:
 {
+  catppuccin.nvim.enable = false;
+
   programs.neovim = {
     defaultEditor = false;
     viAlias = true;
@@ -11,6 +13,7 @@
     plugins = with pkgs.vimPlugins; [
       catppuccin-nvim
       render-markdown-nvim
+      plenary-nvim
       aerial-nvim
       nvim-treesitter.withAllGrammars
       lualine-nvim
@@ -21,7 +24,7 @@
       telescope-nvim
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       require('init')
     '';
   };

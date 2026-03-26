@@ -1,7 +1,12 @@
 ---@diagnostic disable: undefined-global
 
 -- Theme: Catppuccin Mocha
-require("catppuccin").setup({ flavour = "mocha" })
+require("catppuccin").setup({
+  flavour = "mocha",
+  compile = {
+    enabled = false,
+  }
+})
 vim.cmd.colorscheme "catppuccin"
 
 vim.opt.number = true
@@ -26,6 +31,8 @@ require("ibl").setup({
 
 require("render-markdown").setup({})
 
+require("telescope").setup({})
+
 require("aerial").setup({
   on_attach = function(bufnr)
     vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
@@ -33,13 +40,21 @@ require("aerial").setup({
   end,
 })
 
-require("nvim-treesitter.configs").setup({
-  highlight = { enable = true },
-})
+-- Treesitter setup (updated for 1.0.0+)
+local status_ts, ts_configs = pcall(require, "nvim-treesitter.configs")
+if status_ts then
+  ts_configs.setup({
+    highlight = { enable = true },
+  })
+else
+  -- If configs module is missing (v1.0.0+), treesitter highlight might be managed differently
+  -- or we can use the built-in vim.treesitter.start for certain cases.
+  -- Most users on 1.0.0 don't need manual setup for basic highlights if grammars are present.
+end
 
 require("lualine").setup({
   options = {
-    theme = "catppuccin",
+    theme = "auto",
     component_separators = "│",
     section_separators = "",
     globalstatus = true,

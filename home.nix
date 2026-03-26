@@ -42,7 +42,7 @@ in
       enable = true;
       package = pkgs.yazi;
     };
-    zellij.enable = true;
+    zellij.enable = false;
     # less.enable = true;
 
     fastfetch.enable = true;

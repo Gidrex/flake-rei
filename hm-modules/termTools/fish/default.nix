@@ -44,58 +44,69 @@ in
           colored-man-pages
         ];
 
-    functions =
-      listToAttrs (
+    functions = lib.mkMerge [
+      (listToAttrs (
         lib.mapAttrsToList mkFunc {
-          # Wrappers:
-          # $1: completion
-          # $2: alias
-
-          ls = mkFuncWrap "eza" "__eza_cols";
-          la = mkFuncWrap "eza" "__eza_cols -al";
-          lt = mkFuncWrap "eza" "__eza_cols -T";
           md = mkFuncWrap "mkdir" "mkdir -p";
-          h = mkFuncWrap "hx" "${pkgs.helix}/bin/hx";
-          lj = mkFuncWrap "lazyjj" "lazyjj";
-          j = mkFuncWrap "just" "just";
-
-          # Complex commands
-          nt = "rclone copy gdrive:notes/ ~/Notes/ -u -P --fast-list --checkers 32 --transfers 16 && $EDITOR ~/Notes/ && rclone sync ~/Notes/ gdrive:notes/ -u --fast-list --checkers 32 --transfers 16 > /dev/null 2>&1 & disown";
-          hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE";
           gm = "npm install -g @google/gemini-cli@latest && gemini";
-
-          #  commands
           e = "$EDITOR";
           gd = builtins.readFile ./gd_function.fish;
-
-          # Rust
-          cr = mkFuncWrap "cargo run" "cargo run";
-          cb = mkFuncWrap "cargo build --release" "cargo build --release";
-
-          # Zellij
-          zl = mkFuncWrap "zellij" "zellij";
-          zln = mkFuncWrap "zellij" "zellij --session";
-          zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
-          zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
-
-          # Logic
-          __eza_cols = "if contains -- -T \$argv; or contains -- --tree \$argv; or test (count \$argv) -gt 1; ${pkgs.eza}/bin/eza --icons=always \$argv; else; CLICOLOR_FORCE=1 paste (${pkgs.eza}/bin/eza --only-dirs -1 --color=always --icons=always \$argv | psub) (${pkgs.eza}/bin/eza --only-files -1 --color=always --icons=always \$argv | psub) | column -t -s \\t; end";
-
-          # Fzf based
-          helixing = ''
-            set -l selection (${pkgs.fd}/bin/fd . --type file --type symlink -E '*.{png,jpg,jpeg,webp,docx,svg,pdf}' | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse --walker=file,hidden,follow -0 -1)
-            test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
-          '';
-          csv = "csvlens $(fd --extension csv | fzf)";
         }
-      )
-      // listToAttrs (
+      ))
+
+      (lib.mkIf config.programs.eza.enable (
+        listToAttrs (
+          lib.mapAttrsToList mkFunc {
+            ls = mkFuncWrap "eza" "__eza_cols";
+            la = mkFuncWrap "eza" "__eza_cols -al";
+            lt = mkFuncWrap "eza" "__eza_cols -T";
+            __eza_cols = "if contains -- -T \$argv; or contains -- --tree \$argv; or test (count \$argv) -gt 1; ${pkgs.eza}/bin/eza --icons=always \$argv; else; CLICOLOR_FORCE=1 paste (${pkgs.eza}/bin/eza --only-dirs -1 --color=always --icons=always \$argv | psub) (${pkgs.eza}/bin/eza --only-files -1 --color=always --icons=always \$argv | psub) | column -t -s \\t; end";
+          }
+        )
+      ))
+
+      (lib.mkIf config.programs.helix.enable (
+        listToAttrs (
+          lib.mapAttrsToList mkFunc {
+            h = mkFuncWrap "hx" "${pkgs.helix}/bin/hx";
+            helixing = lib.mkIf (config.programs.fd.enable && config.programs.fzf.enable) ''
+              set -l selection (${pkgs.fd}/bin/fd . --type file --type symlink -E '*.{png,jpg,jpeg,webp,docx,svg,pdf}' | ${pkgs.fzf}/bin/fzf --height=20 --layout=reverse --walker=file,hidden,follow -0 -1)
+              test -n "$selection" && ${pkgs.helix}/bin/hx "$selection" || echo ""
+            '';
+          }
+        )
+      ))
+
+      (lib.mkIf config.programs.neovim.enable (
+        listToAttrs (lib.mapAttrsToList mkFunc { n = mkFuncWrap "nvim" "${pkgs.neovim}/bin/nvim"; })
+      ))
+
+      (lib.mkIf config.programs.zellij.enable (
+        listToAttrs (
+          lib.mapAttrsToList mkFunc {
+            zl = mkFuncWrap "zellij" "zellij";
+            zln = mkFuncWrap "zellij" "zellij --session";
+            zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
+            zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.fzf}/bin/fzf)";
+          }
+        )
+      ))
+
+      (lib.mkIf config.programs.home-manager.enable (
+        listToAttrs (
+          lib.mapAttrsToList mkFunc { hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE"; }
+        )
+      ))
+
+      # Dots
+      (listToAttrs (
         map (
           dots:
           mkFunc (concatStringsSep "" (genList (_: ".") dots))
             "cd ${concatStringsSep "/" (genList (_: "..") (dots - 1))}"
         ) (genList (i: i + 2) 5)
-      );
+      ))
+    ];
 
     interactiveShellInit = ''
       set -g fish_greeting ""
