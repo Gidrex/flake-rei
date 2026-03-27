@@ -31,7 +31,15 @@ require("ibl").setup({
 
 require("render-markdown").setup({})
 
-require("telescope").setup({})
+require("telescope").setup({
+  defaults = {
+    layout_config = {
+      width = 0.9,
+      height = 0.9,
+      preview_width = 0.5,
+    },
+  },
+})
 
 require("aerial").setup({
   on_attach = function(bufnr)
@@ -70,6 +78,12 @@ require("lualine").setup({
 })
 
 require("which-key").setup({})
+
+-- Load LSP configuration
+local status_lsp, _ = pcall(require, "lsp")
+if not status_lsp then
+  print("Warning: LSP configuration not found (did you 'git add' it?)")
+end
 
 -- Load Keybindings
 require("keys")

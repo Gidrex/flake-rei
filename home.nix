@@ -326,8 +326,6 @@ in
 
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_SCREENSHOTS_DIR = "$HOME/Pictures/screenshots";
-        GOOGLE_GEMINI_BASE_URL = "http://127.0.0.1:8317";
-        GEMINI_API_KEY = "sk-dummy";
       };
 
     sessionPath = [
