@@ -38,14 +38,14 @@ vim.keymap.set("n", "Z", open_lazygit, { silent = true, desc = "LazyGit" })
 
 -- Space Menu
 wk.add({
-  { "<leader>f", "<cmd>Telescope find_files<CR>",              desc = "File Picker" },
-  { "<leader>b", "<cmd>Telescope buffers<CR>",                 desc = "Buffers" },
-  { "<leader>g", "<cmd>Telescope git_status<CR>",              desc = "Git Status (Diff)" },
-  { "<leader>/", "<cmd>Telescope live_grep<CR>",               desc = "Live Grep" },
-  { "<leader>q", ":!qalc -s 'maxdeci 2' -t -f /dev/stdin<CR>", desc = "Calculator" },
-  { "<leader>a", "<cmd>AerialToggle!<CR>",                     desc = "Outline (Aerial)" },
-  { "<leader>r", ":e!<CR>",                                    desc = "Reload Buffer" },
-  { "<leader>l", group = "LSP" },
+  { "<leader>f",  "<cmd>Telescope find_files<CR>",              desc = "File Picker" },
+  { "<leader>b",  "<cmd>Telescope buffers<CR>",                 desc = "Buffers" },
+  { "<leader>g",  "<cmd>Telescope git_status<CR>",              desc = "Git Status (Diff)" },
+  { "<leader>/",  "<cmd>Telescope live_grep<CR>",               desc = "Live Grep" },
+  { "<leader>q",  ":!qalc -s 'maxdeci 2' -t -f /dev/stdin<CR>", desc = "Calculator" },
+  { "<leader>a",  "<cmd>AerialToggle!<CR>",                     desc = "Outline (Aerial)" },
+  { "<leader>r",  ":e!<CR>",                                    desc = "Reload Buffer" },
+  { "<leader>l",  group = "LSP" },
   { "<leader>la", vim.lsp.buf.code_action,                      desc = "Code Action" },
   { "<leader>lr", vim.lsp.buf.rename,                           desc = "Rename" },
   { "<leader>ld", vim.lsp.buf.definition,                       desc = "Go to Definition" },
