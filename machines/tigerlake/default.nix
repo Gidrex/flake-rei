@@ -12,5 +12,5 @@
   home.packages = with pkgs; [ scanmem ];
 
   home.sessionVariables.FLAKE_MACHINE = "tigerlake";
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 }

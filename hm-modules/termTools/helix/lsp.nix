@@ -68,7 +68,7 @@ in
       helm-ls
 
       # Shells
-      nodePackages_latest.bash-language-server
+      bash-language-server
       fish-lsp
 
       # Lua

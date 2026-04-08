@@ -345,7 +345,7 @@ in
     homeDirectory = "/home/${username}";
 
     enableNixpkgsReleaseCheck = false;
-    stateVersion = "25.05";
+    stateVersion = "26.05";
 
     #   pointerCursor = {
     #     package = pkgs.capitaine-cursors;

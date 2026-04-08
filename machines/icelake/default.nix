@@ -12,5 +12,5 @@
   # home.packages = with pkgs; [ ];
 
   home.sessionVariables.FLAKE_MACHINE = "icelake";
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 }

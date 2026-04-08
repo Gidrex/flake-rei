@@ -171,5 +171,5 @@
 
   # Home Manager state version
   home.sessionVariables.FLAKE_MACHINE = "nixos-icelake";
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 }

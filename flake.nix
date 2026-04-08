@@ -16,6 +16,9 @@
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
+    zjstatus.url = "github:dj95/zjstatus";
+    zjstatus.inputs.nixpkgs.follows = "nixpkgs";
+
     # Yazi plugins
     open-with-cmd.url = "github:Ape/open-with-cmd.yazi";
     open-with-cmd.flake = false;
@@ -78,10 +81,10 @@
       ];
 
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
+        localSystem = "x86_64-linux";
 
         config = {
-          allowunfree = false;
+          allowUnfree = false;
           allowUnfreePredicate =
             pkg:
             builtins.elem (nixpkgs.lib.getName pkg) [
