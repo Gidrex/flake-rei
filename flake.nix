@@ -67,6 +67,7 @@
       # Common modules
       commonModules = [
         ./home.nix
+        ./hm-modules/sound/mpv.nix
         ./hm-modules/termTools/yazi
         ./hm-modules/termTools/fish
         ./hm-modules/termTools/nushell
