@@ -1,15 +1,15 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.mpv = {
     enable = true;
     config = {
-      # Video
+      # Video & Wayland
       vo = "gpu,wlshm";
       gpu-context = "wayland";
       hwdec = "auto-safe";
       profile = "gpu-hq";
+      force-window = "immediate";
 
-      # Quality Settings (work only if gpu VO is active)
+      # Quality
       scale = "ewa_lanczossharp";
       cscale = "ewa_lanczossharp";
       dscale = "mitchell";
@@ -17,13 +17,11 @@
       video-sync = "display-resample";
       tscale = "oversample";
 
-      # Audio
+      # Audio (High-End FLAC)
       ao = "pipewire,alsa";
       audio-channels = "stereo";
       audio-format = "s32";
       audio-samplerate = 0;
-
-      # High quality resampler (Explicit precision)
       af = "lavfi=[aresample=resampler=soxr:precision=28]";
       gapless-audio = "yes";
 
@@ -33,17 +31,31 @@
       replaygain = "no";
       save-position-on-quit = "yes";
       keep-open = "yes";
-      force-window = "immediate";
 
-      # UI & Subtitles
-      osd-font = "SauceCodePro Nerd Font Mono";
-      sub-font = "SauceCodePro Nerd Font Mono";
+      # Subtitles & UI
       sub-auto = "fuzzy";
+      sub-font = "SauceCodePro Nerd Font Mono";
+      sub-font-size = 36;
+      osd-font = "SauceCodePro Nerd Font Mono";
+      osd-bar = "no";
+      border = "no";
     };
 
     scripts = with pkgs.mpvScripts; [
       mpris
+      uosc
+      thumbfast
     ];
+
+    scriptOpts = {
+      uosc = {
+        top_bar = "always";
+        top_bar_controls = "yes";
+        top_bar_title = "yes";
+        click_threshold = 250;
+        double_click_threshold = 300;
+      };
+    };
   };
 
   catppuccin.mpv.enable = true;
