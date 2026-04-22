@@ -48,7 +48,7 @@ in
       (listToAttrs (
         lib.mapAttrsToList mkFunc {
           md = mkFuncWrap "mkdir" "mkdir -p";
-          gm = "npx @google/gemini-cli@latest";
+          gm = "npx --prefer-offline --no-audit --no-fund -y @google/gemini-cli@latest";
           e = "$EDITOR";
           gd = builtins.readFile ./gd_function.fish;
         }
