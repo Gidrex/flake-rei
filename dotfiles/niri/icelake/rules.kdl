@@ -39,6 +39,6 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"libreoffice.*"#
+    match app-id=r#".*libreoffice.*"#
     default-column-width { proportion 1.0; }
 }

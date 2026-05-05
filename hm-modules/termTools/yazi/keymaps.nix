@@ -34,6 +34,7 @@ in
       "d"
     ] ''shell '${ripdrag} "$@" -A 2>/dev/null &' --confirm'' "Drag & Drop file all select files as one")
     (mkBind [ "e" "o" ] "shell 'onlyoffice-desktopeditors \"$@\"'" "Open file in onlyoffice")
+    (mkBind [ "e" "l" ] "shell 'libreoffice \"$@\"'" "Open file in libreoffice")
     (mkBind [ "e" "g" ] "shell --block 'glow -t \"$@\"'" "Open file with glow")
 
     (mkBind [ "u" ] "plugin restore" "Restore last deleted files/folders")

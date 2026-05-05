@@ -39,13 +39,6 @@ in
     helix.enable = true;
     neovim.enable = true;
 
-    andcli = {
-      enable = true;
-      settings = {
-        show_usernames = true;
-      };
-    };
-
     yazi = {
       enable = true;
       package = pkgs.yazi;
