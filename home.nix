@@ -295,6 +295,9 @@ in
         # apps
         ytfzf
 
+        # ml
+        easyocr
+
         # fonts
       ]
       ++ (with nerd-fonts; [

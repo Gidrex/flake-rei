@@ -4,6 +4,9 @@ if [ -z "$LANG" ]; then
   exit 0
 fi
 
+tmp_img=$(mktemp /tmp/ocr_XXXXXX.png)
+trap 'rm -f "$tmp_img"' EXIT
+
 grim -g "$(slurp)" - | \
   magick - \
   -alpha set -background white -alpha remove \
@@ -12,8 +15,9 @@ grim -g "$(slurp)" - | \
   -density 300 \
   -bordercolor white -border 50x50 \
   -sharpen 0x1.5 \
-  png:- | \
-  tesseract - - -l "eng,rus" | wl-copy
+  "$tmp_img"
 
-# paru -S tesseract-data-best-eng tesseract-data-best-rus tesseract-data-eng tesseract-data-rus slurp wofi imagemagick grim
+easyocr -l ru en -f "$tmp_img" --detail=0 | wl-copy
+
+# paru -S python-easyocr slurp imagemagick grim wl-clipboard
 

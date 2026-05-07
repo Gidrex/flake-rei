@@ -22,6 +22,7 @@ binds {
     Mod+Shift+S { screenshot-window; }
     Mod+Ctrl+S { screenshot-screen; }
     Mod+Y { spawn-sh "hyprpicker | wl-copy"; }
+    Mod+Ctrl+V { spawn-sh "cliphist wipe"; }
 
     Mod+Up {  focus-window-up; }
     Mod+Down {  focus-window-down; }
