@@ -13,6 +13,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#".*prismlauncher.*"#
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
     open-on-output "DP-2"
     match app-id="goofcord"
     match app-id="equibop"
