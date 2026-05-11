@@ -30,6 +30,7 @@ window-rule {
 
 window-rule {
     match app-id=r#".*libreoffice.*"#
+    match app-id="chromium"
     default-column-width { proportion 1.0; }
 }
 
