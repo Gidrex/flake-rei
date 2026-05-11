@@ -102,6 +102,8 @@ in
       defaultCommand = "${pkgs.fd}/bin/fd --type f";
     };
 
+    skim.enable = true;
+
     fd = {
       enable = true;
       extraOptions = [ "--absolute-path" ];
@@ -299,6 +301,7 @@ in
         easyocr
 
         # fonts
+        cozette
       ]
       ++ (with nerd-fonts; [
         arimo
