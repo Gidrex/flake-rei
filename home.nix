@@ -299,9 +299,7 @@ in
 
         # ml
         easyocr
-
         # fonts
-        cozette
       ]
       ++ (with nerd-fonts; [
         arimo
@@ -309,6 +307,7 @@ in
         symbols-only
         sauce-code-pro
         jetbrains-mono
+        geist-mono
       ])
       ++ [ times-newer-roman ];
 
