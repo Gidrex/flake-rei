@@ -1,0 +1,8 @@
+# .sops.yaml
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    # Replace with your public key(s)
+    # To get your age public key from ssh: nix-shell -p ssh-to-age --run "ssh-to-age < ~/.ssh/id_ed25519.pub"
+    # key_groups:
+    #   - age:
+    #       - age1...

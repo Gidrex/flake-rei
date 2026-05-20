@@ -2,7 +2,6 @@
 
 - `tigerlake` - my laptop-doc station with tigerlake arch
 - `icelake` - my laptop with icelake arch
-- `nixos-icelake` - icelake NixOS laptop
  
 ## Nix installing on non-NixOS systems
 Install nix via a script or your system's package manager and sometimes you will optionally need to:

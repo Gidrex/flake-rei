@@ -265,6 +265,8 @@ in
       with pkgs;
       [
         # utility
+        sops
+        age
         unrar
         nix-prefetch-github
         rip2

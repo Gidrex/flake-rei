@@ -3,14 +3,9 @@
 
   inputs = {
     # Core
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-
-    # Build system (NixOS only)
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
 
     # Theming
     catppuccin.url = "github:catppuccin/nix";
@@ -18,6 +13,9 @@
 
     zjstatus.url = "github:dj95/zjstatus";
     zjstatus.inputs.nixpkgs.follows = "nixpkgs";
+
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # Yazi plugins
     open-with-cmd.url = "github:Ape/open-with-cmd.yazi";
@@ -75,8 +73,11 @@
         ./hm-modules/termTools/neovim
         #        ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
+        ./hm-modules/security/pass.nix
+        ./hm-modules/security/sops.nix
 
         inputs.catppuccin.homeModules.catppuccin
+        inputs.sops-nix.homeManagerModules.sops
 
         { _module.args = moduleArgs; }
       ];
@@ -99,39 +100,10 @@
       machines = {
         icelake = ./machines/icelake;
         tigerlake = ./machines/tigerlake;
-        nixos-icelake = ./machines/nixos-icelake;
       };
 
     in
     {
-      # NixOS builder
-      nixosConfigurations = {
-        nixos-icelake = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./machines/nixos-icelake/configuration.nix
-            inputs.disko.nixosModules.disko
-            inputs.home-manager.nixosModules.home-manager
-            {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  zjstatus = inputs.zjstatus.packages.${prev.stdenv.hostPlatform.system}.default;
-                })
-              ];
-
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.gidrex = {
-                  imports = commonModules ++ [ machines.nixos-icelake ];
-                };
-                extraSpecialArgs = { inherit inputs; };
-              };
-            }
-          ];
-          specialArgs = { inherit inputs; };
-        };
-      };
 
       # Home Manager builder
       homeConfigurations = nixpkgs.lib.genAttrs (builtins.attrNames machines) (
