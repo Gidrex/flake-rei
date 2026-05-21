@@ -1,0 +1,12 @@
+mouse_support = true
+paste_support = true
+frame_rate = 30.0
+show_status_bar = false
+show_title_bar = false
+theme_enable = true
+theme_filename = "themes/catppuccin.toml"
+take_api_id_from_telegram_config = true
+take_api_hash_from_telegram_config = true
+use_emoji_icons = false
+photo_max_dimension = 1920
+photo_viewer_popup_size = 1.0

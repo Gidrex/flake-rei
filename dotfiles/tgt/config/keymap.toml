@@ -1,0 +1,324 @@
+[[core_window.keymap]]
+keys = ["q"]
+command = "try_quit"
+description = "Quit the application"
+
+[[core_window.keymap]]
+keys = ["ctrl+c"]
+command = "try_quit"
+description = "Quit the application"
+
+[[core_window.keymap]]
+keys = ["alt+1"]
+command = "focus_chat_list"
+description = "Focus the chat list"
+
+[[core_window.keymap]]
+keys = ["alt+2"]
+command = "focus_chat"
+description = "Focus the chat"
+
+[[core_window.keymap]]
+keys = ["alt+3"]
+command = "focus_prompt"
+description = "Focus the prompt"
+
+[[core_window.keymap]]
+keys = ["esc"]
+command = "unfocus_component"
+description = "Unfocus the current component"
+
+[[core_window.keymap]]
+keys = ["alt+n"]
+command = "toggle_chat_list"
+description = "Toggle chat_list visibility"
+
+[[core_window.keymap]]
+keys = ["alt+l"]
+command = "increase_chat_list_size"
+description = "Increase the chat list size"
+
+[[core_window.keymap]]
+keys = ["alt+h"]
+command = "decrease_chat_list_size"
+description = "Decrease the chat list size"
+
+[[core_window.keymap]]
+keys = ["alt+k"]
+command = "increase_prompt_size"
+description = "Increase the prompt size"
+
+[[core_window.keymap]]
+keys = ["alt+j"]
+command = "decrease_prompt_size"
+description = "Decrease the prompt size"
+
+[[core_window.keymap]]
+keys = ["alt+r"]
+command = "chat_list_search"
+description = "Start searching chats"
+
+[[core_window.keymap]]
+keys = ["alt+/"]
+command = "show_command_guide"
+description = "Show command guide with all keybindings"
+
+[[core_window.keymap]]
+keys = ["alt+t"]
+command = "show_theme_selector"
+description = "Show theme selector"
+
+[[core_window.keymap]]
+keys = ["alt+u"]
+command = "show_file_upload_explorer"
+description = "Upload file"
+
+[[chat_list.keymap]]
+keys = ["down"]
+command = "chat_list_next"
+description = "Select the next chat"
+
+[[chat_list.keymap]]
+keys = ["up"]
+command = "chat_list_previous"
+description = "Select the previous chat"
+
+[[chat_list.keymap]]
+keys = ["left"]
+command = "chat_list_unselect"
+description = "Unselect the current chat"
+
+[[chat_list.keymap]]
+keys = ["right"]
+command = "chat_list_open"
+description = "Open the selected chat"
+
+[[chat_list.keymap]]
+keys = ["enter"]
+command = "chat_list_open"
+description = "Open the selected chat"
+
+[[chat_list.keymap]]
+keys = ["alt+r"]
+command = "chat_list_search"
+description = "Focus on prompt to start searching"
+
+[[chat_list.keymap]]
+keys = ["alt+c"]
+command = "chat_list_restore_sort"
+description = "Restore the default ordering of the chat list"
+
+[[chat_list.keymap]]
+keys = ["shift+back_tab"]
+command = "show_pinned_messages_popup"
+description = "Open pinned messages for the open chat"
+
+[[chat_list.keymap]]
+keys = ["back_tab"]
+command = "show_pinned_messages_popup"
+description = "Open pinned messages for the open chat"
+
+[[chat.keymap]]
+keys = ["up"]
+command = "chat_window_next"
+description = "Select the previous message (up)"
+
+[[chat.keymap]]
+keys = ["down"]
+command = "chat_window_previous"
+description = "Select the next message (down)"
+
+[[chat.keymap]]
+keys = ["left"]
+command = "chat_window_unselect"
+description = "Unselect the current message"
+
+[[chat.keymap]]
+keys = ["d"]
+command = "chat_window_delete_for_everyone"
+description = "Delete the selected message for all users"
+
+[[chat.keymap]]
+keys = ["D"]
+command = "chat_window_delete_for_me"
+description = "Delete the selected message for 'me'"
+
+[[chat.keymap]]
+keys = ["y"]
+command = "chat_window_copy"
+description = "Copy the selected message"
+
+[[chat.keymap]]
+keys = ["ctrl+c"]
+command = "chat_window_copy"
+description = "Copy the selected message"
+
+[[chat.keymap]]
+keys = ["e"]
+command = "chat_window_edit"
+description = "Edit the selected message"
+
+[[chat.keymap]]
+keys = ["r"]
+command = "chat_window_reply"
+description = "Reply to the selected message"
+
+[[chat.keymap]]
+keys = ["v"]
+command = "view_photo_message"
+description = "View photo from selected message"
+
+[[chat.keymap]]
+keys = ["p"]
+command = "play_voice_message"
+description = "Play or stop voice/audio from selected message"
+
+[[chat.keymap]]
+keys = ["s"]
+command = "start_file_download"
+description = "Save photo or document to disk"
+
+[[chat.keymap]]
+keys = ["alt+r"]
+command = "chat_window_search"
+description = "Focus on prompt to start searching messages"
+
+[[chat.keymap]]
+keys = ["alt+c"]
+command = "chat_window_restore_sort"
+description = "Restore the default ordering of messages"
+
+[[chat.keymap]]
+keys = ["shift+back_tab"]
+command = "show_pinned_messages_popup"
+description = "Open pinned messages browser"
+
+[[chat.keymap]]
+keys = ["back_tab"]
+command = "show_pinned_messages_popup"
+description = "Open pinned messages browser"
+
+[[prompt.keymap]]
+keys = ["ctrl+c"]
+command = "prompt_copy"
+description = "Copy the selected text"
+
+[[prompt.keymap]]
+keys = ["alt+left"]
+command = "focus_chat_list"
+description = "Focus the chat list"
+
+[[prompt.keymap]]
+keys = ["alt+right"]
+command = "focus_chat"
+description = "Focus the chat"
+
+[[prompt.keymap]]
+keys = ["alt+r"]
+command = "chat_window_search"
+description = "Open message search overlay"
+
+[[command_guide.keymap]]
+keys = ["esc"]
+command = "hide_command_guide"
+description = "Close the command guide"
+
+[[command_guide.keymap]]
+keys = ["f1"]
+command = "hide_command_guide"
+description = "Close the command guide"
+
+[[theme_selector.keymap]]
+keys = ["esc"]
+command = "hide_theme_selector"
+description = "Close the theme selector"
+
+[[search_overlay.keymap]]
+keys = ["esc"]
+command = "close_search_overlay"
+description = "Close the search overlay"
+
+[[search_overlay.keymap]]
+keys = ["enter"]
+command = "search_overlay_submit"
+description = "Submit search or confirm selection"
+
+[[photo_viewer.keymap]]
+keys = ["esc"]
+command = "hide_photo_viewer"
+description = "Close the photo viewer"
+
+[[photo_viewer.keymap]]
+keys = ["up"]
+command = "photo_viewer_previous"
+description = "View previous message"
+
+[[photo_viewer.keymap]]
+keys = ["down"]
+command = "photo_viewer_next"
+description = "View next message"
+
+[[photo_viewer.keymap]]
+keys = ["k"]
+command = "photo_viewer_previous"
+description = "View previous message"
+
+[[photo_viewer.keymap]]
+keys = ["j"]
+command = "photo_viewer_next"
+description = "View next message"
+
+[[file_upload_explorer.keymap]]
+keys = ["esc"]
+command = "hide_file_upload_explorer"
+description = "Close file upload explorer"
+
+[[file_upload_explorer.keymap]]
+keys = ["q"]
+command = "hide_file_upload_explorer"
+description = "Close file upload explorer"
+
+[[file_download_explorer.keymap]]
+keys = ["esc"]
+command = "hide_file_download_explorer"
+description = "Cancel save file"
+
+[[pinned_messages_popup.keymap]]
+keys = ["esc"]
+command = "hide_pinned_messages_popup"
+description = "Close pinned messages"
+
+[[pinned_messages_popup.keymap]]
+keys = ["enter"]
+command = "pinned_popup_confirm_jump"
+description = "Jump to this message in chat"
+
+[[pinned_messages_popup.keymap]]
+keys = ["up"]
+command = "pinned_popup_previous"
+description = "Older pinned message"
+
+[[pinned_messages_popup.keymap]]
+keys = ["down"]
+command = "pinned_popup_next"
+description = "Newer pinned message"
+
+[[pinned_messages_popup.keymap]]
+keys = ["k"]
+command = "pinned_popup_previous"
+description = "Older pinned message"
+
+[[pinned_messages_popup.keymap]]
+keys = ["j"]
+command = "pinned_popup_next"
+description = "Newer pinned message"
+
+[[pinned_messages_popup.keymap]]
+keys = ["alt+v"]
+command = "pinned_popup_view_photo"
+description = "View photo from current pin"
+
+[[pinned_messages_popup.keymap]]
+keys = ["alt+p"]
+command = "pinned_popup_play_voice"
+description = "Play voice/audio from current pin"
