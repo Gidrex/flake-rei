@@ -81,17 +81,6 @@ in
         listToAttrs (lib.mapAttrsToList mkFunc { n = mkFuncWrap "nvim" "${pkgs.neovim}/bin/nvim"; })
       ))
 
-      (lib.mkIf config.programs.zellij.enable (
-        listToAttrs (
-          lib.mapAttrsToList mkFunc {
-            zl = mkFuncWrap "zellij" "zellij";
-            zln = mkFuncWrap "zellij" "zellij --session";
-            zla = "zellij attach $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.skim}/bin/sk)";
-            zlk = "zellij kill-session $(${pkgs.zellij}/bin/zellij ls -s | ${pkgs.skim}/bin/sk)";
-          }
-        )
-      ))
-
       (lib.mkIf config.programs.home-manager.enable (
         listToAttrs (
           lib.mapAttrsToList mkFunc { hm = "home-manager switch --flake ~/flake-rei/#$FLAKE_MACHINE"; }
@@ -134,7 +123,6 @@ in
   catppuccin.fish.enable = true;
 
   programs = {
-    zellij.enableFishIntegration = false;
     zoxide.enableFishIntegration = true;
     yazi.enableFishIntegration = true;
     eza.enableFishIntegration = false;

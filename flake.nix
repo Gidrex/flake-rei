@@ -11,9 +11,6 @@
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 
-    zjstatus.url = "github:dj95/zjstatus";
-    zjstatus.inputs.nixpkgs.follows = "nixpkgs";
-
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -71,7 +68,6 @@
         ./hm-modules/termTools/nushell
         ./hm-modules/termTools/helix
         ./hm-modules/termTools/neovim
-        #        ./hm-modules/termTools/zellij
         ./hm-modules/termTools/less.nix
         ./hm-modules/security/pass.nix
         ./hm-modules/security/sops.nix
