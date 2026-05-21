@@ -300,6 +300,11 @@ in
 
         # ml
         easyocr
+
+        # security
+        age
+        ssh-to-age
+
         # fonts
       ]
       ++ (with nerd-fonts; [
