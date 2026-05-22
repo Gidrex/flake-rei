@@ -3,6 +3,6 @@ creation_rules:
   - path_regex: secrets/.*\.yaml$
     # Replace with your public key(s)
     # To get your age public key from ssh: nix-shell -p ssh-to-age --run "ssh-to-age < ~/.ssh/id_ed25519.pub"
-    # key_groups:
-    #   - age:
-    #       - age1...
+    key_groups:
+      - age:
+          - age1h8xssn2p4tjjgp5ac99m6cy0elgss7mkzpp8j9s5antj69geev9s7pkac4
