@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.password-store = {
     enable = true;
     package = pkgs.pass.withExtensions (exts: [ exts.pass-otp ]);
     settings = {
-      PASSWORD_STORE_DIR = "$HOME/.password-store";
+      PASSWORD_STORE_DIR = "${config.home.homeDirectory}/.password-store";
     };
   };
 
@@ -13,7 +13,5 @@
     pinentry.package = pkgs.pinentry-curses;
   };
 
-  programs.gpg = {
-    enable = true;
-  };
+  programs.gpg.enable = true;
 }

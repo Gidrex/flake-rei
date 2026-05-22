@@ -336,19 +336,19 @@ in
 
         QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
 
-        XDG_CONFIG_HOME = "$HOME/.config";
-        XDG_SCREENSHOTS_DIR = "$HOME/Pictures/screenshots";
+        XDG_CONFIG_HOME = "${config.xdg.configHome}";
+        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
       };
 
     sessionPath = [
-      "$HOME/.volta/bin"
-      "$HOME/.cargo/bin"
-      "$HOME/go/bin"
-      "$HOME/.local/bin"
-      "$HOME/.nix-profile/bin"
-      "$HOME/.npm-global/bin"
-      "$HOME/.deno/bin"
-      "$HOME/.opencode/bin"
+      "${config.home.homeDirectory}/.volta/bin"
+      "${config.home.homeDirectory}/.cargo/bin"
+      "${config.home.homeDirectory}/go/bin"
+      "${config.home.homeDirectory}/.local/bin"
+      "${config.home.homeDirectory}/.nix-profile/bin"
+      "${config.home.homeDirectory}/.npm-global/bin"
+      "${config.home.homeDirectory}/.deno/bin"
+      "${config.home.homeDirectory}/.opencode/bin"
       "/usr/bin"
       "/opt/flutter/bin"
     ];
