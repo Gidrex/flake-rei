@@ -4,3 +4,4 @@ blur/
 .gemini
 .grock
 .claude
+/dotfiles/tgt/config/telegram.toml
