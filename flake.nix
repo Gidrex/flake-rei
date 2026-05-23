@@ -57,6 +57,7 @@
         yazi-plugins = builtins.mapAttrs (_: cleanPlugin) {
           inherit (inputs) open-with-cmd close-and-restore-tab;
         };
+        sshPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHkcwdevqLSxMqKZEo94A4w2VRgeSRCZm5j+hM0pafDf gidrex@rei";
       };
 
       # Common modules
@@ -69,7 +70,7 @@
         ./hm-modules/termTools/helix
         ./hm-modules/termTools/neovim
         ./hm-modules/termTools/less.nix
-        ./hm-modules/security/pass.nix
+        ./hm-modules/security/keys.nix
         ./hm-modules/security/sops.nix
 
         inputs.catppuccin.homeModules.catppuccin
