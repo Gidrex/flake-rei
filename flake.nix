@@ -75,6 +75,7 @@
         ./hm-modules/termTools/less.nix
         ./hm-modules/security/keys.nix
         ./hm-modules/security/sops.nix
+        ./hm-modules/security/rclone.nix
 
         inputs.catppuccin.homeModules.catppuccin
         inputs.sops-nix.homeManagerModules.sops

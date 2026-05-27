@@ -20,15 +20,7 @@ end
 
 switch $cmd
     case init
-        rclone mount gdrive: ~/gdrive \
-            --vfs-cache-mode full \
-            --vfs-cache-max-size 10G \
-            --vfs-cache-max-age 24h \
-            --dir-cache-time 1h \
-            --poll-interval 15s \
-            --vfs-read-chunk-size 32M \
-            --vfs-read-chunk-size-limit 2G \
-            --daemon
+        systemctl --user restart rclone-mount:@gdrive.service
     case ls
         __gd_run_remote lsf $argv
     case lst
